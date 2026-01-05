@@ -1,9 +1,9 @@
 
 namespace Lazzerini;
 
-table 50211 "XV Tipo Prelievo"
+table 50215 "XV Tipo Prelievo Articoli"
 {
-    Caption = 'Tipi Prelievo - Spedizione warehouse';
+    Caption = 'Tipi Prelievo - Articoli';
     DataClassification = CustomerContent;
 
     fields

@@ -6,26 +6,27 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
 {
     layout
     {
-        addlast(Content)
+        addafter("Sorting Method")
         {
-            group("Campi Custom")
+            field("Tipo Prelievo"; Rec."Tipo Prelievo")
             {
-                field("Tipo Prelievo"; Rec."Tipo Prelievo")
-                {
-                    ApplicationArea = All;
-                }
-                field("Tipo Ordine"; Rec."Tipo Ordine")
-                {
-                    ApplicationArea = All;
-                }
-                field("Numero Totale Serie"; Rec."Numero Totale Serie")
-                {
-                    ApplicationArea = All;
-                }
-                field("Numero Totale Pallet"; Rec."Numero Totale Pallet")
-                {
-                    ApplicationArea = All;
-                }
+                ApplicationArea = All;
+            }
+            field("Tipo Ordine"; Rec."Tipo Ordine")
+            {
+                ApplicationArea = All;
+            }
+            field("Numero Totale Serie"; Rec."Numero Totale Serie")
+            {
+                ApplicationArea = All;
+            }
+            field("Numero Totale Pallet"; Rec."Numero Totale Pallet")
+            {
+                ApplicationArea = All;
+            }
+            field("Fattura Richiesta"; Rec."Fattura Richiesta")
+            {
+                ApplicationArea = All;
             }
         }
     }

@@ -1,4 +1,4 @@
-namespace Custom.Custom;
+namespace Lazzerini;
 
 using Microsoft.Sales.Document;
 
@@ -13,6 +13,12 @@ pageextension 50203 XVSalesInvoice extends "Sales Invoice"
                 ApplicationArea = All;
                 Caption = 'Accompagnatoria';
                 ToolTip = 'Indica se la fattura è accompagnatoria.';
+            }
+            field("Tipo Ordine"; Rec."Tipo Ordine")
+            {
+                ApplicationArea = All;
+                Caption = 'Tipo Ordine';
+                ToolTip = 'Specifica il tipo di ordine associato alla fattura.';
             }
         }
     }

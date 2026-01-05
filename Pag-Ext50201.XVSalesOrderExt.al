@@ -38,6 +38,11 @@ pageextension 50201 "XV Sales Order Ext" extends "Sales Order"
                 ApplicationArea = All;
                 ToolTip = 'Specifica il numero di posti disponibili per la serie.';
             }
+            field("Tipo Ordine"; Rec."Tipo Ordine")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Specifica il tipo di ordine.';
+            }
         }
 
     }

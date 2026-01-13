@@ -6,17 +6,23 @@ tableextension 50212 "Warehouse Shipment Line Ext" extends "Invt. Document Line"
 {
     fields
     {
-        field(50100; "Tipo Prelievo"; Enum "XV Tipo Prelievo WSH")
+        field(50100; "Tipo Prelievo"; Code[20])
         {
             Caption = 'Tipo Prelievo';
             DataClassification = ToBeClassified;
-
+            TableRelation = "XV Tipo Prelievo";
+            ObsoleteState = Removed;
+            ObsoleteReason = 'Campo non più utilizzato';
+            ObsoleteTag = '2024.01';
         }
-        field(50101; "Tipo Ordine"; Enum "XV Tipo Ordine WSH")
+        field(50101; "Tipo Ordine"; Code[20])
         {
             Caption = 'Tipo Ordine';
             DataClassification = ToBeClassified;
-
+            TableRelation = "XV Tipo Ordine";
+            ObsoleteState = Removed;
+            ObsoleteReason = 'Campo non più utilizzato';
+            ObsoleteTag = '2024.01';
         }
         field(50102; "Numero Totale Serie"; Integer)
         {

@@ -67,5 +67,17 @@ tableextension 50199 "XV Production Order" extends "Production Order"
             DataClassification = CustomerContent;
             TableRelation = "Routing Header"."No.";
         }
+        field(50109; "Nr. cliente"; code[20])
+        {
+            Caption = 'Nr. Ciclo';
+            DataClassification = CustomerContent;
+
+        }
+        field(50110; "Rif. Ord. Vendita"; code[20])
+        {
+            Caption = 'Nr. Ciclo';
+            DataClassification = CustomerContent;
+
+        }
     }
 }

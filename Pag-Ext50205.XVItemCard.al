@@ -16,6 +16,20 @@ pageextension 50205 XVItemCad extends "Item Card"
             {
                 ApplicationArea = All;
             }
+            field("Articolo CKD"; Rec."Articolo CKD")
+            {
+                ApplicationArea = All;
+            }
+
+            field("CKD - Nr. Art. origine"; Rec."CKD-Nr. Art. origine")
+            {
+                ApplicationArea = All;
+            }
+
+            field("In Packing CKD"; Rec."In Packing CKD")
+            {
+                ApplicationArea = All;
+            }
         }
     }
 }

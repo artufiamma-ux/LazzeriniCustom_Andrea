@@ -1,6 +1,7 @@
 namespace Lazzerini;
 
 using Microsoft.Sales.Document;
+using Microsoft.Sales.History;
 
 pageextension 50203 XVSalesInvoice extends "Sales Invoice"
 {

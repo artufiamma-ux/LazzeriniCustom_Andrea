@@ -6,7 +6,7 @@ pageextension 50209 "XV Released Prod. Order Lines" extends "Released Prod. Orde
 {
     layout
     {
-        addlast(content)
+        addafter("Description")
         {
             field("Status Materiali"; Rec."Status Materiali")
             {

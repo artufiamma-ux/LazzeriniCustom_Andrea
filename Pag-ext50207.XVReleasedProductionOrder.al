@@ -2,11 +2,11 @@ namespace Lazzerini;
 
 using Microsoft.Manufacturing.Document;
 
-pageextension 50216 "XV Released Prod Orders Ext" extends "Released Production Orders"
+pageextension 50216 "XV Released Prod Orders Ext" extends "Released Production Order"
 {
     layout
     {
-        addlast(content)
+        addlast(General)
         {
             field("Rif. Ord. Vendita"; Rec."Rif. Ord. Vendita")
             {

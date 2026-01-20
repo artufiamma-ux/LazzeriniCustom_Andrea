@@ -41,6 +41,7 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
+                        <rd:Selected>true</rd:Selected>
                         <Rectangle Name="Rectangle1">
                           <ReportItems>
                             <Tablix Name="HeaderTable">
@@ -62,7 +63,7 @@
                                     <Width>1.35412cm</Width>
                                   </TablixColumn>
                                   <TablixColumn>
-                                    <Width>4.06262cm</Width>
+                                    <Width>3.4949cm</Width>
                                   </TablixColumn>
                                 </TablixColumns>
                                 <TablixRows>
@@ -2048,7 +2049,7 @@
                               <DataSetName>DataSet_Result</DataSetName>
                               <Top>0.07056cm</Top>
                               <Height>4.29568cm</Height>
-                              <Width>18.96771cm</Width>
+                              <Width>18.4cm</Width>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -7341,37 +7342,6 @@
                                 <PaddingRight>5pt</PaddingRight>
                               </Style>
                             </Textbox>
-                            <Textbox Name="Textbox88">
-                              <rd:DefaultName>Textbox88</rd:DefaultName>
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value>=Globals!PageNumber &amp; "/" &amp; Globals!TotalPages</Value>
-                                      <Style />
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style />
-                                </Paragraph>
-                              </Paragraphs>
-                              <Top>3.6266cm</Top>
-                              <Left>16.33749cm</Left>
-                              <Height>0.6cm</Height>
-                              <Width>2.5cm</Width>
-                              <ZIndex>11</ZIndex>
-                              <RepeatWith>HeaderTable</RepeatWith>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
                           </ReportItems>
                           <KeepTogether>true</KeepTogether>
                           <OmitBorderOnPageBreak>true</OmitBorderOnPageBreak>
@@ -7418,7 +7388,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>22.1353cm</Height>
+        <Height>22.6753cm</Height>
         <Style />
       </Body>
       <Width>20.85093cm</Width>
@@ -7756,6 +7726,50 @@
             </Border>
           </Style>
         </PageHeader>
+        <PageFooter>
+          <Height>0.54cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="NumPagina">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Pag. " &amp; Globals!PageNumber &amp; "/" &amp; Globals!TotalPages</Value>
+                      <Style>
+                        <FontFamily>Segoe UI</FontFamily>
+                        <FontSize>7pt</FontSize>
+                        <Color>DimGray</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.00759cm</Top>
+              <Left>15.52547cm</Left>
+              <Height>0.52483cm</Height>
+              <Width>2.5cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>1.9cm</LeftMargin>
@@ -8664,6 +8678,9 @@ End Function
         </Field>
         <Field Name="EORICode">
           <DataField>EORICode</DataField>
+        </Field>
+        <Field Name="ACCOMPAGNATORIA">
+          <DataField>ACCOMPAGNATORIA</DataField>
         </Field>
       </Fields>
       <Query>

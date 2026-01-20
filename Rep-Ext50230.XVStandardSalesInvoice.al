@@ -21,7 +21,7 @@ reportextension 50230 XVStandardSalesInvoice extends "Standard Sales - Invoice"
         Customer: Record Customer;
     begin
         if Customer.Get(SellToCustomerNo) then
-            exit(Customer."Codice EORI"); // Sostituisci con il nome esatto del campo
+            exit(Customer."Codice EORI");
         exit('');
     end;
 }

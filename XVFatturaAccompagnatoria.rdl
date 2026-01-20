@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-01-20T07:57:46.3067316Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-01-20T09:53:23.5753758Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -32,7 +32,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>20.85093cm</Width>
+                  <Width>18.55097cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -41,7 +41,6 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <rd:Selected>true</rd:Selected>
                         <Rectangle Name="Rectangle1">
                           <ReportItems>
                             <Tablix Name="HeaderTable">
@@ -2049,7 +2048,7 @@
                               <DataSetName>DataSet_Result</DataSetName>
                               <Top>0.07056cm</Top>
                               <Height>4.29568cm</Height>
-                              <Width>18.4cm</Width>
+                              <Width>18.39999cm</Width>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -7378,9 +7377,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
-            <Top>0.22049cm</Top>
+            <Top>0.18029cm</Top>
+            <Left>0.05161cm</Left>
             <Height>21.66187cm</Height>
-            <Width>20.85093cm</Width>
+            <Width>18.55097cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -7391,7 +7391,7 @@
         <Height>22.6753cm</Height>
         <Style />
       </Body>
-      <Width>20.85093cm</Width>
+      <Width>18.60258cm</Width>
       <Page>
         <PageHeader>
           <Height>3.8cm</Height>
@@ -7405,7 +7405,7 @@
                   <Value>=First(Fields!CompanyPicture.Value, "DataSet_Result")</Value>
                   <MIMEType>image/png</MIMEType>
                   <Sizing>FitProportional</Sizing>
-                  <Top>0.3175cm</Top>
+                  <Top>0.635cm</Top>
                   <Height>14mm</Height>
                   <Width>60mm</Width>
                   <Style>
@@ -7430,7 +7430,7 @@
               </ReportItems>
               <KeepTogether>true</KeepTogether>
               <Left>12cm</Left>
-              <Height>3cm</Height>
+              <Height>2.3525cm</Height>
               <Width>6.4cm</Width>
               <Style>
                 <Border>
@@ -7456,7 +7456,7 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>0.3125cm</Top>
+              <Top>0.63cm</Top>
               <Left>0.3175cm</Left>
               <Height>0.38806cm</Height>
               <Width>4.40852cm</Width>
@@ -7491,7 +7491,7 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>1.0604cm</Top>
+              <Top>1.3779cm</Top>
               <Left>0.3175cm</Left>
               <Height>0.38806cm</Height>
               <Width>4.40852cm</Width>
@@ -7526,7 +7526,7 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>0.67234cm</Top>
+              <Top>0.98984cm</Top>
               <Left>0.3175cm</Left>
               <Height>0.38806cm</Height>
               <Width>4.40852cm</Width>
@@ -7561,7 +7561,7 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>1.45197cm</Top>
+              <Top>1.76947cm</Top>
               <Left>0.3175cm</Left>
               <Height>0.38806cm</Height>
               <Width>4.40852cm</Width>
@@ -7596,7 +7596,7 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>0.27899cm</Top>
+              <Top>0.59649cm</Top>
               <Left>5.29323cm</Left>
               <Height>0.38806cm</Height>
               <Width>4.40852cm</Width>
@@ -7631,7 +7631,7 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>1.02689cm</Top>
+              <Top>1.34439cm</Top>
               <Left>5.29323cm</Left>
               <Height>0.38806cm</Height>
               <Width>4.40852cm</Width>
@@ -7666,7 +7666,7 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>0.63883cm</Top>
+              <Top>0.95633cm</Top>
               <Left>5.29323cm</Left>
               <Height>0.38806cm</Height>
               <Width>4.40852cm</Width>
@@ -7701,7 +7701,7 @@
                   <Style />
                 </Paragraph>
               </Paragraphs>
-              <Top>1.41846cm</Top>
+              <Top>1.73596cm</Top>
               <Left>5.29323cm</Left>
               <Height>0.38806cm</Height>
               <Width>4.40852cm</Width>
@@ -7717,6 +7717,41 @@
                 </LeftBorder>
                 <PaddingLeft>5pt</PaddingLeft>
                 <PaddingRight>5pt</PaddingRight>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox1">
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=IIf(First(Fields!ACCOMPAGNATORIA.Value, "DataSet_Result"),"ACCOMPAGNATORIA","STANDARD")</Value>
+                      <Style>
+                        <Color>Lime</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <Top>2.85433cm</Top>
+              <Left>8.35766cm</Left>
+              <Height>0.6cm</Height>
+              <Width>9.64234cm</Width>
+              <ZIndex>9</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <BackgroundColor>Black</BackgroundColor>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
           </ReportItems>

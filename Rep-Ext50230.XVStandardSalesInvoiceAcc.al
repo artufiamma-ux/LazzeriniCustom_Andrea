@@ -9,12 +9,14 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
 
     dataset
     {
+
         add(Header)
         {
             column(ShipToName; "Ship-to Name") { }
             column(EORICode; GetEORICode("Sell-to Customer No.")) { }
             column(ACCOMPAGNATORIA; ACCOMPAGNATORIA) { }
         }
+
     }
 
     local procedure GetEORICode(SellToCustomerNo: Code[20]): Code[50]
@@ -25,6 +27,4 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             exit(Customer."Codice EORI");
         exit('');
     end;
-
 }
-

@@ -3,17 +3,20 @@ namespace Lazzerini;
 using Microsoft.Sales.History;
 using Microsoft.Sales.Customer;
 
-reportextension 50230 XVStandardSalesInvoice extends "Standard Sales - Invoice"
+reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoice"
 {
     RDLCLayout = 'XVFatturaAccompagnatoria.rdl';
 
     dataset
     {
+
         add(Header)
         {
             column(ShipToName; "Ship-to Name") { }
             column(EORICode; GetEORICode("Sell-to Customer No.")) { }
+            column(ACCOMPAGNATORIA; ACCOMPAGNATORIA) { }
         }
+
     }
 
     local procedure GetEORICode(SellToCustomerNo: Code[20]): Code[50]
@@ -25,4 +28,3 @@ reportextension 50230 XVStandardSalesInvoice extends "Standard Sales - Invoice"
         exit('');
     end;
 }
-

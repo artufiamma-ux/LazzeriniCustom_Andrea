@@ -29,5 +29,26 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                 ApplicationArea = All;
             }
         }
+
     }
+    actions
+    {
+        addafter("Action51")
+        {
+            action(ControllaIntegritaSerie)
+            {
+                Caption = 'Controlla integrità serie';
+                ApplicationArea = All;
+                Image = Check;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                begin
+                    Message('Controllo integrità serie avviato');
+                end;
+            }
+        }
+    }
+
 }

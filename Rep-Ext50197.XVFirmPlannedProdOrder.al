@@ -4,8 +4,7 @@ using Microsoft.Manufacturing.Document;
 
 reportextension 50197 XVProdOrderJobCardExt extends "Prod. Order - Job Card"
 {
-    // Qui puoi specificare un RDLC custom se vuoi
-    // RDLCLayout = 'XVProdOrderJobCard.rdl';
+    RDLCLayout = 'ReportLayouts/XVProdOrderJobCard.rdlc';
 
     dataset
     {

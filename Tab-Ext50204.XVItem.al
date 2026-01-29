@@ -38,5 +38,6 @@ tableextension 50204 XVItem extends Item
             Caption = 'In Packing CKD';
             DataClassification = CustomerContent;
         }
+        field(50065; "Posizione Layout"; code[20]) { Caption = 'Posizione Layout'; DataClassification = ToBeClassified; }
     }
 }

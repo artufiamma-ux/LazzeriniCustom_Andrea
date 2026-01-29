@@ -79,5 +79,11 @@ tableextension 50199 "XV Production Order" extends "Production Order"
             DataClassification = CustomerContent;
 
         }
+        field(50111; "Posizione Layout"; code[20])
+        {
+            Caption = 'Posizione Layout';
+            DataClassification = CustomerContent;
+
+        }
     }
 }

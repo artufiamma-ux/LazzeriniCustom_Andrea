@@ -2,6 +2,7 @@ namespace Lazzerini;
 
 using Microsoft.Inventory.Requisition;
 
+
 tableextension 50198 "XV Requisition Line" extends "Requisition Line"
 {
     fields

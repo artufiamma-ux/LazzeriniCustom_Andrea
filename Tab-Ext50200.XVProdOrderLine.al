@@ -2,6 +2,7 @@ namespace Lazzerini;
 
 Using Microsoft.Manufacturing.Document;
 
+
 tableextension 50200 "XV Prod. Order Line" extends "Prod. Order Line"
 {
     fields

@@ -2,6 +2,7 @@ namespace Lazzerini;
 
 using Microsoft.Sales.Document;
 
+
 tableextension 50202 "XV Sales Line" extends "Sales Line"
 {
     fields

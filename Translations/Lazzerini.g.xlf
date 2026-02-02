@@ -258,6 +258,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Ext - Control Tipo Ordine - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 178401406 - Property 3863440606" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Custom XView</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Property AdditionalSearchTerms</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 178401406 - Control 3057824133 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Non duplicabile - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 178401406 - Control 4121001562 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Nr Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Nr Layout - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 178401406 - Control 1477659264 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Nr serie</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Nr serie - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 178401406 - Control 2690962089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Ordine con kit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Ordine con kit - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 444129594 - Control 3942216509 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2420212404">
           <source>Indica se la fattura è accompagnatoria.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -288,6 +313,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XVSalesInvoice - Control Tipo Ordine - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2897141477 - Action 3137979607 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2938519335">
+          <source>Controlla integrità serie</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XVWarehouseShipment - Action ControllaIntegritaSerie - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3260845341 - Field 4193127918 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 400793991">
           <source>Cod zona</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -297,6 +327,11 @@
           <source>Tipo Prelievo</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Bin - Field Tipo Prelievo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 959896155 - Field 3333194228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
+          <source>Posizione Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Prod. Order Line - Field Posizione Layout - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 959896155 - Field 3293909138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
           <source>Status Materiali</source>
@@ -343,6 +378,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Production Order - Field Nr. Serie progressiva - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 1668326629 - Field 3333194228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
+          <source>Posizione Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Production Order - Field Posizione Layout - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1668326629 - Field 508732827 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Nr. Ciclo</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -357,6 +397,11 @@
           <source>Tipo Ciclo</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Production Order - Field Tipo Ciclo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 4198506000 - Field 3333194228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3755718006">
+          <source>Posizione Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Requisition Line - Field Posizione Layout - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2316279051 - Field 530198173 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1192395785">
           <source>Azzera data spedizione</source>
@@ -462,6 +507,11 @@
           <source>In Packing CKD</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XVItem - Field In Packing CKD - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1967575573 - Field 3333194228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
+          <source>Posizione Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XVItem - Field Posizione Layout - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1967575573 - Field 880522992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3276313895">
           <source>Tipo Prelievo</source>

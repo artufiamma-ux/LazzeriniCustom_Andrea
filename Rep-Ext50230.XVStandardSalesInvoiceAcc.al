@@ -34,12 +34,12 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
     begin
         if SellToCountryCode = 'IT' then
             if ACCOMPAGNATORIA then
-                exit('Fattura Accompagnatoria')
+                exit('INVOICE & DELIVERY NOTE') // NON ESISTONO ITALIANI - SOLO DOGANA
             else
                 exit('Fattura')
         else
             if ACCOMPAGNATORIA then
-                exit('Accompanying Invoice')
+                exit('INVOICE & DELIVERY NOTE')
             else
                 exit('Invoice');
         exit('');

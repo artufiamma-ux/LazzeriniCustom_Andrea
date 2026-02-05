@@ -28,6 +28,56 @@
           <note from="Developer" annotates="general" priority="2">%</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TipiEtichettaSpedizioni - Control Description - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Table 2224452237 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>XV IK Strumenti di Misura</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2224452237 - Field 2178668039 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bollino</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura - Field Bollino - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2224452237 - Field 3648392743 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Descrizione</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura - Field Descrizione - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2224452237 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2224452237 - Field 2898143332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Note</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura - Field Note - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2224452237 - Field 4095941223 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stato</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura - Field Stato - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2224452237 - Field 1177764737 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tipo Strumento</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura - Field Tipo Strumento - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2224452237 - Field 2680144053 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ubicazione</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura - Field Ubicazione - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2224452237 - Field 2708250016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Utente</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura - Field User ID - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2224452237 - Field 3021697414 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>User Security ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura - Field User Security ID - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 949863117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tipi Etichetta</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -137,6 +187,76 @@
           <source>Descrizione</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table XV Tipo Prelievo Articoli - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3848372465 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>XV IK Strumenti di Misura Card</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3848372465 - Control 2898143332 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Note aggiuntive sullo strumento.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura Card - Control Note - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>XV IK Strumenti di Misura List</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Control 2178668039 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Valore del bollino.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Bollino - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Control 216412848 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Indicatore colore del bollino (Giallo/Verde/Blu).</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Bollino (Colore) - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Control 216412848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bollino (Colore)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Bollino (Colore) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Control 3648392743 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Descrizione dello strumento.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Descrizione - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Control 4095941223 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stato operativo dello strumento.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Stato - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Control 45720592 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Indicatore colore dello stato (Attivo/Dismesso).</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Stato (Colore) - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Control 45720592 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stato (Colore)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Stato (Colore) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Control 1177764737 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tipologia dello strumento.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Tipo Strumento - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Control 2680144053 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ubicazione dello strumento.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Ubicazione - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Control 1787891797 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Utente che ha inserito il record.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Utente - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Control 1787891797 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Utente</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Utente - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2868243351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tipi Etichetta</source>
@@ -597,6 +717,76 @@
           <source> Parzialmente Disponibile</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum RigheOP - EnumValue Parzialmente - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2634683883 - EnumValue 2890649805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Blu</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Bollino - EnumValue Blu - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2634683883 - EnumValue 1281149780 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Giallo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Bollino - EnumValue Giallo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2634683883 - EnumValue 3879244692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Verde</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Bollino - EnumValue Verde - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 823829387 - EnumValue 754770803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attivo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Stato - EnumValue Attivo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 823829387 - EnumValue 635596939 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dismesso</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Stato - EnumValue Dismesso - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2561490501 - EnumValue 3779688965 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bilancia</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Strumento - EnumValue Bilancia - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2561490501 - EnumValue 216196148 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Calibro</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Strumento - EnumValue Calibro - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2561490501 - EnumValue 103654975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Chiave Dinamometrica</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Strumento - EnumValue Chiave Dinamometrica - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2561490501 - EnumValue 3975183700 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Termometro</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Strumento - EnumValue Termometro - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2561490501 - EnumValue 3732224266 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Strumento - EnumValue Test - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3484098470 - EnumValue 3160399677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Officina</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Ubicazione Strumento - EnumValue Officina - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3484098470 - EnumValue 2899165549 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Produzione</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Ubicazione Strumento - EnumValue Produzione - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3484098470 - EnumValue 1293644528 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qualità</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Ubicazione Strumento - EnumValue Qualità - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3484098470 - EnumValue 1027937731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sala Prove</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Ubicazione Strumento - EnumValue Sala Prove - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 959930685 - EnumValue 3304381810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cuscino</source>

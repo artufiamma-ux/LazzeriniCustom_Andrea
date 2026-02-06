@@ -3,7 +3,7 @@ namespace Lazzerini;
 using Microsoft.Warehouse.Document;
 using Microsoft.Warehouse.History;
 
-tableextension 50310 "XV Posted Whse. Shipment Line"
+tableextension 50220 "XV Posted Whse. Shipment Line"
     extends "Posted Whse. Shipment Line"
 {
     fields

@@ -18,7 +18,6 @@ page 50252 "XV IK Strumenti di Misura Card"
                     ApplicationArea = All;
                     Editable = false;
                 }
-
                 field("Utente"; Rec."User ID")
                 {
                     ApplicationArea = All;

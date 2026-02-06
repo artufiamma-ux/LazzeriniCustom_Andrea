@@ -6,8 +6,6 @@ page 50254 "XV IK Strumenti Doc Card"
     SourceTable = "XV IK Strumenti di Misura Doc";
     Caption = 'Documento Strumento di Misura';
     ApplicationArea = All;
-    Editable = true;
-
     layout
     {
         area(content)

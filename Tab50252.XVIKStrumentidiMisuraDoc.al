@@ -46,7 +46,18 @@ table 50252 "XV IK Strumenti di Misura Doc"
             DataClassification = CustomerContent;
         }
 
+        field(45; "Data Prossimo Intervento"; Date)
+        {
+            Caption = 'Data Prossimo Intervento';
+            DataClassification = CustomerContent;
+        }
+
         field(50; "Allegato"; Media)
+        {
+            Caption = 'Allegato';
+            DataClassification = CustomerContent;
+        }
+        field(60; "Allegati"; MediaSet)
         {
             Caption = 'Allegato';
             DataClassification = CustomerContent;

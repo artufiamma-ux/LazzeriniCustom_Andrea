@@ -18,6 +18,7 @@ page 50252 "XV IK Strumenti di Misura Card"
                     ApplicationArea = All;
                     Editable = false;
                 }
+
                 field("Utente"; Rec."User ID")
                 {
                     ApplicationArea = All;
@@ -47,20 +48,7 @@ page 50252 "XV IK Strumenti di Misura Card"
                 {
                     ApplicationArea = All;
                 }
-                /*
-                                field("Bollino (Colore)"; BollinoIndicatorTxt)
-                                {
-                                    ApplicationArea = All;
-                                    Editable = false;
-                                }
 
-
-                                field("Stato (Colore)"; StatoIndicatorTxt)
-                                {
-                                    ApplicationArea = All;
-                                    Editable = false;
-                                }
-                */
                 field("Note"; Rec."Note")
                 {
                     ApplicationArea = All;
@@ -68,36 +56,79 @@ page 50252 "XV IK Strumenti di Misura Card"
                     ToolTip = 'Note aggiuntive sullo strumento.';
                 }
             }
+
+            group(Documenti)
+            {
+                Caption = 'Documenti';
+
+                part(DocumentiPart; "XV IK Strumenti Doc List")
+                {
+                    ApplicationArea = All;
+                    SubPageLink = "Strumento di misura Entry No." = field("Entry No.");
+                }
+            }
         }
     }
-    /*
-        var
-            BollinoIndicatorTxt: Text[2];
-            StatoIndicatorTxt: Text[2];
 
-        trigger OnAfterGetRecord()
-        begin
-            // Colori Bollino
-            case Rec."Bollino" of
-                Rec."Bollino"::Giallo:
-                    BollinoIndicatorTxt := '🟨';
-                Rec."Bollino"::Verde:
-                    BollinoIndicatorTxt := '🟩';
-                Rec."Bollino"::Blu:
-                    BollinoIndicatorTxt := '🟦';
-                else
-                    BollinoIndicatorTxt := '■';
-            end;
+    actions
+    {
+        area(processing)
+        {
+            action(NewDocument)
+            {
+                Caption = 'Nuovo Documento';
+                Image = NewDocument;
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
 
-            // Colori Stato
-            case Rec."Stato" of
-                Rec."Stato"::Attivo:
-                    StatoIndicatorTxt := '🟩';
-                Rec."Stato"::Dismesso:
-                    StatoIndicatorTxt := '🟥';
-                else
-                    StatoIndicatorTxt := '■';
-            end;
-        end;
-    */
+                trigger OnAction()
+                var
+                    DocRec: Record "XV IK Strumenti di Misura Doc";
+                begin
+                    // Crea un nuovo documento già collegato allo strumento corrente
+                    DocRec.Init();
+                    DocRec."Strumento di misura Entry No." := Rec."Entry No.";
+                    DocRec.Insert(true);
+                    PAGE.Run(PAGE::"XV IK Strumenti Doc Card", DocRec);
+                end;
+            }
+
+            action(OpenSelectedDocument)
+            {
+                Caption = 'Apri Documento';
+                Image = EditLines;
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+
+
+                trigger OnAction()
+                var
+                    DocRec: Record "XV IK Strumenti di Misura Doc";
+                    AnySelected: Boolean;
+                begin
+                    // Applica a DocRec il filtro della selezione corrente nella ListPart
+                    CurrPage.DocumentiPart.PAGE.SetSelectionFilter(DocRec);
+
+                    // Se l'utente ha selezionato una o più righe, il Record avrà dei filtri impostati.
+                    // Proviamo a prenderne la prima (FindFirst rispetta i filtri correnti).
+                    AnySelected := DocRec.FindFirst();
+
+                    if not AnySelected then begin
+                        // Nessuna selezione esplicita: apriamo l'ultimo (visto che la lista è ordinata discendente)
+                        DocRec.Reset();
+                        DocRec.SetRange("Strumento di misura Entry No.", Rec."Entry No.");
+                        if DocRec.FindLast() then
+                            AnySelected := true;
+                    end;
+
+                    if AnySelected then
+                        PAGE.Run(PAGE::"XV IK Strumenti Doc Card", DocRec)
+                    else
+                        Message('Seleziona un documento dalla lista.');
+                end;
+            }
+        }
+    }
 }

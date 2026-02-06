@@ -78,6 +78,46 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura - Field User Security ID - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1768509533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>XV IK Strumenti di Misura Documenti</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura Doc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1768509533 - Field 3273868883 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allegato</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura Doc - Field Allegato - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1768509533 - Field 2396138176 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data Ultimo Intervento</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura Doc - Field Data Ultimo Intervento - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1768509533 - Field 699365837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documento Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura Doc - Field Documento Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1768509533 - Field 3442276579 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nome Documento</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura Doc - Field Nome Documento - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1768509533 - Field 746604083 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Periodicità (Mesi)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura Doc - Field Periodicità (Mesi) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1768509533 - Field 1443118902 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Strumento di misura</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura Doc - Field Strumento di misura Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1768509533 - Field 2832857678 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tipo Documento</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura Doc - Field Tipo Documento - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 949863117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tipi Etichetta</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -193,10 +233,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura Card - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3848372465 - Control 2725023026 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documenti</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura Card - Control Documenti - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3848372465 - Control 2898143332 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Note aggiuntive sullo strumento.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura Card - Control Note - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3848372465 - Action 3557712045 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nuovo Documento</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura Card - Action NewDocument - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3848372465 - Action 468798270 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Apri Documento</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura Card - Action OpenSelectedDocument - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2265855395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>XV IK Strumenti di Misura List</source>
@@ -257,6 +312,36 @@
           <source>Utente</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Utente - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 726278805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documento Strumento di Misura</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti Doc Card - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 726278805 - Action 3445273183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allega file</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti Doc Card - Action AttachFile - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 726278805 - Action 816552588 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rimuovi allegato</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti Doc Card - Action ClearAttachment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 726278805 - Action 2787516006 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Scarica allegato</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti Doc Card - Action DownloadFile - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1473530303 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documenti Strumento di Misura</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti Doc List - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1473530303 - Control 2396138176 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Data dell’ultimo intervento eseguito per questo documento.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti Doc List - Control Data Ultimo Intervento - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2868243351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tipi Etichetta</source>
@@ -403,6 +488,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Ordine con kit - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 178401406 - Control 301689699 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Qta. Origine layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Qta. Origine layout - Property ToolTip</note>
+        </trans-unit>
         <trans-unit id="PageExtension 444129594 - Control 3942216509 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2420212404">
           <source>Indica se la fattura è accompagnatoria.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -447,6 +537,31 @@
           <source>Tipo Prelievo</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Bin - Field Tipo Prelievo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2684030018 - Field 4008615246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 566711204">
+          <source>Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Posted Whse. Shipment Line - Field Kit Bus - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2684030018 - Field 185416220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 566711204">
+          <source>Nr. Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Posted Whse. Shipment Line - Field Nr. Layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2684030018 - Field 3333194228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 566711204">
+          <source>Posizione Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Posted Whse. Shipment Line - Field Posizione Layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2684030018 - Field 273783105 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 566711204">
+          <source>Progressivo Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Posted Whse. Shipment Line - Field Progressivo Kit Bus - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2684030018 - Field 3064155203 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 566711204">
+          <source>Qta. Origine Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Posted Whse. Shipment Line - Field Qta. Origine Layout - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 959896155 - Field 3333194228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4218928473">
           <source>Posizione Layout</source>
@@ -563,6 +678,36 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Sales Invoice Header - Field ACCOMPAGNATORIA - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3649701363 - Field 4008615246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Sales Invoice Line - Field Kit Bus - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3649701363 - Field 185416220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Nr. Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Sales Invoice Line - Field Nr. Layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3649701363 - Field 3333194228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Posizione Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Sales Invoice Line - Field Posizione Layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3649701363 - Field 273783105 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Progressivo Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Sales Invoice Line - Field Progressivo Kit Bus - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3649701363 - Field 3064155203 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2079186865">
+          <source>Qta. Origine Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Sales Invoice Line - Field Qta. Origine Layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 1038665956 - Field 301689699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
+          <source>Qta. Origine layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Sales Line - Field Qta. Origine layout - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 1038665956 - Field 469502744 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2574427010">
           <source>Kit Bus</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -597,6 +742,31 @@
           <source>Nr fattura proforma</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Spedizioni - Field Nr fattura proforma - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 200207027 - Field 4008615246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3659122181">
+          <source>Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Whse Shipment Line - Field Kit Bus - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 200207027 - Field 185416220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3659122181">
+          <source>Nr. Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Whse Shipment Line - Field Nr. Layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 200207027 - Field 3333194228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3659122181">
+          <source>Posizione Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Whse Shipment Line - Field Posizione Layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 200207027 - Field 273783105 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3659122181">
+          <source>Progressivo Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Whse Shipment Line - Field Progressivo Kit Bus - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 200207027 - Field 3064155203 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3659122181">
+          <source>Qta. Origine Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Whse Shipment Line - Field Qta. Origine Layout - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 4018476494 - Field 2088202250 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 1994964448">
           <source>Codice EORI</source>

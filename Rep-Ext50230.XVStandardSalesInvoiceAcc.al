@@ -2,6 +2,7 @@ namespace Lazzerini;
 
 using Microsoft.Sales.History;
 using Microsoft.Sales.Customer;
+using Microsoft.Inventory.Item;
 
 reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoice"
 {
@@ -44,4 +45,5 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
                 exit('Invoice');
         exit('');
     end;
+
 }

@@ -2,7 +2,7 @@ namespace Lazzerini;
 
 using Microsoft.Manufacturing.Document;
 
-pageextension 50216 "XV Released Prod Orders Ext" extends "Released Production Order"
+pageextension 50207 "XV Released Prod Orders Ext" extends "Released Production Order"
 {
     layout
     {

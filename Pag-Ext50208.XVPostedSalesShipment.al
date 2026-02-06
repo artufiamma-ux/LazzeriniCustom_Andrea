@@ -1,7 +1,7 @@
 namespace Lazzerini;
 using Microsoft.Sales.History;
 
-pageextension 50207 "XV Posted Sales Shipment Ext" extends "Posted Sales Shipment"
+pageextension 50208 "XV Posted Sales Shipment Ext" extends "Posted Sales Shipment"
 {
     layout
     {

@@ -2,7 +2,7 @@ namespace Lazzerini;
 
 using Microsoft.Sales.Document;
 using Microsoft.Sales.History;
-pageextension 50218 XVPostedSalesInvoice extends "Posted Sales Invoice"
+pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
 {
     layout
     {

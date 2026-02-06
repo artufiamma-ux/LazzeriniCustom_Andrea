@@ -23,5 +23,10 @@ tableextension 50202 "XV Sales Line" extends "Sales Line"
             Caption = 'Kit Bus';
             DataClassification = ToBeClassified;
         }
+        field(50212; "Qta. Origine layout"; Code[20])
+        {
+            Caption = 'Qta. Origine layout';
+            DataClassification = ToBeClassified;
+        }
     }
 }

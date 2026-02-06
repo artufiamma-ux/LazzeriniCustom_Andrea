@@ -31,6 +31,11 @@ pageextension 50198 "XV Sales Order Subform" extends "Sales Order Subform" // Pa
                 ApplicationArea = All;
                 ToolTip = 'Kit Bus';
             }
+            field("Qta. Origine layout"; Rec."Qta. Origine layout")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Qta. Origine layout';
+            }
         }
     }
 }

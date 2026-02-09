@@ -588,40 +588,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XVWarehouseShipment - Action ControllaIntegritaSerie - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 3260845341 - Field 4193127918 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 400793991">
-          <source>Cod zona</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Bin - Field Cod zona - Property Caption</note>
-        </trans-unit>
         <trans-unit id="TableExtension 3260845341 - Field 880522992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 400793991">
           <source>Tipo Prelievo</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Bin - Field Tipo Prelievo - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 1276156347 - Field 4008615246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2260220107">
-          <source>Kit Bus</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Posted Whse Shipment Header - Field Kit Bus - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 1276156347 - Field 185416220 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2260220107">
-          <source>Nr. Layout</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Posted Whse Shipment Header - Field Nr. Layout - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 1276156347 - Field 3333194228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2260220107">
-          <source>Posizione Layout</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Posted Whse Shipment Header - Field Posizione Layout - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 1276156347 - Field 273783105 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2260220107">
-          <source>Progressivo Kit Bus</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Posted Whse Shipment Header - Field Progressivo Kit Bus - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="TableExtension 1276156347 - Field 3064155203 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2260220107">
-          <source>Qta. Origine Layout</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Posted Whse Shipment Header - Field Qta. Origine Layout - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2684030018 - Field 4008615246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 566711204">
           <source>Kit Bus</source>

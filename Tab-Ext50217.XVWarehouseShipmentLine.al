@@ -27,7 +27,7 @@ tableextension 50217 "XV Whse Shipment Line" extends "Warehouse Shipment Line"
             DecimalPlaces = 0 : 5;
         }
 
-        field(50204; "Kit Bus"; Boolean)
+        field(50204; "Kit Bus"; Code[20])
         {
             Caption = 'Kit Bus';
         }

@@ -21,10 +21,10 @@ tableextension 50217 "XV Whse Shipment Line" extends "Warehouse Shipment Line"
             Caption = 'Nr. Layout';
         }
 
-        field(50203; "Qta. Origine Layout"; Decimal)
+        field(50203; "Qta. Origine Layout"; Code[20])
         {
             Caption = 'Qta. Origine Layout';
-            DecimalPlaces = 0 : 5;
+
         }
 
         field(50204; "Kit Bus"; Code[20])

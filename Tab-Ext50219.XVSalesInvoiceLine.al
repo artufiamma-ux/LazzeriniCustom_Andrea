@@ -13,7 +13,7 @@ tableextension 50219 "XV Sales Invoice Line"
             DataClassification = CustomerContent;
         }
 
-        field(50201; "Kit Bus"; Boolean)
+        field(50201; "Kit Bus"; Code[20])
         {
             Caption = 'Kit Bus';
             DataClassification = CustomerContent;
@@ -31,11 +31,11 @@ tableextension 50219 "XV Sales Invoice Line"
             DataClassification = CustomerContent;
         }
 
-        field(50204; "Qta. Origine Layout"; Decimal)
+        field(50204; "Qta. Origine Layout"; Code[20])
         {
             Caption = 'Qta. Origine Layout';
             DataClassification = CustomerContent;
-            DecimalPlaces = 0 : 5;
+
         }
     }
 }

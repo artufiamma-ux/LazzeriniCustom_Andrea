@@ -6,6 +6,7 @@ page 50254 "XV IK Strumenti Doc Card"
     SourceTable = "XV IK Strumenti di Misura Doc";
     Caption = 'Documento Strumento di Misura';
     ApplicationArea = All;
+
     layout
     {
         area(content)
@@ -15,7 +16,7 @@ page 50254 "XV IK Strumenti Doc Card"
                 field("Strumento di misura Entry No."; Rec."Strumento di misura Entry No.")
                 {
                     ApplicationArea = All;
-                    Editable = false; // viene passato automaticamente dal padre
+                    Editable = false;
                 }
 
                 field("Tipo Documento"; Rec."Tipo Documento")
@@ -38,79 +39,118 @@ page 50254 "XV IK Strumenti Doc Card"
                     ApplicationArea = All;
                 }
 
-                field("Allegato"; Rec."Allegato")
+                field("Data Prossimo Intervento"; Rec."Data Prossimo Intervento")
                 {
                     ApplicationArea = All;
+                }
+                field("Note"; Rec."Note")
+                {
+                    ApplicationArea = All;
+                    MultiLine = true;
+                }
+
+
+                // Sostituisco il controllo MediaSet con un campo che indica se il file esiste
+                field(HasAttachment; Rec."Allegato Contenuto".HasValue)
+                {
+                    Caption = 'Allegato Caricato';
+                    ApplicationArea = All;
+                    Editable = false;
+                    ToolTip = 'Indica se è presente un file allegato.';
+                }
+
+                field("Nome File Originale"; Rec."Nome File Originale")
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    Caption = 'Nome File Allegato';
                 }
             }
         }
     }
+
     actions
     {
         area(processing)
         {
+            // --- CARICA ALLEGATO ---
             action(AttachFile)
             {
                 Caption = 'Allega file';
                 Image = Attach;
                 ApplicationArea = All;
+                ToolTip = 'Seleziona un file dal tuo computer per allegarlo.';
+
+                trigger OnAction()
+                var
+                    InStr: InStream;
+                    OutStr: OutStream;
+                    FileName: Text;
+                begin
+                    if UploadIntoStream('Seleziona file da allegare', '', 'Tutti i file (*.*)|*.*', FileName, InStr) then begin
+                        // Creiamo lo stream di uscita sul Blob
+                        Rec."Allegato Contenuto".CreateOutStream(OutStr);
+                        CopyStream(OutStr, InStr);
+
+                        // Salviamo i metadati
+                        Rec."Nome File Originale" := FileName;
+                        if Rec."Nome Documento" = '' then
+                            Rec."Nome Documento" := FileName;
+
+                        Rec.Modify(true);
+                        Message('Allegato caricato correttamente.');
+                    end;
+                end;
+            }
+
+            // --- SCARICA ALLEGATO ---
+            action(DownloadSelectedAttachment)
+            {
+                Caption = 'Scarica Allegato';
+                Image = ExportFile;
+                ApplicationArea = All;
+                ToolTip = 'Scarica il file allegato al record corrente.';
 
                 trigger OnAction()
                 var
                     InStr: InStream;
                     FileName: Text;
                 begin
-                    // Seleziona un file dal client e importalo nel campo Media
-                    if UploadIntoStream('Seleziona file da allegare', '', '', FileName, InStr) then begin
-                        Rec."Allegato".ImportStream(InStr, FileName);
-                        // Se non è stato valorizzato "Nome Documento", lo suggerisco dal nome file
-                        if Rec."Nome Documento" = '' then
-                            Rec."Nome Documento" := FileName;
-                        Rec.Modify(true);
-                        Message('Allegato caricato correttamente: %1', FileName);
+                    Rec.CalcFields("Allegato Contenuto");
+                    if not Rec."Allegato Contenuto".HasValue then begin
+                        Message('Nessun allegato da scaricare.');
+                        exit;
                     end;
+
+                    Rec."Allegato Contenuto".CreateInStream(InStr);
+
+                    FileName := Rec."Nome File Originale";
+                    if FileName = '' then FileName := Rec."Nome Documento";
+                    if FileName = '' then FileName := 'Allegato.dat';
+
+                    DownloadFromStream(InStr, 'Scarica', '', '', FileName);
                 end;
             }
 
-            action(DownloadFile)
-            {
-                Caption = 'Scarica allegato';
-                Image = ExportFile;
-                ApplicationArea = All;
-
-                trigger OnAction()
-                var
-                    InStr: InStream;
-                    SuggestedName: Text;
-                begin
-                    Rec.CalcFields("Allegato");
-
-
-                    SuggestedName := Rec."Nome Documento";
-                    if SuggestedName = '' then
-                        SuggestedName :=
-                            StrSubstNo('%1_%2', Rec."Tipo Documento", Format(Rec."Documento Entry No."));
-
-                    // --- SAAS-COMPATIBLE ---
-                    //                   Rec."Allegato".CreateInStream(InStr);
-                    DownloadFromStream(InStr, '', '', SuggestedName, SuggestedName);
-                end;
-            }
-
+            // --- RIMUOVI ALLEGATO ---
             action(ClearAttachment)
             {
                 Caption = 'Rimuovi allegato';
                 Image = Delete;
                 ApplicationArea = All;
-                Promoted = true;
-                PromotedCategory = Process;
+                ToolTip = 'Elimina il file allegato da questo record.';
 
                 trigger OnAction()
                 begin
-                    Rec.CalcFields("Allegato");
+                    Rec.CalcFields("Allegato Contenuto");
+                    if not Rec."Allegato Contenuto".HasValue then begin
+                        Message('Nessun allegato da rimuovere.');
+                        exit;
+                    end;
 
-                    if Confirm('Vuoi rimuovere l''allegato?', false) then begin
-                        Clear(Rec."Allegato");
+                    if Confirm('Rimuovere l''allegato corrente?', false) then begin
+                        Clear(Rec."Allegato Contenuto");
+                        Clear(Rec."Nome File Originale");
                         Rec.Modify(true);
                         Message('Allegato rimosso.');
                     end;

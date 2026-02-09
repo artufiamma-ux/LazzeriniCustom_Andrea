@@ -51,16 +51,40 @@ table 50252 "XV IK Strumenti di Misura Doc"
             Caption = 'Data Prossimo Intervento';
             DataClassification = CustomerContent;
         }
+        field(70; "Note"; Text[500])
+        {
+            Caption = 'Note';
+            DataClassification = CustomerContent;
+        }
 
         field(50; "Allegato"; Media)
         {
             Caption = 'Allegato';
             DataClassification = CustomerContent;
+            ObsoleteState = Removed;
+            ObsoleteReason = 'Campo non più utilizzato';
+            ObsoleteTag = '2024.01';
+
         }
         field(60; "Allegati"; MediaSet)
         {
             Caption = 'Allegato';
             DataClassification = CustomerContent;
+            ObsoleteState = Removed;
+            ObsoleteReason = 'Campo non più utilizzato';
+            ObsoleteTag = '2024.01';
+
+        }
+        field(50100; "Allegato Contenuto"; Blob)
+        {
+            Caption = 'Allegato';
+            DataClassification = CustomerContent;
+        }
+        field(50101; "Nome File Originale"; Text[250])
+        {
+            Caption = 'Nome File';
+            DataClassification = CustomerContent;
+            Editable = false;
         }
     }
 

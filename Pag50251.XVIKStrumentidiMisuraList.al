@@ -6,7 +6,8 @@ page 50251 "XV IK Strumenti di Misura List"
     SourceTable = "XV IK Strumenti di Misura";
     ApplicationArea = All;
     UsageCategory = Lists;
-    Caption = 'XV IK Strumenti di Misura List';
+    Caption = 'Strumenti di Misura';
+    AdditionalSearchTerms = 'Strumento di misura, Strumenti di taratura, Instrument, Instruments';
     DelayedInsert = true;
     CardPageId = 50252; // XV IK Strumenti di Misura Card
 
@@ -42,35 +43,37 @@ page 50251 "XV IK Strumenti di Misura List"
                     ToolTip = 'Tipologia dello strumento.';
                 }
 
+
+
+                field("Bollino (Colore)"; BollinoIndicatorTxt)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Bollino';
+                    Editable = false;
+                    ToolTip = 'Indicatore colore del bollino (Giallo/Verde/Blu).';
+                }
+                field("Stato (Colore)"; StatoIndicatorTxt)
+                {
+                    ApplicationArea = All;
+                    Caption = 'Stato';
+                    Editable = false;
+                    ToolTip = 'Indicatore colore dello stato (Attivo/Dismesso).';
+                }
+                /*
+
                 field("Bollino"; Rec."Bollino")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Valore del bollino.';
                 }
-
-                // Indicatore colore Bollino: 🟨/🟩/🟦
-                field("Bollino (Colore)"; BollinoIndicatorTxt)
-                {
-                    ApplicationArea = All;
-                    Caption = 'Bollino (Colore)';
-                    Editable = false;
-                    ToolTip = 'Indicatore colore del bollino (Giallo/Verde/Blu).';
-                }
-
                 field("Stato"; Rec."Stato")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Stato operativo dello strumento.';
                 }
 
-                // Indicatore colore Stato: 🟩/🟥
-                field("Stato (Colore)"; StatoIndicatorTxt)
-                {
-                    ApplicationArea = All;
-                    Caption = 'Stato (Colore)';
-                    Editable = false;
-                    ToolTip = 'Indicatore colore dello stato (Attivo/Dismesso).';
-                }
+                
+                */
             }
         }
     }

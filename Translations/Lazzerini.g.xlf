@@ -264,14 +264,14 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura Card - Action OpenSelectedDocument - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2265855395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>XV IK Strumenti di Misura List</source>
+          <source>Strumenti di Misura</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 2265855395 - Control 2178668039 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Valore del bollino.</source>
+        <trans-unit id="Page 2265855395 - Property 3863440606" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Strumento di misura, Strumenti di taratura, Instrument, Instruments</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Bollino - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Property AdditionalSearchTerms</note>
         </trans-unit>
         <trans-unit id="Page 2265855395 - Control 216412848 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Indicatore colore del bollino (Giallo/Verde/Blu).</source>
@@ -279,7 +279,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Bollino (Colore) - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2265855395 - Control 216412848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bollino (Colore)</source>
+          <source>Bollino</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Bollino (Colore) - Property Caption</note>
         </trans-unit>
@@ -288,18 +288,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Descrizione - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 2265855395 - Control 4095941223 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Stato operativo dello strumento.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Stato - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="Page 2265855395 - Control 45720592 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Indicatore colore dello stato (Attivo/Dismesso).</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Stato (Colore) - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 2265855395 - Control 45720592 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Stato (Colore)</source>
+          <source>Stato</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Stato (Colore) - Property Caption</note>
         </trans-unit>
@@ -393,15 +388,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti Doc List - Control HasAttachment - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 1473530303 - Action 2787516006 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Scarica il file salvato nel record selezionato.</source>
+        <trans-unit id="Page 1473530303 - Action 3813019232 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Scarica il file allegato al record corrente.</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti Doc List - Action DownloadFile - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti Doc List - Action DownloadSelectedAttachment - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 1473530303 - Action 2787516006 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Scarica allegato</source>
+        <trans-unit id="Page 1473530303 - Action 3813019232 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Scarica Allegato</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti Doc List - Action DownloadFile - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti Doc List - Action DownloadSelectedAttachment - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2868243351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tipi Etichetta</source>
@@ -528,25 +523,25 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Property AdditionalSearchTerms</note>
         </trans-unit>
-        <trans-unit id="PageExtension 178401406 - Control 3057824133 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+        <trans-unit id="PageExtension 178401406 - Control 4008615246 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Kit Bus</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Non duplicabile - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Kit Bus - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 178401406 - Control 4121001562 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Nr Layout</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Nr Layout - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="PageExtension 178401406 - Control 1477659264 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
-          <source>Nr serie</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Nr serie - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="PageExtension 178401406 - Control 2690962089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Ordine con kit</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Ordine con kit - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 178401406 - Control 273783105 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Progressivo Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Progressivo Kit Bus - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 178401406 - Control 301689699 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Qta. Origine layout</source>

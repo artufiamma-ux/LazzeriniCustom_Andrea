@@ -7,6 +7,7 @@ page 50253 "XV IK Strumenti Doc List"
     Caption = 'Documenti Strumento di Misura';
     ApplicationArea = All;
     AdditionalSearchTerms = 'Custom XView, Strumenti di Misura, Strumenti di taratura';
+    CardPageId = 50254; // XV IK Strumenti Doc Card
 
     // Lascio Editable false come da tua impostazione originale, 
     // ma le azioni di download funzioneranno comunque.
@@ -21,11 +22,6 @@ page 50253 "XV IK Strumenti Doc List"
         {
             repeater(Group)
             {
-                field("Data Ultimo Intervento"; Rec."Data Ultimo Intervento")
-                {
-                    ApplicationArea = All;
-                }
-
                 field("Tipo Documento"; Rec."Tipo Documento")
                 {
                     ApplicationArea = All;
@@ -36,7 +32,17 @@ page 50253 "XV IK Strumenti Doc List"
                     ApplicationArea = All;
                 }
 
+                field("Data Ultimo Intervento"; Rec."Data Ultimo Intervento")
+                {
+                    ApplicationArea = All;
+                }
+
                 field("Periodicità (Mesi)"; Rec."Periodicità (Mesi)")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Data Prossimo Intervento"; Rec."Data Prossimo Intervento")
                 {
                     ApplicationArea = All;
                 }
@@ -49,6 +55,7 @@ page 50253 "XV IK Strumenti Doc List"
                     ApplicationArea = All;
                     ToolTip = 'Indica se è presente un file caricato.';
                 }
+
             }
         }
     }
@@ -57,38 +64,34 @@ page 50253 "XV IK Strumenti Doc List"
     {
         area(processing)
         {
-            action(DownloadFile)
+            action(DownloadSelectedAttachment)
             {
-                Caption = 'Scarica allegato';
+                Caption = 'Scarica Allegato';
                 Image = ExportFile;
                 ApplicationArea = All;
-                ToolTip = 'Scarica il file salvato nel record selezionato.';
+                ToolTip = 'Scarica il file allegato al record corrente.';
 
                 trigger OnAction()
                 var
                     InStr: InStream;
                     FileName: Text;
                 begin
-                    // Fondamentale: i campi Blob vanno calcolati prima dell'uso
                     Rec.CalcFields("Allegato Contenuto");
-
                     if not Rec."Allegato Contenuto".HasValue then begin
-                        Message('Nessun allegato presente per questo record.');
+                        Message('Nessun allegato da scaricare.');
                         exit;
                     end;
 
-                    // Recupero il nome del file salvato o ne genero uno di backup
-                    FileName := Rec."Nome File Originale";
-                    if FileName = '' then
-                        FileName := StrSubstNo('%1_%2.dat', Rec."Tipo Documento", Rec."Documento Entry No.");
-
-                    // Estrazione del flusso di dati
                     Rec."Allegato Contenuto".CreateInStream(InStr);
 
-                    // Download diretto senza passare da tabelle di sistema
-                    DownloadFromStream(InStr, 'Scarica Allegato', '', '', FileName);
+                    FileName := Rec."Nome File Originale";
+                    if FileName = '' then FileName := Rec."Nome Documento";
+                    if FileName = '' then FileName := 'Allegato.dat';
+
+                    DownloadFromStream(InStr, 'Scarica', '', '', FileName);
                 end;
             }
+
         }
     }
 

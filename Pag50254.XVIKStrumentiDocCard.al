@@ -13,10 +13,11 @@ page 50254 "XV IK Strumenti Doc Card"
         {
             group(General)
             {
-                field("Strumento di misura Entry No."; Rec."Strumento di misura Entry No.")
+                field("Strumento di misura Descrizione"; GetDescrizioneStrumento(Rec."Strumento di misura Entry No."))
                 {
                     ApplicationArea = All;
                     Editable = false;
+                    Style = Favorable;
                 }
 
                 field("Tipo Documento"; Rec."Tipo Documento")
@@ -67,7 +68,9 @@ page 50254 "XV IK Strumenti Doc Card"
                 }
             }
         }
+
     }
+
 
     actions
     {
@@ -158,4 +161,14 @@ page 50254 "XV IK Strumenti Doc Card"
             }
         }
     }
+    local procedure GetDescrizioneStrumento(EntryNo: Integer): Text
+    var
+        StrumentiDiMisura: Record "XV IK Strumenti di Misura";
+    begin
+        if StrumentiDiMisura.Get(EntryNo) then
+            exit(StrumentiDiMisura.Descrizione)
+        else
+            exit('');
+    end;
+
 }

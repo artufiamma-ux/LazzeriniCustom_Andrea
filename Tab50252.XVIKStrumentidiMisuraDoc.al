@@ -21,7 +21,11 @@ table 50252 "XV IK Strumenti di Misura Doc"
             DataClassification = CustomerContent;
             TableRelation = "XV IK Strumenti di Misura"."Entry No.";
         }
-
+        field(5; "Plant"; Enum "XV IK Plant")
+        {
+            Caption = 'Plant';
+            DataClassification = CustomerContent;
+        }
         field(10; "Tipo Documento"; Text[100])
         {
             Caption = 'Tipo Documento';

@@ -19,6 +19,11 @@ page 50254 "XV IK Strumenti Doc Card"
                     Editable = false;
                     Style = Favorable;
                 }
+                field("Plant"; Rec."Plant")
+                {
+                    ApplicationArea = All;
+                    Editable = true;
+                }
 
                 field("Tipo Documento"; Rec."Tipo Documento")
                 {

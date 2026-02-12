@@ -17,6 +17,21 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             column(EORICode; GetEORICode("Sell-to Customer No.")) { }
             column(ACCOMPAGNATORIA; ACCOMPAGNATORIA) { }
             column(TipoDocumento; GetTipoDocumento(ACCOMPAGNATORIA, "Sell-to Country/Region Code")) { }
+
+            column(TariffNo; GetEORICode("Sell-to Customer No."))
+            {
+                Caption = 'Tariff No';
+            }
+
+            column(Value; 1)
+            {
+                Caption = 'Value';
+            }
+
+            column(NetWeight; 1)
+            {
+                Caption = 'Net Weight';
+            }
         }
 
     }

@@ -21,12 +21,12 @@ pageextension 50198 "XV Sales Order Subform" extends "Sales Order Subform" // Pa
                 ApplicationArea = All;
                 ToolTip = 'Ordine con kit';
             }
-            field("Nr serie"; Rec."xv Progressivo Kit Bus")
+            field("Progressivo Kit Bus"; Rec."xv Progressivo Kit Bus")
             {
                 ApplicationArea = All;
-                ToolTip = 'Nr serie';
+                ToolTip = 'Progressivo Kit Bus';
             }
-            field("Non duplicabile"; Rec."xv Kit Bus")
+            field("Kit Bus"; Rec."xv Kit Bus")
             {
                 ApplicationArea = All;
                 ToolTip = 'Kit Bus';

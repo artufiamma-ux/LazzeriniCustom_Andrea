@@ -30,14 +30,14 @@ table 50251 "XV IK Strumenti di Misura"
             DataClassification = SystemMetadata;
         }
 
-        field(20; "Descrizione"; Text[100])
+        field(20; "Descrizione"; Text[500])
         {
             Caption = 'Descrizione';
             NotBlank = true;
             DataClassification = CustomerContent;
         }
 
-        field(30; "Ubicazione"; Enum "XV IK Ubicazione Strumento")
+        field(30; "Ubicazione"; Text[100])
         {
             Caption = 'Ubicazione';
             DataClassification = CustomerContent;

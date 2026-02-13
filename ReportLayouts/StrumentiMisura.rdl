@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-02-09T17:16:20.7487896Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-02-10T09:09:51.8601073Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -76,7 +76,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -117,7 +117,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -158,7 +158,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -199,7 +199,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -240,7 +240,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -281,7 +281,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -322,7 +322,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -417,15 +417,15 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="BollinoIndicator">
-                          <rd:DefaultName>BollinoIndicator</rd:DefaultName>
+                        <Textbox Name="Bollino">
+                          <rd:DefaultName>Bollino</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!BollinoIndicator.Value</Value>
+                                  <Value>=Fields!Bollino.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
                                     <Color>#333333</Color>
@@ -450,21 +450,22 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="StatoIndicator">
-                          <rd:DefaultName>StatoIndicator</rd:DefaultName>
+                        <Textbox Name="Stato1">
+                          <rd:DefaultName>Stato1</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!StatoIndicator.Value</Value>
+                                  <Value>= " "</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
+                              <ListStyle>Bulleted</ListStyle>
                               <Style />
                             </Paragraph>
                           </Paragraphs>
@@ -663,22 +664,25 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="BollinoIndicator1">
-                          <rd:DefaultName>BollinoIndicator1</rd:DefaultName>
+                        <Textbox Name="Bollino1">
+                          <rd:DefaultName>Bollino1</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!BollinoIndicator.Value</Value>
+                                  <Value>="🟨"</Value>
                                   <Style>
-                                    <FontWeight>Normal</FontWeight>
-                                    <Color>#333333</Color>
+                                    <FontFamily>Segoe UI Emoji</FontFamily>
+                                    <FontWeight>Heavy</FontWeight>
+                                    <Color>=Switch( Fields!Bollino.Value = "Giallo", "Yellow", Fields!Bollino.Value = "Verde", "Green", Fields!Bollino.Value = "Blu", "Blu", True, "Transparent" )</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Style>
@@ -691,6 +695,7 @@
                               <Width>1pt</Width>
                             </BottomBorder>
                             <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -701,22 +706,37 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="StatoIndicator1">
-                          <rd:DefaultName>StatoIndicator1</rd:DefaultName>
+                        <Textbox Name="Stato">
+                          <rd:DefaultName>Stato</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!StatoIndicator.Value</Value>
+                                  <Value>="🟨"</Value>
                                   <Style>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontFamily>Segoe UI Emoji</FontFamily>
+                                    <FontWeight>Heavy</FontWeight>
+                                    <Color>=Switch(
+    Fields!Stato.Value = "Attivo", "Green",
+    Fields!Stato.Value = "Dismesso", "Red",
+    True, "Trasparent"
+)</Color>
+                                  </Style>
+                                </TextRun>
+                                <TextRun>
+                                  <Value>= " "</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI Emoji</FontFamily>
+                                    <FontWeight>Heavy</FontWeight>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <Style>
@@ -728,7 +748,7 @@
                               <Style>Solid</Style>
                               <Width>1pt</Width>
                             </BottomBorder>
-                            <BackgroundColor>White</BackgroundColor>
+                            <VerticalAlign>Middle</VerticalAlign>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
@@ -826,6 +846,7 @@
                                   <Value>=Fields!Data_Ultimo_Intervento.Value</Value>
                                   <Style>
                                     <FontWeight>Normal</FontWeight>
+                                    <Format>dd/MM/yyyy</Format>
                                     <Color>#333333</Color>
                                   </Style>
                                 </TextRun>
@@ -1125,7 +1146,7 @@
                               </TextRun>
                             </TextRuns>
                             <Style>
-                              <TextAlign>Right</TextAlign>
+                              <TextAlign>Center</TextAlign>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
@@ -1324,11 +1345,11 @@ End Function
         <Field Name="Ubicazione">
           <DataField>Ubicazione</DataField>
         </Field>
-        <Field Name="BollinoIndicator">
-          <DataField>BollinoIndicator</DataField>
+        <Field Name="Bollino">
+          <DataField>Bollino</DataField>
         </Field>
-        <Field Name="StatoIndicator">
-          <DataField>StatoIndicator</DataField>
+        <Field Name="Stato">
+          <DataField>Stato</DataField>
         </Field>
         <Field Name="Plant">
           <DataField>Plant</DataField>

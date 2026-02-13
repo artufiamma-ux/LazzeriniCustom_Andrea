@@ -6,7 +6,7 @@ report 50251 "XV Strumenti di Misura"
     ApplicationArea = All;
     Caption = 'Report Strumenti di Misura con Documenti';
     DefaultLayout = RDLC;
-    RDLCLayout = './Reports/StrumentiMisura.rdl';
+    RDLCLayout = './ReportLayouts/StrumentiMisura.rdl';
 
     dataset
     {
@@ -19,8 +19,8 @@ report 50251 "XV Strumenti di Misura"
             column(Ubicazione; Ubicazione) { }
 
             // Qui dichiariamo le colonne passandogli le variabili globali
-            column(BollinoIndicator; BollinoIndicatorTxt) { }
-            column(StatoIndicator; StatoIndicatorTxt) { }
+            column(Bollino; Bollino) { }
+            column(Stato; Stato) { }
 
             dataitem(Line; "XV IK Strumenti di Misura Doc")
             {
@@ -33,39 +33,8 @@ report 50251 "XV Strumenti di Misura"
                 column(Note_Line; Note) { }
             }
 
-            trigger OnAfterGetRecord()
-            begin
-                // Svuota le variabili per ogni record per sicurezza
-                BollinoIndicatorTxt := '';
-                StatoIndicatorTxt := '';
-
-                // Mappa Bollino
-                case Header.Bollino of
-                    Header.Bollino::Giallo:
-                        BollinoIndicatorTxt := '🟨';
-                    Header.Bollino::Verde:
-                        BollinoIndicatorTxt := '🟩';
-                    Header.Bollino::Blu:
-                        BollinoIndicatorTxt := '🟦';
-                    else
-                        BollinoIndicatorTxt := '■';
-                end;
-
-                // Mappa Stato
-                case Header.Stato of
-                    Header.Stato::Attivo:
-                        StatoIndicatorTxt := '🟩';
-                    Header.Stato::Dismesso:
-                        StatoIndicatorTxt := '🟥';
-                    else
-                        StatoIndicatorTxt := '■';
-                end;
-            end;
         }
     }
 
     // Le variabili devono essere dichiarate qui, fuori dal dataset
-    var
-        BollinoIndicatorTxt: Text[10];
-        StatoIndicatorTxt: Text[10];
 }

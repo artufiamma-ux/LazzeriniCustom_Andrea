@@ -1203,6 +1203,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum XV Tipo Prelievo WSH - EnumValue Standard - Property Caption</note>
         </trans-unit>
+        <trans-unit id="ReportExtension 1591650415 - ReportColumn 331094305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Net Weight</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn NetWeight - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1591650415 - ReportColumn 4262896369 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Tariff No</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn TariffNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1591650415 - ReportColumn 1131619133 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Value</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn Value - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>

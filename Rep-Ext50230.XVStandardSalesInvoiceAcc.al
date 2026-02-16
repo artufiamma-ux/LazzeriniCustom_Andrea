@@ -6,7 +6,7 @@ using Microsoft.Inventory.Item;
 
 reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoice"
 {
-    RDLCLayout = 'XVFatturaAccompagnatoria.rdl';
+    RDLCLayout = './ReportLayouts/XVV2FatturaAccompagnatoria.rdl';
 
     dataset
     {
@@ -18,24 +18,24 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             column(ACCOMPAGNATORIA; ACCOMPAGNATORIA) { }
             column(TipoDocumento; GetTipoDocumento(ACCOMPAGNATORIA, "Sell-to Country/Region Code")) { }
 
-            column(TariffNo; GetEORICode("Sell-to Customer No."))
-            {
-                Caption = 'Tariff No';
-            }
+        }
 
-            column(Value; 1)
+        add(Line)
+        {
+            column(Service_Tariff_No_; "Service Tariff No.")
             {
-                Caption = 'Value';
+                Caption = 'Service Tariff No';
             }
-
-            column(NetWeight; 1)
+            column(Net_Weight; "Net Weight")
             {
                 Caption = 'Net Weight';
             }
         }
 
-    }
 
+
+
+    }
     local procedure GetEORICode(SellToCustomerNo: Code[20]): Code[50]
     var
         Customer: Record Customer;

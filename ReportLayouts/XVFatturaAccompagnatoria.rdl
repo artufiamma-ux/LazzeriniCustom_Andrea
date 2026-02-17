@@ -4426,14 +4426,14 @@ End Function
         <Field Name="TipoDocumento">
           <DataField>TipoDocumento</DataField>
         </Field>
-        <Field Name="TariffNo">
-          <DataField>TariffNo</DataField>
+        <Field Name="Service_Tariff_No_">
+          <DataField>Service_Tariff_No_</DataField>
         </Field>
-        <Field Name="Value">
-          <DataField>Value</DataField>
+        <Field Name="Net_Weight">
+          <DataField>Net_Weight</DataField>
         </Field>
-        <Field Name="NetWeight">
-          <DataField>NetWeight</DataField>
+        <Field Name="Net_WeightFormat">
+          <DataField>Net_WeightFormat</DataField>
         </Field>
       </Fields>
       <Query>

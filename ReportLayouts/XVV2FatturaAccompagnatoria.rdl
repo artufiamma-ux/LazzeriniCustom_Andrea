@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.14.36915.13</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-02-17T15:26:26.0798288Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-02-18T09:07:30.5771029Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -3112,11 +3112,12 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData</Value>
+                          <Value>Frasi fisse</Value>
                           <MarkupType>HTML</MarkupType>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>7pt</FontSize>
+                            <Color>Red</Color>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -3814,12 +3815,13 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Label>DueDate</Label>
-                          <Value>=UCase(First(Fields!DueDate_lbl.Value, "DataSet_Result"))</Value>
+                          <Label>DueDateLbl</Label>
+                          <Value>="Due Date Lbl"</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>5pt</FontSize>
+                            <Color>Red</Color>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -4084,10 +4086,11 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Code.GetData</Value>
+                          <Value>Frasi fisse</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
+                            <Color>Red</Color>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -5130,8 +5133,8 @@
         <Field Name="Tariff_No_">
           <DataField>Tariff_No_</DataField>
         </Field>
-        <Field Name="Tariff_No_lbl">
-          <DataField>Tariff_No_lbl</DataField>
+        <Field Name="TariffNo_lbl">
+          <DataField>TariffNo_lbl</DataField>
         </Field>
         <Field Name="Notes_lbl">
           <DataField>Notes_lbl</DataField>

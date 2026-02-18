@@ -18,7 +18,7 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             column(ACCOMPAGNATORIA; ACCOMPAGNATORIA) { }
             column(TipoDocumento; GetTipoDocumento(ACCOMPAGNATORIA, "Sell-to Country/Region Code")) { }
             column(Tariff_No_; "Service Tariff No.") { }
-            column(Tariff_No_lbl; GetCustomLabel('Tariff No.')) { }
+            column(TariffNo_lbl; GetCustomLabel('Tariff No.')) { }
             column(Notes_lbl; GetCustomLabel('Notes')) { }
             //  column(VATBase_lbl; GetCustomLabel('VAT Base')) { }
             column(VATandTax_lbl; GetCustomLabel('VAT and Tax')) { }

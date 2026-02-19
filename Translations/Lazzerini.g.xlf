@@ -443,6 +443,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV Tipi Prelievo Articoli - Property AdditionalSearchTerms</note>
         </trans-unit>
+        <trans-unit id="Report 3911226224 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Barcode Fattura Acquisto</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Barcode Fattura Acquisto - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 3911226224 - Control 2346885236 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Options</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Barcode Fattura Acquisto - Control Options - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2839098299 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Report Strumenti di Misura con Documenti</source>
           <note from="Developer" annotates="general" priority="2"></note>

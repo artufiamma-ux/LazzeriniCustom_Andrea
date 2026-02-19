@@ -17,6 +17,13 @@ page 50251 "XV IK Strumenti di Misura List"
         {
             repeater(General)
             {
+                field("Matricola"; Rec."Matricola")
+                {
+                    Caption = 'Matricola';
+                    ApplicationArea = All;
+                    Editable = false;
+                    ToolTip = 'Matricola dello strumento.';
+                }
                 field("Utente"; Rec."User ID")
                 {
                     ApplicationArea = All;

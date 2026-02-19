@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.14.36915.13</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-02-19T08:41:55.1908652Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-02-19T11:12:57.0573796Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -22,25 +22,6 @@
       <rd:DataSourceID>20bffa34-2dfe-4301-b4c2-b68a98007787</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="DocumentType">
-          <DataField>DocumentType</DataField>
-        </Field>
-        <Field Name="No_">
-          <DataField>No_</DataField>
-        </Field>
-        <Field Name="Barcode">
-          <DataField>Barcode</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -49,12 +30,12 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.77165in</Width>
+                  <Width>5cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.3937in</Height>
+                  <Height>2.5cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -72,7 +53,9 @@
                                   </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Barcode</rd:DefaultName>
@@ -81,10 +64,6 @@
                               <Style>None</Style>
                             </Border>
                             <BackgroundColor>White</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -100,14 +79,12 @@
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
               <TablixMembers>
-                <TablixMember>
-                  <Group Name="Dettagli" />
-                </TablixMember>
+                <TablixMember />
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet_Result</DataSetName>
-            <Height>0.3937in</Height>
-            <Width>1.77165in</Width>
+            <Height>2.5cm</Height>
+            <Width>5cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -115,62 +92,81 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1cm</Height>
+        <Height>2.5cm</Height>
         <Style />
       </Body>
-      <Width>4.5cm</Width>
+      <Width>5cm</Width>
       <Page>
-        <PageHeight>1cm</PageHeight>
-        <PageWidth>4.5cm</PageWidth>
-        <InteractiveHeight>1cm</InteractiveHeight>
+        <PageHeight>2.5cm</PageHeight>
+        <PageWidth>5cm</PageWidth>
+        <InteractiveHeight>10cm</InteractiveHeight>
         <InteractiveWidth>4.5cm</InteractiveWidth>
+        <LeftMargin>0cm</LeftMargin>
+        <RightMargin>0cm</RightMargin>
+        <TopMargin>0cm</TopMargin>
+        <BottomMargin>0cm</BottomMargin>
+        <ColumnSpacing>1.27cm</ColumnSpacing>
         <Style />
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
-  <Code>Public Function BlankZero(ByVal Value As Decimal)
-    if Value = 0 then
-        Return ""
-    end if
-    Return Value
-End Function
+  <Code>
+		Public Function BlankZero(ByVal Value As Decimal)
+		if Value = 0 then
+		Return ""
+		end if
+		Return Value
+		End Function
 
-Public Function BlankPos(ByVal Value As Decimal)
-    if Value &gt; 0 then
-        Return ""
-    end if
-    Return Value
-End Function
+		Public Function BlankPos(ByVal Value As Decimal)
+		if Value &gt; 0 then
+		Return ""
+		end if
+		Return Value
+		End Function
 
-Public Function BlankZeroAndPos(ByVal Value As Decimal)
-    if Value &gt;= 0 then
-        Return ""
-    end if
-    Return Value
-End Function
+		Public Function BlankZeroAndPos(ByVal Value As Decimal)
+		if Value &gt;= 0 then
+		Return ""
+		end if
+		Return Value
+		End Function
 
-Public Function BlankNeg(ByVal Value As Decimal)
-    if Value &lt; 0 then
-        Return ""
-    end if
-    Return Value
-End Function
+		Public Function BlankNeg(ByVal Value As Decimal)
+		if Value &lt; 0 then
+		Return ""
+		end if
+		Return Value
+		End Function
 
-Public Function BlankNegAndZero(ByVal Value As Decimal)
-    if Value &lt;= 0 then
-        Return ""
-    end if
-    Return Value
-End Function
-</Code>
+		Public Function BlankNegAndZero(ByVal Value As Decimal)
+		if Value &lt;= 0 then
+		Return ""
+		end if
+		Return Value
+		End Function
+	</Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="DocumentType">
+          <DataField>DocumentType</DataField>
+        </Field>
+        <Field Name="No_">
+          <DataField>No_</DataField>
+        </Field>
+        <Field Name="Barcode">
+          <DataField>Barcode</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

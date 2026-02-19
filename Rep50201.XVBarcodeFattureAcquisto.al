@@ -1,6 +1,6 @@
 namespace Lazzerini;
 
-using Microsoft.Sales.Document;
+using Microsoft.Purchases.Document;
 using System.Text;
 
 
@@ -17,7 +17,7 @@ report 50201 "XV Barcode Fattura Acquisto"
 
     dataset
     {
-        dataitem(Header; "Sales Header")
+        dataitem(Header; "Purchase Header")
         {
             // Filtra solo Fatture Acquisto (se vuoi includere anche Ordini rimuovi il filtro)
             DataItemTableView = where("Document Type" = const(Invoice));

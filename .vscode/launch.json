@@ -9,13 +9,13 @@
             "environmentName": "Lazzerini_Test",
             "tenant": "46eaa442-6c85-4b20-aa51-d16e69a4c167",
             "startupCompany": "Lazzerini S.r.l.",
-            "startupObjectId": 143,
+            "startupObjectId": 9308,
             "startupObjectType": "Page",
             "breakOnError": "All",
             "launchBrowser": true,
-            "enableLongRunningSqlStatements": true,
-            "enableSqlInformationDebugger": true,
-            "schemaUpdateMode":"ForceSync"
+            "enableLongRunningSqlStatements": true//,
+            //"schemaUpdateMode":"ForceSync",
+            //"enableSqlInformationDebugger": true
         }
     ]
 }

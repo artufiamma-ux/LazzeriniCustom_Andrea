@@ -48,6 +48,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura - Field Entry No. - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 2224452237 - Field 3916442926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Matricola</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura - Field Matricola - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2224452237 - Field 2898143332 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Note</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -292,6 +297,16 @@
           <source>Descrizione dello strumento.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Descrizione - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Control 3916442926 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Matricola dello strumento.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Matricola - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 2265855395 - Control 3916442926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Matricola</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Strumenti di Misura List - Control Matricola - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 2265855395 - Control 45720592 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Indicatore colore dello stato (Attivo/Dismesso).</source>

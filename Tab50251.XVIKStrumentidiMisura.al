@@ -65,6 +65,11 @@ table 50251 "XV IK Strumenti di Misura"
             Caption = 'Note';
             DataClassification = CustomerContent;
         }
+        field(80; "Matricola"; Code[50])
+        {
+            Caption = 'Matricola';
+            DataClassification = CustomerContent;
+        }
     }
 
     keys

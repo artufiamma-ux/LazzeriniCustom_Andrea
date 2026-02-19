@@ -24,6 +24,10 @@ page 50252 "XV IK Strumenti di Misura Card"
                     ApplicationArea = All;
                     Editable = false;
                 }
+                field("Matricola"; Rec."Matricola")
+                {
+                    ApplicationArea = All;
+                }
 
                 field("Descrizione"; Rec."Descrizione")
                 {

@@ -11,22 +11,40 @@
   "url": "",
   "logo": "",
   "screenshots": [],
-"application": "27.0.0.0", 
+"application": "27.3.0.0", 
   "runtime": "14.0", 
-  "dependencies": [
-    {
-      "id": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
-      "name": "System Application",
-      "publisher": "Microsoft",
-      "version": "27.0.0.0"
-    },
-    {
-      "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
-      "name": "Base Application",
-      "publisher": "Microsoft",
-      "version": "27.0.0.0"
-    }
-  ],
+"dependencies": [
+  {
+    "id": "63ca2fa4-4f03-4f2b-a480-172fef340d3f",
+    "name": "System Application",
+    "publisher": "Microsoft",
+    "version": "27.0.0.0"
+  },
+  {
+    "id": "437dbf0e-84ff-417a-965d-ed2bb9650972",
+    "name": "Base Application",
+    "publisher": "Microsoft",
+    "version": "27.0.0.0"
+  },
+  {
+    "id": "8d707d0a-0145-4387-a46c-b1a5304029fc",
+    "publisher": "EOS Solutions",            
+    "name": "DocSolutions for Sharepoint",           
+    "version": "27.0.2.0"
+  },
+  {
+    "id": "de912bec-70b4-427d-a57c-c68e3907a6f4",
+    "publisher": "EOS Solutions",            
+    "name": "DocSolutions common library",           
+    "version": "27.0.10.0"
+  },
+  {
+    "id": "4e2a89a2-9049-496c-8b3a-f4eee6399b0e",
+    "publisher": "EOS Solutions",            
+    "name": "Common Data Layer",           
+    "version": "27.0.13.0"
+  }
+],
   "idRanges": [
     {
       "from": 50050,

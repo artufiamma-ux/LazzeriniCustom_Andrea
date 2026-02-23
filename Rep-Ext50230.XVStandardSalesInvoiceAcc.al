@@ -4,6 +4,7 @@ using Microsoft.Sales.History;
 using Microsoft.Sales.Receivables;
 using Microsoft.Sales.Customer;
 using Microsoft.Inventory.Item;
+using Microsoft.Finance.VAT.Setup;
 using Microsoft.Foundation.PaymentTerms;
 
 
@@ -167,11 +168,14 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
     local procedure CalculateVATTotals(DocumentNo: Code[20])
     var
         SalesLine: Record "Sales Invoice Line";
+        VATProdPostingGroup: Record "VAT Product Posting Group";
         CurrentVAT: Code[10];
         CurrentBase: Decimal;
         CurrentVATAmount: Decimal;
+        Desc1: Text[50];
+        Desc2: Text[50];
+        Desc3: Text[50];
     begin
-        // Reset variabili
         Clear(VAT_Description1);
         Clear(VAT_Description2);
         Clear(VAT_Description3);
@@ -190,46 +194,61 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             repeat
                 CurrentVAT := SalesLine."VAT Identifier";
 
-                // Solo se valorizzato
                 if CurrentVAT <> '' then begin
 
                     CurrentBase := SalesLine."VAT Base Amount";
                     CurrentVATAmount := SalesLine."Amount Including VAT" - SalesLine."VAT Base Amount";
 
-                    // Se già esiste
-                    if CurrentVAT = VAT_Description1 then begin
+                    // 🔁 RAGGRUPPAMENTO SOLO PER CODICE (22 / N / 41)
+                    if CurrentVAT = Desc1 then begin
                         VAT_Base1 += CurrentBase;
                         VAT_Amount1 += CurrentVATAmount;
                     end else
-                        if CurrentVAT = VAT_Description2 then begin
+                        if CurrentVAT = Desc2 then begin
                             VAT_Base2 += CurrentBase;
                             VAT_Amount2 += CurrentVATAmount;
                         end else
-                            if CurrentVAT = VAT_Description3 then begin
+                            if CurrentVAT = Desc3 then begin
                                 VAT_Base3 += CurrentBase;
                                 VAT_Amount3 += CurrentVATAmount;
                             end else begin
-                                // Nuovo VAT → primo slot libero
-                                if VAT_Description1 = '' then begin
-                                    VAT_Description1 := CurrentVAT;
+
+                                if Desc1 = '' then begin
+                                    Desc1 := CurrentVAT;
                                     VAT_Base1 := CurrentBase;
                                     VAT_Amount1 := CurrentVATAmount;
                                 end else
-                                    if VAT_Description2 = '' then begin
-                                        VAT_Description2 := CurrentVAT;
+                                    if Desc2 = '' then begin
+                                        Desc2 := CurrentVAT;
                                         VAT_Base2 := CurrentBase;
                                         VAT_Amount2 := CurrentVATAmount;
                                     end else
-                                        if VAT_Description3 = '' then begin
-                                            VAT_Description3 := CurrentVAT;
+                                        if Desc3 = '' then begin
+                                            Desc3 := CurrentVAT;
                                             VAT_Base3 := CurrentBase;
                                             VAT_Amount3 := CurrentVATAmount;
                                         end;
                             end;
-
                 end;
 
             until SalesLine.Next() = 0;
+
+        // 🔎 SOLO ALLA FINE trasformiamo il codice in descrizione (tab 324)
+
+        if VATProdPostingGroup.Get(Desc1) then
+            VAT_Description1 := VATProdPostingGroup.Description
+        else
+            VAT_Description1 := Desc1;
+
+        if VATProdPostingGroup.Get(Desc2) then
+            VAT_Description2 := VATProdPostingGroup.Description
+        else
+            VAT_Description2 := Desc2;
+
+        if VATProdPostingGroup.Get(Desc3) then
+            VAT_Description3 := VATProdPostingGroup.Description
+        else
+            VAT_Description3 := Desc3;
     end;
 
     local procedure CalculatePaymentInstallments(DocumentNo: Code[20])

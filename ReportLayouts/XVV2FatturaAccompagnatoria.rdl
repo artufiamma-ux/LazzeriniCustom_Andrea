@@ -1087,7 +1087,7 @@
         <Height>2.90623cm</Height>
         <Style />
       </Body>
-      <Width>19.9974cm</Width>
+      <Width>19.40293cm</Width>
       <Page>
         <PageHeader>
           <Height>9.64224cm</Height>
@@ -2303,7 +2303,7 @@
                   <Top>1.72293cm</Top>
                   <Left>18.36604cm</Left>
                   <Height>0.45278cm</Height>
-                  <Width>0.98103cm</Width>
+                  <Width>1.00777cm</Width>
                   <ZIndex>12</ZIndex>
                   <Style>
                     <Border>
@@ -2603,7 +2603,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!VATBaseLbl.Value</Value>
+                          <Value EvaluationMode="Constant">Vat Base/ BAse Iva</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -2659,8 +2659,8 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>0.89111cm</Top>
-                  <Left>10.22955cm</Left>
+                  <Top>0.92639cm</Top>
+                  <Left>10.28493cm</Left>
                   <Height>0.35cm</Height>
                   <Width>2cm</Width>
                   <ZIndex>1</ZIndex>
@@ -2704,7 +2704,7 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.24111cm</Top>
-                  <Left>10.24965cm</Left>
+                  <Left>10.28493cm</Left>
                   <Height>0.35cm</Height>
                   <Width>2cm</Width>
                   <ZIndex>2</ZIndex>
@@ -2783,7 +2783,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!VATBase_Lbl.Value</Value>
+                          <Value EvaluationMode="Constant">Vat and tax/Iva e tasse</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -2837,7 +2837,7 @@
                   <Top>0.89111cm</Top>
                   <Left>12.26483cm</Left>
                   <Height>0.35cm</Height>
-                  <Width>5.09145cm</Width>
+                  <Width>5.12673cm</Width>
                   <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
@@ -2940,7 +2940,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>VATBaseCaptionLbl</Value>
+                          <Value EvaluationMode="Constant">VAT total Base/Totale base Iva</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -2954,9 +2954,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.94111cm</Top>
-                  <Left>10.26483cm</Left>
+                  <Left>10.28493cm</Left>
                   <Height>0.3cm</Height>
-                  <Width>4.86887cm</Width>
+                  <Width>4.84877cm</Width>
                   <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
@@ -3031,7 +3031,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>VATTotalCaption</Value>
+                          <Value EvaluationMode="Constant">Vat Totale/ Totale Iva</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -3083,9 +3083,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.24111cm</Top>
-                  <Left>15.13635cm</Left>
+                  <Left>15.1111cm</Left>
                   <Height>0.375cm</Height>
-                  <Width>4.22258cm</Width>
+                  <Width>4.24783cm</Width>
                   <ZIndex>11</ZIndex>
                   <Style>
                     <Border>
@@ -3144,7 +3144,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!TypePaymentCaptionLbl.Value</Value>
+                          <Value EvaluationMode="Constant">Type Payment/Tipo pagamento</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -3160,7 +3160,7 @@
                   <Top>1.94111cm</Top>
                   <Left>0.01518cm</Left>
                   <Height>0.3cm</Height>
-                  <Width>3.96375cm</Width>
+                  <Width>3.99258cm</Width>
                   <ZIndex>13</ZIndex>
                   <Style>
                     <Border>
@@ -3202,7 +3202,7 @@
                   </Paragraphs>
                   <Top>2.24111cm</Top>
                   <Height>0.35cm</Height>
-                  <Width>3.96375cm</Width>
+                  <Width>4.00776cm</Width>
                   <ZIndex>14</ZIndex>
                   <Style>
                     <Border>
@@ -3245,7 +3245,7 @@
                   <Top>2.24111cm</Top>
                   <Left>3.99903cm</Left>
                   <Height>0.35cm</Height>
-                  <Width>2.45822cm</Width>
+                  <Width>2.42272cm</Width>
                   <ZIndex>15</ZIndex>
                   <Style>
                     <Border>
@@ -3283,7 +3283,7 @@
                   <Top>2.56611cm</Top>
                   <Left>3.99903cm</Left>
                   <Height>0.35cm</Height>
-                  <Width>2.45822cm</Width>
+                  <Width>2.43812cm</Width>
                   <ZIndex>16</ZIndex>
                   <Style>
                     <Border>
@@ -3321,8 +3321,8 @@
                   </Paragraphs>
                   <Top>2.59111cm</Top>
                   <Left>6.45703cm</Left>
-                  <Height>0.35cm</Height>
-                  <Width>3.8279cm</Width>
+                  <Height>0.3cm</Height>
+                  <Width>3.8078cm</Width>
                   <ZIndex>17</ZIndex>
                   <Style>
                     <Border>
@@ -3355,7 +3355,7 @@
                   <Top>2.94111cm</Top>
                   <Left>0.03528cm</Left>
                   <Height>0.35cm</Height>
-                  <Width>3.96375cm</Width>
+                  <Width>3.97248cm</Width>
                   <ZIndex>18</ZIndex>
                   <Style>
                     <Border>
@@ -3403,8 +3403,8 @@
                   </Paragraphs>
                   <Top>2.24111cm</Top>
                   <Left>6.45703cm</Left>
-                  <Height>0.35cm</Height>
-                  <Width>3.8279cm</Width>
+                  <Height>0.3cm</Height>
+                  <Width>3.86297cm</Width>
                   <ZIndex>19</ZIndex>
                   <Style>
                     <Border>
@@ -3435,10 +3435,10 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <Top>2.94111cm</Top>
+                  <Top>2.99694cm</Top>
                   <Left>6.43715cm</Left>
-                  <Height>0.35cm</Height>
-                  <Width>3.8279cm</Width>
+                  <Height>0.29417cm</Height>
+                  <Width>3.88285cm</Width>
                   <ZIndex>20</ZIndex>
                   <Style>
                     <Border>
@@ -3476,7 +3476,7 @@
                   <Top>2.59111cm</Top>
                   <Left>0.01518cm</Left>
                   <Height>0.35cm</Height>
-                  <Width>3.96375cm</Width>
+                  <Width>3.99258cm</Width>
                   <ZIndex>21</ZIndex>
                   <Style>
                     <Border>
@@ -3518,7 +3518,7 @@
                   </Paragraphs>
                   <Top>2.91611cm</Top>
                   <Left>3.97893cm</Left>
-                  <Height>0.35cm</Height>
+                  <Height>0.375cm</Height>
                   <Width>2.45822cm</Width>
                   <ZIndex>22</ZIndex>
                   <Style>
@@ -3546,7 +3546,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!Tariff_No_.Value</Value>
+                          <Value>=Fields!TariffNo.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -3592,7 +3592,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!VATAmount_Lbl.Value</Value>
+                          <Value EvaluationMode="Constant">Vat Amount/Valore Iva</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>5pt</FontSize>
@@ -3641,9 +3641,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.89111cm</Top>
-                  <Left>17.35893cm</Left>
+                  <Left>17.39156cm</Left>
                   <Height>0.35cm</Height>
-                  <Width>2cm</Width>
+                  <Width>1.96737cm</Width>
                   <ZIndex>25</ZIndex>
                   <Style>
                     <Border>
@@ -3675,9 +3675,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.59111cm</Top>
-                  <Left>17.35893cm</Left>
+                  <Left>17.37638cm</Left>
                   <Height>0.35cm</Height>
-                  <Width>2cm</Width>
+                  <Width>1.98255cm</Width>
                   <ZIndex>26</ZIndex>
                   <Style>
                     <Border>
@@ -3697,41 +3697,6 @@
                     <PaddingRight>5pt</PaddingRight>
                   </Style>
                 </Textbox>
-                <Textbox Name="VAT_Amount2">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=Fields!VAT_Amount2.Value</Value>
-                          <Style>
-                            <FontFamily>segoe ui</FontFamily>
-                            <FontSize>8pt</FontSize>
-                            <Format>#,0.00;-#,0.00;''</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>1.24111cm</Top>
-                  <Left>17.37638cm</Left>
-                  <Height>0.35cm</Height>
-                  <Width>2cm</Width>
-                  <ZIndex>27</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <RightBorder>
-                      <Color>Black</Color>
-                      <Style>Solid</Style>
-                      <Width>0.5pt</Width>
-                    </RightBorder>
-                    <PaddingLeft>5pt</PaddingLeft>
-                    <PaddingRight>5pt</PaddingRight>
-                  </Style>
-                </Textbox>
                 <Textbox Name="Textbox46">
                   <rd:DefaultName>Textbox33</rd:DefaultName>
                   <KeepTogether>true</KeepTogether>
@@ -3739,7 +3704,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!Notes_lbl.Value</Value>
+                          <Value EvaluationMode="Constant">Note/Annotazioni</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -3756,7 +3721,7 @@
                   <Left>0.01518cm</Left>
                   <Height>0.3cm</Height>
                   <Width>10.24965cm</Width>
-                  <ZIndex>28</ZIndex>
+                  <ZIndex>27</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3794,7 +3759,7 @@
                   <Left>0.01518cm</Left>
                   <Height>0.7cm</Height>
                   <Width>10.24965cm</Width>
-                  <ZIndex>29</ZIndex>
+                  <ZIndex>28</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3817,7 +3782,7 @@
                       <TextRuns>
                         <TextRun>
                           <Label>DueDateLbl</Label>
-                          <Value>="Due Date Lbl"</Value>
+                          <Value EvaluationMode="Constant">Due Date/Data Scadenza</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -3833,8 +3798,8 @@
                   <Top>1.94111cm</Top>
                   <Left>3.99903cm</Left>
                   <Height>0.3cm</Height>
-                  <Width>2.458cm</Width>
-                  <ZIndex>30</ZIndex>
+                  <Width>2.43812cm</Width>
+                  <ZIndex>29</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3856,7 +3821,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!AmountLbl.Value</Value>
+                          <Value EvaluationMode="Constant">Amount/Ammontare</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -3872,61 +3837,13 @@
                   <Top>1.94111cm</Top>
                   <Left>6.43693cm</Left>
                   <Height>0.3cm</Height>
-                  <Width>3.8279cm</Width>
-                  <ZIndex>31</ZIndex>
+                  <Width>3.88307cm</Width>
+                  <ZIndex>30</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
                     <VerticalAlign>Top</VerticalAlign>
-                    <PaddingLeft>5pt</PaddingLeft>
-                    <PaddingRight>5pt</PaddingRight>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox3">
-                  <rd:DefaultName>Textbox1</rd:DefaultName>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=Fields!Total_Lbl.Value</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                          </Style>
-                        </TextRun>
-                        <TextRun>
-                          <Value>tott</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>5pt</FontSize>
-                            <FontWeight>Bold</FontWeight>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>2.59111cm</Top>
-                  <Left>15.13635cm</Left>
-                  <Height>0.3cm</Height>
-                  <Width>4.22258cm</Width>
-                  <ZIndex>32</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <RightBorder>
-                      <Color>Black</Color>
-                      <Style>Solid</Style>
-                      <Width>0.5pt</Width>
-                    </RightBorder>
                     <PaddingLeft>5pt</PaddingLeft>
                     <PaddingRight>5pt</PaddingRight>
                   </Style>
@@ -3955,7 +3872,7 @@
                   <Left>15.1538cm</Left>
                   <Height>0.375cm</Height>
                   <Width>4.22258cm</Width>
-                  <ZIndex>33</ZIndex>
+                  <ZIndex>31</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3982,7 +3899,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!CurrencyLbl.Value</Value>
+                          <Value EvaluationMode="Constant">Currency/Valuta</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -3999,7 +3916,7 @@
                   <Left>10.28493cm</Left>
                   <Height>0.3cm</Height>
                   <Width>4.86887cm</Width>
-                  <ZIndex>34</ZIndex>
+                  <ZIndex>32</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4024,7 +3941,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!CurrencyCode.Value</Value>
+                          <Value>=Fields!CurrencyLbl.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -4037,10 +3954,10 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>2.91611cm</Top>
-                  <Left>10.26505cm</Left>
+                  <Left>10.30011cm</Left>
                   <Height>0.375cm</Height>
-                  <Width>4.86887cm</Width>
-                  <ZIndex>35</ZIndex>
+                  <Width>4.85369cm</Width>
+                  <ZIndex>33</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4070,7 +3987,7 @@
                   <Left>0.03528cm</Left>
                   <Height>3.15cm</Height>
                   <Width>0cm</Width>
-                  <ZIndex>36</ZIndex>
+                  <ZIndex>34</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -4095,11 +4012,11 @@
                       <Style />
                     </Paragraph>
                   </Paragraphs>
-                  <Top>3.32639cm</Top>
+                  <Top>3.39694cm</Top>
                   <Left>0.01518cm</Left>
-                  <Height>0.6cm</Height>
+                  <Height>0.52945cm</Height>
                   <Width>10.22736cm</Width>
-                  <ZIndex>37</ZIndex>
+                  <ZIndex>35</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4130,7 +4047,7 @@
                   <Left>0.03528cm</Left>
                   <Height>0.45cm</Height>
                   <Width>1.40781cm</Width>
-                  <ZIndex>38</ZIndex>
+                  <ZIndex>36</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4173,7 +4090,7 @@
                   <Left>0.01518cm</Left>
                   <Height>0.35cm</Height>
                   <Width>10.24965cm</Width>
-                  <ZIndex>39</ZIndex>
+                  <ZIndex>37</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4186,6 +4103,77 @@
                       <Style>Solid</Style>
                       <Width>0.5pt</Width>
                     </LeftBorder>
+                    <PaddingLeft>5pt</PaddingLeft>
+                    <PaddingRight>5pt</PaddingRight>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox152">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value EvaluationMode="Constant">Total/ Totale</Value>
+                          <Style>
+                            <FontStyle>Normal</FontStyle>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>5pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                      </Style>
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>2.59111cm</Top>
+                  <Left>15.1538cm</Left>
+                  <Height>0.3cm</Height>
+                  <Width>4.22258cm</Width>
+                  <ZIndex>38</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <RightBorder>
+                      <Color>Black</Color>
+                      <Style>Solid</Style>
+                      <Width>0.5pt</Width>
+                    </RightBorder>
+                    <PaddingLeft>5pt</PaddingLeft>
+                    <PaddingRight>5pt</PaddingRight>
+                  </Style>
+                </Textbox>
+                <Textbox Name="VAT_Amount4">
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Fields!VAT_Amount2.Value</Value>
+                          <Style>
+                            <FontFamily>segoe uI</FontFamily>
+                            <FontSize>8pt</FontSize>
+                            <Format>#,0.00;-#,0.00;''</Format>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>1.24111cm</Top>
+                  <Left>17.39156cm</Left>
+                  <Height>0.35cm</Height>
+                  <Width>1.96737cm</Width>
+                  <ZIndex>39</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <RightBorder>
+                      <Style>Solid</Style>
+                      <Width>0.5pt</Width>
+                    </RightBorder>
                     <PaddingLeft>5pt</PaddingLeft>
                     <PaddingRight>5pt</PaddingRight>
                   </Style>

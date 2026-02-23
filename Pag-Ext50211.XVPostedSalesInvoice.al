@@ -16,14 +16,5 @@ pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
             }
         }
 
-        addfirst(FactBoxes)
-        {
-            part(EOSFactbox; "EOS069 DCS FactBox")
-            {
-                ApplicationArea = All;
-            }
-        }
-
-
     }
 }

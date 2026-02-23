@@ -15,5 +15,15 @@ pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
                 ToolTip = 'Indica se la fattura è accompagnatoria.';
             }
         }
+
+        addfirst(FactBoxes)
+        {
+            part(EOSFactbox; "EOS069 DCS FactBox")
+            {
+                ApplicationArea = All;
+            }
+        }
+
+
     }
 }

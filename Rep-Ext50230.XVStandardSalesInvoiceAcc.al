@@ -1,8 +1,11 @@
 namespace Lazzerini;
 
 using Microsoft.Sales.History;
+using Microsoft.Sales.Receivables;
 using Microsoft.Sales.Customer;
 using Microsoft.Inventory.Item;
+using Microsoft.Foundation.PaymentTerms;
+
 
 reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoice"
 {
@@ -13,50 +16,64 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
 
         add(Header)
         {
+
             column(ShipToName; "Ship-to Name") { }
             column(EORICode; GetEORICode("Sell-to Customer No.")) { }
             column(ACCOMPAGNATORIA; ACCOMPAGNATORIA) { }
             column(TipoDocumento; GetTipoDocumento(ACCOMPAGNATORIA, "Sell-to Country/Region Code")) { }
             column(Tariff_No_; "Service Tariff No.") { }
-            column(TariffNo_lbl; GetCustomLabel('Tariff No.')) { }
-            column(Notes_lbl; GetCustomLabel('Notes')) { }
-            //  column(VATBase_lbl; GetCustomLabel('VAT Base')) { }
-            column(VATandTax_lbl; GetCustomLabel('VAT and Tax')) { }
-            //          column(DueDateLbl; GetCustomLabel('DueDateLbl')) { }
-            column(TypePaymentCaptionLbl; GetCustomLabel('TypePaymentCaptionLbl')) { }
-            column(AmountLbl; GetCustomLabel('AmountLbl')) { }
-            column(VATBaseLbl; GetCustomLabel('VATBaseLbl')) { }
-            column(VATTotalLbl; GetCustomLabel('VATTotalLbl')) { }
-            column(CurrencyLbl; GetCustomLabel('CurrencyLbl')) { }
-            column(TotalAmountLbl; GetCustomLabel('TotalAmountLbl')) { }
+            column(TariffNo_lbl; GetCustomLabel('Tariff No./Num Tariffa')) { }
+
+            column(VATBaseTotal_lbl; "TotalVATBaseLCY") { }
+
+            // column(DueDateLbl; GetCustomLabel('Due Date/Data scadenza')) { }
+            column(TypePaymentCaptionLbl; GetCustomLabel('Type Payment Caption/Tipo Pagamento')) { }
+            column(AmountLbl; GetCustomLabel('Amount/Importo')) { }
+            column(VATBaseLbl; GetCustomLabel('VAT Base/Base IVA')) { }
+            column(VATTotalLbl; "TotalAmountVAT") { }
+            column(CurrencyLbl; "Currency Code") { }
+            column(TotalAmountLbl; GetCustomLabel('Total Amount/Importo Totale')) { }
 
 
-            column(ShippingNotes; GetCustomValue('ShippingNotes')) { }
-            column(VAT_Base1; GetCustomValue('VAT_Base1')) { }
-            column(VAT_Description1; GetCustomValue('VAT_Description1')) { }
-            column(VAT_Amount1; GetCustomValue('VAT_Amount1')) { }
-            column(VAT_Base2; GetCustomValue('VAT_Base2')) { }
-            column(VAT_Description2; GetCustomValue('VAT_Description2')) { }
-            column(VAT_Amount2; GetCustomValue('VAT_Amount2')) { }
-            column(VAT_Base3; GetCustomValue('VAT_Base3')) { }
-            column(VAT_Description3; GetCustomValue('VAT_Description3')) { }
-            column(VAT_Amount3; GetCustomValue('VAT_Amount3')) { }
+            column(ShippingNotes; "Work Description") { }
+            column(VAT_Base1; VAT_Base1) { }
+            column(VAT_Description1; VAT_Description1) { }
+            column(VAT_Amount1; VAT_Amount1) { }
+            column(VAT_Base2; VAT_Base2) { }
+            column(VAT_Description2; VAT_Description2) { }
+            column(VAT_Amount2; VAT_Amount2) { }
+            column(VAT_Base3; VAT_Base3) { }
+            column(VAT_Description3; VAT_Description3) { }
+            column(VAT_Amount3; VAT_Amount3) { }
 
-            column(TPaymentMethod1; GetCustomValue('TPaymentMethod1')) { }
-            column(DatScadenze1; GetCustomValue('DatScadenze1')) { }
-            column(DecImportoRate1; GetCustomValue('DecImportoRate1')) { }
-            column(TPaymentMethod2; GetCustomValue('TPaymentMethod2')) { }
-            column(DatScadenze2; GetCustomValue('DatScadenze2')) { }
-            column(DecImportoRate2; GetCustomValue('DecImportoRate2')) { }
-            column(TPaymentMethod3; GetCustomValue('TPaymentMethod3')) { }
-            column(DatScadenze3; GetCustomValue('DatScadenze3')) { }
-            column(DecImportoRate3; GetCustomValue('DecImportoRate3')) { }
+            column(TPaymentMethod1; TPaymentMethod1) { }
+            column(DatScadenze1; DatScadenze1) { }
+            column(DecImportoRate1; DecImportoRate1) { }
+            column(TPaymentMethod2; TPaymentMethod2) { }
+            column(DatScadenze2; DatScadenze2) { }
+            column(DecImportoRate2; DecImportoRate2) { }
+            column(TPaymentMethod3; TPaymentMethod3) { }
+            column(DatScadenze3; DatScadenze3) { }
+            column(DecImportoRate3; DecImportoRate3) { }
 
-            column(TotalAmount; GetCustomValue('TotalAmount')) { }
-            column(TotalAmountVAT; GetCustomValue('TotalAmountVAT')) { }
-            column(TotalAmountInclVAT; GetCustomValue('TotalAmountInclVAT')) { }
+            column(TotalAmount; "TotalAmount") { }
+            column(TotalAmountVAT; GetCustomValue('Total Amount VAT/Importo Totale Iva')) { }
+            column(TotalAmountInclVAT; "TotalAmountInclVAT") { }
             column(SalesInvoiceHeader_CurrencyCode; GetCustomValue('SalesInvoiceHeader_CurrencyCode')) { }
 
+            column(CONAI; GetCustomValue('contributo CONAI assolto ove dovuto')) { }
+            column(DESC; GetCustomValue('the exported of the products covered by this doc declares, except where otherwise clearly indicate, these products are of italian origin.')) { }
+            column(Firma; GetCustomValue('Lazzareni S.r.l Ufficio AMM.VO')) { }
+
+        }
+
+        modify(Header)
+        {
+            trigger OnAfterAfterGetRecord()
+            begin
+                CalculateVATTotals("No.");
+                CalculatePaymentInstallments("No.");
+            end;
 
         }
 
@@ -74,6 +91,7 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             {
                 Caption = 'Net Weight';
             }
+
         }
 
 
@@ -124,4 +142,184 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
         exit('   ');
     end;
 
+    local procedure GetDueDateFromPaymentTerms(PaymentTermsCode: Code[10]; Position: Integer): Date
+    var
+        PaymentLine: Record "Payment Lines";
+        Counter: Integer;
+    begin
+        Counter := 0;
+
+        PaymentLine.SetRange(Code, PaymentTermsCode);
+
+        if PaymentLine.FindSet() then
+            repeat
+                if PaymentLine."Due Date" <> 0D then begin
+                    Counter += 1;
+
+                    if Counter = Position then
+                        exit(PaymentLine."Due Date");
+                end;
+            until PaymentLine.Next() = 0;
+
+        exit(0D);
+    end;
+
+    local procedure CalculateVATTotals(DocumentNo: Code[20])
+    var
+        SalesLine: Record "Sales Invoice Line";
+        CurrentVAT: Code[10];
+        CurrentBase: Decimal;
+        CurrentVATAmount: Decimal;
+    begin
+        // Reset variabili
+        Clear(VAT_Description1);
+        Clear(VAT_Description2);
+        Clear(VAT_Description3);
+
+        VAT_Base1 := 0;
+        VAT_Base2 := 0;
+        VAT_Base3 := 0;
+
+        VAT_Amount1 := 0;
+        VAT_Amount2 := 0;
+        VAT_Amount3 := 0;
+
+        SalesLine.SetRange("Document No.", DocumentNo);
+
+        if SalesLine.FindSet() then
+            repeat
+                CurrentVAT := SalesLine."VAT Identifier";
+
+                // Solo se valorizzato
+                if CurrentVAT <> '' then begin
+
+                    CurrentBase := SalesLine."VAT Base Amount";
+                    CurrentVATAmount := SalesLine."Amount Including VAT" - SalesLine."VAT Base Amount";
+
+                    // Se già esiste
+                    if CurrentVAT = VAT_Description1 then begin
+                        VAT_Base1 += CurrentBase;
+                        VAT_Amount1 += CurrentVATAmount;
+                    end else
+                        if CurrentVAT = VAT_Description2 then begin
+                            VAT_Base2 += CurrentBase;
+                            VAT_Amount2 += CurrentVATAmount;
+                        end else
+                            if CurrentVAT = VAT_Description3 then begin
+                                VAT_Base3 += CurrentBase;
+                                VAT_Amount3 += CurrentVATAmount;
+                            end else begin
+                                // Nuovo VAT → primo slot libero
+                                if VAT_Description1 = '' then begin
+                                    VAT_Description1 := CurrentVAT;
+                                    VAT_Base1 := CurrentBase;
+                                    VAT_Amount1 := CurrentVATAmount;
+                                end else
+                                    if VAT_Description2 = '' then begin
+                                        VAT_Description2 := CurrentVAT;
+                                        VAT_Base2 := CurrentBase;
+                                        VAT_Amount2 := CurrentVATAmount;
+                                    end else
+                                        if VAT_Description3 = '' then begin
+                                            VAT_Description3 := CurrentVAT;
+                                            VAT_Base3 := CurrentBase;
+                                            VAT_Amount3 := CurrentVATAmount;
+                                        end;
+                            end;
+
+                end;
+
+            until SalesLine.Next() = 0;
+    end;
+
+    local procedure CalculatePaymentInstallments(DocumentNo: Code[20])
+    var
+        CustLedgEntry: Record "Cust. Ledger Entry";
+        PaymentTerms: Record "Payment Terms";
+        Counter: Integer;
+    begin
+        // Reset variabili
+        TPaymentMethod1 := '';
+        TPaymentMethod2 := '';
+        TPaymentMethod3 := '';
+
+        DatScadenze1 := 0D;
+        DatScadenze2 := 0D;
+        DatScadenze3 := 0D;
+
+        DecImportoRate1 := 0;
+        DecImportoRate2 := 0;
+        DecImportoRate3 := 0;
+
+        CustLedgEntry.Reset();
+        CustLedgEntry.SetRange("Document No.", DocumentNo);
+        CustLedgEntry.SetRange("Document Type",
+            CustLedgEntry."Document Type"::Invoice);
+
+        Counter := 0;
+
+        if CustLedgEntry.FindSet() then
+            repeat
+                Counter += 1;
+
+                // Assegna data e importo
+                case Counter of
+                    1:
+                        begin
+                            DatScadenze1 := CustLedgEntry."Due Date";
+                            DecImportoRate1 := CustLedgEntry."Remaining Amount";
+                        end;
+                    2:
+                        begin
+                            DatScadenze2 := CustLedgEntry."Due Date";
+                            DecImportoRate2 := CustLedgEntry."Remaining Amount";
+                        end;
+                    3:
+                        begin
+                            DatScadenze3 := CustLedgEntry."Due Date";
+                            DecImportoRate3 := CustLedgEntry."Remaining Amount";
+                        end;
+                end;
+
+                // Lookup descrizione termini pagamento
+                if CustLedgEntry."Payment Method Code" <> '' then
+                    if PaymentTerms.Get(CustLedgEntry."Payment Method Code") then begin
+                        case Counter of
+                            1:
+                                TPaymentMethod1 := PaymentTerms.Description;
+                            2:
+                                TPaymentMethod2 := PaymentTerms.Description;
+                            3:
+                                TPaymentMethod3 := PaymentTerms.Description;
+                        end;
+                    end;
+
+            until (CustLedgEntry.Next() = 0) or (Counter = 3);
+    end;
+
+    var
+        VAT_Description1: Code[10];
+        VAT_Description2: Code[10];
+        VAT_Description3: Code[10];
+
+        VAT_Base1: Decimal;
+        VAT_Base2: Decimal;
+        VAT_Base3: Decimal;
+
+        VAT_Amount1: Decimal;
+        VAT_Amount2: Decimal;
+        VAT_Amount3: Decimal;
+
+    var
+        TPaymentMethod1: Code[20];
+        TPaymentMethod2: Code[20];
+        TPaymentMethod3: Code[20];
+
+        DatScadenze1: Date;
+        DatScadenze2: Date;
+        DatScadenze3: Date;
+
+        DecImportoRate1: Decimal;
+        DecImportoRate2: Decimal;
+        DecImportoRate3: Decimal;
 }

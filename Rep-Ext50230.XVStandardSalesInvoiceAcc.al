@@ -298,9 +298,9 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
     end;
 
     var
-        VAT_Description1: Code[10];
-        VAT_Description2: Code[10];
-        VAT_Description3: Code[10];
+        VAT_Description1: Text[100];
+        VAT_Description2: Text[100];
+        VAT_Description3: Text[100];
 
         VAT_Base1: Decimal;
         VAT_Base2: Decimal;

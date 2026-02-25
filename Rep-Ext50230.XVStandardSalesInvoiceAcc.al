@@ -329,6 +329,7 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
         VAT_Amount2: Decimal;
         VAT_Amount3: Decimal;
 
+
     var
         TPaymentMethod1: Code[20];
         TPaymentMethod2: Code[20];

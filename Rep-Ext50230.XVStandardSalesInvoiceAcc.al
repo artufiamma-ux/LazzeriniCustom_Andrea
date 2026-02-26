@@ -3,6 +3,9 @@ namespace Lazzerini;
 using Microsoft.Sales.History;
 using Microsoft.Sales.Receivables;
 using Microsoft.Sales.Customer;
+using Microsoft.Warehouse.History;
+using Microsoft.Foundation.Shipping;
+using Microsoft.Foundation.AuditCodes;
 using Microsoft.Inventory.Item;
 using Microsoft.Finance.VAT.Setup;
 using Microsoft.Foundation.PaymentTerms;
@@ -66,6 +69,11 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             column(DESC; GetCustomValue('the exported of the products covered by this doc declares, except where otherwise clearly indicate, these products are of italian origin.')) { }
             column(Firma; GetCustomValue('Lazzareni S.r.l Ufficio AMM.VO')) { }
 
+            column(NrColli; GetNrColli("No.")) { Caption = 'Numero colli'; }
+            column(Freight; GetFreight("No.")) { Caption = 'Freight'; }
+            column(Forwarder; GetForwarder("Shipping Agent Code")) { Caption = 'Spedizioniere'; }
+
+
         }
 
         modify(Header)
@@ -92,7 +100,7 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             {
                 Caption = 'Net Weight';
             }
-
+            column(KitBus; GetKitBus("Line No.", "Document No.")) { Caption = 'Kit Bus'; }
         }
 
 
@@ -342,4 +350,48 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
         DecImportoRate1: Decimal;
         DecImportoRate2: Decimal;
         DecImportoRate3: Decimal;
+
+    local procedure GetNrColli(DocumentNo: Code[20]): Code[20]
+    var
+        ShipmentHeader: Record "Sales Shipment Header";
+    begin
+        if ShipmentHeader.Get(DocumentNo) then
+            exit(ShipmentHeader."Package Tracking No.");
+        exit('');
+    end;
+
+    local procedure GetFreight(DocumentNo: Code[20]): Text[100]
+    var
+        ReasonCode: Record "Reason Code";
+    begin
+        if ReasonCode.Get('231') then
+            exit(ReasonCode.Description);
+        exit('');
+    end;
+
+    local procedure GetForwarder(ShippingAgentCode: Code[10]): Text[100]
+    var
+        ShippingAgent: Record "Shipping Agent";
+    begin
+        if ShippingAgent.Get(ShippingAgentCode) then
+            exit(ShippingAgent.Name);
+        exit('');
+    end;
+
+    local procedure GetKitBus(SalesLineNo: Integer; DocumentNo: Code[20]): Code[20]
+    var
+        PostedWhseShptLine: Record "Posted Whse. Shipment Line";
+    begin
+        // Pulisco eventuali filtri precedenti
+        PostedWhseShptLine.Reset();
+
+        // Filtro per collegamento al documento di vendita
+        PostedWhseShptLine.SetRange("Posted Source No.", DocumentNo);
+        PostedWhseShptLine.SetRange("Source Line No.", SalesLineNo);
+
+        if PostedWhseShptLine.FindFirst() then
+            exit(PostedWhseShptLine."Kit Bus");
+
+        exit('');
+    end;
 }

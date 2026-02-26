@@ -473,16 +473,6 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report XV Strumenti di Misura - Property Caption</note>
         </trans-unit>
-        <trans-unit id="PageExtension 2680915475 - Control 4111167565 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
-          <source>Colore basato sulla prima lettera della descrizione</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemColorExt - Control AlphaColorCircle - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 2680915475 - Control 4111167565 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 4178721393">
-          <source>Info</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension ItemColorExt - Control AlphaColorCircle - Property Caption</note>
-        </trans-unit>
         <trans-unit id="PageExtension 3778526271 - Control 3942216509 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 561208485">
           <source>Indica se la fattura è accompagnatoria.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1227,6 +1217,26 @@
           <source>Standard</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum XV Tipo Prelievo WSH - EnumValue Standard - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1591650415 - ReportColumn 2224537128 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Spedizioniere</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn Forwarder - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1591650415 - ReportColumn 2772881581 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Freight</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn Freight - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1591650415 - ReportColumn 2070322339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Numero colli</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn NrColli - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1591650415 - ReportColumn 21930806 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn KitBus - Property Caption</note>
         </trans-unit>
         <trans-unit id="ReportExtension 1591650415 - ReportColumn 331094305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
           <source>Net Weight</source>

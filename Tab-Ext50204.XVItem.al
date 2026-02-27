@@ -14,11 +14,11 @@ tableextension 50204 XVItem extends Item
             TableRelation = "XV Tipo Etichetta";
 
         }
-        field(50101; "Tipo Prelievo"; Code[20])
+        field(50101; "Tipo Prelievo"; Enum "XV Tipo Prelievo Item")
         {
             Caption = 'Tipo Prelievo';
             DataClassification = ToBeClassified;
-            TableRelation = "XV Tipo Prelievo Articoli";
+
 
         }
         field(50102; "Articolo CKD"; Boolean)
@@ -30,7 +30,7 @@ tableextension 50204 XVItem extends Item
         field(50103; "CKD-Nr. Art. origine"; Code[20])
         {
             Caption = 'CKD-Nr. Art. origine';
-            TableRelation = item."CKD-Nr. Art. origine";
+            TableRelation = item."No.";
             DataClassification = CustomerContent;
         }
         field(50104; "In Packing CKD"; Enum "XV Packing CKD")

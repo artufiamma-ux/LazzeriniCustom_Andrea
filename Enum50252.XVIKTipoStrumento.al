@@ -97,4 +97,13 @@ enum 50252 "XV IK Tipo Strumento"
     {
         Caption = 'Truschino';
     }
+    value(201; Glossometro)
+    {
+        Caption = 'Glossometro';
+    }
+    value(202; LivellaDigitale)
+    {
+        Caption = 'Livella Digitale';
+    }
+
 }

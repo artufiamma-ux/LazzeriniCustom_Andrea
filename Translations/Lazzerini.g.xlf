@@ -613,6 +613,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Bin - Field Tipo Prelievo - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2569186907 - Field 3333194228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2378311977">
+          <source>Posizione Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV BOM Component  - Field Posizione Layout - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 2684030018 - Field 4008615246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 566711204">
           <source>Kit Bus</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -647,6 +652,11 @@
           <source>Status Materiali</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Prod. Order Line - Field Status Materiali - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2415949493 - Field 3333194228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2624288207">
+          <source>Posizione Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Production BOM Line  - Field Posizione Layout - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 1668326629 - Field 1134721962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 2308244223">
           <source>Nome area produzione (Ciclo)</source>
@@ -963,6 +973,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum RigheOP - EnumValue Parzialmente - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Enum 2084483908 - EnumValue 926452758 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Design</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK 4M+D Analysis - EnumValue Design - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2084483908 - EnumValue 1341331079 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Machine</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK 4M+D Analysis - EnumValue Machine - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2084483908 - EnumValue 2104701654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Man</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK 4M+D Analysis - EnumValue Man - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2084483908 - EnumValue 3965678037 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Material</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK 4M+D Analysis - EnumValue Material - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2084483908 - EnumValue 3616161400 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Methods</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK 4M+D Analysis - EnumValue Methods - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Enum 2634683883 - EnumValue 2890649805 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Blu</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -978,6 +1013,546 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Bollino - EnumValue Verde - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Enum 564277059 - EnumValue 3540330738 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Debit note</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Debit note Ret goods - EnumValue DebitNote - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 564277059 - EnumValue 1493702658 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Debit note and Returned goods</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Debit note Ret goods - EnumValue DebitNoteAndReturnedGoods - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 564277059 - EnumValue 1806086741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Returned goods</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Debit note Ret goods - EnumValue ReturnedGoods - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3652026405 - EnumValue 2091644006 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer - 0KM</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Detection - EnumValue Customer0km - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3652026405 - EnumValue 2532815046 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer - First Batch or Samples</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Detection - EnumValue CustomerFirstBatchOrSamples - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3652026405 - EnumValue 666002605 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer - No info if 0KM or Warranty</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Detection - EnumValue CustomerNoInfoIf0kmOrWarranty - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3652026405 - EnumValue 923758324 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer - Warranty</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Detection - EnumValue CustomerWarranty - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3652026405 - EnumValue 1968927578 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Finish product - ready to be dispatched</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Detection - EnumValue FinishProductReadyToBeDispatched - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3652026405 - EnumValue 2199882250 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Incoming</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Detection - EnumValue Incoming - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3652026405 - EnumValue 2737815948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Incoming - First Batch or Samples</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Detection - EnumValue IncomingFirstBatchOrSamples - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3652026405 - EnumValue 4188741352 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shopfloor</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Detection - EnumValue Shopfloor - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 2945067945 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Agostino Mengoni</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue AgostinoMengoni - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 4237368142 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Alessandro Arduini</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue AlessandroArduini - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 2134174361 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Alessandro Cirioni</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue AlessandroCirioni - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 3540597675 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Alfredo Pagano</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue AlfredoPagano - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 2177320286 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Alice Polverari</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue AlicePolverari - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 1890916824 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Carmine Monzione</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue CarmineMonzione - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 218519777 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Dylan Guzowski</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue DylanGuzowski - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 3481875085 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Eleonora Mancinelli</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue EleonoraMancinelli - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 2606932258 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Enea Santamarianova</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue EneaSantamarianova - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 4032761748 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Francesco Pelonara</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue FrancescoPelonara - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 1870576180 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Giovanni Di Iorio</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue GiovanniDiIorio - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 1564432704 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Giuliano Aquilanti</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue GiulianoAquilanti - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 1084975135 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Innocenzo Carbone</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue InnocenzoCarbone - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 1836321481 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Luca Leonelli</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue LucaLeonelli - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 3349880655 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Luca Pagano</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue LucaPagano - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 4183451934 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lucia Pacci</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue LuciaPacci - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 3229392447 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Marco Giantomassi</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue MarcoGiantomassi - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 2969895337 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Maria Abbate</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue MariaAbbate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 2994156402 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Matteo Naspetti</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue MatteoNaspetti - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 605075654 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mattia Principi</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue MattiaPrincipi - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 2572906418 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mauro Valentini</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue MauroValentini - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 3805102063 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mike Curzi</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue MikeCurzi - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 3085835034 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mirko Pappalardo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue MirkoPappalardo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 2705799677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mirko Santamarianova</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue MirkoSantamarianova - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 3081021953 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Monia Palpacelli</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue MoniaPalpacelli - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 3244469912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Roberta Sbaffi</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue RobertaSbaffi - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 3792624440 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rocco Carbone</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue RoccoCarbone - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 740673014 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sandro Guidoni</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue SandroGuidoni - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 2055103377 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sara D ercole</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue SaraDErcole - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 1508673909 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sinisa Maric</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue SinisaMaric - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 4174621868 - EnumValue 3499107339 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sony Mathew</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP assigned to. - EnumValue SonyMathew - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 993354899 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Abbate</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue Abbate - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 1432965656 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Carbone R</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue CarboneR - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 1485135417 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Guidoni</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue Guidoni - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 3089741302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mancinelli</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue Mancinelli - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 1166769480 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Maric</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue Maric - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 1871606966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mathew</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue Mathew - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 1962185579 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Mengoni</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue Mengoni - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 3166486917 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Monzione</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue Monzione - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 852702356 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Naspetti</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue Naspetti - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 2037577161 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pagano A</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue PaganoA - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 3691594989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Palpacelli</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue Palpacelli - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 2522884848 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pappalardo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue Pappalardo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 1280830318 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Pelonara-Sales</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue PelonaraSales - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 309862322 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Principi</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue Principi - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 2785720291 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Santamarianova</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue Santamarianova - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 1392833721 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Valentini M.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue ValentiniM - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 638258933 - EnumValue 1855985705 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Yousefi M</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK IP opened by - EnumValue YousefiM - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 4002980038 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D10 - Cucitura Errata</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D10CucituraErrata - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1491710343 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D11 - Danneggiamenti durante il trasporto</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D11DanneggiamentiDuranteIlTrasporto - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1504635639 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D12 - Design</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D12Design - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2730318105 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D13 - Difetto dimensionale</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D13DifettoDimensionale - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 3838043459 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D14 - Difetto estetico su plastica</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D14DifettoEsteticoSuPlastica - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1635202650 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D15 - Errato funzionamento elettronico</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D15ErratoFunzionamentoElettronico - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 574866189 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D16 - Errore di distinta</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D16ErroreDiDistinta - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2274110989 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D17 - Fodera con allineamento errato</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D17FoderaConAllineamentoErrato - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2414711205 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D18 - Fodera danneggiata</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D18FoderaDanneggiata - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1638146079 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D19 - Fodera lenta</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D19FoderaLenta - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2572396718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D1 - Assemblaggio errato</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D1AssemblaggioErrato - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2723989575 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D20 - Fodera ondulata</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D20FoderaOndulata - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 62012311 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D21 - Fodera stretta</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D21FoderaStretta - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1441507906 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D22 - Graffi / bozze epidemiche</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D22GraffiBozzeEpidemiche - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 4125946992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D23 - Graffi / bozze sporadiche</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D23GraffiBozzeSporadiche - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 38232048 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D24 - Materia prima nc (materiali ferrosi &amp; chemicals)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D24MateriaPrimaNcMaterialiFerrosiChemicals - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1171642970 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D25 - Materiale scaduto</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D25MaterialeScaduto - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 810084954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D26 - Meccanismo malfunzionante</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D26MeccanismoMalfunzionante - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2448383937 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D27 - Non corretta identificazione</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D27NonCorrettaIdentificazione - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1398441433 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D28 - Packaging non conforme</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D28PackagingNonConforme - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 599974873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D29 - Rotture per vandalismo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D29RotturePerVandalismo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 3209650128 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D2 - Avvio - Setup macchina</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D2AvvioSetupMacchina - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1729420373 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D30 - Saldatura NC</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D30SaldaturaNc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1347857442 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D31 - Schiumatura NC - bolle/difetti</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D31SchiumaturaNcBolleDifetti - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2372375612 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D32 - Schiumatura NC - portanza fuori tolleranza</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D32SchiumaturaNcPortanzaFuoriTolleranza - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 4193115749 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D33 - Taglio Errato</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D33TaglioErrato - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1933572235 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D34 - Tessuto con tonalità/texture NC</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D34TessutoConTonalitTextureNc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 3612405652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D35 - Verniciatura NC</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D35VerniciaturaNc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1755288059 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D36 - Ritardi di consegna</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D36RitardiDiConsegna - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2862206968 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D3 - Cintura bloccata</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D3CinturaBloccata - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1348907865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D4 - Cintura malfunzionante</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D4CinturaMalfunzionante - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 479147618 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D5 - Cintura montata male</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D5CinturaMontataMale - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2303761218 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D6 - Componente mancante o eccedente</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D6ComponenteMancanteOEccedente - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1344848451 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D7 - Componente/codice errato</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D7ComponenteCodiceErrato - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2092349380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D8 - Criccature/rotture in seguito ad assemblaggio</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D8CriccatureRottureInSeguitoAdAssemblaggio - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1143880608 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>D9 - Cucitura con colori errati</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue D9CucituraConColoriErrati - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 3393058106 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P01 - Lack of material</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue P01LackOfMaterial - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2105738048 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P02 - Logistic services</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue P02LogisticServices - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 1761683940 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P03 - Machinery breakdown</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue P03MachineryBreakdown - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2416294923 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P04 - Reworkings</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue P04Reworkings - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2047036956 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P05 - Samples</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue P05Samples - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2523009271 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P06 - Selections</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue P06Selections - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 255253465 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P07 - Training</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue P07Training - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 788850300 - EnumValue 2135442129 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>P08 - Various activities not planned</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK List of the defects - EnumValue P08VariousActivitiesNotPlanned - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3634901966 - EnumValue 2961552353 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>○</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK PDCA - EnumValue Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3634901966 - EnumValue 3626979210 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>◔</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK PDCA - EnumValue Name1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3634901966 - EnumValue 1713889359 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>◑</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK PDCA - EnumValue Name2 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3634901966 - EnumValue 2351585976 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>◕</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK PDCA - EnumValue Name3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 3634901966 - EnumValue 1245101765 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>●</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK PDCA - EnumValue Name4 - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Enum 3637064549 - EnumValue 3989720048 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Australia</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -992,6 +1567,251 @@
           <source>Monsano (Italy)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Plant - EnumValue Monsano (Italy) - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2519417739 - EnumValue 2522065909 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Improvement Plan</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Problem solving tool - EnumValue ImprovementPlan - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2519417739 - EnumValue 1071049038 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Kaizen</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Problem solving tool - EnumValue Kaizen - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2519417739 - EnumValue 216422146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>8D-Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Problem solving tool - EnumValue V8dCustomer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2519417739 - EnumValue 2741925474 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>8D-Supplier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Problem solving tool - EnumValue V8dSupplier - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2269150299 - EnumValue 2366389731 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>CITY LIGHT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Product family - EnumValue CityLight - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2269150299 - EnumValue 1210110577 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COMPACT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Product family - EnumValue Compact - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2269150299 - EnumValue 4124891411 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>COMPACT RIGIDO</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Product family - EnumValue CompactRigido - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2269150299 - EnumValue 2363316183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ETHOS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Product family - EnumValue Ethos - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2269150299 - EnumValue 1200908693 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>GT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Product family - EnumValue Gt - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2269150299 - EnumValue 490623926 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>PRATICO</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Product family - EnumValue Pratico - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2269150299 - EnumValue 268683351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SCHIUMATI</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Product family - EnumValue Schiumati - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2269150299 - EnumValue 35178949 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SCUOLABUS</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Product family - EnumValue Scuolabus - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2269150299 - EnumValue 3299948348 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>TRANSITO</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Product family - EnumValue Transito - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2269150299 - EnumValue 1555630058 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Trasversale</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Product family - EnumValue Trasversale - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1664141361 - EnumValue 3939861283 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Severity - EnumValue A - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1664141361 - EnumValue 1557983838 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>B</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Severity - EnumValue B - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1664141361 - EnumValue 920287221 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>C</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Severity - EnumValue C - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1664141361 - EnumValue 3497696562 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NC Major</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Severity - EnumValue NcMajor - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1664141361 - EnumValue 2088339966 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NC Minor</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Severity - EnumValue NcMinor - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1664141361 - EnumValue 1902370944 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Notes during the audit</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Severity - EnumValue NotesDuringTheAudit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1664141361 - EnumValue 2799540477 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Potential for improvement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Severity - EnumValue PotentialForImprovement - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1664141361 - EnumValue 2533498501 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>S</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Severity - EnumValue S - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 2892895531 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Audit - Certification 14001</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue AuditCertification14001 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 514024000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Audit - Certification 15085</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue AuditCertification15085 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 1335776031 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Audit - Certification 45001</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue AuditCertification45001 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 3918087769 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Audit - Certification  IATF</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue AuditCertificationIatf - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 705081387 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Audit - Customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue AuditCustomer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 3658130859 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Audit - Supplier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue AuditSupplier - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 1901927777 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Benefit/Cost (B/C) Analysis</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue BenefitCostBCAnalysis - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 544944720 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Commerial Claim - not our responsability</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue CommerialClaimNotOurResponsability - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 1015402609 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deviation / Concession</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue DeviationConcession - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 2017488980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Improvement</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue Improvement - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 4049057475 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Internal Audit - Process</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue InternalAuditProcess - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 3520942891 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Internal Audit - Product</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue InternalAuditProduct - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 2193211433 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Internal Audit - System</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue InternalAuditSystem - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 2019699975 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>LPA</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue Lpa - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 3431221561 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Modification request</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue ModificationRequest - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 3085113623 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NC Customer - general claim</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue NcCustomerGeneralClaim - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 1959719870 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NC Customer - official claim</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue NcCustomerOfficialClaim - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 712612014 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NC Internal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue NcInternal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 1772372760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NC vs Supplier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue NcVsSupplier - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 2465085558 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality Master Plan</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue QualityMasterPlan - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 2935261598 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Safety-First Aid</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue SafetyFirstAid - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 1215758822 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Safety-Incident</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue SafetyIncident - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 370912564 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Safety-Near Miss</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue SafetyNearMiss - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 1877654289 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Safety-UA (Unsafe Acts)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue SafetyUaUnsafeActs - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 1545649052 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Safety-UC (Unsafe Conditions)</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue SafetyUcUnsafeConditions - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 1377404462 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Test &amp; Homologation</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue TestHomologation - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 770336637 - EnumValue 3645372803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tips/Suggestions</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Source/reason of the IP - EnumValue TipsSuggestions - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 823829387 - EnumValue 754770803 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Attivo</source>
@@ -1048,6 +1868,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Strumento - EnumValue Durometro - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Enum 2561490501 - EnumValue 1170148638 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Glossometro</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Strumento - EnumValue Glossometro - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Enum 2561490501 - EnumValue 3276832435 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Goniometro</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1057,6 +1882,11 @@
           <source>Indentometro</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Strumento - EnumValue Indentometro - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 2561490501 - EnumValue 3643330076 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Livella Digitale</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Strumento - EnumValue LivellaDigitale - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2561490501 - EnumValue 2459600659 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Macchia a Controllo</source>
@@ -1098,6 +1928,86 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Strumento - EnumValue Truschino - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 3687462008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>B-Corp</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue BCorp - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 4109501598 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cost reduction</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue CostReduction - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 1317552199 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Environment</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue Environment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 722916711 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Lesson learned</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue LessonLearned - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 2754170929 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Minute Meeting</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue MinuteMeeting - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 1483341903 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue Quality - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 2947605808 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Safety</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue Safety - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 1882997002 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tier-G3</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue TierG3 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 2723163793 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tier Meeting - G2 Acquisti</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue TierMeetingG2Acquisti - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 868136516 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tier Meeting - G2 Operations</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue TierMeetingG2Operations - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 684936094 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tier Meeting - G2 Qualità</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue TierMeetingG2Qualit - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 3606368146 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tier Meeting - G2 Sales</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue TierMeetingG2Sales - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 824137393 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tier Meeting - G2 UT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue TierMeetingG2Ut - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 1777279647 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tier-S4</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue TierS4 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 1084054377 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tiers-G1</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue TiersG1 - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1318095960 - EnumValue 1519972387 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>WCM</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Type - EnumValue Wcm - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Enum 3484098470 - EnumValue 3160399677 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Officina</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1117,6 +2027,26 @@
           <source>Sala Prove</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Ubicazione Strumento - EnumValue Sala Prove - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 636028714 - EnumValue 1526955676 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Neither Warranty nor Reworking</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Warranty Reworking - EnumValue NeitherWarrantyNorReworking - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 636028714 - EnumValue 850398450 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reworking</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Warranty Reworking - EnumValue Reworking - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 636028714 - EnumValue 1903978320 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warranty</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Warranty Reworking - EnumValue Warranty - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 636028714 - EnumValue 3202101011 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Warranty and Reworking</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Warranty Reworking - EnumValue WarrantyAndReworking - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 959930685 - EnumValue 3304381810 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Cuscino</source>

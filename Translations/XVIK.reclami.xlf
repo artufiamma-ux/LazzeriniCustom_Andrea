@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="xml" source-language="en-US" target-language="it-IT" original="XVIK.reclami">
+    <body>
+    <trans-unit id="Page 50255 - Name">
+        <source>XV IK Reclami List</source>
+        <target state="translated">XV IK Reclami - Elenco</target>
+    </trans-unit>
+    <trans-unit id="Page 50256 - Name">
+        <source>XV IK Reclami Card</source>
+        <target state="translated">XV IK Reclami - Scheda</target>
+    </trans-unit>
+    <trans-unit id="Table 50253 - Name">
+        <source>XV IK Reclami</source>
+        <target state="translated">XV IK Reclami</target>
+    </trans-unit>
+    <trans-unit id="Caption - Plant">
+        <source>Plant</source>
+        <target state="translated">Stabilimento</target>
+    </trans-unit>
+    <trans-unit id="Caption - Date of the document">
+        <source>Date of the document</source>
+        <target state="translated">Data del documento</target>
+    </trans-unit>
+    <trans-unit id="Caption - Type">
+        <source>Type</source>
+        <target state="translated">Tipo</target>
+    </trans-unit>
+    <trans-unit id="Caption - Customer">
+        <source>Customer</source>
+        <target state="translated">Cliente</target>
+    </trans-unit>
+    <trans-unit id="Caption - Supplier">
+        <source>Supplier</source>
+        <target state="translated">Fornitore</target>
+    </trans-unit>
+    <trans-unit id="Caption - Part Number / Item">
+        <source>Part Number / Item</source>
+        <target state="translated">Codice articolo</target>
+    </trans-unit>
+    <trans-unit id="Caption - Problem Description">
+        <source>Problem Description</source>
+        <target state="translated">Descrizione problema</target>
+    </trans-unit>
+    <trans-unit id="Caption - Severity">
+        <source>Severity</source>
+        <target state="translated">Gravità</target>
+    </trans-unit>
+    <trans-unit id="Caption - Detection">
+        <source>Detection</source>
+        <target state="translated">Rilevazione</target>
+    </trans-unit>
+    <trans-unit id="Caption - Deadline">
+        <source>Deadline</source>
+        <target state="translated">Scadenza</target>
+    </trans-unit>
+    <trans-unit id="Caption - PDCA">
+        <source>PDCA</source>
+        <target state="translated">PDCA</target>
+    </trans-unit>
+    <trans-unit id="Caption - Notes">
+        <source>Notes</source>
+        <target state="translated">Note</target>
+    </trans-unit>
+    <trans-unit id="Caption - Closing date of the IP">
+        <source>Closing date of the IP</source>
+        <target state="translated">Data chiusura IP</target>
+    </trans-unit>
+    <trans-unit id="Caption - List of the defects">
+        <source>List of the defects</source>
+        <target state="translated">Lista difetti</target>
+    </trans-unit>
+    <trans-unit id="Caption - Product family">
+        <source>Product family</source>
+        <target state="translated">Famiglia prodotto</target>
+    </trans-unit>
+    <trans-unit id="Caption - Quantities of the NC parts">
+        <source>Quantities of the NC parts</source>
+        <target state="translated">Quantità pezzi NC</target>
+    </trans-unit>
+    <trans-unit id="Caption - Rif. Customer NC">
+        <source>Rif. Customer NC</source>
+        <target state="translated">Rif. NC cliente</target>
+    </trans-unit>
+    <trans-unit id="Caption - SR N (warranty N assigned)">
+        <source>SR N (warranty N assigned)</source>
+        <target state="translated">SR N (numero garanzia assegnato)</target>
+    </trans-unit>
+    <trans-unit id="Caption - Root Cause(s) - not to fulfill in case of 8D">
+        <source>Root Cause(s) - not to fulfill in case of 8D</source>
+        <target state="translated">Causa radice (non compilare in caso di 8D)</target>
+    </trans-unit>
+    <trans-unit id="Caption - Corrective action(s)">
+        <source>Corrective action(s)</source>
+        <target state="translated">Azioni correttive</target>
+    </trans-unit>
+    <trans-unit id="Caption - Link to other IP">
+        <source>Link to other IP</source>
+        <target state="translated">Collegamento ad altri IP</target>
+    </trans-unit>
+    <trans-unit id="Caption - Extra transports costs for the warranty">
+        <source>Extra transports costs for the warranty</source>
+        <target state="translated">Costi trasporti extra per garanzia</target>
+    </trans-unit>
+    <trans-unit id="Caption - Various costs of the IP">
+        <source>Various costs of the IP</source>
+        <target state="translated">Costi vari dell’IP</target>
+    </trans-unit>
+    <trans-unit id="Caption - B - Benefit/Cost (B/C) Analysis">
+        <source>B - Benefit/Cost (B/C) Analysis</source>
+        <target state="translated">B - Analisi Benefici/Costi (B/C)</target>
+    </trans-unit>
+    <trans-unit id="Caption - C - Benefit/Cost (B/C) Analysis">
+        <source>C - Benefit/Cost (B/C) Analysis</source>
+        <target state="translated">C - Analisi Benefici/Costi (B/C)</target>
+    </trans-unit>
+    <trans-unit id="Caption - Debit note and/or Returned goods">
+        <source>Debit note and/or Returned goods</source>
+        <target state="translated">Nota di debito e/o Reso</target>
+    </trans-unit>
+    <trans-unit id="Caption - Problem solving tool">
+        <source>Problem solving tool</source>
+        <target state="translated">Strumento di problem solving</target>
+    </trans-unit>
+    <trans-unit id="Caption - Source/reason of the IP">
+        <source>Source/reason of the IP</source>
+        <target state="translated">Origine/motivo dell’IP</target>
+    </trans-unit>
+    <trans-unit id="Caption - Reported by (User)">
+        <source>Reported by (User)</source>
+        <target state="translated">Segnalato da (utente)</target>
+    </trans-unit>
+    <trans-unit id="Caption - Assigned to (User)">
+        <source>Assigned to (User)</source>
+        <target state="translated">Assegnato a (utente)</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Name">
+        <source>XV IK Type</source>
+        <target state="translated">XV IK Tipo</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Name">
+        <source>XV IK Source/reason of the IP</source>
+        <target state="translated">XV IK Origine/motivo dell’IP</target>
+    </trans-unit>
+    <trans-unit id="Enum 50264 - Name">
+        <source>XV IK Problem solving tool</source>
+        <target state="translated">XV IK Strumento di problem solving</target>
+    </trans-unit>
+    <trans-unit id="Enum 50265 - Name">
+        <source>XV IK PDCA</source>
+        <target state="translated">XV IK PDCA</target>
+    </trans-unit>
+    <trans-unit id="Enum 50266 - Name">
+        <source>XV IK Warranty Reworking</source>
+        <target state="translated">XV IK Garanzia/Rilavorazione</target>
+    </trans-unit>
+    <trans-unit id="Enum 50267 - Name">
+        <source>XV IK Product family</source>
+        <target state="translated">XV IK Famiglia prodotto</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Name">
+        <source>XV IK List of the defects</source>
+        <target state="translated">XV IK Elenco difetti</target>
+    </trans-unit>
+    <trans-unit id="Enum 50269 - Name">
+        <source>XV IK 4M+D Analysis</source>
+        <target state="translated">XV IK Analisi 4M+D</target>
+    </trans-unit>
+    <trans-unit id="Enum 50270 - Name">
+        <source>XV IK Severity</source>
+        <target state="translated">XV IK Gravità</target>
+    </trans-unit>
+    <trans-unit id="Enum 50271 - Name">
+        <source>XV IK Detection</source>
+        <target state="translated">XV IK Rilevazione</target>
+    </trans-unit>
+    <trans-unit id="Enum 50272 - Name">
+        <source>XV IK Debit note Ret goods</source>
+        <target state="translated">XV IK Nota di debito/Reso</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Quality">
+        <source>Quality</source>
+        <target state="new">Quality</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Safety">
+        <source>Safety</source>
+        <target state="new">Safety</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Environment">
+        <source>Environment</source>
+        <target state="new">Environment</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - B-Corp">
+        <source>B-Corp</source>
+        <target state="new">B-Corp</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Cost reduction">
+        <source>Cost reduction</source>
+        <target state="new">Cost reduction</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Lesson learned">
+        <source>Lesson learned</source>
+        <target state="new">Lesson learned</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Minute Meeting">
+        <source>Minute Meeting</source>
+        <target state="new">Minute Meeting</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Tiers-G1">
+        <source>Tiers-G1</source>
+        <target state="new">Tiers-G1</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Tier Meeting - G2 Acquisti">
+        <source>Tier Meeting - G2 Acquisti</source>
+        <target state="new">Tier Meeting - G2 Acquisti</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Tier Meeting - G2 Operations">
+        <source>Tier Meeting - G2 Operations</source>
+        <target state="new">Tier Meeting - G2 Operations</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Tier Meeting - G2 Qualità">
+        <source>Tier Meeting - G2 Qualità</source>
+        <target state="new">Tier Meeting - G2 Qualità</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Tier Meeting - G2 Sales">
+        <source>Tier Meeting - G2 Sales</source>
+        <target state="new">Tier Meeting - G2 Sales</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Tier Meeting - G2 UT">
+        <source>Tier Meeting - G2 UT</source>
+        <target state="new">Tier Meeting - G2 UT</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Tier-G3">
+        <source>Tier-G3</source>
+        <target state="new">Tier-G3</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - Tier-S4">
+        <source>Tier-S4</source>
+        <target state="new">Tier-S4</target>
+    </trans-unit>
+    <trans-unit id="Enum 50260 - Value - WCM">
+        <source>WCM</source>
+        <target state="new">WCM</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Audit - Certification 14001">
+        <source>Audit - Certification 14001</source>
+        <target state="new">Audit - Certification 14001</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Audit - Certification 45001">
+        <source>Audit - Certification 45001</source>
+        <target state="new">Audit - Certification 45001</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Audit - Certification  IATF">
+        <source>Audit - Certification  IATF</source>
+        <target state="new">Audit - Certification  IATF</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Benefit/Cost (B/C) Analysis">
+        <source>Benefit/Cost (B/C) Analysis</source>
+        <target state="new">Benefit/Cost (B/C) Analysis</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Commerial Claim - not our responsability">
+        <source>Commerial Claim - not our responsability</source>
+        <target state="new">Commerial Claim - not our responsability</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Deviation / Concession">
+        <source>Deviation / Concession</source>
+        <target state="new">Deviation / Concession</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Internal Audit - Process">
+        <source>Internal Audit - Process</source>
+        <target state="new">Internal Audit - Process</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Internal Audit - Product">
+        <source>Internal Audit - Product</source>
+        <target state="new">Internal Audit - Product</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Internal Audit - System">
+        <source>Internal Audit - System</source>
+        <target state="new">Internal Audit - System</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Improvement">
+        <source>Improvement</source>
+        <target state="new">Improvement</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - LPA">
+        <source>LPA</source>
+        <target state="new">LPA</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Modification request">
+        <source>Modification request</source>
+        <target state="new">Modification request</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - NC Customer - official claim">
+        <source>NC Customer - official claim</source>
+        <target state="new">NC Customer - official claim</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - NC Customer - general claim">
+        <source>NC Customer - general claim</source>
+        <target state="new">NC Customer - general claim</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - NC vs Supplier">
+        <source>NC vs Supplier</source>
+        <target state="new">NC vs Supplier</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - NC Internal">
+        <source>NC Internal</source>
+        <target state="new">NC Internal</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Quality Master Plan">
+        <source>Quality Master Plan</source>
+        <target state="new">Quality Master Plan</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Safety-Incident">
+        <source>Safety-Incident</source>
+        <target state="new">Safety-Incident</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Safety-First Aid">
+        <source>Safety-First Aid</source>
+        <target state="new">Safety-First Aid</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Safety-Near Miss">
+        <source>Safety-Near Miss</source>
+        <target state="new">Safety-Near Miss</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Safety-UA (Unsafe Acts)">
+        <source>Safety-UA (Unsafe Acts)</source>
+        <target state="new">Safety-UA (Unsafe Acts)</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Safety-UC (Unsafe Conditions)">
+        <source>Safety-UC (Unsafe Conditions)</source>
+        <target state="new">Safety-UC (Unsafe Conditions)</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Test &amp; Homologation">
+        <source>Test &amp; Homologation</source>
+        <target state="new">Test &amp; Homologation</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Tips/Suggestions">
+        <source>Tips/Suggestions</source>
+        <target state="new">Tips/Suggestions</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Audit - Customer">
+        <source>Audit - Customer</source>
+        <target state="new">Audit - Customer</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Audit - Supplier">
+        <source>Audit - Supplier</source>
+        <target state="new">Audit - Supplier</target>
+    </trans-unit>
+    <trans-unit id="Enum 50262 - Value - Audit - Certification 15085">
+        <source>Audit - Certification 15085</source>
+        <target state="new">Audit - Certification 15085</target>
+    </trans-unit>
+    <trans-unit id="Enum 50264 - Value - Kaizen">
+        <source>Kaizen</source>
+        <target state="new">Kaizen</target>
+    </trans-unit>
+    <trans-unit id="Enum 50264 - Value - 8D-Supplier">
+        <source>8D-Supplier</source>
+        <target state="new">8D-Supplier</target>
+    </trans-unit>
+    <trans-unit id="Enum 50264 - Value - 8D-Customer">
+        <source>8D-Customer</source>
+        <target state="new">8D-Customer</target>
+    </trans-unit>
+    <trans-unit id="Enum 50264 - Value - Improvement Plan">
+        <source>Improvement Plan</source>
+        <target state="new">Improvement Plan</target>
+    </trans-unit>
+    <trans-unit id="Enum 50265 - Value - ○">
+        <source>○</source>
+        <target state="new">○</target>
+    </trans-unit>
+    <trans-unit id="Enum 50265 - Value - ◔">
+        <source>◔</source>
+        <target state="new">◔</target>
+    </trans-unit>
+    <trans-unit id="Enum 50265 - Value - ◑">
+        <source>◑</source>
+        <target state="new">◑</target>
+    </trans-unit>
+    <trans-unit id="Enum 50265 - Value - ◕">
+        <source>◕</source>
+        <target state="new">◕</target>
+    </trans-unit>
+    <trans-unit id="Enum 50265 - Value - ●">
+        <source>●</source>
+        <target state="new">●</target>
+    </trans-unit>
+    <trans-unit id="Enum 50266 - Value - Reworking">
+        <source>Reworking</source>
+        <target state="new">Reworking</target>
+    </trans-unit>
+    <trans-unit id="Enum 50266 - Value - Warranty">
+        <source>Warranty</source>
+        <target state="new">Warranty</target>
+    </trans-unit>
+    <trans-unit id="Enum 50266 - Value - Warranty and Reworking">
+        <source>Warranty and Reworking</source>
+        <target state="new">Warranty and Reworking</target>
+    </trans-unit>
+    <trans-unit id="Enum 50266 - Value - Neither Warranty nor Reworking">
+        <source>Neither Warranty nor Reworking</source>
+        <target state="new">Neither Warranty nor Reworking</target>
+    </trans-unit>
+    <trans-unit id="Enum 50267 - Value - CITY LIGHT">
+        <source>CITY LIGHT</source>
+        <target state="new">CITY LIGHT</target>
+    </trans-unit>
+    <trans-unit id="Enum 50267 - Value - COMPACT">
+        <source>COMPACT</source>
+        <target state="new">COMPACT</target>
+    </trans-unit>
+    <trans-unit id="Enum 50267 - Value - COMPACT RIGIDO">
+        <source>COMPACT RIGIDO</source>
+        <target state="new">COMPACT RIGIDO</target>
+    </trans-unit>
+    <trans-unit id="Enum 50267 - Value - ETHOS">
+        <source>ETHOS</source>
+        <target state="new">ETHOS</target>
+    </trans-unit>
+    <trans-unit id="Enum 50267 - Value - GT">
+        <source>GT</source>
+        <target state="new">GT</target>
+    </trans-unit>
+    <trans-unit id="Enum 50267 - Value - PRATICO">
+        <source>PRATICO</source>
+        <target state="new">PRATICO</target>
+    </trans-unit>
+    <trans-unit id="Enum 50267 - Value - SCUOLABUS">
+        <source>SCUOLABUS</source>
+        <target state="new">SCUOLABUS</target>
+    </trans-unit>
+    <trans-unit id="Enum 50267 - Value - SCHIUMATI">
+        <source>SCHIUMATI</source>
+        <target state="new">SCHIUMATI</target>
+    </trans-unit>
+    <trans-unit id="Enum 50267 - Value - TRANSITO">
+        <source>TRANSITO</source>
+        <target state="new">TRANSITO</target>
+    </trans-unit>
+    <trans-unit id="Enum 50267 - Value - Trasversale">
+        <source>Trasversale</source>
+        <target state="new">Trasversale</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D1 - Assemblaggio errato">
+        <source>D1 - Assemblaggio errato</source>
+        <target state="new">D1 - Assemblaggio errato</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D2 - Avvio - Setup macchina">
+        <source>D2 - Avvio - Setup macchina</source>
+        <target state="new">D2 - Avvio - Setup macchina</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D3 - Cintura bloccata">
+        <source>D3 - Cintura bloccata</source>
+        <target state="new">D3 - Cintura bloccata</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D4 - Cintura malfunzionante">
+        <source>D4 - Cintura malfunzionante</source>
+        <target state="new">D4 - Cintura malfunzionante</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D5 - Cintura montata male">
+        <source>D5 - Cintura montata male</source>
+        <target state="new">D5 - Cintura montata male</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D6 - Componente mancante o eccedente">
+        <source>D6 - Componente mancante o eccedente</source>
+        <target state="new">D6 - Componente mancante o eccedente</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D7 - Componente/codice errato">
+        <source>D7 - Componente/codice errato</source>
+        <target state="new">D7 - Componente/codice errato</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D8 - Criccature/rotture in seguito ad assemblaggio">
+        <source>D8 - Criccature/rotture in seguito ad assemblaggio</source>
+        <target state="new">D8 - Criccature/rotture in seguito ad assemblaggio</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D9 - Cucitura con colori errati">
+        <source>D9 - Cucitura con colori errati</source>
+        <target state="new">D9 - Cucitura con colori errati</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D10 - Cucitura Errata">
+        <source>D10 - Cucitura Errata</source>
+        <target state="new">D10 - Cucitura Errata</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D11 - Danneggiamenti durante il trasporto">
+        <source>D11 - Danneggiamenti durante il trasporto</source>
+        <target state="new">D11 - Danneggiamenti durante il trasporto</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D12 - Design">
+        <source>D12 - Design</source>
+        <target state="new">D12 - Design</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D13 - Difetto dimensionale">
+        <source>D13 - Difetto dimensionale</source>
+        <target state="new">D13 - Difetto dimensionale</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D14 - Difetto estetico su plastica">
+        <source>D14 - Difetto estetico su plastica</source>
+        <target state="new">D14 - Difetto estetico su plastica</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D15 - Errato funzionamento elettronico">
+        <source>D15 - Errato funzionamento elettronico</source>
+        <target state="new">D15 - Errato funzionamento elettronico</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D16 - Errore di distinta">
+        <source>D16 - Errore di distinta</source>
+        <target state="new">D16 - Errore di distinta</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D17 - Fodera con allineamento errato">
+        <source>D17 - Fodera con allineamento errato</source>
+        <target state="new">D17 - Fodera con allineamento errato</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D18 - Fodera danneggiata">
+        <source>D18 - Fodera danneggiata</source>
+        <target state="new">D18 - Fodera danneggiata</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D19 - Fodera lenta">
+        <source>D19 - Fodera lenta</source>
+        <target state="new">D19 - Fodera lenta</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D20 - Fodera ondulata">
+        <source>D20 - Fodera ondulata</source>
+        <target state="new">D20 - Fodera ondulata</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D21 - Fodera stretta">
+        <source>D21 - Fodera stretta</source>
+        <target state="new">D21 - Fodera stretta</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D22 - Graffi / bozze epidemiche">
+        <source>D22 - Graffi / bozze epidemiche</source>
+        <target state="new">D22 - Graffi / bozze epidemiche</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D23 - Graffi / bozze sporadiche">
+        <source>D23 - Graffi / bozze sporadiche</source>
+        <target state="new">D23 - Graffi / bozze sporadiche</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D24 - Materia prima nc (materiali ferrosi &amp; chemicals)">
+        <source>D24 - Materia prima nc (materiali ferrosi &amp; chemicals)</source>
+        <target state="new">D24 - Materia prima nc (materiali ferrosi &amp; chemicals)</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D25 - Materiale scaduto">
+        <source>D25 - Materiale scaduto</source>
+        <target state="new">D25 - Materiale scaduto</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D26 - Meccanismo malfunzionante">
+        <source>D26 - Meccanismo malfunzionante</source>
+        <target state="new">D26 - Meccanismo malfunzionante</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D27 - Non corretta identificazione">
+        <source>D27 - Non corretta identificazione</source>
+        <target state="new">D27 - Non corretta identificazione</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D28 - Packaging non conforme">
+        <source>D28 - Packaging non conforme</source>
+        <target state="new">D28 - Packaging non conforme</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D29 - Rotture per vandalismo">
+        <source>D29 - Rotture per vandalismo</source>
+        <target state="new">D29 - Rotture per vandalismo</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D30 - Saldatura NC">
+        <source>D30 - Saldatura NC</source>
+        <target state="new">D30 - Saldatura NC</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D31 - Schiumatura NC - bolle/difetti">
+        <source>D31 - Schiumatura NC - bolle/difetti</source>
+        <target state="new">D31 - Schiumatura NC - bolle/difetti</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D32 - Schiumatura NC - portanza fuori tolleranza">
+        <source>D32 - Schiumatura NC - portanza fuori tolleranza</source>
+        <target state="new">D32 - Schiumatura NC - portanza fuori tolleranza</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D33 - Taglio Errato">
+        <source>D33 - Taglio Errato</source>
+        <target state="new">D33 - Taglio Errato</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D34 - Tessuto con tonalità/texture NC">
+        <source>D34 - Tessuto con tonalità/texture NC</source>
+        <target state="new">D34 - Tessuto con tonalità/texture NC</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D35 - Verniciatura NC">
+        <source>D35 - Verniciatura NC</source>
+        <target state="new">D35 - Verniciatura NC</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - D36 - Ritardi di consegna">
+        <source>D36 - Ritardi di consegna</source>
+        <target state="new">D36 - Ritardi di consegna</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - P01 - Lack of material">
+        <source>P01 - Lack of material</source>
+        <target state="new">P01 - Lack of material</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - P02 - Logistic services">
+        <source>P02 - Logistic services</source>
+        <target state="new">P02 - Logistic services</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - P03 - Machinery breakdown">
+        <source>P03 - Machinery breakdown</source>
+        <target state="new">P03 - Machinery breakdown</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - P04 - Reworkings">
+        <source>P04 - Reworkings</source>
+        <target state="new">P04 - Reworkings</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - P05 - Samples">
+        <source>P05 - Samples</source>
+        <target state="new">P05 - Samples</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - P06 - Selections">
+        <source>P06 - Selections</source>
+        <target state="new">P06 - Selections</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - P07 - Training">
+        <source>P07 - Training</source>
+        <target state="new">P07 - Training</target>
+    </trans-unit>
+    <trans-unit id="Enum 50268 - Value - P08 - Various activities not planned">
+        <source>P08 - Various activities not planned</source>
+        <target state="new">P08 - Various activities not planned</target>
+    </trans-unit>
+    <trans-unit id="Enum 50269 - Value - Design">
+        <source>Design</source>
+        <target state="new">Design</target>
+    </trans-unit>
+    <trans-unit id="Enum 50269 - Value - Machine">
+        <source>Machine</source>
+        <target state="new">Machine</target>
+    </trans-unit>
+    <trans-unit id="Enum 50269 - Value - Man">
+        <source>Man</source>
+        <target state="new">Man</target>
+    </trans-unit>
+    <trans-unit id="Enum 50269 - Value - Material">
+        <source>Material</source>
+        <target state="new">Material</target>
+    </trans-unit>
+    <trans-unit id="Enum 50269 - Value - Methods">
+        <source>Methods</source>
+        <target state="new">Methods</target>
+    </trans-unit>
+    <trans-unit id="Enum 50270 - Value - S">
+        <source>S</source>
+        <target state="new">S</target>
+    </trans-unit>
+    <trans-unit id="Enum 50270 - Value - A">
+        <source>A</source>
+        <target state="new">A</target>
+    </trans-unit>
+    <trans-unit id="Enum 50270 - Value - B">
+        <source>B</source>
+        <target state="new">B</target>
+    </trans-unit>
+    <trans-unit id="Enum 50270 - Value - C">
+        <source>C</source>
+        <target state="new">C</target>
+    </trans-unit>
+    <trans-unit id="Enum 50270 - Value - NC Major">
+        <source>NC Major</source>
+        <target state="new">NC Major</target>
+    </trans-unit>
+    <trans-unit id="Enum 50270 - Value - NC Minor">
+        <source>NC Minor</source>
+        <target state="new">NC Minor</target>
+    </trans-unit>
+    <trans-unit id="Enum 50270 - Value - Notes during the audit">
+        <source>Notes during the audit</source>
+        <target state="new">Notes during the audit</target>
+    </trans-unit>
+    <trans-unit id="Enum 50270 - Value - Potential for improvement">
+        <source>Potential for improvement</source>
+        <target state="new">Potential for improvement</target>
+    </trans-unit>
+    <trans-unit id="Enum 50271 - Value - Incoming - First Batch or Samples">
+        <source>Incoming - First Batch or Samples</source>
+        <target state="new">Incoming - First Batch or Samples</target>
+    </trans-unit>
+    <trans-unit id="Enum 50271 - Value - Incoming">
+        <source>Incoming</source>
+        <target state="new">Incoming</target>
+    </trans-unit>
+    <trans-unit id="Enum 50271 - Value - Shopfloor">
+        <source>Shopfloor</source>
+        <target state="new">Shopfloor</target>
+    </trans-unit>
+    <trans-unit id="Enum 50271 - Value - Finish product - ready to be dispatched">
+        <source>Finish product - ready to be dispatched</source>
+        <target state="new">Finish product - ready to be dispatched</target>
+    </trans-unit>
+    <trans-unit id="Enum 50271 - Value - Customer - First Batch or Samples">
+        <source>Customer - First Batch or Samples</source>
+        <target state="new">Customer - First Batch or Samples</target>
+    </trans-unit>
+    <trans-unit id="Enum 50271 - Value - Customer - 0KM">
+        <source>Customer - 0KM</source>
+        <target state="new">Customer - 0KM</target>
+    </trans-unit>
+    <trans-unit id="Enum 50271 - Value - Customer - Warranty">
+        <source>Customer - Warranty</source>
+        <target state="new">Customer - Warranty</target>
+    </trans-unit>
+    <trans-unit id="Enum 50271 - Value - Customer - No info if 0KM or Warranty">
+        <source>Customer - No info if 0KM or Warranty</source>
+        <target state="new">Customer - No info if 0KM or Warranty</target>
+    </trans-unit>
+    <trans-unit id="Enum 50272 - Value - Debit note">
+        <source>Debit note</source>
+        <target state="new">Debit note</target>
+    </trans-unit>
+    <trans-unit id="Enum 50272 - Value - Returned goods">
+        <source>Returned goods</source>
+        <target state="new">Returned goods</target>
+    </trans-unit>
+    <trans-unit id="Enum 50272 - Value - Debit note and Returned goods">
+        <source>Debit note and Returned goods</source>
+        <target state="new">Debit note and Returned goods</target>
+    </trans-unit>
+    </body>
+  </file>
+</xliff>

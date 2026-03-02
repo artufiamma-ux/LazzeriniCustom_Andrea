@@ -16,7 +16,7 @@ table 50253 "XV IK Reclami"
         {
             Caption = 'ID';
             Editable = false;
-            NotBlank = true;
+            //    NotBlank = true;
 
             trigger OnValidate()
             begin

@@ -613,6 +613,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenVendor - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3955022879 - Action 3449595292 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Salva il reclamo/IP e genera automaticamente l'ID.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action SaveIP - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3955022879 - Action 3449595292 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Salva Reclamo/IP</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action SaveIP - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3668435157 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>MD31 Improvement plan (IP) reclamo non conformità</source>
           <note from="Developer" annotates="general" priority="2"></note>

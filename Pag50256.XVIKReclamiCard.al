@@ -212,6 +212,22 @@ page 50256 "XV IK Reclami Card"
     {
         area(processing)
         {
+            action(SaveIP)
+            {
+                Caption = 'Salva Reclamo/IP';
+                Image = Save;
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                ToolTip = 'Salva il reclamo/IP e genera automaticamente l''ID.';
+
+                trigger OnAction()
+                begin
+                    CurrPage.SaveRecord();
+                    Message('Reclamo/IP salvato correttamente.');
+                end;
+            }
             action(OpenCustomer)
             {
                 Caption = 'Apri Cliente';

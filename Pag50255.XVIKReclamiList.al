@@ -10,6 +10,7 @@ page 50255 "XV IK Reclami List"
 
     CardPageId = 50256;
     DelayedInsert = true;
+    InsertAllowed = false;
 
     layout
     {

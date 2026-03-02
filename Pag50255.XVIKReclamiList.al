@@ -7,11 +7,9 @@ page 50255 "XV IK Reclami List"
     SourceTable = "XV IK Reclami";
     UsageCategory = Lists;
     Caption = 'MD31 Improvement plan (IP) reclamo non conformità';
-    AdditionalSearchTerms = 'MD31 Improvement plan (IP) reclamo non conformità';
+
+    CardPageId = 50256;
     DelayedInsert = true;
-    CardPageId = 50256; // XV IK Reclami Card
-
-
 
     layout
     {
@@ -29,7 +27,7 @@ page 50255 "XV IK Reclami List"
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Stabilimento di riferimento in cui è stato aperto il reclamo/IP.';
+                    ToolTip = 'Stabilimento in cui è stato aperto il reclamo/IP.';
                 }
                 field("Date of the document"; Rec."Date of the document")
                 {
@@ -41,50 +39,50 @@ page 50255 "XV IK Reclami List"
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Tipologia di reclamo/IP.';
+                    ToolTip = 'Tipologia del reclamo/IP.';
                 }
                 field("Customer No."; Rec."Customer No.")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Cliente coinvolto nel reclamo (se applicabile).';
+                    ToolTip = 'Cliente coinvolto.';
                 }
                 field("Supplier No."; Rec."Supplier No.")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Fornitore coinvolto nel reclamo (se applicabile).';
+                    ToolTip = 'Fornitore coinvolto.';
                 }
                 field("Item No."; Rec."Item No.")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Articolo interessato dal reclamo.';
+                    ToolTip = 'Articolo collegato.';
                 }
                 field("Problem Description"; Rec."Problem Description")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Descrizione sintetica del problema rilevato.';
+                    ToolTip = 'Descrizione sintetica del problema.';
                 }
                 field("Severity"; Rec."Severity")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Livello di gravità del problema.';
+                    ToolTip = 'Gravità della non conformità.';
                 }
                 field("Detection"; Rec."Detection")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Punto della catena in cui è stato individuato il problema.';
+                    ToolTip = 'Punto del processo in cui è stata rilevata la non conformità.';
                 }
                 field("Deadline"; Rec."Deadline")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Scadenza per la risoluzione del reclamo.';
+                    ToolTip = 'Scadenza prevista per la chiusura del reclamo.';
                 }
                 field("PDCA"; Rec."PDCA")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Avanzamento dell’azione correttiva secondo la metodologia PDCA.';
+                    ToolTip = 'Stato PDCA delle azioni correttive.';
                 }
             }
         }

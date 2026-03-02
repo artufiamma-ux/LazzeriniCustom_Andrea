@@ -419,122 +419,122 @@
           <note from="Xliff Generator" annotates="general" priority="3">Table XV Tipo Prelievo Articoli - Field Description - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 1591006453 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Utente incaricato della gestione e risoluzione del reclamo.</source>
+          <source>Utente incaricato della risoluzione del reclamo.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Assigned to (User) - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 1756943818 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Data in cui è stato chiuso il reclamo/IP.</source>
+          <source>Data di chiusura del reclamo/IP.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Closing date of the IP - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 3731371814 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Scadenza entro cui risolvere il reclamo.</source>
+          <source>Scadenza prevista per chiudere il reclamo.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Deadline - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 3615996801 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fase del processo in cui è stato rilevato il problema.</source>
+          <source>Fase di rilevamento della non conformità.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Detection - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 3215118730 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Stadio di avanzamento PDCA dell’azione correttiva.</source>
+          <source>Stadio PDCA del reclamo.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control PDCA - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 1917761415 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Strumento/metodologia utilizzata per la risoluzione del problema (es. 8D, Kaizen, ecc.).</source>
+          <source>Tecnica usata per il problem solving (es. 8D, Kaizen).</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Problem solving tool - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 4271709816 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Utente che ha aperto il reclamo/IP.</source>
+          <source>Utente che ha aperto il reclamo.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Reported by (User) - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 3618771765 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Livello di gravità associato al problema.</source>
+          <source>Gravità del problema.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Severity - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 1169970457 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Origine o motivo principale del reclamo/IP.</source>
+          <source>Origine/motivo del reclamo.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Source/reason of the IP - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 171227389 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sezione B dell’analisi benefici/costi.</source>
+          <source>Analisi benefici/costi – Sezione B.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control B - Benefit/Cost (B/C) - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 1714833790 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Sezione C dell’analisi benefici/costi.</source>
+          <source>Analisi benefici/costi – Sezione C.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control C - Benefit/Cost (B/C) - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 3953828081 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Eventuali costi extra di trasporto imputabili alla garanzia.</source>
+          <source>Costi extra trasporto garanzia.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Extra trans costs for warranty - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 2979870840 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Costi vari associati al reclamo/IP.</source>
+          <source>Costi vari.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Various costs of the IP - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 662300628 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Azioni correttive decise per risolvere il problema.</source>
+          <source>Azioni correttive applicate.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Corrective action(s) - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 1752378088 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Indicazione se è prevista nota di debito e/o restituzione merce.</source>
+          <source>Nota di debito e/o reso.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Debit note and/or Ret goods - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 2042095386 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Collegamento ad altri reclami/IP correlati.</source>
+          <source>Collegamento ad altri reclami.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Link to other IP - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 2498838168 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Difetto rilevato sul prodotto o sul processo.</source>
+          <source>Difetto rilevato.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control List of the defects - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 222620933 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Note aggiuntive relative al reclamo.</source>
+          <source>Note aggiuntive.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Notes - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 304309256 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quantità di pezzi non conformi rilevati.</source>
+          <source>Quantità non conformi rilevate.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Quantities of the NC parts - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 2699295918 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Riferimento alla nota di credito cliente collegata (se presente).</source>
+          <source>Riferimento alla nota di credito cliente.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Rif. Customer NC - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 632769176 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Causa radice determinata nell’analisi del problema (non da compilare in caso di 8D strutturato).</source>
+          <source>Causa radice determinata.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Root Cause(s) - 8D - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 1142029560 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Numero di garanzia assegnato (se applicabile).</source>
+          <source>Numero garanzia assegnato.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control SR N (warranty N assigned) - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 532223573 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Indicazione se il caso riguarda garanzia, rilavorazione o entrambi.</source>
+          <source>Garanzia e/o rilavorazione.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Warranty and/or Reworking - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cliente coinvolto nel reclamo (se presente).</source>
+          <source>Cliente coinvolto.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Customer No. - Property ToolTip</note>
         </trans-unit>
@@ -549,27 +549,27 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 568743302 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Articolo interessato dal reclamo.</source>
+          <source>Articolo correlato.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Item No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 2614209089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Stabilimento di riferimento in cui è stato aperto il reclamo/IP.</source>
+          <source>Stabilimento in cui è stato aperto il reclamo.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Plant - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 2414822351 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Descrizione del problema riscontrato.</source>
+          <source>Descrizione dettagliata del problema.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Problem Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 3608303767 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Famiglia di prodotto cui appartiene l’articolo coinvolto.</source>
+          <source>Famiglia di prodotto.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Product family - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 1276013773 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fornitore coinvolto nel reclamo (se presente).</source>
+          <source>Fornitore coinvolto.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Supplier No. - Property ToolTip</note>
         </trans-unit>
@@ -578,70 +578,35 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Type - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 3955022879 - Action 103982547 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Crea un nuovo reclamo/IP.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action CreateNewIP - Property ToolTip</note>
-        </trans-unit>
-        <trans-unit id="Page 3955022879 - Action 103982547 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Page 3955022879 - Action 2842723727 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Nuovo Reclamo/IP</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action CreateNewIP - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3955022879 - Action 3900422490 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Apre la scheda dell’utente incaricato alla risoluzione.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenAssignedToUser - Property ToolTip</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action NewIP - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Action 3900422490 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Apri Utente (Assegnato a)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenAssignedToUser - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3955022879 - Action 2007864420 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Apre la scheda del cliente collegato.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenCustomer - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="Page 3955022879 - Action 2007864420 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Apri Cliente</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenCustomer - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3955022879 - Action 3871484529 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Apre la nota di credito cliente collegata (non contabilizzata).</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenCustomerCreditMemo - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Action 3871484529 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Apri Nota di Credito Cliente</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenCustomerCreditMemo - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3955022879 - Action 3012649835 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Apre la scheda dell’articolo interessato.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenItem - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="Page 3955022879 - Action 3012649835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Apri Articolo</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenItem - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3955022879 - Action 1440747571 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Apre la scheda dell’utente che ha aperto il reclamo.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenReportedByUser - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="Page 3955022879 - Action 1440747571 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Apri Utente (Segnalato da)</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenReportedByUser - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3955022879 - Action 672001548 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Apre la scheda del fornitore collegato.</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenVendor - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Action 672001548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Apri Fornitore</source>
@@ -653,13 +618,8 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3668435157 - Property 3863440606" size-unit="char" translate="yes" xml:space="preserve">
-          <source>MD31 Improvement plan (IP) reclamo non conformità</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Property AdditionalSearchTerms</note>
-        </trans-unit>
         <trans-unit id="Page 3668435157 - Control 4190130733 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Cliente coinvolto nel reclamo (se applicabile).</source>
+          <source>Cliente coinvolto.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Control Customer No. - Property ToolTip</note>
         </trans-unit>
@@ -669,12 +629,12 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Control Date of the document - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3668435157 - Control 3731371814 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Scadenza per la risoluzione del reclamo.</source>
+          <source>Scadenza prevista per la chiusura del reclamo.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Control Deadline - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3668435157 - Control 3615996801 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Punto della catena in cui è stato individuato il problema.</source>
+          <source>Punto del processo in cui è stata rilevata la non conformità.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Control Detection - Property ToolTip</note>
         </trans-unit>
@@ -684,37 +644,37 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Control ID - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3668435157 - Control 568743302 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Articolo interessato dal reclamo.</source>
+          <source>Articolo collegato.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Control Item No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3668435157 - Control 3215118730 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Avanzamento dell’azione correttiva secondo la metodologia PDCA.</source>
+          <source>Stato PDCA delle azioni correttive.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Control PDCA - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3668435157 - Control 2614209089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Stabilimento di riferimento in cui è stato aperto il reclamo/IP.</source>
+          <source>Stabilimento in cui è stato aperto il reclamo/IP.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Control Plant - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3668435157 - Control 2414822351 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Descrizione sintetica del problema rilevato.</source>
+          <source>Descrizione sintetica del problema.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Control Problem Description - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3668435157 - Control 3618771765 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Livello di gravità del problema.</source>
+          <source>Gravità della non conformità.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Control Severity - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3668435157 - Control 1276013773 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Fornitore coinvolto nel reclamo (se applicabile).</source>
+          <source>Fornitore coinvolto.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Control Supplier No. - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3668435157 - Control 1878130204 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Tipologia di reclamo/IP.</source>
+          <source>Tipologia del reclamo/IP.</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami List - Control Type - Property ToolTip</note>
         </trans-unit>

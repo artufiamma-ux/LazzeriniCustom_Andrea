@@ -1,5 +1,4 @@
 namespace Lazzerini;
-
 using System.Security.User;
 using Microsoft.Sales.Customer;
 using Microsoft.Purchases.Vendor;
@@ -13,6 +12,9 @@ page 50256 "XV IK Reclami Card"
     SourceTable = "XV IK Reclami";
 
 
+    DelayedInsert = true;
+    InsertAllowed = true;
+
     layout
     {
         area(content)
@@ -25,12 +27,11 @@ page 50256 "XV IK Reclami Card"
                     Editable = false;
                     ToolTip = 'Identificativo univoco generato automaticamente (YYYYMMDD + sequenza).';
                 }
-
                 field("Plant"; Rec."Plant")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Stabilimento di riferimento in cui è stato aperto il reclamo/IP.';
+                    ToolTip = 'Stabilimento in cui è stato aperto il reclamo.';
                 }
                 field("Date of the document"; Rec."Date of the document")
                 {
@@ -47,28 +48,28 @@ page 50256 "XV IK Reclami Card"
                 field("Customer No."; Rec."Customer No.")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Cliente coinvolto nel reclamo (se presente).';
+                    ToolTip = 'Cliente coinvolto.';
                 }
                 field("Supplier No."; Rec."Supplier No.")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Fornitore coinvolto nel reclamo (se presente).';
+                    ToolTip = 'Fornitore coinvolto.';
                 }
                 field("Item No."; Rec."Item No.")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Articolo interessato dal reclamo.';
+                    ToolTip = 'Articolo correlato.';
                 }
                 field("Product family"; Rec."Product family")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Famiglia di prodotto cui appartiene l’articolo coinvolto.';
+                    ToolTip = 'Famiglia di prodotto.';
                 }
                 field("Problem Description"; Rec."Problem Description")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Descrizione del problema riscontrato.';
+                    ToolTip = 'Descrizione dettagliata del problema.';
                 }
             }
 
@@ -78,52 +79,52 @@ page 50256 "XV IK Reclami Card"
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Utente che ha aperto il reclamo/IP.';
+                    ToolTip = 'Utente che ha aperto il reclamo.';
                 }
                 field("Assigned to (User)"; Rec."IP assigned to.")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Utente incaricato della gestione e risoluzione del reclamo.';
+                    ToolTip = 'Utente incaricato della risoluzione del reclamo.';
                 }
                 field("Source/reason of the IP"; Rec."Source/reason of the IP")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Origine o motivo principale del reclamo/IP.';
+                    ToolTip = 'Origine/motivo del reclamo.';
                 }
                 field("Problem solving tool"; Rec."Problem solving tool")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Strumento/metodologia utilizzata per la risoluzione del problema (es. 8D, Kaizen, ecc.).';
+                    ToolTip = 'Tecnica usata per il problem solving (es. 8D, Kaizen).';
                 }
                 field("PDCA"; Rec."PDCA")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Stadio di avanzamento PDCA dell’azione correttiva.';
+                    ToolTip = 'Stadio PDCA del reclamo.';
                 }
                 field("Severity"; Rec."Severity")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Livello di gravità associato al problema.';
+                    ToolTip = 'Gravità del problema.';
                 }
                 field("Detection"; Rec."Detection")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Fase del processo in cui è stato rilevato il problema.';
+                    ToolTip = 'Fase di rilevamento della non conformità.';
                 }
                 field("Deadline"; Rec."Deadline")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Scadenza entro cui risolvere il reclamo.';
+                    ToolTip = 'Scadenza prevista per chiudere il reclamo.';
                 }
                 field("Closing date of the IP"; Rec."Closing date of the IP")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Data in cui è stato chiuso il reclamo/IP.';
+                    ToolTip = 'Data di chiusura del reclamo/IP.';
                 }
             }
 
@@ -132,52 +133,52 @@ page 50256 "XV IK Reclami Card"
                 field("List of the defects"; Rec."List of the defects")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Difetto rilevato sul prodotto o sul processo.';
+                    ToolTip = 'Difetto rilevato.';
                 }
                 field("Quantities of the NC parts"; Rec."Quantities of the NC parts")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Quantità di pezzi non conformi rilevati.';
+                    ToolTip = 'Quantità non conformi rilevate.';
                 }
                 field("Rif. Customer NC"; Rec."Rif. Customer NC")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Riferimento alla nota di credito cliente collegata (se presente).';
+                    ToolTip = 'Riferimento alla nota di credito cliente.';
                 }
                 field("SR N (warranty N assigned)"; Rec."SR N (warranty N assigned)")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Numero di garanzia assegnato (se applicabile).';
+                    ToolTip = 'Numero garanzia assegnato.';
                 }
                 field("Root Cause(s) - 8D"; Rec."Root Cause(s) - 8D")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Causa radice determinata nell’analisi del problema (non da compilare in caso di 8D strutturato).';
+                    ToolTip = 'Causa radice determinata.';
                 }
                 field("Corrective action(s)"; Rec."Corrective action(s)")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Azioni correttive decise per risolvere il problema.';
+                    ToolTip = 'Azioni correttive applicate.';
                 }
                 field("Link to other IP"; Rec."Link to other IP")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Collegamento ad altri reclami/IP correlati.';
+                    ToolTip = 'Collegamento ad altri reclami.';
                 }
                 field("Notes"; Rec."Notes")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Note aggiuntive relative al reclamo.';
+                    ToolTip = 'Note aggiuntive.';
                 }
                 field("Warranty and/or Reworking"; Rec."Warranty and/or Reworking")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Indicazione se il caso riguarda garanzia, rilavorazione o entrambi.';
+                    ToolTip = 'Garanzia e/o rilavorazione.';
                 }
                 field("Debit note and/or Ret goods"; Rec."Debit note and/or Ret goods")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Indicazione se è prevista nota di debito e/o restituzione merce.';
+                    ToolTip = 'Nota di debito e/o reso.';
                 }
             }
 
@@ -186,22 +187,22 @@ page 50256 "XV IK Reclami Card"
                 field("Extra trans costs for warranty"; Rec."Extra trans costs for warranty")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Eventuali costi extra di trasporto imputabili alla garanzia.';
+                    ToolTip = 'Costi extra trasporto garanzia.';
                 }
                 field("Various costs of the IP"; Rec."Various costs of the IP")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Costi vari associati al reclamo/IP.';
+                    ToolTip = 'Costi vari.';
                 }
                 field("B - Benefit/Cost (B/C)"; Rec."B - Benefit/Cost (B/C)")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Sezione B dell’analisi benefici/costi.';
+                    ToolTip = 'Analisi benefici/costi – Sezione B.';
                 }
                 field("C - Benefit/Cost (B/C)"; Rec."C - Benefit/Cost (B/C)")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Sezione C dell’analisi benefici/costi.';
+                    ToolTip = 'Analisi benefici/costi – Sezione C.';
                 }
             }
         }
@@ -216,7 +217,6 @@ page 50256 "XV IK Reclami Card"
                 Caption = 'Apri Cliente';
                 ApplicationArea = All;
                 Image = Customer;
-                ToolTip = 'Apre la scheda del cliente collegato.';
                 Enabled = Rec."Customer No." <> '';
                 trigger OnAction()
                 var
@@ -232,7 +232,6 @@ page 50256 "XV IK Reclami Card"
                 Caption = 'Apri Fornitore';
                 ApplicationArea = All;
                 Image = Vendor;
-                ToolTip = 'Apre la scheda del fornitore collegato.';
                 Enabled = Rec."Supplier No." <> '';
                 trigger OnAction()
                 var
@@ -248,7 +247,6 @@ page 50256 "XV IK Reclami Card"
                 Caption = 'Apri Articolo';
                 ApplicationArea = All;
                 Image = Item;
-                ToolTip = 'Apre la scheda dell’articolo interessato.';
                 Enabled = Rec."Item No." <> '';
                 trigger OnAction()
                 var
@@ -264,13 +262,11 @@ page 50256 "XV IK Reclami Card"
                 Caption = 'Apri Nota di Credito Cliente';
                 ApplicationArea = All;
                 Image = Navigate;
-                ToolTip = 'Apre la nota di credito cliente collegata (non contabilizzata).';
                 Enabled = Rec."Rif. Customer NC" <> '';
                 trigger OnAction()
                 var
                     SH: Record "Sales Header";
                 begin
-                    SH.Reset();
                     SH.SetRange("Document Type", SH."Document Type"::"Credit Memo");
                     SH.SetRange("No.", Rec."Rif. Customer NC");
                     if SH.FindFirst() then
@@ -283,7 +279,6 @@ page 50256 "XV IK Reclami Card"
                 Caption = 'Apri Utente (Segnalato da)';
                 ApplicationArea = All;
                 Image = User;
-                ToolTip = 'Apre la scheda dell’utente che ha aperto il reclamo.';
                 Enabled = Rec."IP opened by" <> '';
                 trigger OnAction()
                 var
@@ -299,7 +294,6 @@ page 50256 "XV IK Reclami Card"
                 Caption = 'Apri Utente (Assegnato a)';
                 ApplicationArea = All;
                 Image = User;
-                ToolTip = 'Apre la scheda dell’utente incaricato alla risoluzione.';
                 Enabled = Rec."IP assigned to." <> '';
                 trigger OnAction()
                 var
@@ -309,22 +303,17 @@ page 50256 "XV IK Reclami Card"
                         Page.Run(Page::"User Setup", US);
                 end;
             }
-            /*
-                        action(CreateNewIP)
-                        {
-                            Caption = 'Nuovo Reclamo/IP';
-                            ApplicationArea = All;
-                            Image = NewDocument;
-                            ToolTip = 'Crea un nuovo reclamo/IP.';
-                            trigger OnAction()
-                            var
-                                NewRec: Record "XV IK Reclami";
-                            begin
-                                NewRec.Init();
-                                Page.Run(Page::"XV IK Reclami Card", NewRec);
-                            end;
-                        }
-            */
+
+            action(NewIP)
+            {
+                Caption = 'Nuovo Reclamo/IP';
+                ApplicationArea = All;
+                Image = NewDocument;
+                trigger OnAction()
+                begin
+                    Page.RunModal(Page::"XV IK Reclami Card");
+                end;
+            }
         }
     }
 }

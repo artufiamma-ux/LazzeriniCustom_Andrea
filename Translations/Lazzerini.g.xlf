@@ -193,6 +193,41 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Reclami - Field Warranty and/or Reworking - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3857845211 - Field 4110714008 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attached File</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Reclami Doc - Field Attached File - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3857845211 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Reclami Doc - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3857845211 - Field 580412389 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Reclami Doc - Field Document Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3857845211 - Field 2363328873 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document Type</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Reclami Doc - Field Document Type - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3857845211 - Field 699365837 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documento Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Reclami Doc - Field Documento Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3857845211 - Field 804481195 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>File Name</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Reclami Doc - Field File Name - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3857845211 - Field 380925138 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reclamo ID</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Reclami Doc - Field Reclamo ID - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2224452237 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>XV IK Strumenti di Misura</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -544,7 +579,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Date of the document - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 3641927271 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Identificativo univoco generato automaticamente (YYYYMMDD + sequenza).</source>
+          <source>-&gt; Identificativo univoco generato automaticamente (YYYYMMDD + sequenza).</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control ID - Property ToolTip</note>
         </trans-unit>
@@ -598,6 +633,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenCustomerCreditMemo - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3955022879 - Action 313983980 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Inserisce i documenti allegati al reclamo/IP.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenDocuments - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3955022879 - Action 313983980 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Aggiungi documento</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenDocuments - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 3955022879 - Action 3012649835 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Apri Articolo</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -622,6 +667,51 @@
           <source>Salva Reclamo/IP</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action SaveIP - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3411461471 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Documento Reclamo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card Doc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3411461471 - Control 3985449205 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allegato Caricato</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card Doc - Control HasAttachment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3411461471 - Action 3445273183 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Seleziona un file dal tuo computer per allegarlo.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card Doc - Action AttachFile - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 3411461471 - Action 3445273183 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allega file</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card Doc - Action AttachFile - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3411461471 - Action 632492012 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Rimuovi Allegato</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card Doc - Action DeleteAttachment - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 3411461471 - Action 2787516006 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Scarica Allegato</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card Doc - Action DownloadFile - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 338711752 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Allegati</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Doc ListPart - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 338711752 - Action 3312338435 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Elimina Allegato</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Doc ListPart - Action DeleteDoc - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 338711752 - Action 593408208 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Scarica</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Doc ListPart - Action Download - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3668435157 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>MD31 Improvement plan (IP) reclamo non conformità</source>
@@ -2257,6 +2347,51 @@
           <source>Dismesso</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Stato - EnumValue Dismesso - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1844352238 - EnumValue 2661699037 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>8D from the customer web portal</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Allegato Reclami - EnumValue 8D from the customer web portal - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1844352238 - EnumValue 2468353532 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>8D received from the supplier</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Allegato Reclami - EnumValue 8D received from the supplier - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1844352238 - EnumValue 3884244931 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Deviation / Concersion</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Allegato Reclami - EnumValue Deviation / Concersion - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1844352238 - EnumValue 1285973296 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Email</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Allegato Reclami - EnumValue Email - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1844352238 - EnumValue 2569984900 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Evidences</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Allegato Reclami - EnumValue Evidences - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1844352238 - EnumValue 1071049038 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Kaizen</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Allegato Reclami - EnumValue Kaizen - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1844352238 - EnumValue 4270928187 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>NC received from the customer</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Allegato Reclami - EnumValue NC received from the customer - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1844352238 - EnumValue 2922682000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Photo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Allegato Reclami - EnumValue Photo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Enum 1844352238 - EnumValue 2272996601 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tecnical spec. / drawing</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Enum XV IK Tipo Allegato Reclami - EnumValue Tecnical spec. / drawing - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 2561490501 - EnumValue 1371923692 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source> </source>

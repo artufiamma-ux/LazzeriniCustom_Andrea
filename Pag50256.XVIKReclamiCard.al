@@ -36,7 +36,7 @@ page 50256 "XV IK Reclami Card"
                 {
                     ApplicationArea = All;
                     Editable = false;
-                    ToolTip = 'Identificativo univoco generato automaticamente (YYYYMMDD + sequenza).';
+                    ToolTip = '-> Identificativo univoco generato automaticamente (YYYYMMDD + sequenza).';
                 }
                 field("Plant"; Rec."Plant")
                 {
@@ -217,6 +217,15 @@ page 50256 "XV IK Reclami Card"
                     ToolTip = 'Analisi benefici/costi – Sezione C.';
                 }
             }
+            group("Allegati Reclamo")
+            {
+                part(Allegati; "XV IK Reclami Doc ListPart")
+                {
+                    ApplicationArea = All;
+                    SubPageView = where("Reclamo ID" = filter(<> ''));
+                    SubPageLink = "Reclamo ID" = field(ID);
+                }
+            }
         }
     }
 
@@ -234,10 +243,38 @@ page 50256 "XV IK Reclami Card"
                 PromotedIsBig = true;
                 ToolTip = 'Salva il reclamo/IP e genera automaticamente l''ID.';
 
+
                 trigger OnAction()
                 begin
                     CurrPage.SaveRecord();
                     Message('Reclamo/IP salvato correttamente.');
+                end;
+                /*
+                                trigger OnAction()
+                                begin
+                                    CurrPage.SaveRecord();
+                                    Message('Reclamo/IP salvato correttamente.');
+                                end;
+                */
+            }
+            action(OpenDocuments)
+            {
+                Enabled = Rec.ID <> '';
+                Caption = 'Aggiungi documento';
+                ApplicationArea = All;
+                Image = Document;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                ToolTip = 'Inserisce i documenti allegati al reclamo/IP.';
+
+
+                trigger OnAction()
+                var
+                    DocPage: Page "XV IK Reclami Card Doc";
+                begin
+                    DocPage.SetReclamoID(Rec.ID);    // PASSA l'ID del reclamo
+                    DocPage.RunModal();
                 end;
             }
             action(OpenCustomer)
@@ -344,4 +381,45 @@ page 50256 "XV IK Reclami Card"
             }
         }
     }
+    var
+        ParentReclamoID: Code[100];
+
+    procedure SetReclamoID(NewID: Code[100])
+    begin
+        ParentReclamoID := NewID;
+    end;
+
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        // Valori di default visibili subito all’utente
+        if Rec."Date of the document" = 0D then
+            Rec.Validate("Date of the document", WorkDate()); // o Today()
+
+        if Rec."IP opened by" = '' then
+            Rec.Validate("IP opened by", UserId());
+    end;
+
+    trigger OnOpenPage()
+    begin
+        //DeleteOrphanDocs();
+        if Rec."IP opened by" = '' then
+            Rec."IP opened by" := UserId();
+        if Rec."Date of the document" = 0D then begin
+            Rec."Date of the document" := WorkDate();
+        end;
+    end;
+
+    procedure DeleteOrphanDocs()
+    var
+        Doc: Record "XV IK Reclami Doc";
+    begin
+        Doc.Reset();
+
+        if Doc.FindSet(true) then
+            repeat
+                Doc.Delete(true);
+            until Doc.Next() = 0;
+
+        Message('Record orfani eliminati.');
+    end;
 }

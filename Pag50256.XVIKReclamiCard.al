@@ -10,10 +10,21 @@ page 50256 "XV IK Reclami Card"
     PageType = Card;
     ApplicationArea = All;
     SourceTable = "XV IK Reclami";
-
+    // UsageCategory = Tasks;
 
     DelayedInsert = true;
     InsertAllowed = true;
+    /*
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        // Valori di default visibili subito all’utente
+        if Rec."Date of the document" = 0D then
+            Rec.Validate("Date of the document", WorkDate()); // o Today()
+
+        if Rec."IP opened by" = '' then
+            Rec.Validate("IP opened by", UserId());
+    end;
+    */
 
     layout
     {
@@ -71,6 +82,7 @@ page 50256 "XV IK Reclami Card"
                     ShowMandatory = true;
                     ToolTip = 'Descrizione dettagliata del problema.';
                 }
+
             }
 
             group(Assignment)

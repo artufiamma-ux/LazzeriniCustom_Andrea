@@ -36,6 +36,7 @@ table 50253 "XV IK Reclami"
         {
             Caption = 'Date of the document';
             NotBlank = true;
+            //InitValue = WorkDate;
         }
 
         field(4; "Type"; Enum "XV IK Type")
@@ -55,6 +56,7 @@ table 50253 "XV IK Reclami"
             Caption = 'Reported by (User)';
             TableRelation = "User Setup"."User ID";
             NotBlank = true;
+            // InitValue = UserId;
         }
 
         field(7; "Source/reason of the IP"; Enum "XV IK Source/reason of the IP")
@@ -210,7 +212,6 @@ table 50253 "XV IK Reclami"
             Clustered = true;
         }
     }
-
     trigger OnInsert()
     var
         Rec2: Record "XV IK Reclami";
@@ -219,28 +220,30 @@ table 50253 "XV IK Reclami"
         SeqTxt: Text[10];
         NextSeq: Integer;
     begin
+        // Default data (se vuota)
+        if "Date of the document" = 0D then
+            "Date of the document" := WorkDate(); // o Today()
+
+        // Default utente (se vuoto)
+        if "IP opened by" = '' then
+            "IP opened by" := UserId();
+
+        // --- Generazione ID (come già avevamo) ---
         if ID = '' then begin
-
-            // FORMATO CORRETTO SENZA HTML: YYYYMMDD
             TodayTxt := Format(Today(), 0, '<Year4><Month,2><Day,2>');
-
             Rec2.Reset();
             Rec2.SetCurrentKey(ID);
-            Rec2.SetFilter(ID, TodayTxt + '*');  // cerca ultimi ID della stessa data
-
+            Rec2.SetFilter(ID, TodayTxt + '*');
             if Rec2.FindLast() then begin
                 LastID := Rec2.ID;
                 SeqTxt := CopyStr(LastID, StrLen(TodayTxt) + 1);
                 if SeqTxt <> '' then
                     Evaluate(NextSeq, SeqTxt);
             end;
-
             NextSeq += 1;
             SeqTxt := Format(NextSeq);
-
             if StrLen(SeqTxt) < 4 then
                 SeqTxt := PadStr('', 4 - StrLen(SeqTxt), '0') + SeqTxt;
-
             ID := TodayTxt + SeqTxt;
         end;
     end;

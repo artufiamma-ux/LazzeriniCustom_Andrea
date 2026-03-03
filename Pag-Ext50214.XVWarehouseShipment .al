@@ -83,10 +83,10 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
 
                 trigger OnAction()
                 var
-                    ParamPage: Page "XV Parametri Etichette";
+                    Report50202: Report "XV Etichette UDC";
                 begin
-                    ParamPage.SetShipmentNo(Rec."No.");
-                    ParamPage.RunModal();
+                    // Esegue il report
+                    Report50202.Run();
                 end;
             }
         }

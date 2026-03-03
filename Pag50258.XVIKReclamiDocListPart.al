@@ -35,6 +35,7 @@ page 50258 "XV IK Reclami Doc ListPart"
                 var
                     InStr: InStream;
                 begin
+                    Rec.CalcFields("Attached File");
                     if not Rec."Attached File".HasValue then
                         Error('Nessun file presente.');
 

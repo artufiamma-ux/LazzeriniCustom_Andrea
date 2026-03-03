@@ -67,7 +67,7 @@ page 50257 "XV IK Reclami Card Doc"
                         FileNameTxt: Text;
                         ok: Boolean;
                     begin
-                        Message('AssistEdit avviato.'); // diagnostica (puoi rimuoverlo a regime)
+                        //Message('AssistEdit avviato.'); // diagnostica (puoi rimuoverlo a regime)
 
                         ok := UploadIntoStream('Seleziona file da allegare', '', '', FileNameTxt, InStr);
                         if not ok then begin

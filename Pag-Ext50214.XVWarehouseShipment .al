@@ -72,6 +72,24 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                 end;
             }
         }
+
+        addafter(ControllaIntegritaSerie) // lo mette accanto a Stampa e Invia
+        {
+            action(StampaEtichetteBasamenti)
+            {
+                Caption = 'Genera dettaglio colli spedizioni';
+                ApplicationArea = All;
+                Image = Print;
+
+                trigger OnAction()
+                var
+                    ParamPage: Page "XV Parametri Etichette";
+                begin
+                    ParamPage.SetShipmentNo(Rec."No.");
+                    ParamPage.RunModal();
+                end;
+            }
+        }
     }
 
 }

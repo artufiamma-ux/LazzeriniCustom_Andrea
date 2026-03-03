@@ -322,63 +322,67 @@ page 50256 "XV IK Reclami Card"
                 end;
             }
 
-            action(OpenCustomerCreditMemo)
+            action(OpenCustomerOrder)
             {
-                Caption = 'Apri Nota di Credito Cliente';
+                Caption = 'Apri Ordini Cliente';
                 ApplicationArea = All;
-                Image = Navigate;
-                Enabled = Rec."Rif. Customer NC" <> '';
+                Image = OrderList;
+                Enabled = Rec."Customer No." <> '';
                 trigger OnAction()
                 var
-                    SH: Record "Sales Header";
+                    SO: Record "Sales Header";
                 begin
-                    SH.SetRange("Document Type", SH."Document Type"::"Credit Memo");
-                    SH.SetRange("No.", Rec."Rif. Customer NC");
-                    if SH.FindFirst() then
-                        Page.Run(Page::"Sales Credit Memo", SH);
+                    SO.SetRange("Bill-to Customer No.", Rec."Customer No.");
+                    //SO.SetRange("Document Type", SO."Document Type"::Order);
+                    //SO.SetRange("No.", Rec."Rif. Customer NC");
+                    if SO.FindFirst() then
+                        Page.Run(Page::"Sales Order List", SO)
+                    else
+                        Message('Nessun ordine cliente trovato per il cliente %1.', Rec."Customer No.");
                 end;
             }
+            /*
+                        action(OpenReportedByUser)
+                        {
+                            Caption = 'Apri Utente (Segnalato da)';
+                            ApplicationArea = All;
+                            Image = User;
+                            Enabled = Rec."IP opened by" <> '';
+                            trigger OnAction()
+                            var
+                                US: Record "User Setup";
+                            begin
+                                if US.Get(Rec."IP opened by") then
+                                    Page.Run(Page::"User Setup", US);
+                            end;
+                        }
 
-            action(OpenReportedByUser)
-            {
-                Caption = 'Apri Utente (Segnalato da)';
-                ApplicationArea = All;
-                Image = User;
-                Enabled = Rec."IP opened by" <> '';
-                trigger OnAction()
-                var
-                    US: Record "User Setup";
-                begin
-                    if US.Get(Rec."IP opened by") then
-                        Page.Run(Page::"User Setup", US);
-                end;
-            }
+                        action(OpenAssignedToUser)
+                        {
+                            Caption = 'Apri Utente (Assegnato a)';
+                            ApplicationArea = All;
+                            Image = User;
+                            Enabled = Rec."IP assigned to." <> '';
+                            trigger OnAction()
+                            var
+                                US: Record "User Setup";
+                            begin
+                                if US.Get(Rec."IP assigned to.") then
+                                    Page.Run(Page::"User Setup", US);
+                            end;
+                        }
 
-            action(OpenAssignedToUser)
-            {
-                Caption = 'Apri Utente (Assegnato a)';
-                ApplicationArea = All;
-                Image = User;
-                Enabled = Rec."IP assigned to." <> '';
-                trigger OnAction()
-                var
-                    US: Record "User Setup";
-                begin
-                    if US.Get(Rec."IP assigned to.") then
-                        Page.Run(Page::"User Setup", US);
-                end;
-            }
-
-            action(NewIP)
-            {
-                Caption = 'Nuovo Reclamo/IP';
-                ApplicationArea = All;
-                Image = NewDocument;
-                trigger OnAction()
-                begin
-                    Page.RunModal(Page::"XV IK Reclami Card");
-                end;
-            }
+                                    action(NewIP)
+                                    {
+                                        Caption = 'Nuovo Reclamo/IP';
+                                        ApplicationArea = All;
+                                        Image = NewDocument;
+                                        trigger OnAction()
+                                        begin
+                                            Page.RunModal(Page::"XV IK Reclami Card");
+                                        end;
+                                    }
+                        */
         }
     }
     var

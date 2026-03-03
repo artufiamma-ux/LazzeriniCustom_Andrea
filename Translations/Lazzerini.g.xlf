@@ -613,25 +613,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Control Type - Property ToolTip</note>
         </trans-unit>
-        <trans-unit id="Page 3955022879 - Action 2842723727 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Nuovo Reclamo/IP</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action NewIP - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3955022879 - Action 3900422490 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Apri Utente (Assegnato a)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenAssignedToUser - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 3955022879 - Action 2007864420 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Apri Cliente</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenCustomer - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 3955022879 - Action 3871484529 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Apri Nota di Credito Cliente</source>
+        <trans-unit id="Page 3955022879 - Action 1416292698 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Apri Ordini Cliente</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenCustomerCreditMemo - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenCustomerOrder - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Action 313983980 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Inserisce i documenti allegati al reclamo/IP.</source>
@@ -647,11 +637,6 @@
           <source>Apri Articolo</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenItem - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 3955022879 - Action 1440747571 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Apri Utente (Segnalato da)</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Card - Action OpenReportedByUser - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Action 672001548 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Apri Fornitore</source>
@@ -702,11 +687,6 @@
           <source>Allegati</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Doc ListPart - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 338711752 - Action 3312338435 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Elimina Allegato</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV IK Reclami Doc ListPart - Action DeleteDoc - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 338711752 - Action 593408208 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Scarica</source>
@@ -1132,6 +1112,11 @@
           <source>Controlla integrità serie</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XVWarehouseShipment - Action ControllaIntegritaSerie - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2897141477 - Action 3976960125 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2938519335">
+          <source>Genera dettaglio colli spedizioni</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XVWarehouseShipment - Action StampaEtichetteBasamenti - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 3260845341 - Field 880522992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 400793991">
           <source>Tipo Prelievo</source>
@@ -2752,6 +2737,41 @@
           <source>Value</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn Value - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 568934500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parametri Stampa Etichette</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 568934500 - Control 1289609885 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nr Totale Pallet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Control NrTotalePallet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 568934500 - Control 3432561997 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nr Totale Serie</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Control NrTotaleSerie - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 568934500 - Control 1999960000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Numero Copie UDC</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Control NumeroCopieUDC - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 568934500 - Control 1917296628 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stampa Basamenti</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Control StampaBasamenti - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 568934500 - Action 3179495675 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Anteprima</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Action Anteprima - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 568934500 - Action 2340409342 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stampa</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Action Stampa - Property Caption</note>
         </trans-unit>
       </group>
     </body>

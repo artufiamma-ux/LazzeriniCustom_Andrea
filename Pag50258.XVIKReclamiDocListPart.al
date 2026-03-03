@@ -43,18 +43,19 @@ page 50258 "XV IK Reclami Doc ListPart"
                     DownloadFromStream(InStr, 'Scarica', '', '', Rec."File Name");
                 end;
             }
+            /*
+                        action(DeleteDoc)
+                        {
+                            Caption = 'Elimina Allegato';
+                            Image = Delete;
 
-            action(DeleteDoc)
-            {
-                Caption = 'Elimina Allegato';
-                Image = Delete;
-
-                trigger OnAction()
-                begin
-                    if Confirm('Eliminare il documento e il relativo file?', false) then
-                        Rec.Delete(true);
-                end;
-            }
+                            trigger OnAction()
+                            begin
+                                if Confirm('Eliminare il documento e il relativo file?', false) then
+                                    Rec.Delete(true);
+                            end;
+                        }
+            */
         }
     }
 }

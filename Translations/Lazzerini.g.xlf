@@ -2738,40 +2738,30 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn Value - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 568934500 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Parametri Stampa Etichette</source>
+        <trans-unit id="Report 1824809665 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Etichette UDC</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichette UDC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 568934500 - Control 1289609885 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Nr Totale Pallet</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Control NrTotalePallet - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 568934500 - Control 3432561997 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Nr Totale Serie</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Control NrTotaleSerie - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 568934500 - Control 1999960000 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1824809665 - Control 3391231706 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Numero Copie UDC</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Control NumeroCopieUDC - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichette UDC - Control NrCopieUDC - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 568934500 - Control 1917296628 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Report 1824809665 - Control 1289609885 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nr Totale Pallet</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichette UDC - Control NrTotalePallet - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1824809665 - Control 3432561997 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Nr Totale Serie</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichette UDC - Control NrTotaleSerie - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1824809665 - Control 1917296628 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Stampa Basamenti</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Control StampaBasamenti - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 568934500 - Action 3179495675 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Anteprima</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Action Anteprima - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 568934500 - Action 2340409342 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Stampa</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV Parametri Etichette - Action Stampa - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichette UDC - Control StampaBasamenti - Property Caption</note>
         </trans-unit>
       </group>
     </body>

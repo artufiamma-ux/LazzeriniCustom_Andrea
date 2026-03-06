@@ -6,11 +6,12 @@ tableextension 50214 XVWarehouseShipmentHeader extends "Warehouse Shipment Heade
 {
     fields
     {
-        field(50100; "Tipo Prelievo"; Code[20])
+        field(50100; "Tipo Prelievo"; Enum "XV Tipo Prelievo WSH")
         {
             Caption = 'Tipo Prelievo';
             DataClassification = ToBeClassified;
-            TableRelation = "XV Tipo Prelievo";
+            InitValue = Standard;
+
         }
         field(50101; "Tipo Ordine"; Code[20])
         {

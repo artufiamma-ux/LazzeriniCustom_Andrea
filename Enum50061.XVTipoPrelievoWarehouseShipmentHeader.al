@@ -14,6 +14,6 @@ enum 50061 "XV Tipo Prelievo WSH"
     }
     value(2; CDK)
     {
-        Caption = 'CDK';
+        Caption = 'CKD';
     }
 }

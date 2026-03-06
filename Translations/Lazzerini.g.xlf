@@ -2689,7 +2689,7 @@
           <note from="Xliff Generator" annotates="general" priority="3">Enum XV Tipo Prelievo Item - EnumValue none - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 3315695314 - EnumValue 624866288 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>CDK</source>
+          <source>CKD</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Enum XV Tipo Prelievo WSH - EnumValue CDK - Property Caption</note>
         </trans-unit>

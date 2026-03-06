@@ -26,17 +26,17 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             column(ACCOMPAGNATORIA; ACCOMPAGNATORIA) { }
             column(TipoDocumento; GetTipoDocumento(ACCOMPAGNATORIA, "Sell-to Country/Region Code")) { }
             column(Tariff_No_; "Service Tariff No.") { }
-            column(TariffNo_lbl; GetCustomLabel('Tariff No./Num Tariffa')) { }
+            column(TariffNo_lbl; GetCustomLabel('Tariff No.')) { }
 
             column(VATBaseTotal_lbl; "TotalVATBaseLCY") { }
 
             // column(DueDateLbl; GetCustomLabel('Due Date/Data scadenza')) { }
-            column(TypePaymentCaptionLbl; GetCustomLabel('Type Payment Caption/Tipo Pagamento')) { }
-            column(AmountLbl; GetCustomLabel('Amount/Importo')) { }
-            column(VATBaseLbl; GetCustomLabel('VAT Base/Base IVA')) { }
+            column(TypePaymentCaptionLbl; GetCustomLabel('Type Payment Caption')) { }
+            column(AmountLbl; GetCustomLabel('Amount')) { }
+            column(VATBaseLbl; GetCustomLabel('VAT Base')) { }
             column(VATTotalLbl; "TotalAmountVAT") { }
             column(CurrencyLbl; "Currency Code") { }
-            column(TotalAmountLbl; GetCustomLabel('Total Amount/Importo Totale')) { }
+            column(TotalAmountLbl; GetCustomLabel('Total Amount')) { }
 
 
             column(ShippingNotes; "Work Description") { }
@@ -105,6 +105,9 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
 
 
     }
+    var
+        IsForeign: Boolean;
+
     local procedure GetTariffNo(ItemNo: Code[20]): Code[20]
     var
         ItemRec: Record Item;
@@ -126,6 +129,7 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
     local procedure GetTipoDocumento(ACCOMPAGNATORIA: Boolean; SellToCountryCode: Code[10]): Text[100]
     var
     begin
+        IsForeign := SellToCountryCode <> 'IT';
         if SellToCountryCode = 'IT' then
             if ACCOMPAGNATORIA then
                 exit('INVOICE & DELIVERY NOTE') // NON ESISTONO ITALIANI - SOLO DOGANA
@@ -140,10 +144,36 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
     end;
 
     local procedure GetCustomLabel(LabelName: Text): Text
+    var
+        langLbl: Text[100];
     begin
-        if LabelName = 'Tariff No.' then
-            exit('Tariff No.');
-        exit(LabelName);
+        langLbl := LabelName;
+        if isForeign then
+            case LabelName of
+                'Tariff No.':
+                    exit('Tariff No.');
+                'Type Payment Caption':
+                    exit('Type Payment Caption');
+                'Amount':
+                    exit('Amount');
+                'VAT Base':
+                    exit('VAT Base');
+                else
+                    exit(LabelName);
+            end
+        else
+            case LabelName of
+                'Tariff No.':
+                    exit('Numero Tariffa');
+                'Type Payment Caption':
+                    exit('Tipo Pagamento');
+                'Amount':
+                    exit('Importo');
+                'VAT Base':
+                    exit('Base IVA');
+                else
+                    exit(LabelName);
+            end
     end;
 
     local procedure GetCustomValue(LabelName: Text): Text

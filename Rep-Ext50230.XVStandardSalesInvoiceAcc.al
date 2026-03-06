@@ -72,6 +72,14 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             column(NrColli; GetNrColli("No.")) { Caption = 'Numero colli'; }
             column(Freight; GetFreight("No.")) { Caption = 'Freight'; }
             column(Forwarder; GetForwarder("Shipping Agent Code")) { Caption = 'Spedizioniere'; }
+            column(XVOurCodeLbl; GetCustomLabel('Our Code No.')) { }
+            column(XVCustomCodeLbl; GetCustomLabel('Custom Code No.')) { }
+            column(XVDescItemLbl; GetCustomLabel('Description')) { }
+            column(XVUomLbl; GetCustomLabel('UoM')) { }
+            column(XVQtyLbl; GetCustomLabel('Q.ty')) { }
+            column(XVUnitPriceLbl; GetCustomLabel('Unit Price')) { }
+            column(XVAmountItemLbl; GetCustomLabel('Amount')) { }
+            column(XVVatIdItemLbl; GetCustomLabel('VATId.')) { }
 
 
         }
@@ -178,7 +186,7 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
 
     local procedure GetCustomValue(LabelName: Text): Text
     begin
-        exit('   ');
+        exit(LabelName);
     end;
 
     local procedure GetDueDateFromPaymentTerms(PaymentTermsCode: Code[10]; Position: Integer): Date

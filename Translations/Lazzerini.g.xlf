@@ -1323,10 +1323,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Sales Line - Field xv Progressivo Kit Bus - Property Caption</note>
         </trans-unit>
-        <trans-unit id="TableExtension 2719667458 - Field 653936593 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3118382297">
-          <source>Cod valura proforma</source>
+        <trans-unit id="TableExtension 2719667458 - Field 558127843 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3118382297">
+          <source>Cod valuta proforma</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Spedizioni - Field Cod valura proforma - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Spedizioni - Field Cod valuta proforma - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2719667458 - Field 80579287 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3118382297">
           <source>Costi di trasporto</source>

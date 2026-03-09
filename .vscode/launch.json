@@ -15,7 +15,7 @@
             "breakOnError": "All",
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true//,
-            //,"schemaUpdateMode":"ForceSync",
+          //  ,"schemaUpdateMode":"ForceSync",
             //"enableSqlInformationDebugger": true
         }
     ]

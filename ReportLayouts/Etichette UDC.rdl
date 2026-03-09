@@ -292,9 +292,6 @@ End Function
         <Field Name="ItemNo">
           <DataField>ItemNo</DataField>
         </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
         <Field Name="OrderNo">
           <DataField>OrderNo</DataField>
         </Field>

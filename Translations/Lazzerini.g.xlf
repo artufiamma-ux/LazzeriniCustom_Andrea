@@ -978,6 +978,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report XV Strumenti di Misura - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1332541005 - Action 1134209145 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 950053399">
+          <source>Crea una proforma dall'ordine corrente</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Posted Sales Shipment - Upd - Action CreaProforma - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1332541005 - Action 1134209145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 950053399">
+          <source>Crea proforma</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Posted Sales Shipment - Upd - Action CreaProforma - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3778526271 - Control 3942216509 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 561208485">
           <source>Indica se la fattura è accompagnatoria.</source>
           <note from="Developer" annotates="general" priority="2"></note>

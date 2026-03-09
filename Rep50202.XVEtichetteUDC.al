@@ -10,31 +10,40 @@ report 50202 "XV Etichette UDC"
     {
         dataitem(Header; "Warehouse Shipment Header")
         {
-            // Filtra solo per record validi, se serve
-            // DataItemTableView = ...
+            RequestFilterFields = "No.";
 
-            column(No_; "No.") { }
-            column(ShippingNo; "Shipping No.") { }
+            column(ShipmentNo; "No.") { }
+            column(Customer; "External Document No.") { }
+            column(LocationCode; "Location Code") { }
 
-            column(Barcode; EncodedText) { }
-            column(SerieNo; SerieNo) { }
-            column(PalletNo; PalletNo) { }
+            column(Serie; NrTotaleSerie) { }
+            column(Pallet; NrTotalePallet) { }
 
-            trigger OnAfterGetRecord()
-            var
-                BarcodeString: Text;
-                BarcodeSymbology: Enum "Barcode Symbology";
-                BarcodeFontProvider: Interface "Barcode Font Provider";
-            begin
-                BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
-                BarcodeSymbology := Enum::"Barcode Symbology"::Code39;
+            dataitem(Line; "Warehouse Shipment Line")
+            {
+                DataItemLink = "No." = field("No.");
 
-                // Barcode basato su No., SerieNo e PalletNo
-                BarcodeString := Format("No.") + '-' + Format(SerieNo) + '-' + Format(PalletNo);
+                column(ItemNo; "Item No.") { }
 
-                BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
-                EncodedText := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
-            end;
+                column(OrderNo; "Source No.") { }
+
+                column(Barcode; EncodedText) { }
+
+                trigger OnAfterGetRecord()
+                var
+                    BarcodeString: Text;
+                    BarcodeSymbology: Enum "Barcode Symbology";
+                    BarcodeFontProvider: Interface "Barcode Font Provider";
+                begin
+                    BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
+                    BarcodeSymbology := Enum::"Barcode Symbology"::Code39;
+
+                    BarcodeString := "Item No.";
+
+                    BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
+                    EncodedText := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
+                end;
+            }
         }
     }
 
@@ -46,10 +55,29 @@ report 50202 "XV Etichette UDC"
             {
                 group(Opzioni)
                 {
-                    field(NrTotaleSerie; NrTotaleSerie) { Caption = 'Nr Totale Serie'; ApplicationArea = All; }
-                    field(NrTotalePallet; NrTotalePallet) { Caption = 'Nr Totale Pallet'; ApplicationArea = All; }
-                    field(NrCopieUDC; NrCopieUDC) { Caption = 'Numero Copie UDC'; ApplicationArea = All; }
-                    field(StampaBasamenti; StampaBasamenti) { Caption = 'Stampa Basamenti'; ApplicationArea = All; }
+                    field(NrTotaleSerie; NrTotaleSerie)
+                    {
+                        Caption = 'Nr Totale Serie';
+                        ApplicationArea = All;
+                    }
+
+                    field(NrTotalePallet; NrTotalePallet)
+                    {
+                        Caption = 'Nr Totale Pallet';
+                        ApplicationArea = All;
+                    }
+
+                    field(NrCopieUDC; NrCopieUDC)
+                    {
+                        Caption = 'Numero Copie UDC';
+                        ApplicationArea = All;
+                    }
+
+                    field(StampaBasamenti; StampaBasamenti)
+                    {
+                        Caption = 'Stampa Basamenti';
+                        ApplicationArea = All;
+                    }
                 }
             }
         }
@@ -57,8 +85,7 @@ report 50202 "XV Etichette UDC"
 
     var
         EncodedText: Text;
-        SerieNo: Integer;
-        PalletNo: Integer;
+
         NrTotaleSerie: Integer;
         NrTotalePallet: Integer;
         NrCopieUDC: Integer;

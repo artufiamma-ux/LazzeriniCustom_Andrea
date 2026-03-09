@@ -12,7 +12,7 @@ pageextension 50208 "XV Posted Sales Shipment Ext" extends "Posted Sales Shipmen
                 ApplicationArea = All;
             }
 
-            field("Cod valura proforma"; Rec."Cod valura proforma")
+            field("Cod valuta proforma"; Rec."Cod valuta proforma")
             {
                 ApplicationArea = All;
             }

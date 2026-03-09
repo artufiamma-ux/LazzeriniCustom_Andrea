@@ -8,7 +8,7 @@ tableextension 50206 "XV Spedizioni" extends "Sales Shipment Header"
     fields
     {
         field(50061; "Nr fattura proforma"; Code[20]) { Caption = 'Nr fattura proforma'; TableRelation = "Sales Header"."Fattura Project Code"; }
-        field(50062; "Cod valura proforma"; Code[20]) { Caption = 'Cod valura proforma'; TableRelation = Currency.Code; }
+        field(50062; "Cod valuta proforma"; Code[20]) { Caption = 'Cod valuta proforma'; TableRelation = Currency.Code; }
         field(50063; "Costi di trasporto"; Decimal) { Caption = 'Costi di trasporto'; }
     }
 }

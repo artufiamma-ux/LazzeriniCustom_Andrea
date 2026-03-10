@@ -24,7 +24,6 @@ report 50202 "XV Etichette UDC"
             {
                 DataItemLink = "No." = field("No.");
 
-                column(ItemNo; "Item No.") { }
                 column(OrderNo; "Source No.") { }
 
                 column(PalletNo; PalletNo) { }
@@ -32,28 +31,6 @@ report 50202 "XV Etichette UDC"
 
                 column(Barcode; EncodedText) { }
 
-                trigger OnAfterGetRecord()
-                var
-                    BarcodeString: Text;
-                    iPallet: Integer;
-                    iSerie: Integer;
-                begin
-                    // Validazione parametri
-                    if (NrTotaleSerie <= 0) or (NrTotalePallet <= 0) or (NrCopieUDC <= 0) then
-                        exit;
-
-                    // Loop per pallet e serie
-                    for iPallet := 1 to NrTotalePallet do begin
-                        for iSerie := 1 to NrTotaleSerie do begin
-                            PalletNo := iPallet;
-                            SerieNo := iSerie;
-
-                            // Barcode = ItemNo-Serie-Pallet
-                            BarcodeString := StrSubstNo('%1-%2-%3', "Item No.", SerieNo, PalletNo);
-                            EncodedText := GenerateBarcode(BarcodeString);
-                        end;
-                    end;
-                end;
             }
         }
     }

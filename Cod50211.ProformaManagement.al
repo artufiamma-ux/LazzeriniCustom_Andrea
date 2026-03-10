@@ -46,7 +46,7 @@ codeunit 50211 "Proforma Management"
         //----------------------------------------------------
         // 3. Nuovo numero tramite no. series "VEND-PROF"
         //----------------------------------------------------
-        NewNo := NoSeriesMgt.GetNextNo('VEND-PROF', WorkDate(), true);
+        NewNo := NoSeriesMgt.GetNextNo('VEND_PROF', WorkDate(), true);
 
         //----------------------------------------------------
         // 4. Creo intestazione Proforma

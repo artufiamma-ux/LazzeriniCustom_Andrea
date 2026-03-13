@@ -8,6 +8,7 @@
             "type": "al",
             "environmentType": "Sandbox",
             "environmentName": "Lazzerini_Test",
+//            "environmentName": "Lazzerini_coll",
             "tenant": "46eaa442-6c85-4b20-aa51-d16e69a4c167",
             "startupCompany": "Lazzerini S.r.l.",
             "startupObjectId": 143,
@@ -15,7 +16,7 @@
             "breakOnError": "All",
             "launchBrowser": true,
             "enableLongRunningSqlStatements": true//,
-          //  ,"schemaUpdateMode":"ForceSync",
+            ,"schemaUpdateMode":"ForceSync",
             //"enableSqlInformationDebugger": true
         }
     ]

@@ -21,6 +21,7 @@ pageextension 50201 "XV Sales Order Ext" extends "Sales Order"
             field("Ordine con kit"; Rec."Ordine con kit")
             {
                 ApplicationArea = All;
+                Editable = false;
                 ToolTip = 'Specifica se l''ordine include articoli kit.';
             }
             field("Non duplicabile"; Rec."Non duplicabile")
@@ -46,4 +47,5 @@ pageextension 50201 "XV Sales Order Ext" extends "Sales Order"
         }
 
     }
+
 }

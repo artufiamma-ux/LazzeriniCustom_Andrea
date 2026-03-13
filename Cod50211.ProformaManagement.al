@@ -46,16 +46,17 @@ codeunit 50211 "Proforma Management"
         //----------------------------------------------------
         // 3. Nuovo numero tramite no. series "VEND-PROF"
         //----------------------------------------------------
-        NewNo := NoSeriesMgt.GetNextNo('VEND_PROF', WorkDate(), true);
 
         //----------------------------------------------------
         // 4. Creo intestazione Proforma
         //----------------------------------------------------
         NewSalesHeader.Init();
         NewSalesHeader.Validate("Document Type", NewSalesHeader."Document Type"::Quote);
+        NewNo := NoSeriesMgt.GetNextNo('PROFORMA', 0D, false);
         NewSalesHeader.Validate("No.", NewNo);
+        NewSalesHeader.Validate("No. Series", 'PROFORMA');
         NewSalesHeader.Validate("Currency Code", PostedShipment."Cod valuta proforma");
-
+//NewSalesHeader.Validate("No. Series", 'VEND-PROF');
         NewSalesHeader.Validate("Sell-to Customer No.", SalesHeader."Sell-to Customer No.");
         NewSalesHeader.Validate("Bill-to Customer No.", SalesHeader."Bill-to Customer No.");
         NewSalesHeader.Validate("Ship-to Code", SalesHeader."Ship-to Code");

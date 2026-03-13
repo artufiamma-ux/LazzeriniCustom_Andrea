@@ -1,8 +1,3 @@
-namespace Lazzerini;
-
-using Microsoft.Warehouse.Document;
-using Microsoft.Inventory.Item;
-
 pageextension 50226 "XV Warehouse Shipment List" extends "Warehouse Shipment List"
 {
     actions
@@ -20,49 +15,30 @@ pageextension 50226 "XV Warehouse Shipment List" extends "Warehouse Shipment Lis
                     WhseShipmentHeader: Record "Warehouse Shipment Header";
                     WhseShipmentLine: Record "Warehouse Shipment Line";
                     Item: Record Item;
-                    Confirmed: Boolean;
-                    PreviewMessage: Text;
-                    LineCount: Integer;
+                    TempPreviewRec: Record "Item Reference" temporary;
+                    PreviewPage: Page 50227;
                     TotalLabels: Decimal;
                 begin
                     WhseShipmentHeader := Rec;
 
-                    // Recupera tutte le righe della spedizione
                     WhseShipmentLine.SetRange("No.", WhseShipmentHeader."No.");
 
                     if WhseShipmentLine.FindSet() then begin
-                        PreviewMessage := 'ANTEPRIMA STAMPA ETICHETTE RICAMBI\n' +
-                                        '===============================\n\n';
-
                         repeat
-                            LineCount += 1;
                             TotalLabels += WhseShipmentLine.Quantity;
 
-                            // Ricerca l'articolo per descrizione
-                            if Item.Get(WhseShipmentLine."Item No.") then
-                                PreviewMessage += 'Articolo: ' + WhseShipmentLine."Item No." + '\n' +
-                                                'Descrizione: ' + Item.Description + '\n' +
-                                                'Quantità: ' + Format(WhseShipmentLine.Quantity) + '\n' +
-                                                'Etichette: ' + Format(WhseShipmentLine.Quantity) + ' (' +
-                                                'una per unità' + ')\n' +
-                                                '---\n';
+                            if Item.Get(WhseShipmentLine."Item No.") then begin
+                                TempPreviewRec.Init();
+                                TempPreviewRec."Reference No." := WhseShipmentLine."Item No.";
+                                TempPreviewRec.Description := Item.Description;
+                                TempPreviewRec."Reference Type No." := Format(WhseShipmentLine.Quantity);
+                                TempPreviewRec.Insert();
+                            end;
                         until WhseShipmentLine.Next() = 0;
 
-                        PreviewMessage += '\n===============================\n' +
-                                        'TOTALE ETICHETTE: ' + Format(TotalLabels) + '\n\n' +
-                                        'Vuoi procedere con la stampa?';
-
-                        Confirmed := Confirm(PreviewMessage, false);
-
-                        if Confirmed then begin
-                            // Lancia il report
-                            Report.Run(
-                                Report::"XV Etichetta Ricambi",
-                                true,
-                                true,
-                                WhseShipmentHeader
-                            );
-                        end;
+                        // Apri solo la pagina di anteprima
+                        PreviewPage.SetTempTable(TempPreviewRec, TotalLabels);
+                        PreviewPage.RunModal();
                     end else
                         Message('Non ci sono articoli in questa spedizione.');
                 end;

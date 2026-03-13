@@ -45,4 +45,5 @@ pageextension 50198 "XV Sales Order Subform" extends "Sales Order Subform" // Pa
             }
         }
     }
+
 }

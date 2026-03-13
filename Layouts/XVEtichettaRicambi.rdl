@@ -249,9 +249,6 @@ End Function
         <Field Name="Quantity">
           <DataField>Quantity</DataField>
         </Field>
-        <Field Name="QuantityFormat">
-          <DataField>QuantityFormat</DataField>
-        </Field>
       </Fields>
       <Query>
         <DataSourceName>DataSource</DataSourceName>

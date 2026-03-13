@@ -9,54 +9,80 @@ codeunit 50212 "XV Kit Bus Subscriber"
         SL: Record "Sales Line";
         SH: Record "Sales Header";
         ParentItemNo: Code[20];
+        Progressivo: Integer;
     begin
-        // Ignora righe non-item o righe padre
-        if Rec.Type <> Rec.Type::Item then
-            exit;
+        // NON Solo righe di tipo Item possono essere figlie dell'esplosione
 
-        // Trova la riga precedente (dovrebbe essere un commento)
-        SL.Reset();
-        SL.SetRange("Document Type", Rec."Document Type");
-        SL.SetRange("Document No.", Rec."Document No.");
-        SL.SetFilter("Line No.", '<%1', Rec."Line No.");
+            // Se è già valorizzato, evitare loop o duplicazioni
+//            if Rec."xv Kit Bus" <> '' then
+//                exit;
 
-        if SL.FindLast() then begin
-            if SL.Type = SL.Type::" " then begin
-                // Riga commento → estrai l'articolo padre
-                ParentItemNo := ExtractParentItemNo(SL.Description);
+            ParentItemNo := Rec."BOM Item No."; // GetParentItem(Rec);
+
+            if ParentItemNo = '' then
+                exit;  // Non è esplosione kit
+Message('ParentItemNo: %1 Type: %2', ParentItemNo, Rec.Type);
+            if Rec.Type = Rec.Type::Item then
+                Progressivo := getProgressivoFromComment(Rec."Document No.", Rec."Document Type", ParentItemNo)
+            else
+                Progressivo := getProgressivoNew(Rec."Document No.", Rec."Document Type", ParentItemNo) ;
+            // Valorizza i tuoi campi custom su tutte le righe figlie
+            Rec."xv Kit Bus" := ParentItemNo;
+            Rec."xv Progressivo Kit Bus" := Progressivo;
+            Rec.Modify(true);
+
+            // Aggiorna intestazione ordine
+            if SH.Get(Rec."Document Type", Rec."Document No.") then 
+            begin
+                if not SH."Ordine con kit" then 
+                begin
+                    SH."Ordine con kit" := true;
+                    SH.Modify();
+                end;
             end;
-        end;
-
-        if ParentItemNo = '' then
-            exit; // Nessun padre trovato → non è esplosione kit
-
-        // Imposta i tuoi campi custom
-        Rec."xv Kit Bus" := ParentItemNo;
-        Rec."xv Progressivo Kit Bus" := 1;
-        Rec.Modify();
-
-        // Aggiorna intestazione ordine
-        SH.Get(Rec."Document Type", Rec."Document No.");
-        SH."Ordine con kit" := true;
-        SH.Modify();
-
-        // Messaggio finale
-        Message('Kit Bus OK');
     end;
 
-    // Funzione per estrarre il No. Articolo dal commento standard
-    local procedure ExtractParentItemNo(CommentTxt: Text): Code[20]
+    // Trova progressivo dalla riga commento sopra
+    local procedure getProgressivoFromComment(DocNo: Code[20]; DocType: Enum "Sales Document Type"; ParentItem: Code[20]): Integer
     var
-        Pos: Integer;
+        SL: Record "Sales Line";
     begin
-        // Esempi commenti standard:
-        // "= 4011202-SAL1/SPEC517"
-        // "Assembly Item: 4011202-SAL1/SPEC517"
+        SL.Reset();
+        SL.SetRange("Document Type", DocType);
+        SL.SetRange("Document No.", DocNo);
+        SL.SetRange("xv Kit Bus", ParentItem);
+        SL.SetRange(Type, SL.Type::" "); // solo commenti
 
-        Pos := StrPos(CommentTxt, ' ');
-        if Pos > 0 then
-            exit(CopyStr(CommentTxt, Pos + 1, 20));
+        if SL.FindLast() then
+            exit(SL."xv Progressivo Kit Bus");
 
-        exit('');
+        exit(1);
     end;
+
+
+    // Genera nuovo progressivo (MAX + 1)
+    local procedure getProgressivoNew(DocNo: Code[20]; DocType: Enum "Sales Document Type"; ParentItem: Code[20]): Integer
+    var
+        SL: Record "Sales Line";
+        MaxProg: Integer;
+    begin
+        MaxProg := 1;
+
+        SL.Reset();
+        SL.SetRange("Document Type", DocType);
+        SL.SetRange("Document No.", DocNo);
+        SL.SetRange("xv Kit Bus", ParentItem);
+        SL.SetRange(Type, SL.Type::" "); // solo commenti-padre
+
+        if SL.FindSet() then
+            repeat
+                if SL."xv Progressivo Kit Bus" > MaxProg then
+                    MaxProg := SL."xv Progressivo Kit Bus";
+            until SL.Next() = 0
+        else
+            MaxProg := 0; 
+
+        exit(MaxProg + 1);
+    end;
+
 }

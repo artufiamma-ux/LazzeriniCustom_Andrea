@@ -1,4 +1,5 @@
 namespace Lazzerini;
+
 using Microsoft.Sales.Document;
 
 codeunit 50212 "XV Kit Bus Subscriber"
@@ -6,52 +7,125 @@ codeunit 50212 "XV Kit Bus Subscriber"
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterInsertEvent', '', false, false)]
     local procedure SalesLineAfterInsert(var Rec: Record "Sales Line")
     var
-        SL: Record "Sales Line";
         SH: Record "Sales Header";
         ParentItemNo: Code[20];
         Progressivo: Integer;
+        IsNewKit: Boolean;
     begin
-        // NON Solo righe di tipo Item possono essere figlie dell'esplosione
+        // ► Consideriamo solo righe figlio (ITEM);
+        if Rec.Type <> Rec.Type::Item then
+            exit;
 
-            // Se è già valorizzato, evitare loop o duplicazioni
-//            if Rec."xv Kit Bus" <> '' then
-//                exit;
+        // ► Solo righe generate da esplosione hanno "BOM Item No."
+        ParentItemNo := Rec."BOM Item No.";
+        if ParentItemNo = '' then
+            exit;
 
-            ParentItemNo := Rec."BOM Item No."; // GetParentItem(Rec);
+        // ► Evita esecuzioni multiple
+        if Rec."xv Kit Bus" <> '' then
+            exit;
 
-            if ParentItemNo = '' then
-                exit;  // Non è esplosione kit
-Message('ParentItemNo: %1 Type: %2', ParentItemNo, Rec.Type);
-            if Rec.Type = Rec.Type::Item then
-                Progressivo := getProgressivoFromComment(Rec."Document No.", Rec."Document Type", ParentItemNo)
-            else
-                Progressivo := getProgressivoNew(Rec."Document No.", Rec."Document Type", ParentItemNo) ;
-            // Valorizza i tuoi campi custom su tutte le righe figlie
-            Rec."xv Kit Bus" := ParentItemNo;
-            Rec."xv Progressivo Kit Bus" := Progressivo;
-            Rec.Modify(true);
+        // ► RIGA PRECEDENTE = PADRE RAW ? 
+        IsNewKit := IsRawParent(Rec);
 
-            // Aggiorna intestazione ordine
-            if SH.Get(Rec."Document Type", Rec."Document No.") then 
-            begin
-                if not SH."Ordine con kit" then 
-                begin
-                    SH."Ordine con kit" := true;
-                    SH.Modify();
-                end;
+        if IsNewKit then begin
+            // -----------------------------
+            // NUOVO KIT → incrementa progressivo
+            // -----------------------------
+            Progressivo :=
+                GetNextKitProgressivo(
+                    Rec."Document Type",
+                    Rec."Document No.",
+                    ParentItemNo);
+
+            // Scrivi il padre
+            WriteParentComment(
+                Rec,
+                ParentItemNo,
+                Progressivo);
+
+        end else begin
+            // -----------------------------
+            // FIGLIO KIT ESISTENTE → eredita progressivo
+            // -----------------------------
+            Progressivo :=
+                GetProgressivoFromParent(
+                    Rec."Document Type",
+                    Rec."Document No.",
+                    ParentItemNo);
+        end;
+
+        // ► Imposta sempre sui figli
+        Rec."xv Kit Bus" := ParentItemNo;
+        Rec."xv Progressivo Kit Bus" := Progressivo;
+        Rec.Modify(true);
+
+        // ► Imposta flag su intestazione ordine
+        if SH.Get(Rec."Document Type", Rec."Document No.") then
+            if not SH."Ordine con kit" then begin
+                SH."Ordine con kit" := true;
+                SH.Modify();
             end;
     end;
 
-    // Trova progressivo dalla riga commento sopra
-    local procedure getProgressivoFromComment(DocNo: Code[20]; DocType: Enum "Sales Document Type"; ParentItem: Code[20]): Integer
+
+    // -------------------------------------------------------------
+    // FUNZIONI DI SUPPORTO
+    // -------------------------------------------------------------
+
+    // Verifica se la riga precedente è un padre RAW NON ancora valorizzato
+    local procedure IsRawParent(var Rec: Record "Sales Line"): Boolean
+    var
+        Prev: Record "Sales Line";
+    begin
+        Prev.SetRange("Document Type", Rec."Document Type");
+        Prev.SetRange("Document No.", Rec."Document No.");
+        Prev.SetFilter("Line No.", '<%1', Rec."Line No.");
+
+        if Prev.FindLast() then begin
+            if (Prev."No." = '') and (Prev."xv Kit Bus" = '') then
+                exit(true);
+        end;
+
+        exit(false);
+    end;
+
+
+    // Scrive padre (riga commento)
+    local procedure WriteParentComment(
+        FromLine: Record "Sales Line";
+        ParentItemNo: Code[20];
+        Progressivo: Integer)
+    var
+        CommentLine: Record "Sales Line";
+    begin
+        CommentLine.SetRange("Document Type", FromLine."Document Type");
+        CommentLine.SetRange("Document No.", FromLine."Document No.");
+        CommentLine.SetFilter("Line No.", '<%1', FromLine."Line No.");
+
+        if CommentLine.FindLast() then begin
+            if CommentLine."No." = '' then begin
+                CommentLine."xv Kit Bus" := ParentItemNo;
+                CommentLine."xv Progressivo Kit Bus" := Progressivo;
+                CommentLine.Modify(true);
+            end;
+        end;
+    end;
+
+
+    // Recupera progressivo dal padre (commento)
+    local procedure GetProgressivoFromParent(
+        DocType: Enum "Sales Document Type";
+        DocNo: Code[20];
+        ParentItemNo: Code[20]
+    ): Integer
     var
         SL: Record "Sales Line";
     begin
-        SL.Reset();
         SL.SetRange("Document Type", DocType);
         SL.SetRange("Document No.", DocNo);
-        SL.SetRange("xv Kit Bus", ParentItem);
-        SL.SetRange(Type, SL.Type::" "); // solo commenti
+        SL.SetRange("No.", '');
+        SL.SetRange("xv Kit Bus", ParentItemNo);
 
         if SL.FindLast() then
             exit(SL."xv Progressivo Kit Bus");
@@ -60,27 +134,28 @@ Message('ParentItemNo: %1 Type: %2', ParentItemNo, Rec.Type);
     end;
 
 
-    // Genera nuovo progressivo (MAX + 1)
-    local procedure getProgressivoNew(DocNo: Code[20]; DocType: Enum "Sales Document Type"; ParentItem: Code[20]): Integer
+    // Calcolo nuovo progressivo (MAX + 1)
+    local procedure GetNextKitProgressivo(
+        DocType: Enum "Sales Document Type";
+        DocNo: Code[20];
+        ParentItemNo: Code[20]
+    ): Integer
     var
         SL: Record "Sales Line";
         MaxProg: Integer;
     begin
-        MaxProg := 1;
+        MaxProg := 0;
 
-        SL.Reset();
         SL.SetRange("Document Type", DocType);
         SL.SetRange("Document No.", DocNo);
-        SL.SetRange("xv Kit Bus", ParentItem);
-        SL.SetRange(Type, SL.Type::" "); // solo commenti-padre
+        SL.SetRange("No.", '');
+        SL.SetRange("xv Kit Bus", ParentItemNo);
 
         if SL.FindSet() then
             repeat
                 if SL."xv Progressivo Kit Bus" > MaxProg then
                     MaxProg := SL."xv Progressivo Kit Bus";
-            until SL.Next() = 0
-        else
-            MaxProg := 0; 
+            until SL.Next() = 0;
 
         exit(MaxProg + 1);
     end;

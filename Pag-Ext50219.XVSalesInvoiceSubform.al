@@ -9,6 +9,10 @@ pageextension 50219 "XV Sales Invoice Subform"
     {
         addafter(Description)
         {
+            field("*Kit Bus*"; Rec."BOM Item No.")
+            {
+                ApplicationArea = All;
+            }
             field("Kit Bus"; Rec."xv Kit Bus")
             {
                 ApplicationArea = All;
@@ -17,6 +21,7 @@ pageextension 50219 "XV Sales Invoice Subform"
             field("Progressivo Kit Bus"; Rec."xv Progressivo Kit Bus")
             {
                 ApplicationArea = All;
+                Editable = false;
             }
 
             field("Nr. Layout"; Rec."xv Nr Layout")

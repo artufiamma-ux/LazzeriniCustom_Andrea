@@ -13,7 +13,7 @@ tableextension 50202 "XV Sales Line" extends "Sales Line"
             Caption = 'Posizione Layout';
             DataClassification = ToBeClassified;
         }
-        field(50210; "xv Progressivo Kit Bus"; Code[20])
+        field(50210; "xv Progressivo Kit Bus"; Integer)
         {
             Caption = 'Progressivo Kit Bus';
             DataClassification = ToBeClassified;

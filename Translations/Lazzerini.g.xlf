@@ -1063,15 +1063,15 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Property AdditionalSearchTerms</note>
         </trans-unit>
-        <trans-unit id="PageExtension 178401406 - Control 4008615246 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
-          <source>Kit Bus</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Kit Bus - Property ToolTip</note>
-        </trans-unit>
         <trans-unit id="PageExtension 178401406 - Control 4121001562 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Nr Layout</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Nr Layout - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 178401406 - Control 1257931439 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
+          <source>Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control OLD Kit Bus - Property ToolTip</note>
         </trans-unit>
         <trans-unit id="PageExtension 178401406 - Control 2690962089 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2026081320">
           <source>Ordine con kit</source>
@@ -1087,6 +1087,11 @@
           <source>Qta. Origine layout</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Qta. Origine layout - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1572327555 - Action 2214803954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1558066289">
+          <source>Stampa etichette ricambi</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Warehouse Shipment List - Action Stampa etichette ricambi - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 444129594 - Control 3942216509 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2420212404">
           <source>Indica se la fattura è accompagnatoria.</source>

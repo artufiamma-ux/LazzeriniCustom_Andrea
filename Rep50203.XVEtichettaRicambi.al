@@ -1,64 +1,57 @@
-report 50203 "XV Etichetta Ricambi"
+report 50230 "XV Etichetta Ricambi"
 {
+    Caption = 'Etichette Ricambi';
+    UsageCategory = None;
+    ApplicationArea = All;
     DefaultLayout = RDLC;
     RDLCLayout = './Layouts/XVEtichettaRicambi.rdl';
-    ApplicationArea = All;
-    UseRequestPage = false;
 
     dataset
     {
-        dataitem(LabelData; "Item Reference")
+        dataitem(ItemReference; "Item Reference")
         {
             UseTemporary = true;
 
-            column(ItemNo; LabelData."Reference No.") { }
-            column(ItemReference; LabelData.Description) { }
-            column(Quantity; LabelData."Reference Type No.") { }
+            column(ItemNo; "Reference No.") { }
 
-            trigger OnPreDataItem()
-            var
-                QtyToPrint: Decimal;
-                i: Integer;
-                SourceRec: Record "Item Reference" temporary;
+            column(Quantity; "Reference Type No.") { }
+
+            column(ReferenceNo; CurrDestinationNo) { }
+
+            trigger OnAfterGetRecord()
             begin
-                // Copia i record dalla tabella temporanea globale
-                LabelData.Copy(TempGlobalLabels, true);
-
-                // Copia per iterare senza modificare l'originale
-                SourceRec.Copy(TempGlobalLabels, true);
-
-                // Espandi in base alla quantità
-                if SourceRec.FindSet() then begin
-                    repeat
-                        // convert string quantity to decimal, se fallisce QtyToPrint resta 0
-                        if NOT EVALUATE(QtyToPrint, SourceRec."Reference Type No.") then
-                            QtyToPrint := 0;
-
-                        for i := 1 to QtyToPrint do begin
-                            TempLabels.Init();
-                            TempLabels."Reference Type" := GlobalCounter;
-                            TempLabels."Reference No." := SourceRec."Reference No.";
-                            TempLabels."Reference Type No." := Format(QtyToPrint);
-                            TempLabels.Description := SourceRec.Description;
-                            TempLabels.Insert();
-                            GlobalCounter += 1;
-                        end;
-                    until SourceRec.Next() = 0;
+                if CurrIndex <= DestinationNos.Count() then begin
+                    DestinationNos.Get(CurrIndex, CurrDestinationNo);
+                    CurrIndex += 1;
                 end;
-
-                // Copia finale in LabelData per il dataset
-                LabelData.Copy(TempLabels, true);
             end;
         }
     }
 
     var
-        TempLabels: Record "Item Reference" temporary;
-        TempGlobalLabels: Record "Item Reference" temporary;
-        GlobalCounter: Integer;
+        TempItemReference: Record "Item Reference" temporary;
+        DestinationNos: List of [Code[20]];
+        CurrIndex: Integer;
+        CurrDestinationNo: Code[20];
 
-    procedure SetLabelData(var SourceData: Record "Item Reference" temporary)
+    procedure SetTempTable(var TempRec: Record "Item Reference" temporary; DestList: List of [Code[20]])
     begin
-        TempGlobalLabels.Copy(SourceData, true);
+        DestinationNos := DestList;
+        CurrIndex := 1;
+
+        if TempRec.FindSet() then
+            repeat
+                TempItemReference := TempRec;
+                TempItemReference.Insert();
+            until TempRec.Next() = 0;
+    end;
+
+    trigger OnPreReport()
+    begin
+        if TempItemReference.FindSet() then
+            repeat
+                ItemReference := TempItemReference;
+                ItemReference.Insert();
+            until TempItemReference.Next() = 0;
     end;
 }

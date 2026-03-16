@@ -18,6 +18,7 @@ pageextension 50226 "XV Warehouse Shipment List" extends "Warehouse Shipment Lis
                     TempPreviewRec: Record "Item Reference" temporary;
                     PreviewPage: Page 50227;
                     TotalLabels: Decimal;
+                    DestinationNos: List of [Code[20]]; // lista parallela dei Destination No.
                 begin
                     WhseShipmentHeader := Rec;
 
@@ -33,12 +34,17 @@ pageextension 50226 "XV Warehouse Shipment List" extends "Warehouse Shipment Lis
                                 TempPreviewRec.Description := Item.Description;
                                 TempPreviewRec."Reference Type No." := Format(WhseShipmentLine.Quantity);
                                 TempPreviewRec.Insert();
+
+                                // memorizza Destination No. nella lista parallela
+                                DestinationNos.Add(WhseShipmentLine."Destination No.");
                             end;
+
                         until WhseShipmentLine.Next() = 0;
 
-                        // Apri solo la pagina di anteprima
-                        PreviewPage.SetTempTable(TempPreviewRec, TotalLabels);
+                        // Passa la lista parallela e il record temporaneo alla pagina preview
+                        PreviewPage.SetTempTable(TempPreviewRec, DestinationNos, TotalLabels);
                         PreviewPage.RunModal();
+
                     end else
                         Message('Non ci sono articoli in questa spedizione.');
                 end;

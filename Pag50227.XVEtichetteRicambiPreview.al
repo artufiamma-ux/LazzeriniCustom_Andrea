@@ -2,7 +2,6 @@ page 50227 "XV Etichette Ricambi Preview"
 {
     PageType = List;
     ApplicationArea = All;
-    UsageCategory = None;
     Caption = 'Anteprima Etichette Ricambi';
     Editable = false;
     DeleteAllowed = false;
@@ -17,38 +16,24 @@ page 50227 "XV Etichette Ricambi Preview"
         {
             repeater(Items)
             {
-                Caption = 'Dettagli Articoli da Stampare';
-
                 field("Item No."; Rec."Reference No.")
                 {
                     Caption = 'Codice Articolo';
-                    ApplicationArea = All;
-                    Style = Standard;
-                    Width = 15;
                 }
 
                 field(Description; Rec.Description)
                 {
                     Caption = 'Descrizione Articolo';
-                    ApplicationArea = All;
-                    Style = Standard;
-                    Width = 30;
                 }
 
                 field(Quantity; Rec."Reference Type No.")
                 {
                     Caption = 'Quantità da Spedire';
-                    ApplicationArea = All;
-                    Style = StandardAccent;
-                    Width = 10;
                 }
 
-                field(Labels; Rec."Reference Type No.")
+                field("Destination No."; CurrDestinationNo)
                 {
-                    Caption = 'N° Etichette';
-                    ApplicationArea = All;
-                    Style = Attention;
-                    Width = 10;
+                    Caption = 'Destination No.';
                 }
             }
         }
@@ -66,16 +51,13 @@ page 50227 "XV Etichette Ricambi Preview"
                 Promoted = true;
                 PromotedCategory = Process;
                 PromotedIsBig = true;
-                PromotedOnly = true;
 
                 trigger OnAction()
                 var
                     LabelReport: Report "XV Etichetta Ricambi";
                 begin
-                    // Passa i dati della pagina al report
-
+                    LabelReport.SetTempTable(Rec, DestinationNos);
                     LabelReport.Run();
-
                     CurrPage.Close();
                 end;
             }
@@ -84,16 +66,26 @@ page 50227 "XV Etichette Ricambi Preview"
 
     var
         TotalLabels: Decimal;
+        DestinationNos: List of [Code[20]];
+        CurrIndex: Integer;
+        CurrDestinationNo: Code[20];
 
-    procedure SetTempTable(var TempRec: Record "Item Reference" temporary; Total: Decimal)
+    procedure SetTempTable(var TempRec: Record "Item Reference" temporary; DestList: List of [Code[20]]; Total: Decimal)
     begin
         TotalLabels := Total;
+        DestinationNos := DestList;
+        CurrIndex := 1;
 
-        if TempRec.FindSet() then begin
+        if TempRec.FindSet() then
             repeat
                 Rec := TempRec;
+
+                if CurrIndex <= DestinationNos.Count() then begin
+                    DestinationNos.Get(CurrIndex, CurrDestinationNo);
+                    CurrIndex += 1;
+                end;
+
                 Rec.Insert();
             until TempRec.Next() = 0;
-        end;
     end;
 }

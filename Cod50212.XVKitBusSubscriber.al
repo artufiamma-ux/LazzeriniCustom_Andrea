@@ -1,6 +1,7 @@
 namespace Lazzerini;
 
 using Microsoft.Sales.Document;
+using Microsoft.Inventory.BOM;
 
 codeunit 50212 "XV Kit Bus Subscriber"
 {
@@ -58,14 +59,20 @@ codeunit 50212 "XV Kit Bus Subscriber"
         // ► Imposta sempre sui figli
         Rec."xv Kit Bus" := ParentItemNo;
         Rec."xv Progressivo Kit Bus" := Progressivo;
+        Rec."xv Nr Layout" := SH."Nr Layout";
+        Rec."xv Posizione Layout" := GetPosizioneLayoutFromBOM(ParentItemNo, Rec."No.");
         Rec.Modify(true);
 
         // ► Imposta flag su intestazione ordine
-        if SH.Get(Rec."Document Type", Rec."Document No.") then
+        if SH.Get(Rec."Document Type", Rec."Document No.")  then begin
             if not SH."Ordine con kit" then begin
                 SH."Ordine con kit" := true;
                 SH.Modify();
             end;
+            Rec."xv Nr Layout" := SH."Nr Layout";
+            Rec.Modify(true);
+        end;
+
     end;
 
 
@@ -159,5 +166,17 @@ codeunit 50212 "XV Kit Bus Subscriber"
 
         exit(MaxProg + 1);
     end;
+    local procedure GetPosizioneLayoutFromBOM(
+        ParentItemNo: Code[20];
+        ItemNo: Code[20]) : Code[20]
+    var IB: Record "BOM Component";
+    begin
+        IB.SetRange("Parent Item No.", ParentItemNo);
+        IB.SetRange("No.", ItemNo);
 
+        if IB.FindFirst() then
+            exit(IB."Posizione Layout");
+
+        exit('');
+    end;
 }

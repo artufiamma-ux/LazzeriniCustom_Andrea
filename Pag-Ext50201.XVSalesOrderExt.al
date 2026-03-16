@@ -13,6 +13,12 @@ pageextension 50201 "XV Sales Order Ext" extends "Sales Order"
         // Aggiungo campi nella FastTab 'General'
         addlast(General)
         {
+        field("Reason Code"; Rec."Reason Code") 
+        {
+            ApplicationArea = All;
+            NotBlank = true;
+            ShowMandatory = Rec."Reason Code" = '';
+         }
             field("Nr Layout"; Rec."Nr Layout")
             {
                 ApplicationArea = All;
@@ -45,7 +51,22 @@ pageextension 50201 "XV Sales Order Ext" extends "Sales Order"
                 ToolTip = 'Specifica il tipo di ordine.';
             }
         }
-
+        modify("Activity Code")
+        {
+            ShowMandatory = true;
+         }
+ 
     }
 
+    trigger OnQueryClosePage(CloseAction: Action): Boolean
+    begin
+        if (CloseAction in [Action::OK, Action::LookupOK]) then begin
+            if Rec."Reason Code" = '' then
+                Error('Il campo Causale è obbligatorio per salvare l’ordine.');
+            if Rec."Activity Code" = '' then
+                Error('Il campo Codice Attività è obbligatorio per salvare l’ordine.');
+        end;
+    end;
+
 }
+

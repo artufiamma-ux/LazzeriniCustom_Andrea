@@ -343,6 +343,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table XV IK Strumenti di Misura Doc - Field Tipo Documento - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 4062547612 - Field 4190130733 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Customer No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV Label Buffer - Field Customer No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4062547612 - Field 883711285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Entry No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV Label Buffer - Field Entry No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4062547612 - Field 568743302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV Label Buffer - Field Item No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 4062547612 - Field 1067425594 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item Reference</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table XV Label Buffer - Field Item Reference - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 949863117 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Tipi Etichetta</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -452,6 +472,31 @@
           <source>Descrizione</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Table XV Tipo Prelievo Articoli - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1369336114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>XV Etichette Ricambi Cliente</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV Etichette Ricambi Cliente - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Page 1369336114 - Control 3461834954 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the description of the item in the line.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV Etichette Ricambi Cliente - Control Description - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1369336114 - Control 568743302 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the number of the item that should be shipped.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV Etichette Ricambi Cliente - Control Item No. - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1369336114 - Control 2704404533 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the quantity that should be shipped.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV Etichette Ricambi Cliente - Control Quantity - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Page 1369336114 - Action 1002420131 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stampa Etichette</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV Etichette Ricambi Cliente - Action Print - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 3955022879 - Control 1591006453 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
           <source>Utente incaricato della risoluzione del reclamo.</source>
@@ -973,6 +1018,26 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report XV Barcode Fattura Acquisto - Control Options - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 1369336114 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Stampa Etichette Articolo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichette Ricambi Cliente - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1369336114 - Control 3689535207 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Cliente</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichette Ricambi Cliente - Control CustomerNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1369336114 - Control 332802016 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Codice Articolo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichette Ricambi Cliente - Control ItemNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 1369336114 - Control 2289258473 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quantità Etichette</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichette Ricambi Cliente - Control QtaEtichette - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 2839098299 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Report Strumenti di Misura con Documenti</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1087,6 +1152,11 @@
           <source>Qta. Origine layout</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Qta. Origine layout - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1572327555 - Action 2214803954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1558066289">
+          <source>Stampa etichette ricambi</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Warehouse Shipment List - Action Stampa etichette ricambi - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 444129594 - Control 3942216509 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2420212404">
           <source>Indica se la fattura è accompagnatoria.</source>
@@ -2783,6 +2853,21 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichetta Ricambi - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Report 536946242 - Control 1151969155 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Elenco Destinazioni</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichetta Ricambi - Control DestinationListParam - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 536946242 - Control 810109192 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Numero Ricambio</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichetta Ricambi - Control ItemNoFilter - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 536946242 - Control 1263701709 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Tipo di Ricambio</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichetta Ricambi - Control ReferenceTypeFilter - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 1824809665 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Etichette UDC</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2807,11 +2892,6 @@
           <source>Stampa Basamenti</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichette UDC - Control StampaBasamenti - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="PageExtension 1572327555 - Action 2214803954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1558066289">
-          <source>Stampa etichette ricambi</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Warehouse Shipment List - Action Stampa etichette ricambi - Property Caption</note>
         </trans-unit>
       </group>
     </body>

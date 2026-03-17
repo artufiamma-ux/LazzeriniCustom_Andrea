@@ -3,13 +3,13 @@ namespace Lazzerini;
 using Microsoft.Warehouse.Document;
 using Microsoft.Sales.Document;
 
-pageextension 50213 "XV Whse Shipment Lines Ext" extends "Whse. Shipment Lines"
+pageextension 50213 "XV Whse Shipment Lines Ext" extends "Whse. Shipment Subform"
 {
     trigger OnAfterGetRecord()
     var
         SalesLine: Record "Sales Line";
     begin
-        Message('PASSATO NEL GETRECORD DELLA PAGINA DI RIGA DI SPEDIZIONE %1',Rec."Source Type");
+       // Message('PASSATO NEL GETRECORD DELLA PAGINA DI RIGA DI SPEDIZIONE %1',Rec."Source Type");
         // Evita loop o ricarichi multipli
         if Rec."Kit Bus" <> '' then
             exit;

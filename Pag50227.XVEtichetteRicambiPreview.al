@@ -55,8 +55,10 @@ page 50227 "XV Etichette Ricambi Preview"
                 trigger OnAction()
                 var
                     LabelReport: Report "XV Etichetta Ricambi";
+                    NumEtichette: Integer;
                 begin
-                    LabelReport.SetTempTable(Rec, DestinationNos, Rec."Reference Type No.");
+                    NumEtichette := 5; // o leggi da un campo della page
+                    LabelReport.SetTempTable(Rec, DestinationNos, Rec."Reference Type No.", NumEtichette);
                     LabelReport.Run();
                     CurrPage.Close();
                 end;

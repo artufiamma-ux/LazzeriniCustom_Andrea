@@ -26,6 +26,12 @@ report 50230 "XV Etichetta Ricambi"
                     CurrIndex += 1;
                 end;
             end;
+
+            trigger OnPreDataItem()
+            begin
+                // Copia i valori dalla temp table nella dataitem
+                ItemReference.Copy(TempItemReference, true);
+            end;
         }
     }
 
@@ -61,25 +67,57 @@ report 50230 "XV Etichetta Ricambi"
         }
     }
 
+    trigger OnPreReport()
+    var
+        i: Integer;
+    begin
+        // Numero di etichette da generare (puoi renderlo dinamico)
+        if QtaEtichette = 0 then
+            QtaEtichette := 5;
+
+        // Popolo la tabella temporanea con X righe
+        TempItemReference.DeleteAll();
+        for i := 1 to QtaEtichette do begin
+            TempItemReference.Init();
+            TempItemReference."Reference No." := ItemNo;
+            TempItemReference.Insert();
+        end;
+
+        CurrIndex := 1;
+    end;
+
     var
         TempItemReference: Record "Item Reference" temporary;
         DestinationNos: List of [Code[20]];
         CurrIndex: Integer;
         CurrDestinationNo: Code[20];
         ReferenceTypeFilterValue: Code[20]; // Variabile per il parametro manuale
+        QtaEtichette: Integer;
+        ItemNo: Code[20];
 
-    procedure SetTempTable(var TempRec: Record "Item Reference" temporary; DestList: List of [Code[20]]; ReferenceType: Code[20])
+    procedure SetTempTable(var TempRec: Record "Item Reference" temporary; DestList: List of [Code[20]]; ReferenceType: Code[20]; NumEtichette: Integer)
     begin
-        // Copia i record temporanei
-        TempItemReference.Copy(TempRec, true);
+        // Imposta i parametri della stampa dal page
+        QtaEtichette := NumEtichette;
         DestinationNos := DestList;
         CurrIndex := 1;
+        ReferenceTypeFilterValue := ReferenceType;
 
-        // Imposta il parametro manuale
-        ReferenceTypeFilterValue := '';
+        // Pulizia tabella temporanea e copia dei record
+        TempItemReference.DeleteAll();
+        TempRec.FindSet();
+        repeat
+            TempItemReference.Init();
+            TempItemReference := TempRec;
+            TempItemReference.Insert();
+        until TempRec.Next() = 0;
 
-        // Imposta il primo valore della lista destinazioni
+        // Imposta il primo DestinationNo se presente
         if DestinationNos.Count() > 0 then
             DestinationNos.Get(1, CurrDestinationNo);
+
+        // Imposta ItemNo per il ciclo OnPreReport se vuoi generare più etichette
+        if TempItemReference.FindFirst() then
+            ItemNo := TempItemReference."Reference No.";
     end;
 }

@@ -1348,6 +1348,31 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Spedizioni - Field Nr fattura proforma - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 2394719414 - Field 301689699 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4046090368">
+          <source>Qta. Origine layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Warehouse Request - Field Qta. Origine layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2394719414 - Field 469502744 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4046090368">
+          <source>Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Warehouse Request - Field xv Kit Bus - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2394719414 - Field 925556268 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4046090368">
+          <source>Nr Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Warehouse Request - Field xv Nr Layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2394719414 - Field 209000562 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4046090368">
+          <source>Posizione Layout</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Warehouse Request - Field xv Posizione Layout - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2394719414 - Field 1101793395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 4046090368">
+          <source>Progressivo Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Warehouse Request - Field xv Progressivo Kit Bus - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 200207027 - Field 4008615246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3659122181">
           <source>Kit Bus</source>
           <note from="Developer" annotates="general" priority="2"></note>

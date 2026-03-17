@@ -2,6 +2,9 @@ namespace Lazzerini;
 
 using Microsoft.Sales.Document;
 using Microsoft.Inventory.BOM;
+using Microsoft.Warehouse.Document;
+using Microsoft.Warehouse.Request;
+
 
 codeunit 50212 "XV Kit Bus Subscriber"
 {
@@ -179,4 +182,76 @@ codeunit 50212 "XV Kit Bus Subscriber"
 
         exit('');
     end;
+ 
+
+
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Whse.-Sales Release",
+        'OnAfterCreateWhseRequest', '', false, false)]
+    local procedure AfterCreateWhseRequest(
+        var WhseRqst: Record "Warehouse Request";
+        var SalesHeader: Record "Sales Header";
+        var SalesLine: Record "Sales Line";
+        WhseType: Option)
+    begin
+        Message('PASSATO NEL SUBSCRIBER DI CREAZIONE RQST %1 ' , SalesLine."xv Kit Bus");
+        WhseRqst."xv Kit Bus" := SalesLine."xv Kit Bus";
+        WhseRqst."xv Progressivo Kit Bus" := SalesLine."xv Progressivo Kit Bus";
+        WhseRqst."xv Nr Layout" := SalesLine."xv Nr Layout";
+        WhseRqst."xv Posizione Layout" := SalesLine."xv Posizione Layout";
+
+        WhseRqst.Modify();
+    end;
+
+
+/*
+    [EventSubscriber(
+        ObjectType::Table,
+        Database::"Warehouse Shipment Line",
+        'OnAfterSetSourceFilter',
+        '', false, false)]
+    local procedure OnAfterSetSourceFilterWhse(
+        var WarehouseShipmentLine: Record "Warehouse Shipment Line";
+        SourceType: Integer; 
+        SourceSubType: Option; 
+        SourceNo: Code[20]; 
+        SourceLineNo: Integer; 
+        SetKey: Boolean)
+
+    var
+        SalesLine: Record "Sales Line";
+    begin
+        Message('PASSATO NEL SUBSCRIBER DI CREAZIONE RIGA DI SPEDIZIONE %1 - %2 - %3 - %4 - %5'
+        ,WarehouseShipmentLine."Source Type"
+        ,WarehouseShipmentLine."Source Subtype"
+        ,WarehouseShipmentLine."Source No."
+        ,WarehouseShipmentLine."Source Line No."
+        ,WarehouseShipmentLine."Line No.");
+        // Verifica che l'origine sia una Sales Line
+        if WarehouseShipmentLine."Source Type" <> Database::"Sales Line" then
+            exit;
+
+        // Recupera la sales line di origine
+        if SalesLine.Get(
+            WarehouseShipmentLine."Source Subtype",
+            WarehouseShipmentLine."Source No.",
+            WarehouseShipmentLine."Source Line No.") then begin
+
+            // Copia i campi custom
+                    WarehouseShipmentLine."Kit Bus" := SalesLine."xv Kit Bus";
+                    WarehouseShipmentLine."Progressivo Kit Bus" := SalesLine."xv Progressivo Kit Bus";
+                    WarehouseShipmentLine."Nr. Layout" := SalesLine."xv Nr Layout";
+                    WarehouseShipmentLine."Posizione Layout" := SalesLine."xv Posizione Layout";
+
+            WarehouseShipmentLine.Modify(true);
+        end;
+        Message('Evento di creazione riga di spedizione catturato. Campi Kit Bus copiati dalla Sales Line.');
+    end;
+*/
+/*
+    WhseShptLine."Kit Bus" := SalesLine."xv Kit Bus";
+    WhseShptLine."Progressivo Kit Bus" := SalesLine."xv Progressivo Kit Bus";
+    WhseShptLine."Nr. Layout" := SalesLine."xv Nr Layout";
+    WhseShptLine."Posizione Layout" := SalesLine."xv Posizione Layout";
+    WhseShptLine.Modify();
+*/
 }

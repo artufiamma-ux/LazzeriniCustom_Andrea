@@ -46,45 +46,7 @@ page 50227 "XV Etichette Ricambi Preview"
                     KeyList: List of [Text[50]]; // Lista per evitare duplicati
                     KeyValue: Text[50];
                 begin
-                    if Rec.Count() = 0 then begin
-                        Message('Nessun record da stampare.');
-                        exit;
-                    end;
-
-                    if DestinationNos.Count() = 0 then begin
-                        Message('Inserire almeno una destinazione.');
-                        exit;
-                    end;
-
-                    TempRec.DeleteAll();
-                    CurrDestinationIndex := 1;
-
-                    if Rec.FindSet() then
-                        repeat
-                            for i := 1 to Copies do begin
-                                // Genera chiave univoca per evitare duplicati
-                                KeyValue := Rec."Reference No." + '|' + Format(Rec."Reference Type No.") + '|' + Format(CurrDestinationIndex);
-                                if not KeyList.Contains(KeyValue) then begin
-                                    KeyList.Add(KeyValue);
-
-                                    TempRec.Init();
-                                    TempRec."Reference No." := Rec."Reference No.";
-                                    TempRec.Description := Rec.Description;
-                                    TempRec."Reference Type No." := Rec."Reference Type No.";
-
-                                    if CurrDestinationIndex <= DestinationNos.Count() then
-                                        DestinationNos.Get(CurrDestinationIndex, CurrDestinationNo);
-
-                                    CurrDestinationIndex += 1;
-                                    if CurrDestinationIndex > DestinationNos.Count() then
-                                        CurrDestinationIndex := 1;
-
-                                    TempRec.Insert();
-                                end;
-                            end;
-                        until Rec.Next() = 0;
-
-                    LabelReport.SetTempTable(TempRec, DestinationNos, Format(Copies));
+                    LabelReport.SetTempTable(Rec, DestinationNos);
                     LabelReport.Run();
                     CurrPage.Close();
                 end;

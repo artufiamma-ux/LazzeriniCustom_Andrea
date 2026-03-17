@@ -56,7 +56,7 @@ page 50227 "XV Etichette Ricambi Preview"
                 var
                     LabelReport: Report "XV Etichetta Ricambi";
                 begin
-                    LabelReport.SetTempTable(Rec, DestinationNos);
+                    
                     LabelReport.Run();
                     CurrPage.Close();
                 end;

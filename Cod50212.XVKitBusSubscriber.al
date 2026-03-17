@@ -185,24 +185,6 @@ codeunit 50212 "XV Kit Bus Subscriber"
  
 
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Whse.-Sales Release",
-        'OnAfterCreateWhseRequest', '', false, false)]
-    local procedure AfterCreateWhseRequest(
-        var WhseRqst: Record "Warehouse Request";
-        var SalesHeader: Record "Sales Header";
-        var SalesLine: Record "Sales Line";
-        WhseType: Option)
-    begin
-        Message('PASSATO NEL SUBSCRIBER DI CREAZIONE RQST %1 ' , SalesLine."xv Kit Bus");
-        WhseRqst."xv Kit Bus" := SalesLine."xv Kit Bus";
-        WhseRqst."xv Progressivo Kit Bus" := SalesLine."xv Progressivo Kit Bus";
-        WhseRqst."xv Nr Layout" := SalesLine."xv Nr Layout";
-        WhseRqst."xv Posizione Layout" := SalesLine."xv Posizione Layout";
-
-        WhseRqst.Modify();
-    end;
-
-
 /*
     [EventSubscriber(
         ObjectType::Table,

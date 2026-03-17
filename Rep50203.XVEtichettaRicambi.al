@@ -13,26 +13,17 @@ report 50230 "XV Etichetta Ricambi"
             UseTemporary = true;
 
             column(ItemNo; "Reference No.") { }
+
             column(Quantity; "Reference Type No.") { }
+
             column(ReferenceNo; CurrDestinationNo) { }
 
             trigger OnAfterGetRecord()
-            var
-                i: Integer;
             begin
-                // Converti ReferenceTypeFilterValue in intero
-                if not Evaluate(ReferenceTypeFilterValueInt, ReferenceTypeFilterValue) then
-                    ReferenceTypeFilterValueInt := 1;
-
-                // Ripeti record tante volte quanto indica ReferenceTypeFilterValueInt
-                for i := 2 to ReferenceTypeFilterValueInt do begin
-                    CurrIndex := 1;
-                    if CurrIndex <= DestinationNos.Count() then
-                        DestinationNos.Get(CurrIndex, CurrDestinationNo);
+                // Aggiorniamo CurrDestinationNo con la lista Destinazioni
+                if CurrIndex <= DestinationNos.Count() then begin
+                    DestinationNos.Get(CurrIndex, CurrDestinationNo);
                     CurrIndex += 1;
-
-                    // Inserisci un record temporaneo duplicato
-                    TempItemReference.Insert();
                 end;
             end;
         }
@@ -56,14 +47,14 @@ report 50230 "XV Etichetta Ricambi"
                     {
                         ApplicationArea = All;
                         Caption = 'Elenco Destinazioni';
-                        Editable = false;
+                        Editable = false; // Solo visualizzazione
                     }
 
                     field(ReferenceTypeFilter; ReferenceTypeFilterValue)
                     {
                         ApplicationArea = All;
-                        Caption = 'Quantità Etichette';
-                        Editable = true;
+                        Caption = 'Tipo di Ricambio';
+                        Editable = true; // Puoi scrivere manualmente il valore
                     }
                 }
             }
@@ -75,19 +66,19 @@ report 50230 "XV Etichetta Ricambi"
         DestinationNos: List of [Code[20]];
         CurrIndex: Integer;
         CurrDestinationNo: Code[20];
-        ReferenceTypeFilterValue: Code[20];
-        ReferenceTypeFilterValueInt: Integer;
+        ReferenceTypeFilterValue: Code[20]; // Variabile per il parametro manuale
 
     procedure SetTempTable(var TempRec: Record "Item Reference" temporary; DestList: List of [Code[20]]; ReferenceType: Code[20])
     begin
+        // Copia i record temporanei
         TempItemReference.Copy(TempRec, true);
         DestinationNos := DestList;
         CurrIndex := 1;
 
-        // Imposta ReferenceTypeFilterValue
-        ReferenceTypeFilterValue := ReferenceType;
+        // Imposta il parametro manuale
+        ReferenceTypeFilterValue := '';
 
-        // Primo valore della lista destinazioni
+        // Imposta il primo valore della lista destinazioni
         if DestinationNos.Count() > 0 then
             DestinationNos.Get(1, CurrDestinationNo);
     end;

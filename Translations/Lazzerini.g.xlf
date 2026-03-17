@@ -2778,25 +2778,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV Etichette Ricambi Preview - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Page 418336948 - Control 1554554962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Dettagli Articoli da Stampare</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV Etichette Ricambi Preview - Control Items - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Page 418336948 - Control 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Descrizione Articolo</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV Etichette Ricambi Preview - Control Description - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 418336948 - Control 2680873021 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Destination No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page XV Etichette Ricambi Preview - Control Destination No. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 418336948 - Control 568743302 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Codice Articolo</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV Etichette Ricambi Preview - Control Item No. - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Page 418336948 - Control 2496062775 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>N° Etichette</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">Page XV Etichette Ricambi Preview - Control Labels - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 418336948 - Control 2704404533 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quantità da Spedire</source>
@@ -2807,6 +2802,11 @@
           <source>Conferma e Stampa</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page XV Etichette Ricambi Preview - Action Print - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Report 536946242 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Etichette Ricambi</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report XV Etichetta Ricambi - Property Caption</note>
         </trans-unit>
         <trans-unit id="Report 1824809665 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Etichette UDC</source>

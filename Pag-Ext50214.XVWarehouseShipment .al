@@ -30,7 +30,29 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                 ApplicationArea = All;
             }
         }
+        addafter(General)
+        {
+            group(Filtri)
+            {
+                Caption = 'Filtri';
 
+
+                field("Pagamento Effettuato"; Rec."Pagamento Effettuato")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Da Spedire"; Rec."Da Spedire")
+                {
+                    ApplicationArea = All;
+                }
+
+                field("Quotazione Trasporto Acc."; Rec."Quotazione Trasporto Acc.")
+                {
+                    ApplicationArea = All;
+                }
+            }
+        }
     }
     actions
     {

@@ -29,10 +29,36 @@ tableextension 50214 XVWarehouseShipmentHeader extends "Warehouse Shipment Heade
             Caption = 'Numero Totale Pallet';
             DataClassification = ToBeClassified;
         }
-        field(50105; "Fattura Richiesta"; Boolean)
+
+        field(50106; "Verifica Pagamenti"; Boolean)
         {
-            Caption = 'Fattura Richiesta';
+            Caption = 'Verifica pagamenti';
             DataClassification = ToBeClassified;
         }
+
+        field(50107; "Fattura Richiesta"; Boolean)
+        {
+            Caption = 'Fattura richiesta';
+            DataClassification = ToBeClassified;
+        }
+
+        field(50108; "Pagamento Effettuato"; Boolean)
+        {
+            Caption = 'Pagamento effettuato';
+            DataClassification = ToBeClassified;
+        }
+
+        field(50109; "Da Spedire"; Boolean)
+        {
+            Caption = 'Da spedire';
+            DataClassification = ToBeClassified;
+        }
+
+        field(50110; "Quotazione Trasporto Acc."; Boolean)
+        {
+            Caption = 'Quotazione trasporto accettata';
+            DataClassification = ToBeClassified;
+        }
+
     }
 }

@@ -1,24 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:am="http://schemas.microsoft.com/sqlserver/reporting/authoringmetadata">
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
   <am:AuthoringMetadata>
     <am:CreatedBy>
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.14.36915.13</am:Version>
     </am:CreatedBy>
     <am:UpdatedBy>
-      <am:Name>SSDTRS</am:Name>
-      <am:Version>17.14.36915.13</am:Version>
+      <am:Name>MSRB</am:Name>
+      <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-03-17T17:15:44.8403393Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-03-18T08:32:40.2698428Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
     <DataSource Name="DataSource">
+      <rd:SecurityType>None</rd:SecurityType>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString />
       </ConnectionProperties>
-      <rd:SecurityType>None</rd:SecurityType>
       <rd:DataSourceID>17fabac5-818b-4cb8-b7b2-411a3945154c</rd:DataSourceID>
     </DataSource>
   </DataSources>
@@ -32,16 +34,17 @@
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>2.48611in</Width>
+                      <Width>6.05771cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
                     <TablixRow>
-                      <Height>0.25in</Height>
+                      <Height>0.83328cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox7">
+                              <rd:DefaultName>Textbox7</rd:DefaultName>
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -49,17 +52,17 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>Codice Lazzerini</Value>
-                                      <Style />
+                                      <Style>
+                                        <Color>DimGray</Color>
+                                      </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox7</rd:DefaultName>
                               <Style>
                                 <Border>
-                                  <Color>LightGrey</Color>
-                                  <Style>Solid</Style>
+                                  <Style>None</Style>
                                 </Border>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
@@ -67,17 +70,17 @@
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
-                            <rd:Selected>true</rd:Selected>
                           </CellContents>
                         </TablixCell>
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>0.25in</Height>
+                      <Height>0.83328cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="ItemNo">
+                              <rd:DefaultName>ItemNo</rd:DefaultName>
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -85,17 +88,17 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>=Fields!ItemNo.Value</Value>
-                                      <Style />
+                                      <Style>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>ItemNo</rd:DefaultName>
                               <Style>
                                 <Border>
-                                  <Color>LightGrey</Color>
-                                  <Style>Solid</Style>
+                                  <Style>None</Style>
                                 </Border>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
@@ -103,17 +106,17 @@
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
-                            <rd:Selected>true</rd:Selected>
                           </CellContents>
                         </TablixCell>
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>0.25in</Height>
+                      <Height>0.83328cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="Textbox8">
+                              <rd:DefaultName>Textbox8</rd:DefaultName>
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -121,17 +124,17 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>Customer Code</Value>
-                                      <Style />
+                                      <Style>
+                                        <Color>DimGray</Color>
+                                      </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox8</rd:DefaultName>
                               <Style>
                                 <Border>
-                                  <Color>LightGrey</Color>
-                                  <Style>Solid</Style>
+                                  <Style>None</Style>
                                 </Border>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
@@ -139,17 +142,17 @@
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
-                            <rd:Selected>true</rd:Selected>
                           </CellContents>
                         </TablixCell>
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>0.25in</Height>
+                      <Height>0.83328cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
                             <Textbox Name="ItemReference">
+                              <rd:DefaultName>ItemReference</rd:DefaultName>
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
@@ -157,17 +160,17 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>=Fields!ItemReference.Value</Value>
-                                      <Style />
+                                      <Style>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
                                     </TextRun>
                                   </TextRuns>
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>ItemReference</rd:DefaultName>
                               <Style>
                                 <Border>
-                                  <Color>LightGrey</Color>
-                                  <Style>Solid</Style>
+                                  <Style>None</Style>
                                 </Border>
                                 <PaddingLeft>2pt</PaddingLeft>
                                 <PaddingRight>2pt</PaddingRight>
@@ -175,7 +178,6 @@
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
-                            <rd:Selected>true</rd:Selected>
                           </CellContents>
                         </TablixCell>
                       </TablixCells>
@@ -205,20 +207,40 @@
                   </TablixMembers>
                 </TablixRowHierarchy>
                 <DataSetName>DataSet_Result</DataSetName>
-                <Top>0.02306in</Top>
-                <Left>0.00917in</Left>
-                <Height>1in</Height>
-                <Width>2.48611in</Width>
+                <Top>0.14583in</Top>
+                <Left>0.60417in</Left>
+                <Height>3.33313cm</Height>
+                <Width>6.05771cm</Width>
                 <Style>
                   <Border>
-                    <Style>None</Style>
+                    <Style>Solid</Style>
                   </Border>
+                  <TopBorder>
+                    <Color>Black</Color>
+                    <Style>Solid</Style>
+                    <Width>1pt</Width>
+                  </TopBorder>
+                  <BottomBorder>
+                    <Color>Black</Color>
+                    <Style>Solid</Style>
+                    <Width>1pt</Width>
+                  </BottomBorder>
+                  <LeftBorder>
+                    <Color>Black</Color>
+                    <Style>Solid</Style>
+                    <Width>1pt</Width>
+                  </LeftBorder>
+                  <RightBorder>
+                    <Color>Black</Color>
+                    <Style>Solid</Style>
+                    <Width>1pt</Width>
+                  </RightBorder>
                 </Style>
               </Tablix>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Height>1.02306in</Height>
-            <Width>2.49528in</Width>
+            <Height>5cm</Height>
+            <Width>10cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -226,13 +248,14 @@
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>1.02306in</Height>
+        <Height>5cm</Height>
         <Style />
       </Body>
-      <Width>2.49528in</Width>
+      <Width>10cm</Width>
       <Page>
-        <PageHeight>1.14806in</PageHeight>
-        <PageWidth>2.9675in</PageWidth>
+        <PageHeight>17.78cm</PageHeight>
+        <PageWidth>12.7cm</PageWidth>
+        <ColumnSpacing>1.27cm</ColumnSpacing>
         <Style />
       </Page>
     </ReportSection>
@@ -274,8 +297,6 @@ End Function
 </Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>

@@ -30,10 +30,6 @@ pageextension 50205 XVItemCad extends "Item Card"
             {
                 ApplicationArea = All;
             }
-            field("Posizione Layout"; Rec."Posizione Layout")
-            {
-                ApplicationArea = All;
-            }
         }
     }
 }

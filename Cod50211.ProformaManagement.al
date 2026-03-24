@@ -19,7 +19,7 @@ codeunit 50211 "Proforma Management"
         NewSalesHeader: Record "Sales Header";
         NewSalesLine: Record "Sales Line";
         NoSeriesMgt: Codeunit "No. Series";   // CORRETTO
-        Currency: Record Currency;
+        Currency: Record "Currency Exchange Rate";
         FattoreValuta: Decimal;
         LineNo: Integer;
         NewNo: Code[20];
@@ -36,10 +36,10 @@ codeunit 50211 "Proforma Management"
         if PostedShipment."Cod valuta proforma" = '' then
             Error('Il campo "Cod valuta proforma" non è valorizzato.');
 
-        if not Currency.Get(PostedShipment."Cod valuta proforma") then
-            Error('La valuta %1 non esiste.', PostedShipment."Cod valuta proforma");
-
-        FattoreValuta := Currency."Currency Factor";
+ //       if not Currency.Get(PostedShipment."Cod valuta proforma") then
+ //           Error('La valuta %1 non esiste.', PostedShipment."Cod valuta proforma");
+        
+        FattoreValuta := Currency.GetCurrentCurrencyFactor(PostedShipment."Cod valuta proforma");
         if FattoreValuta = 0 then
             FattoreValuta := 1;
 
@@ -114,14 +114,15 @@ codeunit 50211 "Proforma Management"
         // 7. Salvo numero proforma sulla spedizione
         //----------------------------------------------------
         PostedShipment.Validate("Nr fattura proforma", NewSalesHeader."No.");
+        PostedShipment."Cod valuta proforma" := NewSalesHeader."Currency Code";
+        PostedShipment."Nr fattura proforma" := NewSalesHeader."No.";
         PostedShipment.Modify(true);
-
+        Commit();
         //----------------------------------------------------
         // 8. Messaggio e apertura
         //----------------------------------------------------
         Message('Proforma %1 creata correttamente.', NewSalesHeader."No.");
 
-        Commit();
 
         PAGE.Run(PAGE::"Sales Quote", NewSalesHeader);
     end;

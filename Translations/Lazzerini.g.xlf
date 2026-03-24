@@ -1198,6 +1198,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XVWarehouseShipment - Action StampaEtichetteBasamenti - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2897141477 - Control 2780478632 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 2938519335">
+          <source>Filtri</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XVWarehouseShipment - Control Filtri - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3260845341 - Field 880522992 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 400793991">
           <source>Tipo Prelievo</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1493,8 +1498,13 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XVSales Header - Field Tipo Ordine - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3664958624 - Field 4002765219 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3880947038">
+          <source>Da spedire</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XVWarehouseShipmentHeader - Field Da Spedire - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3664958624 - Field 2546864741 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3880947038">
-          <source>Fattura Richiesta</source>
+          <source>Fattura richiesta</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XVWarehouseShipmentHeader - Field Fattura Richiesta - Property Caption</note>
         </trans-unit>
@@ -1508,6 +1518,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XVWarehouseShipmentHeader - Field Numero Totale Serie - Property Caption</note>
         </trans-unit>
+        <trans-unit id="TableExtension 3664958624 - Field 2510913999 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3880947038">
+          <source>Pagamento effettuato</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XVWarehouseShipmentHeader - Field Pagamento Effettuato - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3664958624 - Field 439889760 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3880947038">
+          <source>Quotazione trasporto accettata</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XVWarehouseShipmentHeader - Field Quotazione Trasporto Acc. - Property Caption</note>
+        </trans-unit>
         <trans-unit id="TableExtension 3664958624 - Field 1559333459 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3880947038">
           <source>Tipo Ordine</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1517,6 +1537,11 @@
           <source>Tipo Prelievo</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XVWarehouseShipmentHeader - Field Tipo Prelievo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 3664958624 - Field 2001709139 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3880947038">
+          <source>Verifica pagamenti</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XVWarehouseShipmentHeader - Field Verifica Pagamenti - Property Caption</note>
         </trans-unit>
         <trans-unit id="Enum 321888471 - EnumValue 3671411600 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Disponibile</source>
@@ -2798,15 +2823,20 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn NrColli - Property Caption</note>
         </trans-unit>
-        <trans-unit id="ReportExtension 1591650415 - ReportColumn 21930806 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+        <trans-unit id="ReportExtension 1591650415 - ReportColumn 3343302351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
           <source>Kit Bus</source>
           <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn KitBus - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn Kit_Bus - Property Caption</note>
         </trans-unit>
         <trans-unit id="ReportExtension 1591650415 - ReportColumn 331094305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
           <source>Net Weight</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn NetWeight - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1591650415 - ReportColumn 3419352177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Progressivo Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn Progressivo_Kit_Bus - Property Caption</note>
         </trans-unit>
         <trans-unit id="ReportExtension 1591650415 - ReportColumn 4262896369 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
           <source>Tariff No</source>

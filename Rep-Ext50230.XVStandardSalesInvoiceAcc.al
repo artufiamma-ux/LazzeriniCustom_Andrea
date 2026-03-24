@@ -108,7 +108,15 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             {
                 Caption = 'Net Weight';
             }
-            column(KitBus; GetKitBus("Line No.", "Document No.")) { Caption = 'Kit Bus'; }
+            column(Kit_Bus;currentKitBus)
+            {
+                Caption = 'Kit Bus';
+            }
+            column(Progressivo_Kit_Bus;currentProgressivoKitBus)
+            {
+                Caption = 'Progressivo Kit Bus';
+            }
+          //  column(KitBus; GetKitBus("Line No.", "Document No.")) { Caption = 'Kit Bus'; }
         }
 
 
@@ -432,4 +440,8 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
 
         exit('');
     end;
+    var
+    currentKitBus: Text[20];
+    currentProgressivoKitBus: Integer;
+
 }

@@ -51,20 +51,21 @@ pageextension 50201 "XV Sales Order Ext" extends "Sales Order"
                 ToolTip = 'Specifica il tipo di ordine.';
             }
         }
+        /*
         modify("Activity Code")
         {
             ShowMandatory = true;
          }
- 
+ */
     }
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     begin
         if (CloseAction in [Action::OK, Action::LookupOK]) then begin
             if Rec."Reason Code" = '' then
-                Error('Il campo Causale è obbligatorio per salvare l’ordine.');
+                Message('Il campo Causale è obbligatorio per salvare l’ordine.');//Error
             if Rec."Activity Code" = '' then
-                Error('Il campo Codice Attività è obbligatorio per salvare l’ordine.');
+                Message('Il campo Codice Attività è obbligatorio per salvare l’ordine.');//Error
         end;
     end;
 

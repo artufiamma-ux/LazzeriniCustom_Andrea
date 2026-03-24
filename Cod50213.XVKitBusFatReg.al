@@ -1,0 +1,24 @@
+namespace Lazzerini;
+using Microsoft.Sales.Posting;
+using Microsoft.Sales.History;
+using Microsoft.Sales.Document;
+
+codeunit 50213 "XV Kit Bus - Fat Reg"
+{
+[EventSubscriber(ObjectType::Codeunit, Codeunit::"Sales-Post",
+    'OnBeforeSalesInvLineInsert', '', false, false)]
+local procedure CopyKitBusToInvoiceLines(
+    var SalesInvLine: Record "Sales Invoice Line";
+    SalesInvHeader: Record "Sales Invoice Header";
+    SalesLine: Record "Sales Line";
+    CommitIsSuppressed: Boolean;
+    var IsHandled: Boolean;
+    PostingSalesLine: Record "Sales Line";
+    SalesShipmentHeader: Record "Sales Shipment Header";
+    SalesHeader: Record "Sales Header";
+    var ReturnReceiptHeader: Record "Return Receipt Header")
+begin
+    SalesInvLine."Kit Bus" := SalesLine."xv Kit Bus";
+    SalesInvLine."Progressivo Kit Bus" := SalesLine."xv Progressivo Kit Bus";
+end;
+}

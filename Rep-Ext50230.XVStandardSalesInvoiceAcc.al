@@ -112,14 +112,39 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             {
                 Caption = 'Kit Bus';
             }
-            column(Progressivo_Kit_Bus;currentProgressivoKitBus)
+            column(Progressivo_Kit_Bus;currentQtaKitBus)
             {
                 Caption = 'Progressivo Kit Bus';
             }
           //  column(KitBus; GetKitBus("Line No.", "Document No.")) { Caption = 'Kit Bus'; }
         }
+        modify(Line)
+        {
+            trigger OnAfterAfterGetRecord ()
+            begin
+                // Primo ciclo? Inizializzo
+                if currentKitBus = '' then begin
+                    currentKitBus := "Kit Bus";
+                    currentProgressivoKitBus := "Progressivo Kit Bus";
+                    currentQtaKitBus := 1;
+                    exit;
+                end;
 
-
+                // Se stesso Kit Bus
+                if currentKitBus = "Kit Bus" then begin
+                    // Progressivo diverso → incremento
+                    if currentProgressivoKitBus <> "Progressivo Kit Bus" then begin
+                        currentQtaKitBus := currentQtaKitBus + 1;
+                        currentProgressivoKitBus := "Progressivo Kit Bus"; // può capitare un buco nei progressivi
+                        end
+                end else begin
+                    // Nuovo kit → reset
+                    currentKitBus := "Kit Bus";
+                    currentProgressivoKitBus := "Progressivo Kit Bus";
+                    currentQtaKitBus := 1;
+                end;
+            end;
+        }
     }
     var
         IsForeign: Boolean;
@@ -443,5 +468,6 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
     var
     currentKitBus: Text[20];
     currentProgressivoKitBus: Integer;
+    currentQtaKitBus: Integer;
 
 }

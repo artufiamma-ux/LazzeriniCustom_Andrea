@@ -28,6 +28,101 @@
           <note from="Developer" annotates="general" priority="2">%</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TipiEtichettaSpedizioni - Control Description - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="Table 1570827365 - Field 1314287010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Count Progressivo</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Kit Bus Aggregate - Field Count Progressivo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1570827365 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Kit Bus Aggregate - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1570827365 - Field 4008615246 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Kit Bus</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Kit Bus Aggregate - Field Kit Bus - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1570827365 - Field 2202932243 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Order No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Kit Bus Aggregate - Field Order No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1570827365 - Field 3953183481 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Sum Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Kit Bus Aggregate - Field Sum Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1570827365 - Field 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Kit Bus Aggregate - Field VAT - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155920177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Report Flat Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Report Flat Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155920177 - Field 636392376 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Amount</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Report Flat Line - Field Amount - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155920177 - Field 83221844 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Delivery Date</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Report Flat Line - Field Delivery Date - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155920177 - Field 3461834954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Description</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Report Flat Line - Field Description - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155920177 - Field 1792520506 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Document No</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Report Flat Line - Field Document No - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155920177 - Field 1734039856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ext Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Report Flat Line - Field Ext Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155920177 - Field 1653696250 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Int Code</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Report Flat Line - Field Int Code - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155920177 - Field 3320823955 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Line No.</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Report Flat Line - Field Line No. - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155920177 - Field 1795468512 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Qty</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Report Flat Line - Field Qty - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155920177 - Field 219048380 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Table Line</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Report Flat Line - Field Table Line - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155920177 - Field 2937233469 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unit Price</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Report Flat Line - Field Unit Price - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155920177 - Field 2004914921 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>UoM</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Report Flat Line - Field UoM - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 2155920177 - Field 334623485 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Report Flat Line - Field VAT - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2605024491 - Field 1367381856 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>4M+D Analysis</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -2823,20 +2918,10 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn NrColli - Property Caption</note>
         </trans-unit>
-        <trans-unit id="ReportExtension 1591650415 - ReportColumn 3343302351 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
-          <source>Kit Bus</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn Kit_Bus - Property Caption</note>
-        </trans-unit>
         <trans-unit id="ReportExtension 1591650415 - ReportColumn 331094305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
           <source>Net Weight</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn NetWeight - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="ReportExtension 1591650415 - ReportColumn 3419352177 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
-          <source>Progressivo Kit Bus</source>
-          <note from="Developer" annotates="general" priority="2"></note>
-          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn Progressivo_Kit_Bus - Property Caption</note>
         </trans-unit>
         <trans-unit id="ReportExtension 1591650415 - ReportColumn 4262896369 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
           <source>Tariff No</source>

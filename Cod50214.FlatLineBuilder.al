@@ -1,5 +1,6 @@
 namespace Lazzerini;
 using Microsoft.Sales.History;
+
 codeunit 50214 "Flat Line Builder"
 {
     SingleInstance = false;

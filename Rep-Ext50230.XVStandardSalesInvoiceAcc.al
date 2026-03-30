@@ -1,5 +1,4 @@
 namespace Lazzerini;
-
 using Microsoft.Sales.History;
 using Microsoft.Sales.Receivables;
 using Microsoft.Sales.Customer;
@@ -9,36 +8,26 @@ using Microsoft.Foundation.AuditCodes;
 using Microsoft.Inventory.Item;
 using Microsoft.Finance.VAT.Setup;
 using Microsoft.Foundation.PaymentTerms;
-
-
 reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoice"
 {
     RDLCLayout = './ReportLayouts/XVV2FatturaAccompagnatoria.rdl';
-
     dataset
     {
-
         add(Header)
         {
-
             column(ShipToName; "Ship-to Name") { }
             column(EORICode; GetEORICode("Sell-to Customer No.")) { }
             column(ACCOMPAGNATORIA; ACCOMPAGNATORIA) { }
             column(TipoDocumento; GetTipoDocumento(ACCOMPAGNATORIA, "Sell-to Country/Region Code")) { }
             column(Tariff_No_; "Service Tariff No.") { }
             column(TariffNo_lbl; GetCustomLabel('Tariff No.')) { }
-
             column(VATBaseTotal_lbl; "TotalVATBaseLCY") { }
-
-            // column(DueDateLbl; GetCustomLabel('Due Date/Data scadenza')) { }
             column(TypePaymentCaptionLbl; GetCustomLabel('Type Payment Caption')) { }
             column(AmountLbl; GetCustomLabel('Amount')) { }
             column(VATBaseLbl; GetCustomLabel('VAT Base')) { }
             column(VATTotalLbl; "TotalAmountVAT") { }
             column(CurrencyLbl; "Currency Code") { }
             column(TotalAmountLbl; GetCustomLabel('Total Amount')) { }
-
-
             column(ShippingNotes; "Work Description") { }
             column(VAT_Base1; VAT_Base1) { }
             column(VAT_Description1; VAT_Description1) { }
@@ -49,7 +38,6 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             column(VAT_Base3; VAT_Base3) { }
             column(VAT_Description3; VAT_Description3) { }
             column(VAT_Amount3; VAT_Amount3) { }
-
             column(TPaymentMethod1; TPaymentMethod1) { }
             column(DatScadenze1; DatScadenze1) { }
             column(DecImportoRate1; DecImportoRate1) { }
@@ -59,16 +47,13 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             column(TPaymentMethod3; TPaymentMethod3) { }
             column(DatScadenze3; DatScadenze3) { }
             column(DecImportoRate3; DecImportoRate3) { }
-
             column(TotalAmount; "TotalAmount") { }
             column(TotalAmountVAT; GetCustomValue('Total Amount VAT/Importo Totale Iva')) { }
             column(TotalAmountInclVAT; "TotalAmountInclVAT") { }
             column(SalesInvoiceHeader_CurrencyCode; GetCustomValue('SalesInvoiceHeader_CurrencyCode')) { }
-
             column(CONAI; GetCustomValue('contributo CONAI assolto ove dovuto')) { }
             column(DESC; GetCustomValue('the exported of the products covered by this doc declares, except where otherwise clearly indicate, these products are of italian origin.')) { }
             column(Firma; GetCustomValue('Lazzareni S.r.l Ufficio AMM.VO')) { }
-
             column(NrColli; GetNrColli("No.")) { Caption = 'Numero colli'; }
             column(Freight; GetFreight("No.")) { Caption = 'Freight'; }
             column(Forwarder; GetForwarder("Shipping Agent Code")) { Caption = 'Spedizioniere'; }
@@ -80,10 +65,7 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             column(XVUnitPriceLbl; GetCustomLabel('Unit Price')) { }
             column(XVAmountItemLbl; GetCustomLabel('Amount')) { }
             column(XVVatIdItemLbl; GetCustomLabel('VATId.')) { }
-
-
         }
-
         modify(Header)
         {
             trigger OnAfterAfterGetRecord()
@@ -92,31 +74,79 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
                 CalculatePaymentInstallments("No.");
                 HeaderDocumentNo := "No.";
             end;
-
         }
 
-        add(Line)
+
+        modify(Line)
         {
-            column(TariffNo; GetTariffNo("No."))
-            {
-                Caption = 'Tariff No';
-            }
-            column(Value; "Amount")
-            {
-                Caption = 'Value';
-            }
-            column(NetWeight; "Net Weight")
-            {
-                Caption = 'Net Weight';
-            }
-            
+            //
+            // 1) Carichiamo FlatLines PRIMA di iterare il DataItem Line
+            //
+            trigger OnAfterPreDataItem()
+            begin
+                // Costruisco la tabella FlatTemp per questo documento
+                FlatTemp.DeleteAll();
+                FlatBuilder.BuildFromSalesInvoice("Document No.", FlatTemp);
 
-          //  column(KitBus; GetKitBus("Line No.", "Document No.")) { Caption = 'Kit Bus'; }
+                // Se non ci sono righe → esco
+                if FlatTemp.IsEmpty() then
+                    CurrReport.Break();
+
+                // Fingo che Line contenga un numero di righe pari a FlatTemp.Count
+                SetRange("Line No.", 1, FlatTemp.Count);
+            end;
+
+            //
+            // 2) Per ogni iterazione di Line, recupero l’N-esima FlatLine
+            //
+            trigger OnAfterAfterGetRecord()
+            var
+                Found: Boolean;
+            begin
+                FlatTemp.Reset();
+                FlatTemp.SetRange("Line No.", "Line No.");
+                Found := FlatTemp.FindFirst();
+
+                if not Found then
+                    CurrReport.Skip();
+
+                // Mappatura dei campi FL* nel DataSet_Result
+                FLDocumentNo := FlatTemp."Document No";
+                FLTableLine := FlatTemp."Table Line";
+                FLIntCode := FlatTemp."Int Code";
+                FLExtCode := FlatTemp."Ext Code";
+                FLDescription := FlatTemp.Description;
+                FLUoM := FlatTemp."UoM";
+                FLQty := FlatTemp.Qty;
+                FLQtyFormat := Format(FlatTemp.Qty, 0, '#,0.###');
+                FLUnitPrice := FlatTemp."Unit Price";
+                FLUnitPriceFormat := Format(FlatTemp."Unit Price", 0, '#,0.00');
+                FLAmount := FlatTemp.Amount;
+                FLAmountFormat := Format(FlatTemp.Amount, 0, '#,0.00');
+                FLVAT := FlatTemp.VAT;
+                FLDeliveryDate := FlatTemp."Delivery Date";
+            end;
         }
-        
 
-    
-
+        addafter(Line)
+        {
+            dataitem("FL"; "Report Flat Line") 
+            {
+            column(FLDocumentNo; FLDocumentNo) { }
+            column(FLTableLine; FLTableLine) { }
+            column(FLIntCode; FLIntCode) { }
+            column(FLExtCode; FLExtCode) { }
+            column(FLDescription; FLDescription) { }
+            column(FLUoM; FLUoM) { }
+            column(FLQty; FLQty) { }
+            column(FLQtyFormt; FLQtyFormat) { }
+            column(FLUnitPrice; FLUnitPriceFormat) { }
+            column(FLAmount; FLAmountFormat) { }
+            column(FLVAT; FLVAT) { }
+            column(FLDeliveryDate; FLDeliveryDate) { }
+            }
+        }
+   
     }
     var
         IsForeign: Boolean;
@@ -129,7 +159,6 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             exit(ItemRec."Tariff No.");
         exit('');
     end;
-
     local procedure GetEORICode(SellToCustomerNo: Code[20]): Code[50]
     var
         Customer: Record Customer;
@@ -138,7 +167,6 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             exit(Customer."Codice EORI");
         exit('');
     end;
-
     local procedure GetTipoDocumento(ACCOMPAGNATORIA: Boolean; SellToCountryCode: Code[10]): Text[100]
     var
     begin
@@ -155,7 +183,6 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
                 exit('Invoice');
         exit('');
     end;
-
     local procedure GetCustomLabel(LabelName: Text): Text
     var
         langLbl: Text[100];
@@ -188,12 +215,10 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
                     exit(LabelName);
             end
     end;
-
     local procedure GetCustomValue(LabelName: Text): Text
     begin
         exit(LabelName);
     end;
-
     local procedure GetDueDateFromPaymentTerms(PaymentTermsCode: Code[10]; Position: Integer): Date
     var
         PaymentLine: Record "Payment Lines";
@@ -215,7 +240,6 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
 
         exit(0D);
     end;
-
     local procedure CalculateVATTotals(DocumentNo: Code[20])
     var
         SalesLine: Record "Sales Invoice Line";
@@ -230,27 +254,19 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
         Clear(VAT_Description1);
         Clear(VAT_Description2);
         Clear(VAT_Description3);
-
         VAT_Base1 := 0;
         VAT_Base2 := 0;
         VAT_Base3 := 0;
-
         VAT_Amount1 := 0;
         VAT_Amount2 := 0;
         VAT_Amount3 := 0;
-
         SalesLine.SetRange("Document No.", DocumentNo);
-
         if SalesLine.FindSet() then
             repeat
                 CurrentVAT := SalesLine."VAT Identifier";
-
                 if CurrentVAT <> '' then begin
-
                     CurrentBase := SalesLine."VAT Base Amount";
                     CurrentVATAmount := SalesLine."Amount Including VAT" - SalesLine."VAT Base Amount";
-
-                    // 🔁 RAGGRUPPAMENTO SOLO PER CODICE (22 / N / 41)
                     if CurrentVAT = Desc1 then begin
                         VAT_Base1 += CurrentBase;
                         VAT_Amount1 += CurrentVATAmount;
@@ -281,11 +297,7 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
                                         end;
                             end;
                 end;
-
             until SalesLine.Next() = 0;
-
-        // 🔎 SOLO ALLA FINE trasformiamo il codice in descrizione (tab 324)
-
         if VATProdPostingGroup.Get(Desc1) then
             VAT_Description1 := VATProdPostingGroup.Description
         else
@@ -301,7 +313,6 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
         else
             VAT_Description3 := Desc3;
     end;
-
     local procedure CalculatePaymentInstallments(DocumentNo: Code[20])
     var
         CustLedgEntry: Record "Cust. Ledger Entry";
@@ -331,7 +342,6 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
         if CustLedgEntry.FindSet() then
             repeat
                 Counter += 1;
-
                 // Assegna data e importo
                 case Counter of
                     1:
@@ -420,14 +430,12 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
             exit(ShippingAgent.Name);
         exit('');
     end;
-
     local procedure GetKitBus(SalesLineNo: Integer; DocumentNo: Code[20]): Code[20]
     var
         PostedWhseShptLine: Record "Posted Whse. Shipment Line";
     begin
         // Pulisco eventuali filtri precedenti
         PostedWhseShptLine.Reset();
-
         // Filtro per collegamento al documento di vendita
         PostedWhseShptLine.SetRange("Posted Source No.", DocumentNo);
         PostedWhseShptLine.SetRange("Source Line No.", SalesLineNo);
@@ -438,11 +446,23 @@ reportextension 50230 XVStandardSalesInvoiceAcc extends "Standard Sales - Invoic
         exit('');
     end;
 
-    var
+var
         FlatTemp: Record "Report Flat Line" temporary;
         FlatBuilder: Codeunit "Flat Line Builder";
+
+        FLDocumentNo: Code[20];
+        FLTableLine: Text[100];
+        FLIntCode: Code[50];
+        FLExtCode: Code[50];
+        FLDescription: Text[100];
+        FLUoM: Text[50];
+        FLQty: Decimal;
+        FLQtyFormat: Text[30];
+        FLUnitPrice: Decimal;
+        FLUnitPriceFormat: Text[30];
+        FLAmount: Decimal;
+        FLAmountFormat: Text[30];
+        FLVAT: Code[20];
+        FLDeliveryDate: Date;
         HeaderDocumentNo: Code[20];
-
-     
-
 }

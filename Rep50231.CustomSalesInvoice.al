@@ -499,7 +499,6 @@ report 50231 "Custom Sales - Invoice"
             column(EORICode; GetEORICode("Sell-to Customer No.")) { }
             column(ACCOMPAGNATORIA; ACCOMPAGNATORIA) { }
             column(TipoDocumento; GetTipoDocumento(ACCOMPAGNATORIA, "Sell-to Country/Region Code")) { }
-            column(Tariff_No_; "Service Tariff No.") { }
             column(TariffNo_lbl; GetCustomLabel('Tariff No.')) { }
             column(VATBaseTotal_lbl; "TotalVATBaseLCY") { }
             column(TypePaymentCaptionLbl; GetCustomLabel('Type Payment Caption')) { }
@@ -690,6 +689,21 @@ report 50231 "Custom Sales - Invoice"
                 column(Progressivo_Kit_Bus;"Progressivo Kit Bus")
                 {
                 }
+                column(Service_Tariff_No;"Service Tariff No.")
+                {
+                }
+                column(Tariff_No;GetTariffNo(Line."No."))
+                {
+                }
+                column(NetWeight; "Net Weight")
+                {
+                    Caption = 'Net Weight';
+                }
+                column(NetWeight_Lbl; FieldCaption("Net Weight"))
+                {
+                }
+
+
                 dataitem(ShipmentLine; "Sales Shipment Buffer")
                 {
                     DataItemTableView = sorting("Document No.", "Line No.", "Entry No.");
@@ -956,7 +970,12 @@ report 50231 "Custom Sales - Invoice"
                 }
 
                 trigger OnAfterGetRecord()
+                    var
+                        Item: Record Item;
                 begin
+                    if Item.Get(Line."No.") then
+                        LineTariffNo := Item."Tariff No.";
+
                     if "VAT Clause Code" = '' then
                         CurrReport.Skip();
                     if not VATClause.Get("VAT Clause Code") then
@@ -971,6 +990,7 @@ report 50231 "Custom Sales - Invoice"
                     else
                         VATClausesText := VATClausesLbl;
                 end;
+                
             }
             dataitem(ReportTotalsLine; "Report Totals Buffer")
             {
@@ -1050,7 +1070,7 @@ report 50231 "Custom Sales - Invoice"
                 PaymentServiceSetup: Record "Payment Service Setup";
                 Currency: Record Currency;
                 GeneralLedgerSetup: Record "General Ledger Setup";
-            begin
+           begin
                 CurrReport.Language := LanguageMgt.GetLanguageIdOrDefault("Language Code");
                 CurrReport.FormatRegion := LanguageMgt.GetFormatRegionOrDefault("Format Region");
                 FormatAddr.SetLanguageCode("Language Code");
@@ -1076,6 +1096,7 @@ report 50231 "Custom Sales - Invoice"
 //                FillLeftHeader();
 //                FillRightHeader();
 
+
                 if not Cust.Get("Bill-to Customer No.") then
                     Clear(Cust);
 
@@ -1093,31 +1114,6 @@ report 50231 "Custom Sales - Invoice"
                         CurrSymbol := GeneralLedgerSetup.GetCurrencySymbol();
                     end;
 
-//                GetLineFeeNoteOnReportHist("No.");
-
-                PaymentServiceSetup.CreateReportingArgs(PaymentReportingArgument, Header);
-
-                CalcFields("Amount Including VAT");
-                RemainingAmount := GetRemainingAmount();
-                if RemainingAmount = 0 then
-                    RemainingAmountTxt := AlreadyPaidLbl
-                else
-                    if RemainingAmount <> "Amount Including VAT" then
-                        RemainingAmountTxt := StrSubstNo(PartiallyPaidLbl, Format(RemainingAmount, 0, '<Precision,2><Standard Format,0>'))
-                    else
-                        RemainingAmountTxt := '';
-/*
-                OnAfterGetSalesHeader(Header);
-
-                TotalSubTotal := 0;
-                TotalInvDiscAmount := 0;
-                TotalAmount := 0;
-                TotalAmountVAT := 0;
-                TotalAmountInclVAT := 0;
-                TotalPaymentDiscOnVAT := 0;
-                if ("Order No." = '') and "Prepayment Invoice" then
-                    "Order No." := "Prepayment Order No.";
-*/
             end;
 
             trigger OnPreDataItem()
@@ -1349,8 +1345,18 @@ report 50231 "Custom Sales - Invoice"
         ShptMethodDescLbl: Label 'Shipment Method';
         ShiptoAddrLbl: Label 'Ship-to Address';
         HideLinesWithZeroQuantity: Boolean;
+        LineTariffNo: Code[20];
 
 /* RPCustom */
+    local procedure GetTariffNo(ItemNo: Code[20]): Code[20]
+    var
+        Item: Record Item;
+    begin
+        if Item.Get(ItemNo) then
+            exit(Item."Tariff No.");
+        exit('');
+    end;
+
     local procedure GetKitBusDescription(KitBus: Code[20]; Description: Text[100]): Text[120]
     var
         ItemRec: Record Item;
@@ -1362,14 +1368,6 @@ report 50231 "Custom Sales - Invoice"
         exit(Description);
     end;
 
-    local procedure GetTariffNo(ItemNo: Code[20]): Code[20]
-    var
-        ItemRec: Record Item;
-    begin
-        if ItemRec.Get(ItemNo) then
-            exit(ItemRec."Tariff No.");
-        exit('');
-    end;
     local procedure GetEORICode(SellToCustomerNo: Code[20]): Code[50]
     var
         Customer: Record Customer;

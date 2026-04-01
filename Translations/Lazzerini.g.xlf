@@ -1408,6 +1408,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Custom Sales - Invoice - NamedType YourSalesInvoiceLbl</note>
         </trans-unit>
+        <trans-unit id="Report 3519557761 - ReportColumn 331094305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Net Weight</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Custom Sales - Invoice - ReportColumn NetWeight - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Report 3519557761 - ReportColumn 2224537128 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Spedizioniere</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -3257,6 +3262,21 @@
           <source>Numero colli</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn NrColli - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1591650415 - ReportColumn 331094305 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Net Weight</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn NetWeight - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1591650415 - ReportColumn 4262896369 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Tariff No</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn TariffNo - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="ReportExtension 1591650415 - ReportColumn 1131619133 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Report 2226024577">
+          <source>Value</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">ReportExtension XVStandardSalesInvoiceAcc - ReportColumn Value - Property Caption</note>
         </trans-unit>
         <trans-unit id="Page 418336948 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Anteprima Etichette Ricambi</source>

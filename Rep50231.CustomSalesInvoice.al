@@ -544,8 +544,20 @@ report 50231 "Custom Sales - Invoice"
             column(XVUnitPriceLbl; GetCustomLabel('Unit Price')) { }
             column(XVAmountItemLbl; GetCustomLabel('Amount')) { }
             column(XVVatIdItemLbl; GetCustomLabel('VATId.')) { }
-
-
+            column(XVGrossWeightLbl; GetCustomLabel('Gross Weight')) { }
+            column(XVNetWeightLbl; GetCustomLabel('Net Weight')) { }
+            column(XVCurrencyLbl; GetCustomLabel('Currency')){}
+            column(XVDeliveryTermsLbl; GetCustomLabel('Delivery Terms')){}
+            column(XVFreightLbl; GetCustomLabel('Freight')){}
+            column(XVShipTimeLbl; GetCustomLabel('Ship Time')){}
+            column(XVForwarderLbl; GetCustomLabel('Forwarder')){}
+            column(XVTotVatBaseLbl; GetCustomLabel('Total VAT Base')){}
+            column(XVVatTotalLbl; GetCustomLabel('Total VAT')){}
+            column(XVSignForwarderLbl; GetCustomLabel('Signature of forwarder')){}
+            column(XVSignDriverLbl; GetCustomLabel('Driver''s signature')){}
+            column(XVSignConsigneeLbl; GetCustomLabel('Consignee signature')){}
+            column(XVParcNoLbl; GetCustomLabel('Parc. No.')){}
+            column(XVCustomerIdLbl; GetCustomLabel('Customer ID')){}
             dataitem(Line; "Sales Invoice Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -554,6 +566,7 @@ report 50231 "Custom Sales - Invoice"
                 column(LineNo_Line; "Line No.")
                 {
                 }
+                //column(EOSPQ;"EOS055 Packaging Quantity"){}
                 column(AmountExcludingVAT_Line; Amount)
                 {
                     AutoFormatExpression = GetCurrencyCode();
@@ -702,7 +715,13 @@ report 50231 "Custom Sales - Invoice"
                 column(NetWeight_Lbl; FieldCaption("Net Weight"))
                 {
                 }
-
+                column(GrossWeight; "Gross Weight")
+                {
+                }
+                column(GrossWeight_Lbl; FieldCaption("Gross Weight"))
+                {
+                }
+                column(TariffList; TariffList){}
 
                 dataitem(ShipmentLine; "Sales Shipment Buffer")
                 {
@@ -767,6 +786,9 @@ report 50231 "Custom Sales - Invoice"
                     InitializeShipmentLine();
                     if Type = Type::"G/L Account" then
                         "No." := '';
+                    TariffTemp := GetTariffNo(Line."No.");
+                    if (TariffTemp <> '') and (not TariffList.Contains(TariffTemp)) then
+                        TariffList := TariffList + TariffTemp + ', ';
 
  //                   OnBeforeLineOnAfterGetRecord(Header, Line);
 
@@ -925,6 +947,7 @@ report 50231 "Custom Sales - Invoice"
                         VATClauseLine := VATAmountLine;
                         if VATClauseLine.Insert() then;
                     end;
+                    
                 end;
 
                 trigger OnPreDataItem()
@@ -973,8 +996,6 @@ report 50231 "Custom Sales - Invoice"
                     var
                         Item: Record Item;
                 begin
-                    if Item.Get(Line."No.") then
-                        LineTariffNo := Item."Tariff No.";
 
                     if "VAT Clause Code" = '' then
                         CurrReport.Skip();
@@ -1113,7 +1134,8 @@ report 50231 "Custom Sales - Invoice"
                         CurrCode := GeneralLedgerSetup."LCY Code";
                         CurrSymbol := GeneralLedgerSetup.GetCurrencySymbol();
                     end;
-
+                CalculateVATTotals("No.");
+                CalculatePaymentInstallments("No.");
             end;
 
             trigger OnPreDataItem()
@@ -1178,6 +1200,8 @@ report 50231 "Custom Sales - Invoice"
     var
     /* RPCustom */
         IsForeign: Boolean;
+        TariffList: Text;
+        TariffTemp: Code[20];
         VAT_Description1: Text[100];
         VAT_Description2: Text[100];
         VAT_Description3: Text[100];
@@ -1382,23 +1406,26 @@ report 50231 "Custom Sales - Invoice"
         IsForeign := SellToCountryCode <> 'IT';
         if SellToCountryCode = 'IT' then
             if ACCOMPAGNATORIA then
-                exit('INVOICE & DELIVERY NOTE') // NON ESISTONO ITALIANI - SOLO DOGANA
+                exit('FATTURA ACCOMPAGNATORIA') // NON ESISTONO ITALIANI - SOLO DOGANA
             else
-                exit('Fattura')
+                exit('FATTURA')
         else
             if ACCOMPAGNATORIA then
                 exit('INVOICE & DELIVERY NOTE')
             else
-                exit('Invoice');
+                exit('INVOICE');
         exit('');
     end;
     local procedure GetCustomLabel(LabelName: Text): Text
     var
         langLbl: Text[100];
+        
     begin
         langLbl := LabelName;
         if isForeign then
             case LabelName of
+                'Ship Time':
+                    exit('Shipment Date & Time');
                 'Tariff No.':
                     exit('Tariff No.');
                 'Type Payment Caption':
@@ -1412,6 +1439,49 @@ report 50231 "Custom Sales - Invoice"
             end
         else
             case LabelName of
+                'Customer ID':
+                    exit('Cliente ID');
+                'Parc. No.':
+                    exit('Nr. Colli');
+                'Signature of forwarder':
+                    exit('Firma del vettore');
+                'Driver''s signature':
+                    exit('Firma del conducente');
+                'Consignee signature':
+                    exit('Firma del destinatario');
+
+                'Our Code No.':
+                    exit('Codice Articolo');
+                'Custom Code No.':
+                    exit('Codice Cliente');
+                'Description':
+                    exit('Descrizione');
+                'UoM':
+                    exit('UdM');
+                'Q.ty':
+                    exit('Quantità');
+                'Unit Price':
+                    exit('Prezzo Unitario');
+                'VATId.':
+                    exit('Id IVA');
+                'Currency':
+                    exit('Valuta');
+                'Delivery Terms':
+                    exit('Condizioni di Consegna');
+                'Freight':
+                    exit('Trasporto');
+                'Ship Time':
+                    exit('Data e Ora di Spedizione');
+                'Forwarder':
+                    exit('Vettore');
+                'Total VAT Base':
+                    exit('Base IVA Totale');
+                'Total VAT':
+                    exit('IVA Totale');
+                'Gross Weight':
+                    exit('Peso Lordo');
+                'Net Weight':
+                    exit('Peso Netto');
                 'Tariff No.':
                     exit('Numero Tariffa');
                 'Type Payment Caption':

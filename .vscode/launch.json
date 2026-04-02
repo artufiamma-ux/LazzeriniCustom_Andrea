@@ -1,23 +1,49 @@
 {
     "version": "0.2.0",
     "configurations": [
-        
         {
             "name": "Microsoft cloud sandbox",
             "request": "launch",
             "type": "al",
             "environmentType": "Sandbox",
             "environmentName": "Lazzerini_Test",
-          //  "environmentName": "Lazzerini_coll",
             "tenant": "46eaa442-6c85-4b20-aa51-d16e69a4c167",
             "startupCompany": "Lazzerini S.r.l.",
             "startupObjectId": 143,
             "startupObjectType": "Page",
             "breakOnError": "All",
             "launchBrowser": true,
-            "enableLongRunningSqlStatements": true//,
-           // ,"schemaUpdateMode":"ForceSync",
-            //"enableSqlInformationDebugger": true
+            "enableLongRunningSqlStatements": true
+        },
+        {
+            "name": "AL: Generated Download Symbols request",
+            "request": "launch",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "Lazzerini_Test",
+            "tenant": "46eaa442-6c85-4b20-aa51-d16e69a4c167"
+        },
+        {
+            "name": "AL: Generated Attach request",
+            "request": "attach",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "Lazzerini_Test",
+            "sessionId": 15472,
+            "breakOnNext": "WebClient",
+            "breakOnError": "ExcludeTry",
+            "tenant": "46eaa442-6c85-4b20-aa51-d16e69a4c167"
+        },
+        {
+            "name": "AL: Generated Snapshot request",
+            "request": "snapshotInitialize",
+            "type": "al",
+            "environmentType": "Sandbox",
+            "environmentName": "Lazzerini_Test",
+            "sessionId": 15472,
+            "breakOnNext": "WebClient",
+            "executionContext": "DebugAndProfile",
+            "tenant": "46eaa442-6c85-4b20-aa51-d16e69a4c167"
         }
     ]
 }

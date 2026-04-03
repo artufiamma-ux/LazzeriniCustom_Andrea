@@ -211,7 +211,7 @@ report 50231 "Custom Sales - Invoice"
             column(ShipmentMethodDescription_Lbl; ShptMethodDescLbl)
             {
             }
-            column(ShipmentDate; Format("Shipment Date", 0, 4))
+            column(ShipmentDate; Format("Shipment Date", 0, '<Day,2>/<Month,2>/<Year4>'))
             {
             }
             column(ShipmentDate_Lbl; FieldCaption("Shipment Date"))
@@ -307,7 +307,7 @@ report 50231 "Custom Sales - Invoice"
             column(BilltoCustomerNo_Lbl; FieldCaption("Bill-to Customer No."))
             {
             }
-            column(DocumentDate; Format("Document Date", 0, 4))
+            column(DocumentDate; Format("Document Date", 0, '<Day,2>/<Month,2>/<Year4>'))
             {
             }
             column(DocumentDate_Lbl; FieldCaption("Document Date"))
@@ -322,7 +322,7 @@ report 50231 "Custom Sales - Invoice"
             column(DocumentNo; "No.")
             {
             }
-            column(DocumentNo_Lbl; InvNoLbl)
+            column(DocumentNo_Lbl; GetCustomLabel(InvNoLbl) )
             {
             }
             column(OrderNo; "Order No.")
@@ -451,10 +451,13 @@ report 50231 "Custom Sales - Invoice"
             column(Total_Lbl; TotalLbl)
             {
             }
-            column(VATAmount_Lbl; VATAmtLbl)
+            column(VATAmount_Lbl; GetCustomLabel(VATAmtLbl))
             {
             }
-            column(VATBase_Lbl; VATBaseLbl)
+            column(VATTAX_Lbl; GetCustomLabel(VATTAXLbl))
+            {
+            }
+            column(VATBase_Lbl; GetCustomLabel(VATBaseLbl))
             {
             }
             column(VATAmountSpecification_Lbl; VATAmtSpecificationLbl)
@@ -496,7 +499,7 @@ report 50231 "Custom Sales - Invoice"
 /*  Custom*/
             column(IsKitBus; GetIsKitBus()) {}         
             column(ShipToName; "Ship-to Name") { }
-            column(EORICode; GetEORICode("Sell-to Customer No.")) { }
+            column(EORICode; Cust."EORI Number"){} //GetEORICode("Sell-to Customer No.")) { }
             column(ACCOMPAGNATORIA; ACCOMPAGNATORIA) { }
             column(TipoDocumento; GetTipoDocumento(ACCOMPAGNATORIA, "Sell-to Country/Region Code")) { }
             column(TariffNo_lbl; GetCustomLabel('Tariff No.')) { }
@@ -558,6 +561,14 @@ report 50231 "Custom Sales - Invoice"
             column(XVSignConsigneeLbl; GetCustomLabel('Consignee signature')){}
             column(XVParcNoLbl; GetCustomLabel('Parc. No.')){}
             column(XVCustomerIdLbl; GetCustomLabel('Customer ID')){}
+            column(XVPaymentTerms; GetPaymentTerms("Payment Terms Code")){}
+            column(XVPaymentTermsLbl; GetCustomLabel('Payment Terms')){}
+            column(XVBankAccount; GetBankAccount("Company Bank Account Code")){}
+            column(XVBankAccountLbl; GetCustomLabel('Bank')){}
+            column(XVPaymentMethod; GetPaymentMethod("Payment Method Code")){}
+            column(XVPackagingLbl; GetCustomLabel('Packaging')){}
+            column(XVEORILbl; GetCustomLabel('EORI Code')){}
+
             dataitem(Line; "Sales Invoice Line")
             {
                 DataItemLink = "Document No." = field("No.");
@@ -1284,6 +1295,7 @@ report 50231 "Custom Sales - Invoice"
         VATAmtLbl: Label 'VAT Amount';
         VATAmountLCYLbl: Label 'VAT Amount (LCY)';
         VATBaseLbl: Label 'VAT Base';
+        VATTAXLbl: Label 'VAT And TAX';
         VATBaseLCYLbl: Label 'VAT Base (LCY)';
         VATClausesLbl: Label 'VAT Clause';
         VATIdentifierLbl: Label 'VAT Identifier';
@@ -1416,6 +1428,36 @@ report 50231 "Custom Sales - Invoice"
                 exit('INVOICE');
         exit('');
     end;
+    local procedure GetPaymentTerms(PaymentTermsCode: Code[10]): Text[100]
+    var
+        PaymentTerms: Record "Payment Terms";
+    begin
+        if PaymentTerms.Get(PaymentTermsCode) then
+            exit(PaymentTerms.Description);
+        exit('');
+    end;
+    local procedure GetBankAccount(CompanyBankAccountCode: Code[20]): Text[100]
+    var
+        BankAccount: Record "Bank Account";
+    begin
+        if BankAccount.Get(CompanyBankAccountCode) then
+                exit('IBAN: ' + BankAccount.IBAN + ' SWIFT CODE: ' + BankAccount."SWIFT Code")
+        else begin
+            CompanyBankAccountCode := Header."EOS Our Bank Account";
+            if BankAccount.Get(CompanyBankAccountCode) then
+                exit('IBAN: ' + BankAccount.IBAN + ' SWIFT CODE: ' + BankAccount."SWIFT Code");
+        end;
+        exit('');
+    end;
+    local procedure GetPaymentMethod(PaymentMethodCode: Code[10]): Text[100]
+    var
+        PaymentMethod: Record "Payment Method";
+    begin
+        if PaymentMethod.Get(PaymentMethodCode) then
+            exit(PaymentMethod.Description);
+        exit('');
+    end;
+
     local procedure GetCustomLabel(LabelName: Text): Text
     var
         langLbl: Text[100];
@@ -1439,6 +1481,22 @@ report 50231 "Custom Sales - Invoice"
             end
         else
             case LabelName of
+                'EORI Code':
+                    exit('Cod. EORI');
+                VatAmtLbl:
+                    exit('Importo IVA');
+                VATBaseLbl:
+                    exit('Imponibile');
+                VATTAXLbl:
+                    exit('IVA e Imposte');
+                'Packaging':
+                    exit('Aspetto esteriore dei beni');
+                InvNoLbl:
+                    exit('Nr. Fattura');
+                'Payment Terms':
+                    exit('Codice e descrizione pagamento');
+                'Bank':
+                    exit('Banca d''appoggio');
                 'Customer ID':
                     exit('Cliente ID');
                 'Parc. No.':

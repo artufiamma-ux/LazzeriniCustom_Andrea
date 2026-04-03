@@ -1403,6 +1403,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Report Custom Sales - Invoice - NamedType VATPercentageLbl</note>
         </trans-unit>
+        <trans-unit id="Report 3519557761 - NamedType 104829928" size-unit="char" translate="yes" xml:space="preserve">
+          <source>VAT And TAX</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Report Custom Sales - Invoice - NamedType VATTAXLbl</note>
+        </trans-unit>
         <trans-unit id="Report 3519557761 - NamedType 1899552902" size-unit="char" translate="yes" xml:space="preserve">
           <source>Your Invoice</source>
           <note from="Developer" annotates="general" priority="2"></note>

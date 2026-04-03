@@ -7,16 +7,12 @@ pageextension 50228 "XV Posted Sales Invoices" extends "Posted Sales Invoices"
 {
     actions
     {
-        addfirst("&Invoice")
+        addfirst("Processing")
         {  
-            group("Custom Actions")
-            {
-                Caption = 'Custom Actions';
-                Image = PrintDocument;
                 action(StampaKitBus)
                     {
                         ApplicationArea = All;
-                        Caption = '**Stampa**';
+                        Caption = 'Stampa Personalizzata';
                         ToolTip = 'Stampa personalizzata della fattura.';
                         Image = Print;
                         Promoted = true;
@@ -33,7 +29,7 @@ pageextension 50228 "XV Posted Sales Invoices" extends "Posted Sales Invoices"
                             SalesInvoiceReport.Run();
                         end;
                     }
-            }
+            
         }
     }
 procedure GetReport(InvoiceNo: Code[20]): Code[30]

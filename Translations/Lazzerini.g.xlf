@@ -28,6 +28,16 @@
           <note from="Developer" annotates="general" priority="2">%</note>
           <note from="Xliff Generator" annotates="general" priority="3">Page TipiEtichettaSpedizioni - Control Description - Property ToolTip</note>
         </trans-unit>
+        <trans-unit id="PageExtension 2960391920 - Control 818828455 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1840709038">
+          <source>Nr Fattura</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Posted Sales Shipments  - Control Nr Fattura - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2960391920 - Control 587511865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1840709038">
+          <source>Nr Fattura Proforma</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Posted Sales Shipments  - Control Nr Fattura Proforma - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 1570827365 - Field 1314287010 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Count Progressivo</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1493,6 +1503,16 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Posted Sales Shipment - Upd - Action CreaProforma - Property Caption</note>
         </trans-unit>
+        <trans-unit id="PageExtension 1219853154 - Action 1134209145 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3373253667">
+          <source>Crea una proforma dall'ordine corrente</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Posted Sales Shipment Ext - Action CreaProforma - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 1219853154 - Action 1134209145 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 3373253667">
+          <source>Crea proforma</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Posted Sales Shipment Ext - Action CreaProforma - Property Caption</note>
+        </trans-unit>
         <trans-unit id="PageExtension 3778526271 - Control 3942216509 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 561208485">
           <source>Indica se la fattura è accompagnatoria.</source>
           <note from="Developer" annotates="general" priority="2"></note>
@@ -1592,6 +1612,16 @@
           <source>Qta. Origine layout</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Order Subform - Control Qta. Origine layout - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2109965347 - Control 818828455 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 35400042">
+          <source>Nr Fattura</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Posted Ship Summary - Control Nr Fattura - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PageExtension 2109965347 - Control 587511865 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 35400042">
+          <source>Nr Fattura Proforma</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">PageExtension XV Sales Posted Ship Summary - Control Nr Fattura Proforma - Property Caption</note>
         </trans-unit>
         <trans-unit id="PageExtension 1572327555 - Action 2214803954 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Page 1558066289">
           <source>Stampa etichette ricambi</source>
@@ -1867,6 +1897,11 @@
           <source>Costi di trasporto</source>
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Spedizioni - Field Costi di trasporto - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="TableExtension 2719667458 - Field 1333448327 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3118382297">
+          <source>Nr fattura associata</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">TableExtension XV Spedizioni - Field Nr fattura - Property Caption</note>
         </trans-unit>
         <trans-unit id="TableExtension 2719667458 - Field 1706676025 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve" al-object-target="Table 3118382297">
           <source>Nr fattura proforma</source>

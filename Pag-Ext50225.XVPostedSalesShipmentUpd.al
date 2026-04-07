@@ -17,9 +17,10 @@ pageextension 50225 "XV Posted Sales Shipment - Upd" extends "Posted Sales Shipm
             }
         }
     }
-    actions    {
-        
-addlast(Processing)
+    actions
+    {
+
+        addlast(Processing)
         {
 
             action(CreaProforma)
@@ -42,9 +43,9 @@ addlast(Processing)
                     if (Rec."Cod valuta proforma" = '') then
                         Error('Il campo "Cod valuta proforma" non è valorizzato.')
                     else
-                        ProformaMgt.CreateProformaFromShipment(Rec."No.",Rec."Cod valuta proforma");
+                        ProformaMgt.CreateProformaFromShipment(Rec."No.", Rec."Cod valuta proforma");
                 end;
-			}
-        } 
-     }       
+            }
+        }
+    }
 }

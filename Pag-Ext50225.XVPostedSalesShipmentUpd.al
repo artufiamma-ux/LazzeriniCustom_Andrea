@@ -31,6 +31,7 @@ addlast(Processing)
                 PromotedCategory = Process;
                 PromotedIsBig = true;
                 ToolTip = 'Crea una proforma dall''ordine corrente';
+                Enabled = Rec."Nr fattura proforma" = '';
 
 
 
@@ -38,7 +39,10 @@ addlast(Processing)
                 var
                     ProformaMgt: Codeunit "Proforma Management";
                 begin
-                    ProformaMgt.CreateProformaFromShipment(Rec);
+                    if (Rec."Cod valuta proforma" = '') then
+                        Error('Il campo "Cod valuta proforma" non è valorizzato.')
+                    else
+                        ProformaMgt.CreateProformaFromShipment(Rec."No.",Rec."Cod valuta proforma");
                 end;
 			}
         } 

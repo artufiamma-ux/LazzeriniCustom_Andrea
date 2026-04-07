@@ -12,8 +12,14 @@ namespace Lazzerini;
 codeunit 50211 "Proforma Management"
 {
 
-    procedure CreateProformaFromShipment(var PostedShipment: Record "Sales Shipment Header")
+    Permissions =
+        tabledata "Sales Shipment Header" = m,
+        tabledata "Sales Header" = rimd,
+        tabledata "Sales Line" = rimd;
+
+    procedure CreateProformaFromShipment(var PK: Code[20]; CodValuta: Code[20])
     var
+        PostedShipment: Record "Sales Shipment Header"; 
         SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
         NewSalesHeader: Record "Sales Header";
@@ -24,6 +30,7 @@ codeunit 50211 "Proforma Management"
         LineNo: Integer;
         NewNo: Code[20];
     begin
+        PostedShipment.Get(PK);
         // 0. Blocco difensivo
         if PostedShipment."Nr fattura proforma" <> '' then
             Error('Esiste già una proforma associata: %1.', PostedShipment."Nr fattura proforma");
@@ -33,6 +40,7 @@ codeunit 50211 "Proforma Management"
             Error('Impossibile recuperare l''ordine %1.', PostedShipment."Order No.");
 
         // 2. Recupero valuta proforma
+        PostedShipment."Cod valuta proforma" := CodValuta;
         if PostedShipment."Cod valuta proforma" = '' then
             Error('Il campo "Cod valuta proforma" non è valorizzato.');
 
@@ -60,6 +68,9 @@ codeunit 50211 "Proforma Management"
         NewSalesHeader.Validate("Sell-to Customer No.", SalesHeader."Sell-to Customer No.");
         NewSalesHeader.Validate("Bill-to Customer No.", SalesHeader."Bill-to Customer No.");
         NewSalesHeader.Validate("Ship-to Code", SalesHeader."Ship-to Code");
+        if NewSalesHeader."Currency Code" = '' then
+            NewSalesHeader."Currency Code" := PostedShipment."Cod valuta proforma";
+        NewSalesHeader."Currency Factor" := FattoreValuta;
 
         NewSalesHeader.Insert(true);
 
@@ -74,6 +85,7 @@ codeunit 50211 "Proforma Management"
         NewSalesLine.Validate("Line No.", LineNo);
         NewSalesLine.Type := NewSalesLine.Type::" ";
         NewSalesLine.Validate(Description, 'Riferimento ordine ' + SalesHeader."No.");
+        
         NewSalesLine.Insert(true);
 
         LineNo += 10000;

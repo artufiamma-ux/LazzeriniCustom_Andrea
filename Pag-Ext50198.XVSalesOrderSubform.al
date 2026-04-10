@@ -47,22 +47,35 @@ pageextension 50198 "XV Sales Order Subform" extends "Sales Order Subform" // Pa
         modify("Net Weight")
         {
             ShowMandatory = (Rec.Type <> Rec.Type::" ") and (Rec."No." <> '');
-         }    
+        }
         modify("Service Tariff No.")
         {
             ShowMandatory = (Rec.Type <> Rec.Type::" ") and (Rec."No." <> '');
-         }    
+        }
+
     }
+
+    actions
+    {
+        modify(ExplodeBOM_Functions)
+        {
+            Enabled =
+                (Rec.Type = Rec.Type::Item) and
+                (Rec.Quantity <> 0);
+        }
+    }
+
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     begin
         if (CloseAction in [Action::OK, Action::LookupOK]) then begin
             if Rec."Service Tariff No." = '' then
                 Error('Il campo Causale è obbligatorio per salvare l’ordine.');
-           // if Rec."Unit Price" = 0 then
-             //   Error('Il campo Prezzo Unitario è obbligatorio per salvare l’ordine.');
+            // if Rec."Unit Price" = 0 then
+            //   Error('Il campo Prezzo Unitario è obbligatorio per salvare l’ordine.');
             if Rec."Net Weight" = 0 then
                 Error('Il campo Peso Netto è obbligatorio per salvare l’ordine.');
         end;
     end;
 
 }
+

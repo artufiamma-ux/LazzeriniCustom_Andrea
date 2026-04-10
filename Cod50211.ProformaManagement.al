@@ -30,7 +30,7 @@ codeunit 50211 "Proforma Management"
         LineNo: Integer;
         NewNo: Code[20];
     begin
-        PostedShipment.Get(PK);
+        PostedShipment.Get(PK); // Recupero la spedizione di riferimento, non quella temporanea
         // 0. Blocco difensivo
         if PostedShipment."Nr fattura proforma" <> '' then
             Error('Esiste già una proforma associata: %1.', PostedShipment."Nr fattura proforma");
@@ -65,13 +65,14 @@ codeunit 50211 "Proforma Management"
         NewNo := NoSeriesMgt.GetNextNo('PROFORMA', 0D, false);
         NewSalesHeader.Validate("No.", NewNo);
         NewSalesHeader.Validate("No. Series", 'PROFORMA');
-        //   NewSalesHeader.Validate("EOS Document Class Code", 'PROFORMA');
+        NewSalesHeader."EOS Document Class Code" := 'PROFORMA';
         NewSalesHeader.Validate("Currency Code", PostedShipment."Cod valuta proforma");
         //NewSalesHeader.Validate("No. Series", 'VEND-PROF');
         NewSalesHeader.Validate("Sell-to Customer No.", SalesHeader."Sell-to Customer No.");
         NewSalesHeader.Validate("Bill-to Customer No.", SalesHeader."Bill-to Customer No.");
         NewSalesHeader.Validate("Ship-to Code", SalesHeader."Ship-to Code");
-        NewSalesHeader.Validate("Reason Code", PostedShipment."Reason Code");
+        NewSalesHeader.Validate("Activity Code", SalesHeader."Activity Code");
+        NewSalesHeader.Validate("Reason Code", SalesHeader."Reason Code");
 
 
         if NewSalesHeader."Currency Code" = '' then
@@ -120,8 +121,7 @@ codeunit 50211 "Proforma Management"
 
                 NewSalesLine.Validate(Quantity, SalesLine.Quantity);
 
-                NewSalesLine.Validate("Line Amount",
-                    Round(NewSalesLine.Quantity * NewSalesLine."Unit Price", 0.01, '>'));
+                // NewSalesLine.Validate("Line Amount",           Round(NewSalesLine.Quantity * NewSalesLine."Unit Price", 0.01, '>'));
 
                 NewSalesLine.Insert(true);
                 SalesLine."Qty. to Invoice" := SalesLine.Quantity;
@@ -176,13 +176,15 @@ codeunit 50211 "Proforma Management"
         NewNo := NoSeriesMgt.GetNextNo('PROFORMA', 0D, false);
         NewSalesHeader.Validate("No.", NewNo);
         NewSalesHeader.Validate("No. Series", 'PROFORMA');
+        NewSalesHeader."EOS Document Class Code" := 'PROFORMA';
         //        NewSalesHeader.Validate("EOS Document Class Code", 'PROFORMA');
         NewSalesHeader.Validate("Currency Code", PostedShipment."Currency Code");
         //NewSalesHeader.Validate("No. Series", 'VEND-PROF');
         NewSalesHeader.Validate("Sell-to Customer No.", SalesHeader."Sell-to Customer No.");
         NewSalesHeader.Validate("Bill-to Customer No.", SalesHeader."Bill-to Customer No.");
         NewSalesHeader.Validate("Ship-to Code", SalesHeader."Ship-to Code");
-        NewSalesHeader.Validate("Reason Code", PostedShipment."Reason Code");
+        NewSalesHeader.Validate("Activity Code", SalesHeader."Activity Code");
+        NewSalesHeader.Validate("Reason Code", SalesHeader."Reason Code");
 
 
         NewSalesHeader.Insert(true);
@@ -226,7 +228,7 @@ codeunit 50211 "Proforma Management"
 
                 NewSalesLine.Validate(Quantity, SalesLine.Quantity);
 
-                NewSalesLine.Validate("Line Amount", SalesLine."Line Amount");
+                //NewSalesLine.Validate("Line Amount", SalesLine."Line Amount");
 
                 NewSalesLine.Insert(true);
                 SalesLine."Qty. to Invoice" := SalesLine.Quantity;

@@ -13,12 +13,12 @@ pageextension 50201 "XV Sales Order Ext" extends "Sales Order"
         // Aggiungo campi nella FastTab 'General'
         addlast(General)
         {
-        field("Reason Code"; Rec."Reason Code") 
-        {
-            ApplicationArea = All;
-            NotBlank = true;
-            ShowMandatory = Rec."Reason Code" = '';
-         }
+            field("Reason Code"; Rec."Reason Code")
+            {
+                ApplicationArea = All;
+                NotBlank = true;
+                ShowMandatory = Rec."Reason Code" = '';
+            }
             field("Nr Layout"; Rec."Nr Layout")
             {
                 ApplicationArea = All;
@@ -51,12 +51,34 @@ pageextension 50201 "XV Sales Order Ext" extends "Sales Order"
                 ToolTip = 'Specifica il tipo di ordine.';
             }
         }
-        /*
-        modify("Activity Code")
+
+    }
+
+    actions
+    {
+        addfirst("Processing")
         {
-            ShowMandatory = true;
-         }
- */
+            action(StampaKitBus)
+            {
+                ApplicationArea = All;
+                Caption = 'Stampa Personalizzata';
+                ToolTip = 'Stampa personalizzata dell''ordine';
+                Image = Print;
+                Promoted = true;
+                PromotedCategory = Process;
+
+
+                trigger OnAction()
+                var
+                    KBReport: Report "XV Custom Sales Order";
+                begin
+                    KBReport.SetParameters(Rec."No.");
+                    //                    KBReport.SetTableView(Rec);
+                    KBReport.Run();
+                end;
+            }
+
+        }
     }
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
@@ -68,6 +90,8 @@ pageextension 50201 "XV Sales Order Ext" extends "Sales Order"
                 Message('Il campo Codice Attività è obbligatorio per salvare l’ordine.');//Error
         end;
     end;
+
+
 
 }
 

@@ -33,4 +33,29 @@ pageextension 50202 "XV Sales List Ext" extends "Sales Order List" // Page 9305
             }
         }
     }
+    actions
+    {
+        addlast(Processing)
+        {
+            action(StampaKitBus)
+            {
+                ApplicationArea = All;
+                Caption = 'Stampa personalizzata';
+                ToolTip = 'Stampa personalizzata della fattura.';
+                Image = Print;
+                Promoted = true;
+                PromotedCategory = Process;
+
+
+                trigger OnAction()
+                var
+                    SalesInvoiceReport: Report "XV Custom Sales Order";
+                    Rep: Integer;
+                begin
+                    SalesInvoiceReport.SetParameters(Rec."No.");
+                    SalesInvoiceReport.Run();
+                end;
+            }
+        }
+    }
 }

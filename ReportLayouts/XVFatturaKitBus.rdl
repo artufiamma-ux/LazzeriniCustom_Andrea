@@ -7119,6 +7119,15 @@
         <Field Name="Forwarder">
           <DataField>Forwarder</DataField>
         </Field>
+        <Field Name="XVPaymentTerms">
+          <DataField>XVPaymentTerms</DataField>
+        </Field>
+        <Field Name="XVBankAccount">
+          <DataField>XVBankAccount</DataField>
+        </Field>
+        <Field Name="XVPaymentMethod">
+          <DataField>XVPaymentMethod</DataField>
+        </Field>
         <Field Name="XVOurCodeLbl">
           <DataField>XVOurCodeLbl</DataField>
         </Field>
@@ -7185,20 +7194,11 @@
         <Field Name="XVCustomerIdLbl">
           <DataField>XVCustomerIdLbl</DataField>
         </Field>
-        <Field Name="XVPaymentTerms">
-          <DataField>XVPaymentTerms</DataField>
-        </Field>
         <Field Name="XVPaymentTermsLbl">
           <DataField>XVPaymentTermsLbl</DataField>
         </Field>
-        <Field Name="XVBankAccount">
-          <DataField>XVBankAccount</DataField>
-        </Field>
         <Field Name="XVBankAccountLbl">
           <DataField>XVBankAccountLbl</DataField>
-        </Field>
-        <Field Name="XVPaymentMethod">
-          <DataField>XVPaymentMethod</DataField>
         </Field>
         <Field Name="XVPackagingLbl">
           <DataField>XVPackagingLbl</DataField>

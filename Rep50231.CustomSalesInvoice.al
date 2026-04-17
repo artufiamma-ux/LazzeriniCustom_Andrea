@@ -225,7 +225,19 @@ report 50231 "Custom Sales - Invoice"
             column(ShowShippingAddress; ShowShippingAddr)
             {
             }
+            column(ShiptoPostCode; "Ship-to Post Code")
+            {
+            }
+            column(ShiptoCity; "Ship-to City")
+            {
+            }
+            column(ShiptoCountry; XVUtil.GetCountry("Ship-to Country/Region Code"))
+            {
+            }
             column(ShipToAddress_Lbl; ShiptoAddrLbl)
+            {
+            }
+            column(ShiptoAddress; "Ship-to Address")
             {
             }
             column(ShipToAddress1; ShipToAddr[1])
@@ -505,7 +517,10 @@ report 50231 "Custom Sales - Invoice"
             column(InvoiceTo4; Cust.City) { }
             column(InvoiceTo5; XVUtil.GetCountry(Cust."Country/Region Code")) { }
             column(IsKitBus; XVUtil.GetIsKitBus('FATTURA', DocNo)) { }
-            column(ShipToName; "Ship-to Name") { }
+            column(ShiptoName; "Ship-to Name") { }
+            column(ShiptoName2; "Ship-to Name 2")
+            {
+            }
             column(EORICode; Cust."EORI Number") { } //GetEORICode("Sell-to Customer No.")) { }
             column(ACCOMPAGNATORIA; ACCOMPAGNATORIA) { }
             column(TipoDocumento; GetTipoDocumento(ACCOMPAGNATORIA, "Sell-to Country/Region Code")) { }
@@ -579,6 +594,13 @@ report 50231 "Custom Sales - Invoice"
             column(XVPackagingLbl; GetCustomLabel('Packaging')) { }
             column(XVEORILbl; GetCustomLabel('EORI Code')) { }
             column(XVInvoiceDateLbl; GetCustomLabel('Invoice Date')) { }
+            column(XVPaymentMethodLbl; GetCustomLabel('Payment Method')) { }
+            column(Packaging; ShipmentInfo[4])
+            {
+            }
+            column(NrPackages; ShipmentInfo[1]) { }
+            column(GrossWeight; ShipmentInfo[3]) { }
+            column(NetWeight; ShipmentInfo[2]) { }
 
             dataitem(Line; "Sales Invoice Line")
             {
@@ -728,19 +750,6 @@ report 50231 "Custom Sales - Invoice"
                 {
                 }
                 column(Tariff_No; GetTariffNo(Line."No."))
-                {
-                }
-                column(NetWeight; "Net Weight")
-                {
-                    Caption = 'Net Weight';
-                }
-                column(NetWeight_Lbl; FieldCaption("Net Weight"))
-                {
-                }
-                column(GrossWeight; "Gross Weight")
-                {
-                }
-                column(GrossWeight_Lbl; FieldCaption("Gross Weight"))
                 {
                 }
                 column(TariffList; TariffList) { }
@@ -1142,6 +1151,8 @@ report 50231 "Custom Sales - Invoice"
 
                 if not Cust.Get("Bill-to Customer No.") then
                     Clear(Cust);
+                IsForeign := Cust."Country/Region Code" <> 'IT';
+                XVUtil.GetInfoPackaging(Header."Order No.", ShipmentInfo, IsForeign);
 
                 if "Currency Code" <> '' then begin
                     CurrencyExchangeRate.FindCurrency("Posting Date", "Currency Code", 1);
@@ -1222,6 +1233,7 @@ report 50231 "Custom Sales - Invoice"
     var
         /* RPCustom */
         IsForeign: Boolean;
+        ShipmentInfo: array[4] of Text[100];
         TariffList: Text;
         TariffTemp: Code[20];
         VAT_Description1: Text[100];
@@ -1418,7 +1430,7 @@ report 50231 "Custom Sales - Invoice"
     local procedure GetTipoDocumento(ACCOMPAGNATORIA: Boolean; SellToCountryCode: Code[10]): Text[100]
     var
     begin
-        IsForeign := SellToCountryCode <> 'IT';
+
         if SellToCountryCode = 'IT' then
             if ACCOMPAGNATORIA then
                 exit('FATTURA ACCOMPAGNATORIA') // NON ESISTONO ITALIANI - SOLO DOGANA

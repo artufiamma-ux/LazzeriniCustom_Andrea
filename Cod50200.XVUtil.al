@@ -34,6 +34,9 @@ codeunit 50200 XVUtil
             end
         else
             case LabelName of
+                'Payment Method':
+                    exit('Metodo Pagamento');
+
                 'Order No.':
                     exit('Nr. Ordine');
                 'Invoice To':

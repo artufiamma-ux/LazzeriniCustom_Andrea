@@ -169,6 +169,8 @@ report 50231 "Custom Sales - Invoice"
             column(CompanyLegalStatement; LegalStatementLbl)
             {
             }
+            column(CompanyCountry; XVUtil.GetCountry(CompanyInfo."Country/Region Code")) { }
+
             column(DisplayAdditionalFeeNote; DisplayAdditionalFeeNote)
             {
             }
@@ -497,6 +499,11 @@ report 50231 "Custom Sales - Invoice"
             {
             }
             /*  Custom*/
+            column(InvoiceTo1; Cust.Name) { }
+            column(InvoiceTo2; Cust.Address) { }
+            column(InvoiceTo3; Cust."Address 2") { }
+            column(InvoiceTo4; Cust.City) { }
+            column(InvoiceTo5; XVUtil.GetCountry(Cust."Country/Region Code")) { }
             column(IsKitBus; XVUtil.GetIsKitBus('FATTURA', DocNo)) { }
             column(ShipToName; "Ship-to Name") { }
             column(EORICode; Cust."EORI Number") { } //GetEORICode("Sell-to Customer No.")) { }
@@ -554,6 +561,7 @@ report 50231 "Custom Sales - Invoice"
             column(XVNetWeightLbl; GetCustomLabel('Net Weight')) { }
             column(XVCurrencyLbl; GetCustomLabel('Currency')) { }
             column(XVDeliveryTermsLbl; GetCustomLabel('Delivery Terms')) { }
+            column(XVDeliveryLbl; GetCustomLabel('Delivery')) { }
             column(XVFreightLbl; GetCustomLabel('Freight')) { }
             column(XVShipTimeLbl; GetCustomLabel('Ship Time')) { }
             column(XVForwarderLbl; GetCustomLabel('Forwarder')) { }
@@ -564,10 +572,13 @@ report 50231 "Custom Sales - Invoice"
             column(XVSignConsigneeLbl; GetCustomLabel('Consignee signature')) { }
             column(XVParcNoLbl; GetCustomLabel('Parc. No.')) { }
             column(XVCustomerIdLbl; GetCustomLabel('Customer ID')) { }
-            column(XVPaymentTermsLbl; GetCustomLabel('Payment Terms')) { }
+            column(XVVatNoLbl; GetCustomLabel('VAT No.')) { }
+            column(XVCustomerLbl; GetCustomLabel('Customer')) { }
+            column(XVPaymentTermsLbl; GetCustomLabel('Term Payment')) { }
             column(XVBankAccountLbl; GetCustomLabel('Bank')) { }
             column(XVPackagingLbl; GetCustomLabel('Packaging')) { }
             column(XVEORILbl; GetCustomLabel('EORI Code')) { }
+            column(XVInvoiceDateLbl; GetCustomLabel('Invoice Date')) { }
 
             dataitem(Line; "Sales Invoice Line")
             {

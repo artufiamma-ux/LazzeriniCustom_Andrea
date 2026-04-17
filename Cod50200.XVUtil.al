@@ -2,7 +2,7 @@ namespace Lazzerini;
 using Microsoft.Inventory.Item;
 using Microsoft.Sales.History;
 using Microsoft.Sales.Document;
-
+using Microsoft.Foundation.Address;
 codeunit 50200 XVUtil
 {
     procedure GetCustomLabel(LabelName: Text; isForeign: Boolean): Text
@@ -66,6 +66,8 @@ codeunit 50200 XVUtil
                     exit('Aspetto esteriore dei beni');
                 'Invoice No.':
                     exit('Nr. Fattura');
+                'Invoice Date':
+                    exit('Data Fattura');
                 'Payment Terms':
                     exit('Codice e descrizione pagamento');
                 'Bank':
@@ -105,6 +107,8 @@ codeunit 50200 XVUtil
                     exit('Trasporto');
                 'Ship Time':
                     exit('Data e Ora di Spedizione');
+                'Customer':
+                    exit('Cliente');
                 'Forwarder':
                     exit('Vettore');
                 'Total VAT Base':
@@ -142,6 +146,7 @@ codeunit 50200 XVUtil
         SalesInvLine: Record "Sales Invoice Line";
         SalesOrderLine: Record "Sales Line";
         SalesHeader: Record "Sales Header";
+        DDTLine: Record "Sales Shipment Line";
     begin
         case DocType of
             'FATTURA':
@@ -159,6 +164,21 @@ codeunit 50200 XVUtil
                                     exit(true);  // appena trovato → fine
                         until SalesInvLine.Next() = 0;
                 end;
+            'DDT':
+                begin
+                    // Filtra solo le righe con un Order No. valorizzato
+                    // Il riferimento all'ordine va cercato nelle righe
+                    DDTLine.SetRange("Document No.", DocNo);
+                    DDTLine.SetFilter("Order No.", '<>%1', '');
+
+                    if DDTLine.FindSet() then
+                        repeat
+                            // Lettura diretta testata ordine
+                            if SalesHeader.Get(SalesHeader."Document Type"::Order, DDTLine."Order No.") then
+                                if SalesHeader."Ordine con kit" then
+                                    exit(true);  // appena trovato → fine
+                        until DDTLine.Next() = 0;
+                end;
             'ORDINE':
                 begin
                     SalesHeader.SetRange("Document Type", SalesHeader."Document Type"::Order);
@@ -173,5 +193,90 @@ codeunit 50200 XVUtil
         // Nessun ordine con kit
         exit(false);
     end;
+    /*
+        * Nr Colli
+        * Peso Netto
+        * Peso Lordo
+        * Aspetto dei beni
+    */
+    procedure GetInfoPackaging(DocNo: Code[20]; var info: array[4] of Text[100])
+    begin
+        GetInfoPackaging(DocNo, Info, false);
+    end;
+
+    procedure GetCountry(CountryCod: Code[20]): Text[30]
+    var
+        Country: Record "Country/Region";
+    begin
+        Country.Get(CountryCod);
+        exit(Country."Name");
+    end;
+
+    procedure GetInfoPackaging(DocNo: Code[20]; var info: array[4] of Text[100]; IsForeign: Boolean)
+    var
+        RecAssignm: Record "EOS055 Handling Unit Assignm.";
+        RecInfo: Record "EOS055 Handling Unit"; // scatola
+        RecInfoFK: Record "EOS055 Handling Unit"; //pallet
+        NrColli: Integer;
+        PesoNetto: Decimal;
+        PesoLordo: Decimal;
+        AspettoDeiBeni: Text[100];
+        AspettoDeiBeniFK: Text[100];
+        FK: Code[20];
+        TmpFK: Text[100];
+        TmpAspetto: Text[100];
+    begin
+        NrColli := 0;
+        PesoNetto := 0;
+        PesoLordo := 0;
+        AspettoDeiBeniFK := '';
+        AspettoDeiBeni := '';
+        RecAssignm.Reset();
+        RecAssignm.SetRange("Source No.", DocNo);
+        if RecAssignm.FindSet() then
+            repeat
+                if RecInfo.Get(RecAssignm."Handling Unit No.") then begin
+                    FK := RecInfo."Parent Handling Unit No.";
+                    if NOT TmpFK.Contains(FK) then begin
+                        TmpFK := TmpFK + ', ' + FK;
+                        if RecInfoFK.Get(FK) then begin
+                            PesoNetto := PesoNetto + RecInfoFK."Calc. Net Weight";
+                            PesoLordo := PesoLordo + RecInfoFK."Calc. Gross Weight";
+                            TmpAspetto := RecInfoFK."HU Type Code";
+                            if AspettoDeiBeniFK = '' then
+                                AspettoDeiBeniFK := 'PALLET'
+                            else if IsForeign then
+                                AspettoDeiBeniFK := 'PALLETS'
+                        end;
+                    end;
+                    NrColli := NrColli + 1;
+                    PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
+                    PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
+                    TmpAspetto := RecInfo."HU Type Code";
+                    if AspettoDeiBeni = '' then
+                        if IsForeign then
+                            AspettoDeiBeni := 'BOX'
+                        else
+                            AspettoDeiBeni := 'SCATOLA'
+                    else if IsForeign then
+                        AspettoDeiBeni := 'BOXES'
+                    else
+                        AspettoDeiBeni := 'SCATOLE'
+
+                end;
+            until RecAssignm.Next() = 0;
+        info[1] := Format(NrColli);
+        info[2] := Format(PesoNetto);
+        info[3] := Format(PesoLordo);
+        if AspettoDeiBeniFK = '' then
+            info[4] := AspettoDeiBeni
+        else if IsForeign then
+            info[4] := AspettoDeiBeniFK + ' AND ' + AspettoDeiBeni
+        else
+            info[4] := AspettoDeiBeniFK + ' E ' + AspettoDeiBeni
+
+
+    end;
+
 
 }

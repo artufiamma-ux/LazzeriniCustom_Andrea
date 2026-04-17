@@ -6,8 +6,10 @@ using Microsoft.Warehouse.Document;
 using Microsoft.Warehouse.Request;
 
 
+
 codeunit 50212 "XV Kit Bus Subscriber"
 {
+
     [EventSubscriber(ObjectType::Table, Database::"Sales Line", 'OnAfterInsertEvent', '', false, false)]
     local procedure SalesLineAfterInsert(var Rec: Record "Sales Line")
     var

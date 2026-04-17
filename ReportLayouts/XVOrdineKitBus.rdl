@@ -4508,6 +4508,33 @@
         <Field Name="XVDeliveryDateLbl">
           <DataField>XVDeliveryDateLbl</DataField>
         </Field>
+        <Field Name="XVVatNoLbl">
+          <DataField>XVVatNoLbl</DataField>
+        </Field>
+        <Field Name="XVTelephoneNoLbl">
+          <DataField>XVTelephoneNoLbl</DataField>
+        </Field>
+        <Field Name="XVDeliveryNoteNoLbl">
+          <DataField>XVDeliveryNoteNoLbl</DataField>
+        </Field>
+        <Field Name="XVDNDateLbl">
+          <DataField>XVDNDateLbl</DataField>
+        </Field>
+        <Field Name="XVDeliveryReasonLbl">
+          <DataField>XVDeliveryReasonLbl</DataField>
+        </Field>
+        <Field Name="XVShipmentProvidedBy">
+          <DataField>XVShipmentProvidedBy</DataField>
+        </Field>
+        <Field Name="XVForwarder1Lbl">
+          <DataField>XVForwarder1Lbl</DataField>
+        </Field>
+        <Field Name="XVForwarder2Lbl">
+          <DataField>XVForwarder2Lbl</DataField>
+        </Field>
+        <Field Name="XVDateAndTimeLbl">
+          <DataField>XVDateAndTimeLbl</DataField>
+        </Field>
         <Field Name="XVReferenteNome">
           <DataField>XVReferenteNome</DataField>
         </Field>

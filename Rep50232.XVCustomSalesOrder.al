@@ -486,6 +486,17 @@ report 50232 "XV Custom Sales Order"
             column(XVInvoiceToLbl; GetCustomLabel('Invoice To')) { }
             column(XVVatPercItemLbl; GetCustomLabel('VAT')) { }
             column(XVDeliveryDateLbl; GetCustomLabel('Delivery Date')) { }
+            column(XVVatNoLbl; GetCustomLabel('VAT No.')) { }
+            column(XVTelephoneNoLbl; GetCustomLabel('Telephone No.')) { }
+            column(XVDeliveryNoteNoLbl; GetCustomLabel('Delivery Note No.')) { }
+            column(XVDNDateLbl; GetCustomLabel('D.N. Date')) { }
+            column(XVDeliveryReasonLbl; GetCustomLabel('Delivery Reason')) { }
+            column(XVShipmentProvidedBy; GetCustomLabel('Shipment Provided By')) { }
+            column(XVForwarder1Lbl; GetCustomLabel('Forwarder 1')) { }
+            column(XVForwarder2Lbl; GetCustomLabel('Forwarder 2')) { }
+            column(XVDateAndTimeLbl; GetCustomLabel('Date and Time')) { }
+
+
             column(XVReferenteNome; ReferenteNome) { }
             column(XVReferenteEmail; ReferenteEmail) { }
             column(XVReferenteTelefono; ReferenteTelefono) { }

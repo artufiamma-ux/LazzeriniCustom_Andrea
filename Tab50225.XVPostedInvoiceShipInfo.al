@@ -14,6 +14,7 @@ table 50225 "XV Posted Invoice Ship Info"
         field(3; "Peso Netto"; Decimal) { }
         field(4; "Peso Lordo"; Decimal) { }
         field(5; "Aspetto Beni"; Text[100]) { }
+        field(6; "Modificato manualmente"; Boolean) { }
     }
 
     keys

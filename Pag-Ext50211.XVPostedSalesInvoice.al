@@ -32,6 +32,21 @@ pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
     {
         addlast(Processing)
         {
+            action(UpdShipInfo)
+            {
+                ApplicationArea = All;
+                Caption = 'Colli e Pesi';
+                ToolTip = 'Aggiorna Pesi e Nr Colli.';
+                Image = Print;
+                Promoted = true;
+                PromotedCategory = Process;
+
+
+                trigger OnAction()
+                begin
+                    Page.RunModal(Page::"XV Ship Details Card", ShipInfo);
+                end;
+            }
             action(StampaKitBus)
             {
                 ApplicationArea = All;
@@ -59,10 +74,10 @@ pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
         PesoNetto: Decimal;
         PesoLordo: Decimal;
         AspettoDeiBeni: Text[100];
+        ShipInfo: Record "XV Posted Invoice Ship Info";
 
     trigger OnAfterGetCurrRecord()
     var
-        ShipInfo: Record "XV Posted Invoice Ship Info";
         XVUtil: Codeunit "XVUtil";
     begin
         if ShipInfo.Get(Rec."No.") then begin

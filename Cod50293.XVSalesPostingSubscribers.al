@@ -8,5 +8,6 @@ codeunit 50293 "XV Sales Posting Subscribers"
     local procedure OnAfterUpdateWonOpportunities(var SalesHeader: Record "Sales Header"; var SalesInvoiceHeader: Record "Sales Invoice Header")
     begin
         SalesInvoiceHeader."Accompagnatoria" := SalesHeader."Accompagnatoria";
+
     end;
 }

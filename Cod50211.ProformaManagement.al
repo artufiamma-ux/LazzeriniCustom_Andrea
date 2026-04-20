@@ -73,6 +73,7 @@ codeunit 50211 "Proforma Management"
         NewSalesHeader.Validate("Ship-to Code", SalesHeader."Ship-to Code");
         NewSalesHeader.Validate("Activity Code", SalesHeader."Activity Code");
         NewSalesHeader.Validate("Reason Code", SalesHeader."Reason Code");
+        NewSalesHeader.Validate("Your Reference", SalesHeader."Your Reference");
 
 
         if NewSalesHeader."Currency Code" = '' then
@@ -185,6 +186,7 @@ codeunit 50211 "Proforma Management"
         NewSalesHeader.Validate("Ship-to Code", SalesHeader."Ship-to Code");
         NewSalesHeader.Validate("Activity Code", SalesHeader."Activity Code");
         NewSalesHeader.Validate("Reason Code", SalesHeader."Reason Code");
+        NewSalesHeader.Validate("Your Reference", SalesHeader."Your Reference");
 
 
         NewSalesHeader.Insert(true);

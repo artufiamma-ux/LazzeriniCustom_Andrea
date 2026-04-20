@@ -595,12 +595,18 @@ report 50231 "Custom Sales - Invoice"
             column(XVEORILbl; GetCustomLabel('EORI Code')) { }
             column(XVInvoiceDateLbl; GetCustomLabel('Invoice Date')) { }
             column(XVPaymentMethodLbl; GetCustomLabel('Payment Method')) { }
-            column(Packaging; ShipmentInfo[4])
-            {
-            }
-            column(NrPackages; ShipmentInfo[1]) { }
-            column(GrossWeight; ShipmentInfo[3]) { }
-            column(NetWeight; ShipmentInfo[2]) { }
+            /*
+                        column(Packaging; ShipmentInfo[4])
+                        {
+                        }
+                        column(NrPackages; ShipmentInfo[1]) { }
+                        column(GrossWeight; ShipmentInfo[3]) { }
+                        column(NetWeight; ShipmentInfo[2]) { }
+            */
+            column(NrPackages; NrColli) { }
+            column(GrossWeight; PesoLordo) { }
+            column(NetWeight; PesoNetto) { }
+            column(Packaging; AspettoDeiBeni) { }
 
             dataitem(Line; "Sales Invoice Line")
             {
@@ -1151,8 +1157,23 @@ report 50231 "Custom Sales - Invoice"
 
                 if not Cust.Get("Bill-to Customer No.") then
                     Clear(Cust);
+                if ShipInfo.Get(Header."No.") then begin
+                    AspettoDeiBeni := ShipInfo."Aspetto Beni";
+                    NrColli := ShipInfo."Nr. Colli";
+                    PesoNetto := ShipInfo."Peso Netto";
+                    PesoLordo := ShipInfo."Peso Lordo";
+                end
+                else begin
+                    XVUtil.SetShipInfo(Header."No.");
+                    if ShipInfo.Get(Header."No.") then begin
+                        AspettoDeiBeni := ShipInfo."Aspetto Beni";
+                        NrColli := ShipInfo."Nr. Colli";
+                        PesoNetto := ShipInfo."Peso Netto";
+                        PesoLordo := ShipInfo."Peso Lordo";
+                    end;
+                end;
                 IsForeign := Cust."Country/Region Code" <> 'IT';
-                XVUtil.GetInfoPackaging(Header."Order No.", ShipmentInfo, IsForeign);
+                //                XVUtil.GetInfoPackagingInvoice(Header."No.", ShipmentInfo, IsForeign);
 
                 if "Currency Code" <> '' then begin
                     CurrencyExchangeRate.FindCurrency("Posting Date", "Currency Code", 1);
@@ -1356,6 +1377,10 @@ report 50231 "Custom Sales - Invoice"
         LCYTxt: label ' (LCY)';
         VATClauseText: Text;
         LegalOfficeTxt, LegalOfficeLbl, CustomGiroTxt, CustomGiroLbl, LegalStatementLbl : Text;
+        NrColli: Integer;
+        PesoNetto: Decimal;
+        PesoLordo: Decimal;
+        AspettoDeiBeni: Text[100];
 
     protected var
         XVUtil: Codeunit "XVUtil";
@@ -1366,6 +1391,7 @@ report 50231 "Custom Sales - Invoice"
         SalesSetup: Record "Sales & Receivables Setup";
         ShipmentMethod: Record "Shipment Method";
         PaymentTerms: Record "Payment Terms";
+        ShipInfo: Record "XV Posted Invoice Ship Info";
         TempLineFeeNoteOnReportHist: Record "Line Fee Note on Report Hist." temporary;
         CompanyAddr: array[8] of Text[100];
         CustAddr: array[8] of Text[100];

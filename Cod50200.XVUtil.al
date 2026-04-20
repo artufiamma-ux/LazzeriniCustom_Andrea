@@ -217,7 +217,7 @@ codeunit 50200 XVUtil
 
     procedure GetInfoPackaging(DocNo: Code[20]; var info: array[4] of Text[100]; IsForeign: Boolean)
     var
-        RecAssignm: Record "EOS055 Handling Unit Assignm.";
+        RecAssignm: Record "EOS055 Handling Unit Assignm.";//70491906
         RecInfo: Record "EOS055 Handling Unit"; // scatola
         RecInfoFK: Record "EOS055 Handling Unit"; //pallet
         NrColli: Integer;
@@ -281,5 +281,70 @@ codeunit 50200 XVUtil
 
     end;
 
+    procedure SetInfoPackagingInvoice(DocNo: Code[20]; var info: array[4] of Text[100]; IsForeign: Boolean)
+    var
+        RecAssignm: Record "EOS055 Handling Unit Assignm.";//70491906
+        RecInfo: Record "EOS055 Handling Unit"; // scatola
+        RecInfoFK: Record "EOS055 Handling Unit"; //pallet
+        NrColli: Integer;
+        PesoNetto: Decimal;
+        PesoLordo: Decimal;
+        AspettoDeiBeni: Text[100];
+        AspettoDeiBeniFK: Text[100];
+        FK: Code[20];
+        TmpFK: Text[100];
+        TmpAspetto: Text[100];
+    begin
+        NrColli := 0;
+        PesoNetto := 0;
+        PesoLordo := 0;
+        AspettoDeiBeniFK := '';
+        AspettoDeiBeni := '';
+        RecAssignm.Reset();
+        RecAssignm.SetRange("Source No.", DocNo);
+        if RecAssignm.FindSet() then
+            repeat
+                if RecInfo.Get(RecAssignm."Handling Unit No.") then begin
+                    FK := RecInfo."Parent Handling Unit No.";
+                    if NOT TmpFK.Contains(FK) then begin
+                        TmpFK := TmpFK + ', ' + FK;
+                        if RecInfoFK.Get(FK) then begin
+                            PesoNetto := PesoNetto + RecInfoFK."Calc. Net Weight";
+                            PesoLordo := PesoLordo + RecInfoFK."Calc. Gross Weight";
+                            TmpAspetto := RecInfoFK."HU Type Code";
+                            if AspettoDeiBeniFK = '' then
+                                AspettoDeiBeniFK := 'PALLET'
+                            else if IsForeign then
+                                AspettoDeiBeniFK := 'PALLETS'
+                        end;
+                    end;
+                    NrColli := NrColli + 1;
+                    PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
+                    PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
+                    TmpAspetto := RecInfo."HU Type Code";
+                    if AspettoDeiBeni = '' then
+                        if IsForeign then
+                            AspettoDeiBeni := 'BOX'
+                        else
+                            AspettoDeiBeni := 'SCATOLA'
+                    else if IsForeign then
+                        AspettoDeiBeni := 'BOXES'
+                    else
+                        AspettoDeiBeni := 'SCATOLE'
+
+                end;
+            until RecAssignm.Next() = 0;
+        info[1] := Format(NrColli);
+        info[2] := Format(PesoNetto);
+        info[3] := Format(PesoLordo);
+        if AspettoDeiBeniFK = '' then
+            info[4] := AspettoDeiBeni
+        else if IsForeign then
+            info[4] := AspettoDeiBeniFK + ' AND ' + AspettoDeiBeni
+        else
+            info[4] := AspettoDeiBeniFK + ' E ' + AspettoDeiBeni
+
+
+    end;
 
 }

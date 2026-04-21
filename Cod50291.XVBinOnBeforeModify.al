@@ -16,6 +16,8 @@ codeunit 50055 "XV Bin Events"
                     Bin."Tipo Prelievo" := 'PRELIEVO COOPERATIVA';
                 'REPOU', 'REPIN':
                     Bin."Tipo Prelievo" := 'PRELIEVO INTERNO';
+                else
+                    Bin."Tipo Prelievo" := '';
             end;
     end;
 

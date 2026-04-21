@@ -10,6 +10,7 @@ pageextension 50217 XVWBins extends "Bins"
             field("Tipo Prelievo"; Rec."Tipo Prelievo")
             {
                 ApplicationArea = All;
+                Editable = false;
             }
         }
     }

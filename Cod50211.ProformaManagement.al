@@ -14,6 +14,7 @@ codeunit 50211 "Proforma Management"
 
     Permissions =
         tabledata "Sales Shipment Header" = m,
+        tabledata "Sales Shipment Line" = m,
         tabledata "Sales Header" = rimd,
         tabledata "Sales Line" = rimd;
 
@@ -121,11 +122,14 @@ codeunit 50211 "Proforma Management"
                         Round(SalesLine."Unit Price" * FattoreValuta, 0.01, '>'));
 
                 NewSalesLine.Validate(Quantity, SalesLine.Quantity);
+                NewSalesLine.Validate("Quantity Invoiced", SalesLine.Quantity);
+                NewSalesLine.Validate("Qty. Invoiced (Base)", SalesLine.Quantity);
 
                 // NewSalesLine.Validate("Line Amount",           Round(NewSalesLine.Quantity * NewSalesLine."Unit Price", 0.01, '>'));
 
                 NewSalesLine.Insert(true);
-                SalesLine."Qty. to Invoice" := SalesLine.Quantity;
+                SalesLine."Quantity Invoiced" := SalesLine.Quantity;
+                SalesLine."Qty. Invoiced (Base)" := SalesLine.Quantity;
                 SalesLine.Modify(true);
 
                 LineNo += 10000;
@@ -139,6 +143,7 @@ codeunit 50211 "Proforma Management"
         PostedShipment."Cod valuta proforma" := NewSalesHeader."Currency Code";
         PostedShipment."Nr fattura proforma" := NewSalesHeader."No.";
         PostedShipment.Modify(true);
+        SetShipLineInvoiced(PostedShipment."No.");
         Commit();
         //----------------------------------------------------
         // 8. Messaggio e apertura
@@ -229,11 +234,14 @@ codeunit 50211 "Proforma Management"
                 NewSalesLine.Validate("Unit Price", Round(SalesLine."Unit Price"));
 
                 NewSalesLine.Validate(Quantity, SalesLine.Quantity);
+                NewSalesLine.Validate("Qty. Invoiced (Base)", SalesLine.Quantity);
+                NewSalesLine.Validate("Quantity Invoiced", SalesLine.Quantity);
 
                 //NewSalesLine.Validate("Line Amount", SalesLine."Line Amount");
 
                 NewSalesLine.Insert(true);
-                SalesLine."Qty. to Invoice" := SalesLine.Quantity;
+                SalesLine."Qty. Invoiced (Base)" := SalesLine.Quantity;
+                SalesLine."Quantity Invoiced" := SalesLine.Quantity;
                 SalesLine.Modify(true);
 
                 LineNo += 10000;
@@ -246,7 +254,9 @@ codeunit 50211 "Proforma Management"
         PostedShipment.Validate("Nr fattura proforma", NewSalesHeader."No.");
         PostedShipment."Nr fattura proforma" := NewSalesHeader."No.";
         PostedShipment.Modify(true);
+        SetShipLineInvoiced(PostedShipment."No.");
         Commit();
+
         //----------------------------------------------------
         // 8. Messaggio e apertura
         //----------------------------------------------------
@@ -254,5 +264,19 @@ codeunit 50211 "Proforma Management"
 
 
         PAGE.Run(PAGE::"Sales Quote", NewSalesHeader);
+    end;
+
+    procedure SetShipLineInvoiced(DocNo: Code[20])
+    var
+        SalesLine: Record "Sales Shipment Line";
+    begin
+        SalesLine.Reset();
+        SalesLine.SetRange("Document No.", DocNo);
+        if SalesLine.FindSet() then
+            repeat
+                SalesLine."Qty. Invoiced (Base)" := SalesLine.Quantity;
+                SalesLine."Quantity Invoiced" := SalesLine.Quantity;
+                SalesLine.Modify(true);
+            until SalesLine.Next() = 0;
     end;
 }

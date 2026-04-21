@@ -3,6 +3,7 @@ using Microsoft.Inventory.Item;
 using Microsoft.Sales.History;
 using Microsoft.Sales.Document;
 using Microsoft.Foundation.Address;
+using Microsoft.Foundation.PaymentTerms;
 codeunit 50200 XVUtil
 {
     procedure GetCustomLabel(LabelName: Text; isForeign: Boolean): Text
@@ -395,4 +396,26 @@ codeunit 50200 XVUtil
         end;
 
     end;
+
+    procedure GetPostedPayments(DocNo: Code[20]; PaymentMethod: Text[100]; var info: array[9] of Text[100])
+    var
+        RecPostedPaymentLines: Record "Posted Payment Lines";
+        i: Integer;
+    begin
+        RecPostedPaymentLines.Reset();
+        RecPostedPaymentLines.SetRange("Code", DocNo);
+        i := 1;
+        if RecPostedPaymentLines.FindSet() then
+            repeat
+                info[i] := PaymentMethod;
+                info[i + 1] := Format(RecPostedPaymentLines."Due Date", 0, '<Day,2>/<Month,2>/<Year4>');
+                info[i + 2] := Format(
+                                        RecPostedPaymentLines.Amount,
+                                        0,
+                                        '<Precision,2:2><Standard Format,0>'
+                                    );
+                i := i + 3;
+            until RecPostedPaymentLines.Next() = 0;
+    end;
 }
+

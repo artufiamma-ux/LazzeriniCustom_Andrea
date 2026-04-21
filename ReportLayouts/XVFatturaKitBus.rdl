@@ -4634,7 +4634,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TPaymentMethod1.Value</Value>
+                              <Value>=Fields!PostedPayment1.Value</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Segoe UI</FontFamily>
@@ -4648,7 +4648,7 @@
                         </Paragraph>
                       </Paragraphs>
                       <Top>2.41461cm</Top>
-                      <Left>0.04772cm</Left>
+                      <Left>0.03693cm</Left>
                       <Height>0.35cm</Height>
                       <Width>3.98385cm</Width>
                       <ZIndex>5</ZIndex>
@@ -4687,7 +4687,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Format(Fields!DatScadenze1.Value, "dd/MM/yyyy")</Value>
+                              <Value>=Fields!PostedPayment2.Value</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Segoe UI</FontFamily>
@@ -4700,7 +4700,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <Top>2.42808cm</Top>
+                      <Top>2.3925cm</Top>
                       <Left>4.00818cm</Left>
                       <Height>0.35cm</Height>
                       <Width>2.42272cm</Width>
@@ -5798,7 +5798,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!DecImportoRate1.Value</Value>
+                              <Value>=Fields!PostedPayment3.Value</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Segoe UI</FontFamily>
@@ -5812,8 +5812,8 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <Top>2.42164cm</Top>
-                      <Left>6.46261cm</Left>
+                      <Top>2.41461cm</Top>
+                      <Left>6.44943cm</Left>
                       <Height>0.35cm</Height>
                       <Width>3.86297cm</Width>
                       <ZIndex>29</ZIndex>
@@ -5924,6 +5924,166 @@
                         <PaddingRight>5pt</PaddingRight>
                       </Style>
                     </Textbox>
+                    <Textbox Name="TPaymentMethod2">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!PostedPayment4.Value</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Top>2.83805cm</Top>
+                      <Left>0.01477cm</Left>
+                      <Height>0.35cm</Height>
+                      <Width>3.99258cm</Width>
+                      <ZIndex>33</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>None</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>None</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Style>None</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Style>None</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <VerticalAlign>Top</VerticalAlign>
+                        <PaddingLeft>5pt</PaddingLeft>
+                        <PaddingRight>5pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                    <Textbox Name="DueDate2">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!PostedPayment5.Value</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Top>2.83805cm</Top>
+                      <Left>3.99278cm</Left>
+                      <Height>0.35cm</Height>
+                      <Width>2.43812cm</Width>
+                      <ZIndex>34</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>None</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>None</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Style>None</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Style>None</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <VerticalAlign>Top</VerticalAlign>
+                        <PaddingLeft>5pt</PaddingLeft>
+                        <PaddingRight>5pt</PaddingRight>
+                      </Style>
+                    </Textbox>
+                    <Textbox Name="DueAmount2">
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!PostedPayment6.Value</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontFamily>Segoe UI</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <Format>#,0.00;-#,0.00;''</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <Top>2.84833cm</Top>
+                      <Left>6.45402cm</Left>
+                      <Height>0.35cm</Height>
+                      <Width>3.8078cm</Width>
+                      <ZIndex>35</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>None</Style>
+                          <Width>1pt</Width>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>None</Style>
+                          <Width>1pt</Width>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                          <Style>None</Style>
+                          <Width>1pt</Width>
+                        </LeftBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Style>None</Style>
+                          <Width>1pt</Width>
+                        </RightBorder>
+                        <VerticalAlign>Top</VerticalAlign>
+                        <PaddingLeft>5pt</PaddingLeft>
+                        <PaddingRight>5pt</PaddingRight>
+                      </Style>
+                    </Textbox>
                   </ReportItems>
                   <KeepTogether>true</KeepTogether>
                   <Left>0.635cm</Left>
@@ -5990,120 +6150,13 @@
                     <PaddingRight>5pt</PaddingRight>
                   </Style>
                 </Textbox>
-                <Textbox Name="DueDate2">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=Format(Fields!DatScadenze2.Value, "dd/MM/yyyy")</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>8pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Center</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>2.84833cm</Top>
-                  <Left>4.64293cm</Left>
-                  <Height>0.35cm</Height>
-                  <Width>2.43812cm</Width>
-                  <ZIndex>6</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <TopBorder>
-                      <Color>Black</Color>
-                      <Style>None</Style>
-                      <Width>1pt</Width>
-                    </TopBorder>
-                    <BottomBorder>
-                      <Color>Black</Color>
-                      <Style>None</Style>
-                      <Width>1pt</Width>
-                    </BottomBorder>
-                    <LeftBorder>
-                      <Color>Black</Color>
-                      <Style>None</Style>
-                      <Width>1pt</Width>
-                    </LeftBorder>
-                    <RightBorder>
-                      <Color>Black</Color>
-                      <Style>None</Style>
-                      <Width>1pt</Width>
-                    </RightBorder>
-                    <VerticalAlign>Top</VerticalAlign>
-                    <PaddingLeft>5pt</PaddingLeft>
-                    <PaddingRight>5pt</PaddingRight>
-                  </Style>
-                </Textbox>
-                <Textbox Name="DueAmount2">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=Fields!DecImportoRate2.Value</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>8pt</FontSize>
-                            <Format>#,0.00;-#,0.00;''</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Right</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>2.84833cm</Top>
-                  <Left>7.10093cm</Left>
-                  <Height>0.35cm</Height>
-                  <Width>3.8078cm</Width>
-                  <ZIndex>7</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <TopBorder>
-                      <Color>Black</Color>
-                      <Style>None</Style>
-                      <Width>1pt</Width>
-                    </TopBorder>
-                    <BottomBorder>
-                      <Color>Black</Color>
-                      <Style>None</Style>
-                      <Width>1pt</Width>
-                    </BottomBorder>
-                    <LeftBorder>
-                      <Color>Black</Color>
-                      <Style>None</Style>
-                      <Width>1pt</Width>
-                    </LeftBorder>
-                    <RightBorder>
-                      <Color>Black</Color>
-                      <Style>None</Style>
-                      <Width>1pt</Width>
-                    </RightBorder>
-                    <VerticalAlign>Top</VerticalAlign>
-                    <PaddingLeft>5pt</PaddingLeft>
-                    <PaddingRight>5pt</PaddingRight>
-                  </Style>
-                </Textbox>
                 <Textbox Name="TPaymentMethod3">
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!TPaymentMethod3.Value</Value>
+                          <Value>=Fields!PostedPayment7.Value</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -6120,7 +6173,7 @@
                   <Left>0.65908cm</Left>
                   <Height>0.35cm</Height>
                   <Width>3.97248cm</Width>
-                  <ZIndex>8</ZIndex>
+                  <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -6156,7 +6209,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!DecImportoRate3.Value</Value>
+                          <Value>=Fields!PostedPayment9.Value</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -6174,60 +6227,7 @@
                   <Left>7.08083cm</Left>
                   <Height>0.35cm</Height>
                   <Width>3.8279cm</Width>
-                  <ZIndex>9</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <TopBorder>
-                      <Color>Black</Color>
-                      <Style>None</Style>
-                      <Width>1pt</Width>
-                    </TopBorder>
-                    <BottomBorder>
-                      <Color>Black</Color>
-                      <Style>None</Style>
-                      <Width>1pt</Width>
-                    </BottomBorder>
-                    <LeftBorder>
-                      <Color>Black</Color>
-                      <Style>None</Style>
-                      <Width>1pt</Width>
-                    </LeftBorder>
-                    <RightBorder>
-                      <Color>Black</Color>
-                      <Style>None</Style>
-                      <Width>1pt</Width>
-                    </RightBorder>
-                    <VerticalAlign>Top</VerticalAlign>
-                    <PaddingLeft>5pt</PaddingLeft>
-                    <PaddingRight>5pt</PaddingRight>
-                  </Style>
-                </Textbox>
-                <Textbox Name="TPaymentMethod2">
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=Fields!TPaymentMethod2.Value</Value>
-                          <Style>
-                            <FontStyle>Normal</FontStyle>
-                            <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>8pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>2.84833cm</Top>
-                  <Left>0.65908cm</Left>
-                  <Height>0.35cm</Height>
-                  <Width>3.99258cm</Width>
-                  <ZIndex>10</ZIndex>
+                  <ZIndex>7</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -6263,7 +6263,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Format(Fields!DatScadenze3.Value, "dd/MM/yyyy")</Value>
+                          <Value>=Fields!PostedPayment8.Value</Value>
                           <Style>
                             <FontStyle>Normal</FontStyle>
                             <FontFamily>Segoe UI</FontFamily>
@@ -6280,7 +6280,7 @@
                   <Left>4.62283cm</Left>
                   <Height>0.35cm</Height>
                   <Width>2.45822cm</Width>
-                  <ZIndex>11</ZIndex>
+                  <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -6315,7 +6315,7 @@
                   <Left>10.9474cm</Left>
                   <Height>3.09967cm</Height>
                   <Width>0cm</Width>
-                  <ZIndex>12</ZIndex>
+                  <ZIndex>9</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -6327,7 +6327,7 @@
                   <Left>12.93874cm</Left>
                   <Height>1.4664cm</Height>
                   <Width>0cm</Width>
-                  <ZIndex>13</ZIndex>
+                  <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -6339,7 +6339,7 @@
                   <Left>18.02318cm</Left>
                   <Height>1.4664cm</Height>
                   <Width>0cm</Width>
-                  <ZIndex>14</ZIndex>
+                  <ZIndex>11</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -6351,7 +6351,7 @@
                   <Left>4.65643cm</Left>
                   <Height>1.62515cm</Height>
                   <Width>0cm</Width>
-                  <ZIndex>15</ZIndex>
+                  <ZIndex>12</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -6363,7 +6363,7 @@
                   <Left>7.10118cm</Left>
                   <Height>1.62515cm</Height>
                   <Width>0cm</Width>
-                  <ZIndex>16</ZIndex>
+                  <ZIndex>13</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -6392,7 +6392,7 @@
                   <Left>0.65946cm</Left>
                   <Height>0.28137cm</Height>
                   <Width>17.95419cm</Width>
-                  <ZIndex>17</ZIndex>
+                  <ZIndex>14</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -6421,7 +6421,7 @@
                   <Left>0.65946cm</Left>
                   <Height>0.28137cm</Height>
                   <Width>17.95419cm</Width>
-                  <ZIndex>18</ZIndex>
+                  <ZIndex>15</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -6448,7 +6448,7 @@
                   <Left>0.62719cm</Left>
                   <Height>0.35cm</Height>
                   <Width>10.24965cm</Width>
-                  <ZIndex>19</ZIndex>
+                  <ZIndex>16</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -7110,47 +7110,47 @@
         <Field Name="VAT_Amount3Format">
           <DataField>VAT_Amount3Format</DataField>
         </Field>
-        <Field Name="TPaymentMethod1">
-          <DataField>TPaymentMethod1</DataField>
-        </Field>
         <Field Name="DatScadenze1">
           <DataField>DatScadenze1</DataField>
-        </Field>
-        <Field Name="DecImportoRate1">
-          <DataField>DecImportoRate1</DataField>
-        </Field>
-        <Field Name="DecImportoRate1Format">
-          <DataField>DecImportoRate1Format</DataField>
-        </Field>
-        <Field Name="TPaymentMethod2">
-          <DataField>TPaymentMethod2</DataField>
         </Field>
         <Field Name="DatScadenze2">
           <DataField>DatScadenze2</DataField>
         </Field>
-        <Field Name="DecImportoRate2">
-          <DataField>DecImportoRate2</DataField>
-        </Field>
-        <Field Name="DecImportoRate2Format">
-          <DataField>DecImportoRate2Format</DataField>
-        </Field>
-        <Field Name="TPaymentMethod3">
-          <DataField>TPaymentMethod3</DataField>
-        </Field>
         <Field Name="DatScadenze3">
           <DataField>DatScadenze3</DataField>
-        </Field>
-        <Field Name="DecImportoRate3">
-          <DataField>DecImportoRate3</DataField>
-        </Field>
-        <Field Name="DecImportoRate3Format">
-          <DataField>DecImportoRate3Format</DataField>
         </Field>
         <Field Name="TotalAmount">
           <DataField>TotalAmount</DataField>
         </Field>
         <Field Name="TotalAmountFormat">
           <DataField>TotalAmountFormat</DataField>
+        </Field>
+        <Field Name="PostedPayment1">
+          <DataField>PostedPayment1</DataField>
+        </Field>
+        <Field Name="PostedPayment2">
+          <DataField>PostedPayment2</DataField>
+        </Field>
+        <Field Name="PostedPayment3">
+          <DataField>PostedPayment3</DataField>
+        </Field>
+        <Field Name="PostedPayment4">
+          <DataField>PostedPayment4</DataField>
+        </Field>
+        <Field Name="PostedPayment5">
+          <DataField>PostedPayment5</DataField>
+        </Field>
+        <Field Name="PostedPayment6">
+          <DataField>PostedPayment6</DataField>
+        </Field>
+        <Field Name="PostedPayment7">
+          <DataField>PostedPayment7</DataField>
+        </Field>
+        <Field Name="PostedPayment8">
+          <DataField>PostedPayment8</DataField>
+        </Field>
+        <Field Name="PostedPayment9">
+          <DataField>PostedPayment9</DataField>
         </Field>
         <Field Name="TotalAmountVAT">
           <DataField>TotalAmountVAT</DataField>

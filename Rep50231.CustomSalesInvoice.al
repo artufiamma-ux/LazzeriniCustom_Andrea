@@ -542,16 +542,20 @@ report 50231 "Custom Sales - Invoice"
             column(VAT_Base3; VAT_Base3) { }
             column(VAT_Description3; VAT_Description3) { }
             column(VAT_Amount3; VAT_Amount3) { }
-            column(TPaymentMethod1; TPaymentMethod1) { }
             column(DatScadenze1; DatScadenze1) { }
-            column(DecImportoRate1; DecImportoRate1) { }
-            column(TPaymentMethod2; TPaymentMethod2) { }
             column(DatScadenze2; DatScadenze2) { }
-            column(DecImportoRate2; DecImportoRate2) { }
-            column(TPaymentMethod3; TPaymentMethod3) { }
             column(DatScadenze3; DatScadenze3) { }
-            column(DecImportoRate3; DecImportoRate3) { }
             column(TotalAmount; "TotalAmount") { }
+            column(PostedPayment1; PostedPayment[1]) { }
+            column(PostedPayment2; PostedPayment[2]) { }
+            column(PostedPayment3; PostedPayment[3]) { }
+            column(PostedPayment4; PostedPayment[4]) { }
+            column(PostedPayment5; PostedPayment[5]) { }
+            column(PostedPayment6; PostedPayment[6]) { }
+            column(PostedPayment7; PostedPayment[7]) { }
+            column(PostedPayment8; PostedPayment[8]) { }
+            column(PostedPayment9; PostedPayment[9]) { }
+
             column(TotalAmountVAT; GetCustomValue('Total Amount VAT/Importo Totale Iva')) { }
             column(TotalAmountInclVAT; "TotalAmountInclVAT") { }
             column(SalesInvoiceHeader_CurrencyCode; GetCustomValue('SalesInvoiceHeader_CurrencyCode')) { }
@@ -1189,7 +1193,7 @@ report 50231 "Custom Sales - Invoice"
                         CurrSymbol := GeneralLedgerSetup.GetCurrencySymbol();
                     end;
                 CalculateVATTotals("No.");
-                CalculatePaymentInstallments("No.");
+                XVUtil.GetPostedPayments("No.", GetPaymentMethod(Header."Payment Method Code"), PostedPayment);
             end;
 
             trigger OnPreDataItem()
@@ -1269,18 +1273,13 @@ report 50231 "Custom Sales - Invoice"
         VAT_Amount2: Decimal;
         VAT_Amount3: Decimal;
 
-        TPaymentMethod1: Code[20];
-        TPaymentMethod2: Code[20];
-        TPaymentMethod3: Code[20];
 
         DatScadenze1: Date;
         DatScadenze2: Date;
         DatScadenze3: Date;
 
-        DecImportoRate1: Decimal;
-        DecImportoRate2: Decimal;
-        DecImportoRate3: Decimal;
-
+        PostedPayment1, PostedPayment2, PostedPayment3, PostedPayment4, PostedPayment5, PostedPayment6, PostedPayment7, PostedPayment8, PostedPayment9 : Text[100];
+        PostedPayment: array[9] of Text[100];
         /* End RPCustom */
         GLSetup: Record "General Ledger Setup";
         DummyCompanyInfo: Record "Company Information";
@@ -1606,70 +1605,6 @@ report 50231 "Custom Sales - Invoice"
             VAT_Description3 := VATProdPostingGroup.Description
         else
             VAT_Description3 := Desc3;
-    end;
-
-    local procedure CalculatePaymentInstallments(DocumentNo: Code[20])
-    var
-        CustLedgEntry: Record "Cust. Ledger Entry";
-        PaymentTerms: Record "Payment Terms";
-        Counter: Integer;
-    begin
-        // Reset variabili
-        TPaymentMethod1 := '';
-        TPaymentMethod2 := '';
-        TPaymentMethod3 := '';
-
-        DatScadenze1 := 0D;
-        DatScadenze2 := 0D;
-        DatScadenze3 := 0D;
-
-        DecImportoRate1 := 0;
-        DecImportoRate2 := 0;
-        DecImportoRate3 := 0;
-
-        CustLedgEntry.Reset();
-        CustLedgEntry.SetRange("Document No.", DocumentNo);
-        CustLedgEntry.SetRange("Document Type",
-            CustLedgEntry."Document Type"::Invoice);
-
-        Counter := 0;
-
-        if CustLedgEntry.FindSet() then
-            repeat
-                Counter += 1;
-                // Assegna data e importo
-                case Counter of
-                    1:
-                        begin
-                            DatScadenze1 := CustLedgEntry."Due Date";
-                            DecImportoRate1 := CustLedgEntry."Remaining Amount";
-                        end;
-                    2:
-                        begin
-                            DatScadenze2 := CustLedgEntry."Due Date";
-                            DecImportoRate2 := CustLedgEntry."Remaining Amount";
-                        end;
-                    3:
-                        begin
-                            DatScadenze3 := CustLedgEntry."Due Date";
-                            DecImportoRate3 := CustLedgEntry."Remaining Amount";
-                        end;
-                end;
-
-                // Lookup descrizione termini pagamento
-                if CustLedgEntry."Payment Method Code" <> '' then
-                    if PaymentTerms.Get(CustLedgEntry."Payment Method Code") then begin
-                        case Counter of
-                            1:
-                                TPaymentMethod1 := PaymentTerms.Description;
-                            2:
-                                TPaymentMethod2 := PaymentTerms.Description;
-                            3:
-                                TPaymentMethod3 := PaymentTerms.Description;
-                        end;
-                    end;
-
-            until (CustLedgEntry.Next() = 0) or (Counter = 3);
     end;
 
 

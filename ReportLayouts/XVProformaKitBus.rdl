@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.14.36915.13</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-04-22T14:51:05.3782902Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-04-22T14:26:36.5562946Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -361,7 +361,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=Max(fields!TariffList.Value) &amp; " " &amp; fields!XVGrossWeightLbl.Value &amp; ": " &amp; fields!GrossWeight.Value &amp; " " &amp; fields!XVNetWeightLbl.Value &amp; ": " &amp; fields!NetWeight.Value</Value>
+                                      <Value>=Max(fields!TariffList.Value) &amp; " " &amp; fields!XVGrossWeightLbl.Value &amp; ": " &amp; fields!GrossWeight.Value &amp; " " &amp; fields!XVNetWeightLbl.Value &amp; ": " &amp; sum(fields!XVNetWeightLine.Value)</Value>
                                       <Style />
                                     </TextRun>
                                   </TextRuns>
@@ -6824,12 +6824,6 @@
         <Field Name="DocumentNo_Lbl">
           <DataField>DocumentNo_Lbl</DataField>
         </Field>
-        <Field Name="OrderNo">
-          <DataField>OrderNo</DataField>
-        </Field>
-        <Field Name="OrderNo_Lbl">
-          <DataField>OrderNo_Lbl</DataField>
-        </Field>
         <Field Name="PricesIncludingVAT">
           <DataField>PricesIncludingVAT</DataField>
         </Field>
@@ -6860,20 +6854,11 @@
         <Field Name="VATRegistrationNo_Lbl">
           <DataField>VATRegistrationNo_Lbl</DataField>
         </Field>
-        <Field Name="GlobalLocationNumber">
-          <DataField>GlobalLocationNumber</DataField>
-        </Field>
-        <Field Name="GlobalLocationNumber_Lbl">
-          <DataField>GlobalLocationNumber_Lbl</DataField>
-        </Field>
         <Field Name="SellToFaxNo">
           <DataField>SellToFaxNo</DataField>
         </Field>
         <Field Name="SellToPhoneNo">
           <DataField>SellToPhoneNo</DataField>
-        </Field>
-        <Field Name="PaymentReference">
-          <DataField>PaymentReference</DataField>
         </Field>
         <Field Name="From_Lbl">
           <DataField>From_Lbl</DataField>
@@ -6883,9 +6868,6 @@
         </Field>
         <Field Name="ChecksPayable_Lbl">
           <DataField>ChecksPayable_Lbl</DataField>
-        </Field>
-        <Field Name="PaymentReference_Lbl">
-          <DataField>PaymentReference_Lbl</DataField>
         </Field>
         <Field Name="LegalEntityType">
           <DataField>LegalEntityType</DataField>
@@ -7172,12 +7154,6 @@
         <Field Name="Firma">
           <DataField>Firma</DataField>
         </Field>
-        <Field Name="NrColli">
-          <DataField>NrColli</DataField>
-        </Field>
-        <Field Name="Freight">
-          <DataField>Freight</DataField>
-        </Field>
         <Field Name="Forwarder">
           <DataField>Forwarder</DataField>
         </Field>
@@ -7301,32 +7277,17 @@
         <Field Name="Packaging">
           <DataField>Packaging</DataField>
         </Field>
+        <Field Name="Freight">
+          <DataField>Freight</DataField>
+        </Field>
         <Field Name="LineNo_Line">
           <DataField>LineNo_Line</DataField>
-        </Field>
-        <Field Name="AmountExcludingVAT_Line">
-          <DataField>AmountExcludingVAT_Line</DataField>
-        </Field>
-        <Field Name="AmountExcludingVAT_LineFormat">
-          <DataField>AmountExcludingVAT_LineFormat</DataField>
         </Field>
         <Field Name="XVNetWeightLine">
           <DataField>XVNetWeightLine</DataField>
         </Field>
         <Field Name="XVNetWeightLineFormat">
           <DataField>XVNetWeightLineFormat</DataField>
-        </Field>
-        <Field Name="AmountExcludingVAT_Line_Lbl">
-          <DataField>AmountExcludingVAT_Line_Lbl</DataField>
-        </Field>
-        <Field Name="AmountIncludingVAT_Line">
-          <DataField>AmountIncludingVAT_Line</DataField>
-        </Field>
-        <Field Name="AmountIncludingVAT_LineFormat">
-          <DataField>AmountIncludingVAT_LineFormat</DataField>
-        </Field>
-        <Field Name="AmountIncludingVAT_Line_Lbl">
-          <DataField>AmountIncludingVAT_Line_Lbl</DataField>
         </Field>
         <Field Name="Description_Line">
           <DataField>Description_Line</DataField>
@@ -7540,12 +7501,6 @@
         </Field>
         <Field Name="VATAmountLCY_VATAmountLine_Lbl">
           <DataField>VATAmountLCY_VATAmountLine_Lbl</DataField>
-        </Field>
-        <Field Name="VATBase_VatAmountLine">
-          <DataField>VATBase_VatAmountLine</DataField>
-        </Field>
-        <Field Name="VATBase_VatAmountLineFormat">
-          <DataField>VATBase_VatAmountLineFormat</DataField>
         </Field>
         <Field Name="VATBase_VatAmountLine_Lbl">
           <DataField>VATBase_VatAmountLine_Lbl</DataField>

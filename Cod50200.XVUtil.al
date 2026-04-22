@@ -227,8 +227,7 @@ codeunit 50200 XVUtil
         AspettoDeiBeni: Text[100];
         AspettoDeiBeniFK: Text[100];
         FK: Code[20];
-        TmpFK: Text[100];
-        TmpAspetto: Text[100];
+        TmpBox: Text[100];
     begin
         NrColli := 0;
         PesoNetto := 0;
@@ -239,35 +238,26 @@ codeunit 50200 XVUtil
         RecAssignm.SetRange("Source No.", DocNo);
         if RecAssignm.FindSet() then
             repeat
-                if RecInfo.Get(RecAssignm."Handling Unit No.") then begin
-                    FK := RecInfo."Parent Handling Unit No.";
-                    if NOT TmpFK.Contains(FK) then begin
-                        TmpFK := TmpFK + ', ' + FK;
-                        if RecInfoFK.Get(FK) then begin
-                            PesoNetto := PesoNetto + RecInfoFK."Calc. Net Weight";
-                            PesoLordo := PesoLordo + RecInfoFK."Calc. Gross Weight";
-                            TmpAspetto := RecInfoFK."HU Type Code";
-                            if AspettoDeiBeniFK = '' then
-                                AspettoDeiBeniFK := 'PALLET'
-                            else if IsForeign then
-                                AspettoDeiBeniFK := 'PALLETS'
+                repeat
+                    if RecInfo.Get(RecAssignm."Handling Unit No.") then begin // prendo il padre
+                        FK := RecInfo."Parent Handling Unit No.";
+                        if NOT TmpBox.Contains(FK) then begin
+                            TmpBox += ' ; ' + FK;
+                            if RecInfoFK.Get(FK) then begin
+                                PesoNetto := PesoNetto + RecInfoFK."Calc. Net Weight";
+                                PesoLordo := PesoLordo + RecInfoFK."Calc. Gross Weight";
+                            end;
                         end;
                     end;
-                    NrColli := NrColli + 1;
-                    PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
-                    PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
-                    TmpAspetto := RecInfo."HU Type Code";
-                    if AspettoDeiBeni = '' then
-                        if IsForeign then
-                            AspettoDeiBeni := 'BOX'
-                        else
-                            AspettoDeiBeni := 'SCATOLA'
-                    else if IsForeign then
-                        AspettoDeiBeni := 'BOXES'
-                    else
-                        AspettoDeiBeni := 'SCATOLE'
-
-                end;
+                    if NOT TmpBox.Contains(RecInfo."No.") then begin // solo le scatole fanno collo, non conto le scatole già contate
+                        NrColli := NrColli + 1;
+                        TmpBox += ' ; ' + RecInfo."No.";
+                    end;
+                    if RecAssignm."Handling Unit No." = '' then begin // non ha padre, scatola singola
+                        PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
+                        PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
+                    end;
+                until RecAssignm.Next() = 0;
             until RecAssignm.Next() = 0;
         info[1] := Format(NrColli);
         info[2] := Format(PesoNetto);
@@ -306,8 +296,7 @@ codeunit 50200 XVUtil
         AspettoDeiBeni: Text[100];
         AspettoDeiBeniFK: Text[100];
         FK: Code[20];
-        TmpFK: Text[100];
-        TmpAspetto: Text[100];
+        TmpBox: Text[100];
     begin
         NrColli := 0;
         PesoNetto := 0;
@@ -324,36 +313,25 @@ codeunit 50200 XVUtil
                 RecAssignm.SetRange("Source Line No.", RecSalesInvoiceLine."Shipment Line No.");
                 if RecAssignm.FindSet() then
                     repeat
-                        if RecInfo.Get(RecAssignm."Handling Unit No.") then begin
+                        if RecInfo.Get(RecAssignm."Handling Unit No.") then begin // prendo il padre
                             FK := RecInfo."Parent Handling Unit No.";
-                            if NOT TmpFK.Contains(FK) then begin
-                                TmpFK := TmpFK + ', ' + FK;
+                            if NOT TmpBox.Contains(FK) then begin
+                                TmpBox += ' ; ' + FK;
                                 if RecInfoFK.Get(FK) then begin
                                     PesoNetto := PesoNetto + RecInfoFK."Calc. Net Weight";
                                     PesoLordo := PesoLordo + RecInfoFK."Calc. Gross Weight";
-                                    TmpAspetto := RecInfoFK."HU Type Code";
-                                    if AspettoDeiBeniFK = '' then
-                                        AspettoDeiBeniFK := 'PALLET'
-                                    else if IsForeign then
-                                        AspettoDeiBeniFK := 'PALLETS'
                                 end;
                             end;
                         end;
-                        NrColli := NrColli + 1;
-                        PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
-                        PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
-                        TmpAspetto := RecInfo."HU Type Code";
-                        if AspettoDeiBeni = '' then
-                            if IsForeign then
-                                AspettoDeiBeni := 'BOX'
-                            else
-                                AspettoDeiBeni := 'SCATOLA'
-                        else if IsForeign then
-                            AspettoDeiBeni := 'BOXES'
-                        else
-                            AspettoDeiBeni := 'SCATOLE'
-
-                until RecAssignm.Next() = 0;
+                        if NOT TmpBox.Contains(RecInfo."No.") then begin // solo le scatole fanno collo, non conto le scatole già contate
+                            NrColli := NrColli + 1;
+                            TmpBox += ' ; ' + RecInfo."No.";
+                        end;
+                        if RecAssignm."Handling Unit No." = '' then begin // non ha padre, scatola singola
+                            PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
+                            PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
+                        end;
+                    until RecAssignm.Next() = 0;
 
             until RecSalesInvoiceLine.Next() = 0;
         info[1] := Format(NrColli);
@@ -380,6 +358,32 @@ codeunit 50200 XVUtil
         ShipInfo: Record "XV Posted Invoice Ship Info";
     begin
         XUtil.GetInfoPackagingInvoice(SalesInvoiceHeaderNo, info, false);
+
+
+        if not ShipInfo.Get(SalesInvoiceHeaderNo) then begin
+            ShipInfo.Init();
+            ShipInfo."Invoice No." := SalesInvoiceHeaderNo;
+            if (Evaluate(TInt, info[1])) then
+                ShipInfo."Nr. Colli" := TInt;
+            if (Evaluate(TDec, info[2])) then
+                ShipInfo."Peso Netto" := TDec;
+            if (Evaluate(TDec, info[3])) then
+                ShipInfo."Peso Lordo" := TDec;
+            ShipInfo."Aspetto Beni" := info[4];
+            ShipInfo.Insert();
+        end;
+
+    end;
+
+    procedure SetShipInfoProforma(var SalesInvoiceHeaderNo: Code[20])
+    var
+        XUtil: Codeunit XVUtil;
+        info: array[4] of Text[100];
+        TInt: Integer;
+        TDec: Decimal;
+        ShipInfo: Record "XV Posted Invoice Ship Info";
+    begin
+        XUtil.GetInfoPackaging(SalesInvoiceHeaderNo, info, false);
 
 
         if not ShipInfo.Get(SalesInvoiceHeaderNo) then begin

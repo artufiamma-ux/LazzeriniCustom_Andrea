@@ -58,10 +58,6 @@ pageextension 50207 "XV Released Prod Orders Ext" extends "Released Production O
                 ApplicationArea = All;
             }
 
-            field("MARK ordine chiuso"; Rec."Mark")
-            {
-                ApplicationArea = All;
-            }
 
             field("Nr. Ciclo"; Rec."Nr. Ciclo")
             {

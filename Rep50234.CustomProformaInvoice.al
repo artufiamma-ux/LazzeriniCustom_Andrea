@@ -42,18 +42,18 @@ using Microsoft.Inventory.Item;
 using Microsoft.Finance.VAT.Setup;
 
 
-report 50231 "Custom Sales - Invoice"
+report 50234 "Custom Proforma - Invoice"
 {
-    Caption = 'Sales - Invoice';
+    Caption = 'Proforma - Invoice';
     EnableHyperlinks = true;
     Permissions = TableData "Sales Shipment Buffer" = rimd;
     PreviewMode = PrintLayout;
     WordMergeDataItem = Header;
-    RDLCLayout = './ReportLayouts/XVFatturaKitBus.rdl';
+    RDLCLayout = './ReportLayouts/XVProformaKitBus.rdl';
     UsageCategory = None;
     dataset
     {
-        dataitem(Header; "Sales Invoice Header")
+        dataitem(Header; "Sales Header")
         {
             DataItemTableView = sorting("No.");
             //RequestFilterFields = "No.";//, "Sell-to Customer No.", "No. Printed";
@@ -339,12 +339,6 @@ report 50231 "Custom Sales - Invoice"
             column(DocumentNo_Lbl; GetCustomLabel(InvNoLbl))
             {
             }
-            column(OrderNo; "Order No.")
-            {
-            }
-            column(OrderNo_Lbl; FieldCaption("Order No."))
-            {
-            }
             column(PricesIncludingVAT; "Prices Including VAT")
             {
             }
@@ -375,19 +369,10 @@ report 50231 "Custom Sales - Invoice"
             column(VATRegistrationNo_Lbl; GetCustomerVATRegistrationNumberLbl())
             {
             }
-            column(GlobalLocationNumber; GetCustomerGlobalLocationNumber())
-            {
-            }
-            column(GlobalLocationNumber_Lbl; GetCustomerGlobalLocationNumberLbl())
-            {
-            }
             column(SellToFaxNo; '') //GetSellToCustomerFaxNo()
             {
             }
             column(SellToPhoneNo; "Sell-to Phone No.")
-            {
-            }
-            column(PaymentReference; GetPaymentReference())
             {
             }
             column(From_Lbl; FromLbl)
@@ -397,9 +382,6 @@ report 50231 "Custom Sales - Invoice"
             {
             }
             column(ChecksPayable_Lbl; ChecksPayableText)
-            {
-            }
-            column(PaymentReference_Lbl; GetPaymentReferenceLbl())
             {
             }
             column(LegalEntityType; Cust.GetLegalEntityType())
@@ -522,8 +504,8 @@ report 50231 "Custom Sales - Invoice"
             {
             }
             column(EORICode; Cust."EORI Number") { } //GetEORICode("Sell-to Customer No.")) { }
-            column(ACCOMPAGNATORIA; ACCOMPAGNATORIA) { }
-            column(TipoDocumento; GetTipoDocumento(ACCOMPAGNATORIA, "Sell-to Country/Region Code")) { }
+            column(ACCOMPAGNATORIA; true) { }
+            column(TipoDocumento; GetTipoDocumento("Sell-to Country/Region Code")) { }
             column(TariffNo_lbl; GetCustomLabel('Tariff No.')) { }
             column(VATBaseTotal_lbl; "TotalVATBaseLCY") { }
             column(TypePaymentCaptionLbl; GetCustomLabel('Type Payment Caption')) { }
@@ -562,8 +544,6 @@ report 50231 "Custom Sales - Invoice"
             column(CONAI; GetCustomValue('contributo CONAI assolto ove dovuto')) { }
             column(DESC; GetCustomValue('the exported of the products covered by this doc declares, except where otherwise clearly indicate, these products are of italian origin.')) { }
             column(Firma; GetCustomValue('Lazzareni S.r.l Ufficio AMM.VO')) { }
-            column(NrColli; GetNrColli("No.")) { Caption = 'Numero colli'; }
-            column(Freight; GetFreight("No.")) { Caption = 'Freight'; }
             column(Forwarder; GetForwarder("Shipping Agent Code")) { Caption = 'Spedizioniere'; }
             column(XVPaymentTerms; GetPaymentTerms("Payment Terms Code")) { }
             column(XVBankAccount; GetBankAccount("Company Bank Account Code")) { }
@@ -611,8 +591,9 @@ report 50231 "Custom Sales - Invoice"
             column(GrossWeight; PesoLordo) { }
             column(NetWeight; PesoNetto) { }
             column(Packaging; AspettoDeiBeni) { }
+            column(Freight; GetFreight("No.")) { Caption = 'Freight'; }
 
-            dataitem(Line; "Sales Invoice Line")
+            dataitem(Line; "Sales Line")
             {
                 DataItemLink = "Document No." = field("No.");
                 DataItemLinkReference = Header;
@@ -620,26 +601,8 @@ report 50231 "Custom Sales - Invoice"
                 column(LineNo_Line; "Line No.")
                 {
                 }
-                //column(EOSPQ;"EOS055 Packaging Quantity"){}
-                column(AmountExcludingVAT_Line; Amount)
-                {
-                    AutoFormatExpression = GetCurrencyCode();
-                    AutoFormatType = 1;
-                }
                 column(XVNetWeightLine; "Net Weight" * Quantity) { }
-                column(AmountExcludingVAT_Line_Lbl; FieldCaption(Amount))
-                {
-                }
-                column(AmountIncludingVAT_Line; "Amount Including VAT")
-                {
-                    AutoFormatExpression = GetCurrencyCode();
-                    AutoFormatType = 1;
-                }
-                column(AmountIncludingVAT_Line_Lbl; FieldCaption("Amount Including VAT"))
-                {
-                    AutoFormatExpression = GetCurrencyCode();
-                    AutoFormatType = 1;
-                }
+
                 column(Description_Line; Description)
                 {
                 }
@@ -748,13 +711,13 @@ report 50231 "Custom Sales - Invoice"
                 column(PricePer_Lbl; PricePerLbl)
                 {
                 }
-                column(Kit_Bus; "Kit Bus")
+                column(Kit_Bus; "xv Kit Bus")
                 {
                 }
-                column(Kit_Bus_Desc; XVUtil.GetKitBusDescription("Kit Bus", "Description"))
+                column(Kit_Bus_Desc; XVUtil.GetKitBusDescription("xv Kit Bus", "Description"))
                 {
                 }
-                column(Progressivo_Kit_Bus; "Progressivo Kit Bus")
+                column(Progressivo_Kit_Bus; "xv Progressivo Kit Bus")
                 {
                 }
                 column(Service_Tariff_No; "Service Tariff No.")
@@ -825,7 +788,7 @@ report 50231 "Custom Sales - Invoice"
                 }
                 trigger OnAfterGetRecord()
                 begin
-                    InitializeShipmentLine();
+                    // InitializeShipmentLine();
                     if Type = Type::"G/L Account" then
                         "No." := '';
                     TariffTemp := GetTariffNo(Line."No.");
@@ -937,11 +900,6 @@ report 50231 "Custom Sales - Invoice"
                 }
                 column(VATAmountLCY_VATAmountLine_Lbl; VATAmountLCYLbl)
                 {
-                }
-                column(VATBase_VatAmountLine; "VAT Base")
-                {
-                    AutoFormatExpression = Line.GetCurrencyCode();
-                    AutoFormatType = 1;
                 }
                 column(VATBase_VatAmountLine_Lbl; FieldCaption("VAT Base"))
                 {
@@ -1162,11 +1120,12 @@ report 50231 "Custom Sales - Invoice"
 
                 if not Cust.Get("Bill-to Customer No.") then
                     Clear(Cust);
-                if ShipInfo.Get(Header."No.") then begin
+                if ShipInfo.Get(Header."XV Proforma Source") then begin
+                    // se esite ma i colli sono a zero ricalcola
                     if ShipInfo."Nr. Colli" = 0 then begin
                         ShipInfo.Delete();
-                        XVUtil.SetShipInfo(Header."No.");
-                        if ShipInfo.Get(Header."No.") then;
+                        XVUtil.SetShipInfoProforma(Header."XV Proforma Source");
+                        if ShipInfo.Get(Header."XV Proforma Source") then;
                     end;
                     AspettoDeiBeni := ShipInfo."Aspetto Beni";
                     NrColli := ShipInfo."Nr. Colli";
@@ -1174,8 +1133,8 @@ report 50231 "Custom Sales - Invoice"
                     PesoLordo := ShipInfo."Peso Lordo";
                 end
                 else begin
-                    XVUtil.SetShipInfo(Header."No.");
-                    if ShipInfo.Get(Header."No.") then begin
+                    XVUtil.SetShipInfoProforma(Header."XV Proforma Source");
+                    if ShipInfo.Get(Header."XV Proforma Source") then begin
                         AspettoDeiBeni := ShipInfo."Aspetto Beni";
                         NrColli := ShipInfo."Nr. Colli";
                         PesoNetto := ShipInfo."Peso Netto";
@@ -1458,20 +1417,14 @@ report 50231 "Custom Sales - Invoice"
         exit('');
     end;
 
-    local procedure GetTipoDocumento(ACCOMPAGNATORIA: Boolean; SellToCountryCode: Code[10]): Text[100]
+    local procedure GetTipoDocumento(SellToCountryCode: Code[10]): Text[100]
     var
     begin
 
         if SellToCountryCode = 'IT' then
-            if ACCOMPAGNATORIA then
-                exit('FATTURA ACCOMPAGNATORIA') // NON ESISTONO ITALIANI - SOLO DOGANA
-            else
-                exit('FATTURA')
+            exit('FATTURA PROFORMA')
         else
-            if ACCOMPAGNATORIA then
-                exit('INVOICE & DELIVERY NOTE')
-            else
-                exit('INVOICE');
+            exit('PROFORMA INVOICE');
         exit('');
     end;
 
@@ -1649,34 +1602,34 @@ report 50231 "Custom Sales - Invoice"
     begin
         exit(SegManagement.FindInteractionTemplateCode(Enum::"Interaction Log Entry Document Type"::"Sales Inv.") <> '');
     end;
-
-    local procedure InitializeShipmentLine()
-    var
-        SalesShipmentHeader: Record "Sales Shipment Header";
-    begin
-        if not DisplayShipmentInformation then
-            exit;
-
-        if Line.Type = Line.Type::" " then
-            exit;
-
-        if Line."Shipment No." <> '' then
-            if SalesShipmentHeader.Get(Line."Shipment No.") then
+    /*
+        local procedure InitializeShipmentLine()
+        var
+            SalesShipmentHeader: Record "Sales Shipment Header";
+        begin
+            if not DisplayShipmentInformation then
                 exit;
 
-        ShipmentLine.GetLinesForSalesInvoiceLine(Line, Header);
-
-        ShipmentLine.Reset();
-        ShipmentLine.SetRange("Line No.", Line."Line No.");
-        if not ShipmentLine.IsEmpty() then begin
-            ShipmentLine.CalcSums(Quantity);
-            if ShipmentLine.Quantity <> Line.Quantity then begin
-                ShipmentLine.DeleteAll();
+            if Line.Type = Line.Type::" " then
                 exit;
+
+            if Line."Shipment No." <> '' then
+                if SalesShipmentHeader.Get(Line."Shipment No.") then
+                    exit;
+
+            ShipmentLine.GetLinesForSalesInvoiceLine(Line, Header);
+
+            ShipmentLine.Reset();
+            ShipmentLine.SetRange("Line No.", Line."Line No.");
+            if not ShipmentLine.IsEmpty() then begin
+                ShipmentLine.CalcSums(Quantity);
+                if ShipmentLine.Quantity <> Line.Quantity then begin
+                    ShipmentLine.DeleteAll();
+                    exit;
+                end;
             end;
         end;
-    end;
-
+    */
 
     procedure InitializeRequest(NewLogInteraction: Boolean; DisplayAsmInfo: Boolean)
     begin
@@ -1702,11 +1655,11 @@ report 50231 "Custom Sales - Invoice"
         end;
     end;
 
-    local procedure FormatAddressFields(var SalesInvoiceHeader: Record "Sales Invoice Header")
+    local procedure FormatAddressFields(var SalesInvoiceHeader: Record "Sales Header")
     begin
         FormatAddr.GetCompanyAddr(SalesInvoiceHeader."Responsibility Center", RespCenter, CompanyInfo, CompanyAddr);
-        FormatAddr.SalesInvBillTo(CustAddr, SalesInvoiceHeader);
-        ShowShippingAddr := FormatAddr.SalesInvShipTo(ShipToAddr, CustAddr, SalesInvoiceHeader);
+        FormatAddr.SalesHeaderBillTo(CustAddr, SalesInvoiceHeader);
+        //        ShowShippingAddr := FormatAddr.SalesHeaderSellTo(ShipToAddr, CustAddr, SalesInvoiceHeader);
     end;
 
     local procedure GetJobTaskDescription(JobNo: Code[20]; JobTaskNo: Code[20]): Text[100]

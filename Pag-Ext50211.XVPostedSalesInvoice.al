@@ -81,6 +81,11 @@ pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
         XVUtil: Codeunit "XVUtil";
     begin
         if ShipInfo.Get(Rec."No.") then begin
+            if ShipInfo."Nr. Colli" = 0 then begin
+                ShipInfo.Delete();
+                XVUtil.SetShipInfo(Rec."No.");
+                if ShipInfo.Get(Rec."No.") then;
+            end;
             AspettoDeiBeni := ShipInfo."Aspetto Beni";
             NrColli := ShipInfo."Nr. Colli";
             PesoNetto := ShipInfo."Peso Netto";

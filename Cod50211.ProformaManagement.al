@@ -70,6 +70,7 @@ codeunit 50211 "Proforma Management"
         NewSalesHeader.Validate("No.", NewNo);
         NewSalesHeader.Validate("No. Series", 'PROFORMA');
         NewSalesHeader."EOS Document Class Code" := 'PROFORMA';
+        NewSalesHeader."XV Proforma Source" := PK;
         if IsValuta then begin
             NewSalesHeader.Validate("Currency Code", PostedShipment."Cod valuta proforma");
             if NewSalesHeader."Currency Code" = '' then
@@ -154,6 +155,9 @@ codeunit 50211 "Proforma Management"
                 NewSalesLine.Validate(Quantity, SalesLine.Quantity);
                 NewSalesLine.Validate("Quantity Invoiced", SalesLine.Quantity);
                 NewSalesLine.Validate("Qty. Invoiced (Base)", SalesLine.Quantity);
+                NewSalesLine."xv Progressivo Kit Bus" := SalesLine."xv Progressivo Kit Bus";
+                NewSalesLine."xv Kit Bus" := SalesLine."xv Kit Bus";
+                //NewSalesLine."Service Tariff No." := SalesLine.;
                 NewSalesLine.Insert(true);
 
 

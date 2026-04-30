@@ -157,6 +157,7 @@ codeunit 50211 "Proforma Management"
                 NewSalesLine.Validate("Qty. Invoiced (Base)", SalesLine.Quantity);
                 NewSalesLine."xv Progressivo Kit Bus" := SalesLine."xv Progressivo Kit Bus";
                 NewSalesLine."xv Kit Bus" := SalesLine."xv Kit Bus";
+                NewSalesLine.Amount := NewSalesLine."Unit Price" * NewSalesLine.Quantity;
                 //NewSalesLine."Service Tariff No." := SalesLine.;
                 NewSalesLine.Insert(true);
 

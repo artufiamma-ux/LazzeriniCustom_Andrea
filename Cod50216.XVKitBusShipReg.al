@@ -19,6 +19,9 @@ codeunit 50216 "XV KitBus Ship Reg"
         if SalesLine.Get(SalesLine."Document Type"::Order, Rec."Order No.", Rec."Order Line No.") then begin
             Rec."xv Kit Bus" := SalesLine."xv Kit Bus";
             Rec."xv Progressivo Kit Bus" := SalesLine."xv Progressivo Kit Bus";
+            Rec."Nr. Layout" := SalesLine."xv Nr Layout";
+            Rec."Posizione Layout" := SalesLine."xv Posizione Layout";
+            Rec."Qta. Origine Layout" := SalesLine."Qta. Origine layout";
             // Rec.Modify(true);
         end;
     end;

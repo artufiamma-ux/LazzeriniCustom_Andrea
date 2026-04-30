@@ -14,5 +14,22 @@ tableextension 50201 "XV Sales Header" extends "Sales Header"
         field(50205; "Non duplicabile"; Boolean) { Caption = 'Non duplicabile'; }
         field(50206; "Sezione Iknow"; Code[20]) { Caption = 'Sezione Iknow'; }
         field(50207; "Azzera data spedizione"; Boolean) { Caption = 'Azzera data spedizione'; }
+        field(50100; ACCOMPAGNATORIA; Boolean)
+        {
+            Caption = 'Accompagnatoria';
+            InitValue = false;
+            DataClassification = ToBeClassified;
+        }
+        field(50101; "Tipo Ordine"; Code[20])
+        {
+            Caption = 'Tipo Ordine';
+            TableRelation = "XV Tipo Ordine";
+            DataClassification = ToBeClassified;
+        }
+        field(50103; "XV Proforma Source"; Code[20])
+        {
+            Caption = 'XV Proforma Source';
+            DataClassification = ToBeClassified;
+        }
     }
 }

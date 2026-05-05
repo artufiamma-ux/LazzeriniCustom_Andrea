@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.14.36915.13</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-04-10T07:22:37.2339168Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-05-04T09:24:08.7722762Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -3382,10 +3382,43 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <Top>0.09317in</Top>
-                          <Left>0.09162in</Left>
+                          <Top>0.04061in</Top>
+                          <Left>0.04162in</Left>
                           <Height>0.41194cm</Height>
                           <Width>1in</Width>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=fields!XVNote.Value</Value>
+                                  <Style>
+                                    <FontFamily>Segoe UI</FontFamily>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <Top>0.04061in</Top>
+                          <Left>1.04162in</Left>
+                          <Height>0.3625in</Height>
+                          <Width>6.58953in</Width>
+                          <ZIndex>1</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -3399,8 +3432,7 @@
                       </ReportItems>
                       <KeepTogether>true</KeepTogether>
                       <Top>0.85581in</Top>
-                      <Left>0in</Left>
-                      <Height>0.45224in</Height>
+                      <Height>0.45311in</Height>
                       <Width>7.7in</Width>
                       <ZIndex>1</ZIndex>
                       <Style>
@@ -3537,7 +3569,7 @@
                   <KeepTogether>true</KeepTogether>
                   <Top>0.51937in</Top>
                   <Left>0.03961in</Left>
-                  <Height>1.30805in</Height>
+                  <Height>1.30892in</Height>
                   <Width>7.70661in</Width>
                   <ZIndex>1</ZIndex>
                   <Style>
@@ -4405,6 +4437,9 @@
         </Field>
         <Field Name="PiePag2_Lbl">
           <DataField>PiePag2_Lbl</DataField>
+        </Field>
+        <Field Name="XVNote">
+          <DataField>XVNote</DataField>
         </Field>
         <Field Name="EORICode">
           <DataField>EORICode</DataField>

@@ -1,6 +1,7 @@
 namespace Lazzerini;
 
 using System.Security.User;
+using Microsoft.Sales.History;
 using Microsoft.Sales.Document;
 using Microsoft.Assembly.Document;
 using Microsoft.Bank.BankAccount;
@@ -450,6 +451,9 @@ report 50232 "XV Custom Sales Order"
             {
             }
             column(PiePag2_Lbl; GetCustomLabel('Pie di pagina 2'))
+            {
+            }
+            column(XVNote; GetNote())
             {
             }
             column(EORICode; Cust."EORI Number") { }
@@ -924,6 +928,21 @@ report 50232 "XV Custom Sales Order"
     local procedure GetCustomLabel(LabelName: Text): Text
     begin
         exit(XVUtil.GetCustomLabel(LabelName, IsForeign));
+    end;
+
+    local procedure GetNote(): Text[1000]
+    var
+        XVNote: Text[1000];
+        ShippingNo: Code[20];
+        ShipmentHeader: Record "Sales Shipment Header";
+
+    begin
+
+        XVNote := Header."Additional Notes";
+        if ShipmentHeader.Get(Header."Shipping No.") then
+            if ShipmentHeader."Additional Notes" <> '' then
+                XVNote := XVNote + ' ' + ShipmentHeader."Additional Notes";
+        exit(XVNote);
     end;
 
 

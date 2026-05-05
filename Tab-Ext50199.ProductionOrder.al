@@ -69,13 +69,13 @@ tableextension 50199 "XV Production Order" extends "Production Order"
         }
         field(50109; "Nr. cliente"; code[20])
         {
-            Caption = 'Nr. Ciclo';
+            Caption = 'Nr. cliente';
             DataClassification = CustomerContent;
 
         }
         field(50110; "Rif. Ord. Vendita"; code[20])
         {
-            Caption = 'Nr. Ciclo';
+            Caption = 'Rif. Ord. Vendita';
             DataClassification = CustomerContent;
 
         }

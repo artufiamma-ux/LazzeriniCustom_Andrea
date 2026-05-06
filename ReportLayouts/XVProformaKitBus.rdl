@@ -7160,11 +7160,11 @@
         <Field Name="XVPaymentTerms">
           <DataField>XVPaymentTerms</DataField>
         </Field>
-        <Field Name="XVBankAccount">
-          <DataField>XVBankAccount</DataField>
-        </Field>
         <Field Name="XVPaymentMethod">
           <DataField>XVPaymentMethod</DataField>
+        </Field>
+        <Field Name="XVBankAccount">
+          <DataField>XVBankAccount</DataField>
         </Field>
         <Field Name="XVOurCodeLbl">
           <DataField>XVOurCodeLbl</DataField>

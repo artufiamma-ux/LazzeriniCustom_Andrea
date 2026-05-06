@@ -126,15 +126,13 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                         Message('Controllo integrità serie Fallito: ' + ItemOrderMsg + ItemToCheck);
                 end;
             }
-        }
-
-        addafter(ControllaIntegritaSerie) // lo mette accanto a Stampa e Invia
-        {
-            action(StampaEtichetteBasamenti)
+            action(StampaEtichetteUdc)
             {
                 Caption = 'Genera dettaglio colli spedizioni';
                 ApplicationArea = All;
-                Image = Print;
+                Image = BarCode;
+                Promoted = true;
+                PromotedCategory = Process;
 
                 trigger OnAction()
                 var
@@ -145,6 +143,7 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                 end;
             }
         }
+
     }
 
 }

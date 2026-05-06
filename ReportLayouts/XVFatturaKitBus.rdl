@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.14.36915.13</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-04-22T14:51:05.3782902Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-05-06T07:32:40.0455062Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -875,7 +875,7 @@
                             </TablixMember>
                           </TablixMembers>
                           <Visibility>
-                            <Hidden>=Len(fields!Kit_Bus.Value)&gt;0 OR NOT fields!LineNo_Line.Value&gt;0</Hidden>
+                            <Hidden>=fields!IsKitBus.Value OR NOT fields!LineNo_Line.Value&gt;0</Hidden>
                           </Visibility>
                         </TablixMember>
                         <TablixMember>
@@ -7184,11 +7184,11 @@
         <Field Name="XVPaymentTerms">
           <DataField>XVPaymentTerms</DataField>
         </Field>
-        <Field Name="XVBankAccount">
-          <DataField>XVBankAccount</DataField>
-        </Field>
         <Field Name="XVPaymentMethod">
           <DataField>XVPaymentMethod</DataField>
+        </Field>
+        <Field Name="XVBankAccount">
+          <DataField>XVBankAccount</DataField>
         </Field>
         <Field Name="XVOurCodeLbl">
           <DataField>XVOurCodeLbl</DataField>

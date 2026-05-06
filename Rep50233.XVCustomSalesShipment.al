@@ -231,7 +231,7 @@ report 50233 "XV Custom Sales - Shipment"
             column(ShippingAgentServiceCode; "Shipping Agent Service Code")
             {
             }
-            column(AdditionalNotes; EOSShipHeader."Shipping Notes") { }
+            column(AdditionalNotes; GetNotes()) { }
             column(Forwarder; GetForwarder("Shipping Agent Code")) { }
             column(NrPackages; ShipmentInfo[1]) { }
             column(GrossWeight; ShipmentInfo[3]) { }
@@ -455,23 +455,18 @@ report 50233 "XV Custom Sales - Shipment"
     end;
 
     local procedure GetPaymentTerms(): Text[200]
-    var
-        PaymentTerms: Record "Payment Terms";
-        PaymentMethod: Record "Payment Method";
-        TermsCode: Code[10];
-        MethodCode: Code[20];
-        PaymentDesc: Text[200];
     begin
-        MethodCode := Header."Payment Method Code";
-        TermsCode := Header."Payment Terms Code";
-        if PaymentMethod.Get(MethodCode) then PaymentDesc := PaymentMethod.Description;
-        if PaymentTerms.Get(TermsCode) then PaymentDesc := PaymentDesc + ' ' + PaymentTerms.Description;
-        exit(PaymentDesc);
+        exit(XVUtil.GetPaymentMethodTerms(Header."Payment Method Code", Header."Payment Terms Code", IsForeign));
     end;
 
     local procedure GetShippingDateTime(): Text[30]
     begin
         exit(EOSShipHeader."Shipping Starting Date".ToText() + ' ' + EOSShipHeader."Shipping Starting Time".ToText());
+    end;
+
+    local procedure GetNotes(): Text[150]
+    begin
+        exit(EOSShipHeader."Shipping Notes" + ' ' + EOSShipHeader."Additional Notes");
     end;
 
     procedure GetTrasportType(Cod: Code[20]): Text[100]

@@ -61,9 +61,14 @@ report 50202 "XV Etichette UDC"
                         ApplicationArea = All;
                     }
 
-                    field(StampaBasamenti; StampaBasamenti)
+                    field(NrPallettAccessori; NrPallettAccessori)
                     {
-                        Caption = 'Stampa Basamenti';
+                        Caption = 'Nr Pallet Accessori';
+                        ApplicationArea = All;
+                    }
+                    field(DescrPallettAccessori; DescrPallettAccessori)
+                    {
+                        Caption = 'Descrizione Pallet Accessori';
                         ApplicationArea = All;
                     }
                 }
@@ -79,7 +84,8 @@ report 50202 "XV Etichette UDC"
         NrTotaleSerie: Integer;
         NrTotalePallet: Integer;
         NrCopieUDC: Integer;
-        StampaBasamenti: Boolean;
+        NrPallettAccessori: Integer;
+        DescrPallettAccessori: Text[100];
 
     local procedure GenerateBarcode(BarcodeString: Text): Text
     var

@@ -65,4 +65,26 @@ pageextension 50207 "XV Released Prod Orders Ext" extends "Released Production O
             }
         }
     }
+    actions
+    {
+        addlast(Warehouse)
+        {
+            action(EtichetteBasamenti)
+            {
+                Caption = 'Genera etichette basamenti';
+                ApplicationArea = All;
+                Image = DebugNext;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    Report50202: Report "XV Etichette UDC";
+                begin
+                    // Esegue il report
+                    Report50202.Run();
+                end;
+            }
+        }
+    }
 }

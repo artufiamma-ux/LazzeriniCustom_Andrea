@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.14.36915.13</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-05-04T09:24:08.7722762Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-05-06T08:09:57.0065438Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1232,8 +1232,8 @@
                     </Textbox>
                   </ReportItems>
                   <KeepTogether>true</KeepTogether>
-                  <Top>1.14697in</Top>
-                  <Left>0.39091in</Left>
+                  <Top>1.11987in</Top>
+                  <Left>0.37674in</Left>
                   <Height>1in</Height>
                   <Width>7.5cm</Width>
                   <Style>
@@ -1403,7 +1403,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!CompanyAddress4.Value</Value>
+                          <Value>=Fields!CompanyAddress4.Value &amp; " (" &amp; fields!CompanyCountry.Value &amp; ")"</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
@@ -2001,8 +2001,8 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>TipoDocumento</rd:DefaultName>
-                  <Top>5.87655cm</Top>
-                  <Left>3.68042in</Left>
+                  <Top>5.86539cm</Top>
+                  <Left>3.67603in</Left>
                   <Height>0.75706cm</Height>
                   <Width>3.19933in</Width>
                   <ZIndex>13</ZIndex>
@@ -2053,7 +2053,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>="E-mail: " &amp; Fields!XVReferenteEmail.Value</Value>
+                          <Value>="Tel: " &amp; Fields!XVReferenteTelefono.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
@@ -2083,7 +2083,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>="Tel: " &amp; Fields!XVReferenteTelefono.Value</Value>
+                          <Value>="E-mail: " &amp; Fields!XVReferenteEmail.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
@@ -2317,7 +2317,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!PaymentTermsDescription.Value</Value>
+                              <Value>=Fields!XVPaymentTerms.Value</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Segoe UI</FontFamily>
@@ -2657,7 +2657,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!PaymentMethodDescription.Value</Value>
+                              <Value>=Fields!XVPaymentMethod.Value</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Segoe UI</FontFamily>
@@ -2870,7 +2870,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <Top>0.8cm</Top>
+                      <Top>0.82609cm</Top>
                       <Left>0.28575cm</Left>
                       <Height>0.4cm</Height>
                       <Width>7cm</Width>
@@ -2899,7 +2899,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <Top>0.4cm</Top>
+                      <Top>0.42609cm</Top>
                       <Left>0.28575cm</Left>
                       <Height>0.4cm</Height>
                       <Width>7cm</Width>
@@ -2929,7 +2929,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <Top>1.2cm</Top>
+                      <Top>1.22609cm</Top>
                       <Left>0.28575cm</Left>
                       <Height>0.4cm</Height>
                       <Width>7cm</Width>
@@ -2960,6 +2960,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
+                      <Top>0.02609cm</Top>
                       <Height>0.4cm</Height>
                       <Width>5.99602cm</Width>
                       <ZIndex>3</ZIndex>
@@ -2988,7 +2989,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <Top>1.6cm</Top>
+                      <Top>1.62609cm</Top>
                       <Left>0.28575cm</Left>
                       <Height>0.4cm</Height>
                       <Width>7cm</Width>
@@ -3018,7 +3019,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <Top>2cm</Top>
+                      <Top>2.02609cm</Top>
                       <Left>0.28575cm</Left>
                       <Height>0.4cm</Height>
                       <Width>7cm</Width>
@@ -3033,8 +3034,8 @@
                     </Textbox>
                   </ReportItems>
                   <KeepTogether>true</KeepTogether>
-                  <Top>1.14697in</Top>
-                  <Left>4.1082in</Left>
+                  <Top>1.1198in</Top>
+                  <Left>3.99131in</Left>
                   <Height>1in</Height>
                   <Width>7.5cm</Width>
                   <ZIndex>18</ZIndex>
@@ -3612,7 +3613,9 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <Top>0.05586in</Top>
@@ -3644,7 +3647,9 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox78</rd:DefaultName>
@@ -3770,7 +3775,9 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox78</rd:DefaultName>
@@ -3806,7 +3813,9 @@
                           </Style>
                         </TextRun>
                       </TextRuns>
-                      <Style />
+                      <Style>
+                        <TextAlign>Right</TextAlign>
+                      </Style>
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox78</rd:DefaultName>
@@ -3836,6 +3845,7 @@
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>8pt</FontSize>
+                            <FontWeight>Bold</FontWeight>
                             <Format>n2</Format>
                           </Style>
                         </TextRun>
@@ -4041,6 +4051,9 @@
         </Field>
         <Field Name="CompanyAddress4">
           <DataField>CompanyAddress4</DataField>
+        </Field>
+        <Field Name="CompanyCountry">
+          <DataField>CompanyCountry</DataField>
         </Field>
         <Field Name="CompanyAddress5">
           <DataField>CompanyAddress5</DataField>
@@ -4515,6 +4528,12 @@
         </Field>
         <Field Name="XVPaymentTermsLbl">
           <DataField>XVPaymentTermsLbl</DataField>
+        </Field>
+        <Field Name="XVPaymentTerms">
+          <DataField>XVPaymentTerms</DataField>
+        </Field>
+        <Field Name="XVPaymentMethod">
+          <DataField>XVPaymentMethod</DataField>
         </Field>
         <Field Name="XVBankAccountLbl">
           <DataField>XVBankAccountLbl</DataField>

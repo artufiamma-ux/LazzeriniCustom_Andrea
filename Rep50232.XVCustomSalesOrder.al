@@ -54,6 +54,7 @@ report 50232 "XV Custom Sales Order"
             column(CompanyAddress4; CompanyAddr[4])
             {
             }
+            column(CompanyCountry; XVUtil.GetCountry(CompanyInfo."Country/Region Code")) { }
             column(CompanyAddress5; CompanyAddr[5])
             {
             }
@@ -481,6 +482,8 @@ report 50232 "XV Custom Sales Order"
             column(XVParcNoLbl; GetCustomLabel('Parc. No.')) { }
             column(XVCustomerIdLbl; GetCustomLabel('Customer ID')) { }
             column(XVPaymentTermsLbl; GetCustomLabel('Payment Terms')) { }
+            column(XVPaymentTerms; XVUtil.GetPaymentTerms("Payment Terms Code", IsForeign)) { }
+            column(XVPaymentMethod; XVUtil.GetPaymentMethod("Payment Method Code", IsForeign)) { }
             column(XVBankAccountLbl; GetCustomLabel('Bank')) { }
             column(XVPackagingLbl; GetCustomLabel('Packaging')) { }
             column(XVEORILbl; GetCustomLabel('EORI Code')) { }

@@ -545,9 +545,9 @@ report 50234 "Custom Proforma - Invoice"
             column(DESC; GetCustomValue('the exported of the products covered by this doc declares, except where otherwise clearly indicate, these products are of italian origin.')) { }
             column(Firma; GetCustomValue('Lazzareni S.r.l Ufficio AMM.VO')) { }
             column(Forwarder; GetForwarder("Shipping Agent Code")) { Caption = 'Spedizioniere'; }
-            column(XVPaymentTerms; GetPaymentTerms("Payment Terms Code")) { }
+            column(XVPaymentTerms; XVUtil.GetPaymentTerms("Payment Terms Code", IsForeign)) { }
+            column(XVPaymentMethod; XVUtil.GetPaymentMethod("Payment Method Code", IsForeign)) { }
             column(XVBankAccount; GetBankAccount("Company Bank Account Code")) { }
-            column(XVPaymentMethod; GetPaymentMethod("Payment Method Code")) { }
             column(XVOurCodeLbl; GetCustomLabel('Our Code No.')) { }
             column(XVCustomCodeLbl; GetCustomLabel('Custom Code No.')) { }
             column(XVDescItemLbl; GetCustomLabel('Description')) { }
@@ -1158,7 +1158,7 @@ report 50234 "Custom Proforma - Invoice"
                         CurrSymbol := GeneralLedgerSetup.GetCurrencySymbol();
                     end;
                 CalculateVATTotals("No.");
-                XVUtil.GetPostedPayments("No.", GetPaymentMethod(Header."Payment Method Code"), PostedPayment);
+                XVUtil.GetPostedPayments("No.", Header."Payment Method Code", PostedPayment, IsForeign);
             end;
 
             trigger OnPreDataItem()

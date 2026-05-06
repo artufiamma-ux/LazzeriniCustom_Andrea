@@ -565,9 +565,9 @@ report 50231 "Custom Sales - Invoice"
             column(NrColli; GetNrColli("No.")) { Caption = 'Numero colli'; }
             column(Freight; GetFreight("No.")) { Caption = 'Freight'; }
             column(Forwarder; GetForwarder("Shipping Agent Code")) { Caption = 'Spedizioniere'; }
-            column(XVPaymentTerms; GetPaymentTerms("Payment Terms Code")) { }
+            column(XVPaymentTerms; XVUtil.GetPaymentTerms("Payment Terms Code", IsForeign)) { }
+            column(XVPaymentMethod; XVUtil.GetPaymentMethod("Payment Method Code", IsForeign)) { }
             column(XVBankAccount; GetBankAccount("Company Bank Account Code")) { }
-            column(XVPaymentMethod; GetPaymentMethod("Payment Method Code")) { }
             column(XVOurCodeLbl; GetCustomLabel('Our Code No.')) { }
             column(XVCustomCodeLbl; GetCustomLabel('Custom Code No.')) { }
             column(XVDescItemLbl; GetCustomLabel('Description')) { }
@@ -1199,7 +1199,7 @@ report 50231 "Custom Sales - Invoice"
                         CurrSymbol := GeneralLedgerSetup.GetCurrencySymbol();
                     end;
                 CalculateVATTotals("No.");
-                XVUtil.GetPostedPayments("No.", GetPaymentMethod(Header."Payment Method Code"), PostedPayment);
+                XVUtil.GetPostedPayments("No.", Header."Payment Method Code", PostedPayment, IsForeign);
             end;
 
             trigger OnPreDataItem()

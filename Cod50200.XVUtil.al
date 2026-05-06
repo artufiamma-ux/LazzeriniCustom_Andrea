@@ -4,6 +4,7 @@ using Microsoft.Sales.History;
 using Microsoft.Sales.Document;
 using Microsoft.Foundation.Address;
 using Microsoft.Foundation.PaymentTerms;
+using Microsoft.Bank.BankAccount;
 codeunit 50200 XVUtil
 {
     procedure GetCustomLabel(LabelName: Text; isForeign: Boolean): Text
@@ -172,7 +173,7 @@ codeunit 50200 XVUtil
                 begin
                     // Filtra solo le righe con un Order No. valorizzato
                     // Il riferimento all'ordine va cercato nelle righe
-                    DDTLine.SetRange("Document No.", DocNo);
+                    DDTLine.SetRange("EOS Shipment No.", DocNo); //EOS Shipment No.
                     DDTLine.SetFilter("Order No.", '<>%1', '');
 
                     if DDTLine.FindSet() then
@@ -181,7 +182,20 @@ codeunit 50200 XVUtil
                             if SalesHeader.Get(SalesHeader."Document Type"::Order, DDTLine."Order No.") then
                                 if SalesHeader."Ordine con kit" then
                                     exit(true);  // appena trovato → fine
-                        until DDTLine.Next() = 0;
+                        until DDTLine.Next() = 0
+                    else begin
+                        DDTLine.SetRange("Document No.", DocNo); //EOS Shipment No.
+                        DDTLine.SetFilter("Order No.", '<>%1', '');
+
+                        if DDTLine.FindSet() then
+                            repeat
+                                // Lettura diretta testata ordine
+                                if SalesHeader.Get(SalesHeader."Document Type"::Order, DDTLine."Order No.") then
+                                    if SalesHeader."Ordine con kit" then
+                                        exit(true);  // appena trovato → fine
+                            until DDTLine.Next() = 0
+
+                    end;
                 end;
             'ORDINE':
                 begin
@@ -401,7 +415,7 @@ codeunit 50200 XVUtil
 
     end;
 
-    procedure GetPostedPayments(DocNo: Code[20]; PaymentMethod: Text[100]; var info: array[9] of Text[100])
+    procedure GetPostedPayments(DocNo: Code[20]; PaymentMethodCode: Code[20]; var info: array[9] of Text[100]; IsForeign: Boolean)
     var
         RecPostedPaymentLines: Record "Posted Payment Lines";
         i: Integer;
@@ -411,7 +425,7 @@ codeunit 50200 XVUtil
         i := 1;
         if RecPostedPaymentLines.FindSet() then
             repeat
-                info[i] := PaymentMethod;
+                info[i] := GetPaymentMethod(PaymentMethodCode, IsForeign);
                 info[i + 1] := Format(RecPostedPaymentLines."Due Date", 0, '<Day,2>/<Month,2>/<Year4>');
                 info[i + 2] := Format(
                                         RecPostedPaymentLines.Amount,
@@ -421,5 +435,62 @@ codeunit 50200 XVUtil
                 i := i + 3;
             until RecPostedPaymentLines.Next() = 0;
     end;
+
+    procedure GetPaymentMethodTerms(MethodCode: Code[20]; TermsCode: Code[10]; IsForeign: Boolean): Text[200]
+    var
+        PaymentTerms: Record "Payment Terms";
+        PaymentMethod: Record "Payment Method";
+        PaymentMethodTranslation: Record "Payment Method Translation";
+        PaymentTermTranslation: Record "Payment Term Translation";
+
+        PaymentDesc: Text[200];
+        LanguageId: Code[10]; //English (United States)
+    begin
+        LanguageId := 'ING';
+        if IsForeign then begin
+            if PaymentMethodTranslation.Get(MethodCode, LanguageId) then PaymentDesc := PaymentMethodTranslation.Description;
+            if PaymentTermTranslation.Get(TermsCode, LanguageId) then PaymentDesc := PaymentDesc + ' ' + PaymentTermTranslation.Description;
+        end else begin
+            if PaymentMethod.Get(MethodCode) then PaymentDesc := PaymentMethod.Description;
+            if PaymentTerms.Get(TermsCode) then PaymentDesc := PaymentDesc + ' ' + PaymentTerms.Description;
+        end;
+        exit(PaymentDesc);
+    end;
+
+    procedure GetPaymentMethod(MethodCode: Code[20]; IsForeign: Boolean): Text[200]
+    var
+        PaymentMethod: Record "Payment Method";
+        PaymentMethodTranslation: Record "Payment Method Translation";
+
+        PaymentDesc: Text[200];
+        LanguageId: Code[10]; //English (United States)
+    begin
+        LanguageId := 'ING';
+        if IsForeign then begin
+            if PaymentMethodTranslation.Get(MethodCode, LanguageId) then PaymentDesc := PaymentMethodTranslation.Description;
+        end else begin
+            if PaymentMethod.Get(MethodCode) then PaymentDesc := PaymentMethod.Description;
+        end;
+        exit(PaymentDesc);
+    end;
+
+    procedure GetPaymentTerms(TermsCode: Code[10]; IsForeign: Boolean): Text[200]
+    var
+        PaymentTerms: Record "Payment Terms";
+        PaymentMethodTranslation: Record "Payment Method Translation";
+        PaymentTermTranslation: Record "Payment Term Translation";
+
+        PaymentDesc: Text[200];
+        LanguageId: Code[10]; //English (United States)
+    begin
+        LanguageId := 'ING';
+        if IsForeign then begin
+            if PaymentTermTranslation.Get(TermsCode, LanguageId) then PaymentDesc := PaymentTermTranslation.Description;
+        end else begin
+            if PaymentTerms.Get(TermsCode) then PaymentDesc := PaymentTerms.Description;
+        end;
+        exit(PaymentDesc);
+    end;
+
 }
 

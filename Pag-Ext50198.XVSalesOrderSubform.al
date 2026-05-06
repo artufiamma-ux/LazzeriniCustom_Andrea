@@ -25,7 +25,7 @@ pageextension 50198 "XV Sales Order Subform" extends "Sales Order Subform" // Pa
             {
                 ApplicationArea = All;
                 ToolTip = 'Progressivo Kit Bus';
-                Editable = false;
+                //Editable = false;
             }
             field("New Kit Bus"; Rec."BOM Item No.")
             {

@@ -136,10 +136,10 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
 
                 trigger OnAction()
                 var
-                    Report50202: Report "XV Etichette UDC";
+                    Rep: Report "XV Colli Di Spedizione";
                 begin
-                    // Esegue il report
-                    Report50202.Run();
+                    Rep.SetWarehouseShipmentNo(Rec."No.");
+                    Rep.Run();
                 end;
             }
         }

@@ -23,6 +23,7 @@ tableextension 50214 XVWarehouseShipmentHeader extends "Warehouse Shipment Heade
         {
             Caption = 'Numero Totale Serie';
             DataClassification = ToBeClassified;
+            InitValue = 1;
         }
         field(50103; "Numero Totale Pallet"; Integer)
         {

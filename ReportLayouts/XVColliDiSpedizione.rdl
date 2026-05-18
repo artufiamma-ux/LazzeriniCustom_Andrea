@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.14.36915.13</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-05-11T08:24:25.2853853Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-05-15T11:26:14.0246916Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -162,7 +162,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>="Pallet" &amp; Max(fields!NScatola.Value) &amp; "/" &amp; First(Fields!Numero_Totale_Pallet.Value, "DataSet_Result")</Value>
+                                      <Value>="Box " &amp; Max(fields!NScatola.Value) &amp; "/" &amp; First(Fields!Numero_Totale_Pallet.Value, "DataSet_Result")</Value>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
                                         <FontSize>12pt</FontSize>
@@ -656,7 +656,7 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
                 </TablixRowHierarchy>
                 <Top>0.05cm</Top>
                 <Left>0.13882cm</Left>
-                <Height>8.24153cm</Height>
+                <Height>8.24154cm</Height>
                 <Width>14.90001cm</Width>
                 <Style>
                   <Border>
@@ -666,8 +666,11 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
               </Tablix>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Height>8.29153cm</Height>
+            <Height>8.29154cm</Height>
             <Width>15.1cm</Width>
+            <Visibility>
+              <Hidden>= Fields!Barcode.Value=""</Hidden>
+            </Visibility>
             <Style>
               <Border>
                 <Style>None</Style>

@@ -34,7 +34,7 @@ report 50235 "XV Colli Di Spedizione"
 
                 column(SourceNo; "Source No.") { }
                 column(SourceLineNo; "Source Line No.") { }
-                column(ProgressivoKitBus; "Progressivo Kit Bus") { }
+                column(ProgressivoKitBus; ZeroValeUno("Progressivo Kit Bus")) { }
 
                 // DATAITEM FIGLIO
                 dataitem(HUAssignm; "EOS055 Handling Unit Assignm.")
@@ -42,6 +42,11 @@ report 50235 "XV Colli Di Spedizione"
                     DataItemLink =
                     "Source No." = field("Source No."),
                     "Source Line No." = field("Source Line No.");
+
+                    DataItemTableView =
+                            SORTING("Nr Scatola", "Handling Unit No.")
+                            ORDER(Ascending);
+
 
                     column(HandlingUnitNo; "Handling Unit No.") { }
                     column(HUSourceNo; "Source No.") { }
@@ -64,7 +69,15 @@ report 50235 "XV Colli Di Spedizione"
                     column(Barcode; EncodedText)
                     {
                     }
-                    column(NScatola; NScatola) { }
+                    column(NScatola; "Nr Scatola") { }
+                    /*
+                    trigger OnPreDataItem()
+                    begin
+                        if NrScatolaFilter <> '' then
+                            SetFilter("Nr Scatola", NrScatolaFilter);
+                    end;
+*/
+
                     trigger OnAfterGetRecord()
                     var
                         BarcodeString: Text;
@@ -86,17 +99,16 @@ report 50235 "XV Colli Di Spedizione"
 
                         // Encode the data string to the barcode font
                         EncodedText := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
-
+                        HUAssignm."Nr Scatola" := 0;
                         // Recupero dati per indirizzo di spedizione dall'ordine
-                        if NOT Scatole.Contains("Handling Unit No.") then begin
-                            NScatola := NScatola + 1;
-                            Scatole := Scatole + ';' + "Handling Unit No.";
-                        end
-                        else
-                            Scatole := Scatole + ';' + "Handling Unit No.";
-                        HUAssignm."Nr Scatola" := NScatola;
-                        HUAssignm.Modify(true);
-
+                        if HUAssignm."Nr Scatola" = 0 then begin
+                            if NOT Scatole.Contains(HUAssignm."Handling Unit No.") then begin
+                                NScatola := NScatola + 1;
+                                Scatole := Scatole + ';' + HUAssignm."Handling Unit No.";
+                            end;
+                            HUAssignm."Nr Scatola" := NScatola;
+                            HUAssignm.Modify(true);
+                        end;
 
                     end;
 
@@ -153,12 +165,22 @@ report 50235 "XV Colli Di Spedizione"
                     field(NrPalletAccessori; NrPalletAccessori)
                     {
                         ApplicationArea = All;
+                        Caption = 'Nr Pallet Accessori';
                     }
 
                     field(DescrPalletAccessori; DescrPalletAccessori)
                     {
                         ApplicationArea = All;
+                        Caption = 'Descrizione Pallet Accessori';
                     }
+                    /*
+                                        field(NrScatolaFilter; NrScatolaFilter)
+                                        {
+                                            Caption = 'Nr Scatola';
+                                            ApplicationArea = All;
+                                            ToolTip = 'Inserire uno o più numeri (es: 1 | 1|3 | 1..5). Lasciare vuoto per tutti.';
+                                        }
+                    */
                 }
             }
         }
@@ -166,6 +188,7 @@ report 50235 "XV Colli Di Spedizione"
     var
         Scatole: Text[250];
         NScatola: Integer;
+        NrScatolaFilter: Text[100];
         EncodedText: Text;
         NrPalletAccessori: Integer;
         DescrPalletAccessori: Text[100];
@@ -180,6 +203,14 @@ report 50235 "XV Colli Di Spedizione"
     procedure SetWarehouseShipmentNo(No: Code[20])
     begin
         WarehouseShipmentNo := No;
+    end;
+
+    local procedure ZeroValeUno(ProgressivoKitBus: Integer): Integer;
+    begin
+        if (ProgressivoKitBus = 0) then
+            exit(1)
+        else
+            exit(ProgressivoKitBus);
     end;
 
 }

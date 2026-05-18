@@ -5,6 +5,7 @@ using Microsoft.Sales.Document;
 using Microsoft.Foundation.Address;
 using Microsoft.Foundation.PaymentTerms;
 using Microsoft.Bank.BankAccount;
+using Microsoft.Warehouse.Document;
 codeunit 50200 XVUtil
 {
     procedure GetCustomLabel(LabelName: Text; isForeign: Boolean): Text
@@ -492,5 +493,36 @@ codeunit 50200 XVUtil
         exit(PaymentDesc);
     end;
 
+    procedure SetNrScatola(WarehouseShipmentNo: Code[20])
+    var
+        WarehouseShipmentLine: Record "Warehouse Shipment Line";
+        HUAssignm: Record "EOS055 Handling Unit Assignm.";
+        Scatole: Text[100];
+        NScatola: Integer;
+        
+
+
+    begin
+        WarehouseShipmentLine.SetRange("No.", WarehouseShipmentNo);
+        if WarehouseShipmentLine.FindSet() then
+            repeat
+                HUAssignm.SetRange("Source No.", WarehouseShipmentLine."Source No.");
+                HUAssignm.SetRange("Source Line No.", WarehouseShipmentLine."Line No.");
+                if HUAssignm.FindSet() then
+                    repeat
+                        HUAssignm."Nr Scatola" := 0;
+                        // Recupero dati per indirizzo di spedizione dall'ordine
+                        if HUAssignm."Nr Scatola" = 0 then begin
+                            if NOT Scatole.Contains(HUAssignm."Handling Unit No.") then begin
+                                NScatola := NScatola + 1;
+                                Scatole := Scatole + ';' + HUAssignm."Handling Unit No.";
+                            end;
+                            HUAssignm."Nr Scatola" := NScatola;
+                            HUAssignm.Modify(true);
+                        end;
+                    until HUAssignm.Next() = 0;
+            until WarehouseShipmentLine.Next() = 0;
+
+    end;
 }
 

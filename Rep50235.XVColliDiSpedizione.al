@@ -99,17 +99,18 @@ report 50235 "XV Colli Di Spedizione"
 
                         // Encode the data string to the barcode font
                         EncodedText := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
-                        HUAssignm."Nr Scatola" := 0;
-                        // Recupero dati per indirizzo di spedizione dall'ordine
-                        if HUAssignm."Nr Scatola" = 0 then begin
-                            if NOT Scatole.Contains(HUAssignm."Handling Unit No.") then begin
-                                NScatola := NScatola + 1;
-                                Scatole := Scatole + ';' + HUAssignm."Handling Unit No.";
-                            end;
-                            HUAssignm."Nr Scatola" := NScatola;
-                            HUAssignm.Modify(true);
-                        end;
 
+                        /*                       
+                                                HUAssignm."Nr Scatola" := 0;
+                                                if HUAssignm."Nr Scatola" = 0 then begin
+                                                    if NOT Scatole.Contains(HUAssignm."Handling Unit No.") then begin
+                                                        NScatola := NScatola + 1;
+                                                        Scatole := Scatole + ';' + HUAssignm."Handling Unit No.";
+                                                    end;
+                                                    HUAssignm."Nr Scatola" := NScatola;
+                                                    HUAssignm.Modify(true);
+                                                end;
+                        */
                     end;
 
                 }
@@ -199,10 +200,13 @@ report 50235 "XV Colli Di Spedizione"
         Indirizzo_Spedizione2: Text[100];
         Indirizzo_Spedizione3: Text[100];
         YourReference: Text[100];
+        XVUtil: Codeunit "XVUtil";
 
     procedure SetWarehouseShipmentNo(No: Code[20])
     begin
         WarehouseShipmentNo := No;
+        // TODO DA provare
+        XVUtil.SetNrScatola(No);
     end;
 
     local procedure ZeroValeUno(ProgressivoKitBus: Integer): Integer;

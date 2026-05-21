@@ -13,11 +13,11 @@ tableextension 50214 XVWarehouseShipmentHeader extends "Warehouse Shipment Heade
             InitValue = Standard;
 
         }
-        field(50101; "Tipo Ordine"; Code[20])
+        field(50101; "Tipo Ordine"; Enum "XV Tipo Ordine")
         {
             Caption = 'Tipo Ordine';
             DataClassification = ToBeClassified;
-            TableRelation = "XV Tipo Ordine";
+
         }
         field(50102; "Numero Totale Serie"; Integer)
         {
@@ -58,6 +58,16 @@ tableextension 50214 XVWarehouseShipmentHeader extends "Warehouse Shipment Heade
         field(50110; "Quotazione Trasporto Acc."; Boolean)
         {
             Caption = 'Quotazione trasporto accettata';
+            DataClassification = ToBeClassified;
+        }
+        field(50111; "Nr Colli Accessori"; Integer)
+        {
+            Caption = 'Nr Colli Accessori';
+            DataClassification = ToBeClassified;
+        }
+        field(50112; "Descrizione Colli Accessori"; Text[100])
+        {
+            Caption = 'Descrizione Colli Accessori';
             DataClassification = ToBeClassified;
         }
 

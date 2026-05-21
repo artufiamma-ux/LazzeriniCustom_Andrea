@@ -20,8 +20,25 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
             field("Numero Totale Serie"; Rec."Numero Totale Serie")
             {
                 ApplicationArea = All;
+                Editable = false;
             }
             field("Numero Totale Pallet"; Rec."Numero Totale Pallet")
+            {
+                ApplicationArea = All;
+                Editable = false;
+                Caption = 'Box per serie';
+            }
+            field(NrPalletAccessori; Rec."Nr Colli Accessori")
+            {
+                ApplicationArea = All;
+                Caption = 'Box Accessori per serie';
+
+                trigger OnValidate()
+                begin
+                    Message('Ricalcolo Scatole necessario');
+                end;
+            }
+            field(DescrPalletAccessori; Rec."Descrizione Colli Accessori")
             {
                 ApplicationArea = All;
             }

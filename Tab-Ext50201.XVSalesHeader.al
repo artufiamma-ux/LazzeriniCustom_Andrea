@@ -20,10 +20,10 @@ tableextension 50201 "XV Sales Header" extends "Sales Header"
             InitValue = false;
             DataClassification = ToBeClassified;
         }
-        field(50101; "Tipo Ordine"; Code[20])
+        field(50101; "Tipo Ordine"; Enum "XV Tipo Ordine")
         {
             Caption = 'Tipo Ordine';
-            TableRelation = "XV Tipo Ordine";
+
             DataClassification = ToBeClassified;
         }
         field(50103; "XV Proforma Source"; Code[20])

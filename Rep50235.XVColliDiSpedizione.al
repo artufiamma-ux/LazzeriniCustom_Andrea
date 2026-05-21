@@ -70,13 +70,12 @@ report 50235 "XV Colli Di Spedizione"
                     {
                     }
                     column(NScatola; "Nr Scatola") { }
-                    /*
+
                     trigger OnPreDataItem()
                     begin
                         if NrScatolaFilter <> '' then
                             SetFilter("Nr Scatola", NrScatolaFilter);
                     end;
-*/
 
                     trigger OnAfterGetRecord()
                     var
@@ -133,6 +132,7 @@ report 50235 "XV Colli Di Spedizione"
             trigger OnPreDataItem()
             begin
                 SetRange("No.", WarehouseShipmentNo);
+                XVUtil.SetNrScatola(WarehouseShipmentNo);
             end;
 
             trigger OnAfterGetRecord()
@@ -163,25 +163,12 @@ report 50235 "XV Colli Di Spedizione"
                 {
                     Caption = 'Opzioni';
 
-                    field(NrPalletAccessori; NrPalletAccessori)
+                    field(NrScatolaFilter; NrScatolaFilter)
                     {
+                        Caption = 'Nr Scatola';
                         ApplicationArea = All;
-                        Caption = 'Nr Pallet Accessori';
+                        ToolTip = 'Inserire uno o più numeri (es: 1 | 1|3 | 1..5). Lasciare vuoto per tutti.';
                     }
-
-                    field(DescrPalletAccessori; DescrPalletAccessori)
-                    {
-                        ApplicationArea = All;
-                        Caption = 'Descrizione Pallet Accessori';
-                    }
-                    /*
-                                        field(NrScatolaFilter; NrScatolaFilter)
-                                        {
-                                            Caption = 'Nr Scatola';
-                                            ApplicationArea = All;
-                                            ToolTip = 'Inserire uno o più numeri (es: 1 | 1|3 | 1..5). Lasciare vuoto per tutti.';
-                                        }
-                    */
                 }
             }
         }
@@ -206,7 +193,6 @@ report 50235 "XV Colli Di Spedizione"
     begin
         WarehouseShipmentNo := No;
         // TODO DA provare
-        XVUtil.SetNrScatola(No);
     end;
 
     local procedure ZeroValeUno(ProgressivoKitBus: Integer): Integer;
@@ -216,5 +202,6 @@ report 50235 "XV Colli Di Spedizione"
         else
             exit(ProgressivoKitBus);
     end;
+
 
 }

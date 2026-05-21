@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.14.36915.13</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-05-15T11:26:14.0246916Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-05-20T13:44:35.8367894Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -32,18 +32,18 @@
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>4.96667cm</Width>
+                      <Width>5.8cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>4.96667cm</Width>
+                      <Width>5.8cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>4.96667cm</Width>
+                      <Width>8.15cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
                     <TablixRow>
-                      <Height>1.79026cm</Height>
+                      <Height>2.0129cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -86,7 +86,7 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>1.04943cm</Height>
+                      <Height>1cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -162,7 +162,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>="Box " &amp; Max(fields!NScatola.Value) &amp; "/" &amp; First(Fields!Numero_Totale_Pallet.Value, "DataSet_Result")</Value>
+                                      <Value>="Box " &amp; Max(fields!NScatola.Value, "DataSet_Result") &amp; "/" &amp; First(Fields!Numero_Totale_Pallet.Value, "DataSet_Result")</Value>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
                                         <FontSize>12pt</FontSize>
@@ -189,7 +189,7 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>0.80248cm</Height>
+                      <Height>1cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -293,7 +293,7 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>1.64915cm</Height>
+                      <Height>2.55971cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -404,7 +404,7 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>1.13762cm</Height>
+                      <Height>1cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -504,7 +504,7 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>0.83776cm</Height>
+                      <Height>1cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -547,7 +547,7 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>0.97484cm</Height>
+                      <Height>1cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -579,42 +579,11 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
                                 <PaddingBottom>2pt</PaddingBottom>
                               </Style>
                             </Textbox>
-                            <ColSpan>2</ColSpan>
+                            <ColSpan>3</ColSpan>
                           </CellContents>
                         </TablixCell>
                         <TablixCell />
-                        <TablixCell>
-                          <CellContents>
-                            <Textbox Name="Textbox7">
-                              <CanGrow>true</CanGrow>
-                              <KeepTogether>true</KeepTogether>
-                              <Paragraphs>
-                                <Paragraph>
-                                  <TextRuns>
-                                    <TextRun>
-                                      <Value />
-                                      <Style>
-                                        <FontFamily>Segoe UI</FontFamily>
-                                        <FontWeight>Bold</FontWeight>
-                                      </Style>
-                                    </TextRun>
-                                  </TextRuns>
-                                  <Style />
-                                </Paragraph>
-                              </Paragraphs>
-                              <rd:DefaultName>Textbox7</rd:DefaultName>
-                              <Style>
-                                <Border>
-                                  <Style>None</Style>
-                                </Border>
-                                <PaddingLeft>2pt</PaddingLeft>
-                                <PaddingRight>2pt</PaddingRight>
-                                <PaddingTop>2pt</PaddingTop>
-                                <PaddingBottom>2pt</PaddingBottom>
-                              </Style>
-                            </Textbox>
-                          </CellContents>
-                        </TablixCell>
+                        <TablixCell />
                       </TablixCells>
                     </TablixRow>
                   </TablixRows>
@@ -656,8 +625,8 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
                 </TablixRowHierarchy>
                 <Top>0.05cm</Top>
                 <Left>0.13882cm</Left>
-                <Height>8.24154cm</Height>
-                <Width>14.90001cm</Width>
+                <Height>9.57261cm</Height>
+                <Width>19.75cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -666,11 +635,8 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
               </Tablix>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Height>8.29154cm</Height>
-            <Width>15.1cm</Width>
-            <Visibility>
-              <Hidden>= Fields!Barcode.Value=""</Hidden>
-            </Visibility>
+            <Height>9.9cm</Height>
+            <Width>19.93882cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -678,13 +644,13 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>8.47681cm</Height>
+        <Height>9.9cm</Height>
         <Style />
       </Body>
-      <Width>15.17764cm</Width>
+      <Width>19.93882cm</Width>
       <Page>
-        <PageHeight>11.43cm</PageHeight>
-        <PageWidth>15.24cm</PageWidth>
+        <PageHeight>10cm</PageHeight>
+        <PageWidth>20cm</PageWidth>
         <LeftMargin>0cm</LeftMargin>
         <RightMargin>0cm</RightMargin>
         <TopMargin>0cm</TopMargin>

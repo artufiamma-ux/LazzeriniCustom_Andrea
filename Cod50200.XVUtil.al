@@ -495,22 +495,27 @@ codeunit 50200 XVUtil
 
     procedure SetNrScatola(WarehouseShipmentNo: Code[20])
     var
+
+        WhseShpt: Record "Warehouse Shipment Header";
         WarehouseShipmentLine: Record "Warehouse Shipment Line";
         HUAssignm: Record "EOS055 Handling Unit Assignm.";
         Scatole: Text[100];
         NScatola: Integer;
-        
+        NScatoleAccessorie: Integer;
+
 
 
     begin
+        WhseShpt.Get(WarehouseShipmentNo);
+        //HUAssignm.
         WarehouseShipmentLine.SetRange("No.", WarehouseShipmentNo);
         if WarehouseShipmentLine.FindSet() then
             repeat
                 HUAssignm.SetRange("Source No.", WarehouseShipmentLine."Source No.");
-                HUAssignm.SetRange("Source Line No.", WarehouseShipmentLine."Line No.");
+                HUAssignm.SetRange("Source Line No.", WarehouseShipmentLine."Source Line No.");
                 if HUAssignm.FindSet() then
                     repeat
-                        HUAssignm."Nr Scatola" := 0;
+                        //                   HUAssignm."Nr Scatola" := 0;
                         // Recupero dati per indirizzo di spedizione dall'ordine
                         if HUAssignm."Nr Scatola" = 0 then begin
                             if NOT Scatole.Contains(HUAssignm."Handling Unit No.") then begin

@@ -1,5 +1,5 @@
 
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 page 50210 "XV Tipi Etichetta"
 {

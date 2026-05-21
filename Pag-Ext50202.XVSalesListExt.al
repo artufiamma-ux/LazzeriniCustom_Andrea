@@ -1,5 +1,5 @@
 
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 using Microsoft.Sales.Document;
 
 pageextension 50202 "XV Sales List Ext" extends "Sales Order List" // Page 9305

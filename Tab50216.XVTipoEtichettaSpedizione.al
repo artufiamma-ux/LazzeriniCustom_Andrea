@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 table 50216 "XV Tipo Etichetta Spedizione"
 {

@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 enum 50061 "XV Tipo Prelievo WSH"
 {
     Extensible = false;

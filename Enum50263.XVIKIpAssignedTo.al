@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 enum 50263 "XV IK IP assigned to."
 {

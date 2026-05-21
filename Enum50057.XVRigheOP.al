@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 enum 50057 "RigheOP"
 {
     Extensible = false;

@@ -1,5 +1,5 @@
 
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 using Microsoft.Sales.Document;
 
 pageextension 50198 "XV Sales Order Subform" extends "Sales Order Subform" // Page 9305

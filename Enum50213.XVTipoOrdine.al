@@ -1,5 +1,5 @@
 
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 enum 50213 "XV Tipo Ordine"
 {

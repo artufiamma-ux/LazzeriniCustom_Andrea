@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 enum 50253 "XV IK Bollino"
 {
     Extensible = true;

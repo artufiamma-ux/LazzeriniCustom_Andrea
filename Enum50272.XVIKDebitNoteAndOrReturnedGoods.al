@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 enum 50272 "XV IK Debit note Ret goods"
 {

@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 table 50217 "XV Label Buffer"
 {
     DataClassification = ToBeClassified;

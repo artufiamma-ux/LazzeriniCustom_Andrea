@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 enum 50266 "XV IK Warranty Reworking"
 {

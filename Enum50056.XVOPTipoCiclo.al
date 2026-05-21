@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 enum 50056 "OPTipoCiclo"
 {
     Extensible = false;

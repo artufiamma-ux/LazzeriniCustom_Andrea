@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 using Microsoft.Manufacturing.Document;
 using Microsoft.Manufacturing.Routing;

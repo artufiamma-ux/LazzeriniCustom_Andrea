@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 using Microsoft.Foundation.Company;
 using Microsoft.Foundation.Address;
 using Microsoft.Sales.Customer;

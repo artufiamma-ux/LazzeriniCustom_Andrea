@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 using Microsoft.Manufacturing.ProductionBOM;
 using Microsoft.Inventory.BOM;
 

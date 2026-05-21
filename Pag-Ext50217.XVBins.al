@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 using Microsoft.Warehouse.Structure;
 pageextension 50217 XVWBins extends "Bins"

@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 using Microsoft.Warehouse.Document;
 using Microsoft.Inventory.Ledger;
 using System.Text;

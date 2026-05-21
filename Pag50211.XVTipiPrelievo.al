@@ -1,5 +1,5 @@
 
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 page 50211 "XV Tipi Prelievo"
 {

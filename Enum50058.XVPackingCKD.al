@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 enum 50058 "XV Packing CKD"
 {
     Extensible = false;

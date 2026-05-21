@@ -1,5 +1,5 @@
 
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 table 50215 "XV Tipo Prelievo Articoli"
 {

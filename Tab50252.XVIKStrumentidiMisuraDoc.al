@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 table 50252 "XV IK Strumenti di Misura Doc"
 {

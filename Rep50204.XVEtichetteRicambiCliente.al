@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 using Microsoft.Inventory.Item.Catalog;
 using Microsoft.Inventory.Item;
@@ -66,15 +66,15 @@ report 50204 "XV Etichette Ricambi Cliente"
         i: Integer;
     begin
         // Recupera item reference
-            ItemRef.Reset();
-            ItemRef.SetRange("Item No.", ItemNo);
-            ItemRef.SetRange("Reference Type", ItemRef."Reference Type"::Customer);
-            ItemRef.SetRange("Reference Type No.", CustomerNo);
+        ItemRef.Reset();
+        ItemRef.SetRange("Item No.", ItemNo);
+        ItemRef.SetRange("Reference Type", ItemRef."Reference Type"::Customer);
+        ItemRef.SetRange("Reference Type No.", CustomerNo);
 
-            if ItemRef.FindFirst() then
-                ItemReference := ItemRef."Reference No."
-            else
-                ItemReference := '';
+        if ItemRef.FindFirst() then
+            ItemReference := ItemRef."Reference No."
+        else
+            ItemReference := '';
         // Popolazione temporanea
         for i := 1 to QtaEtichette do begin
             TempBuffer.Init();
@@ -88,9 +88,10 @@ report 50204 "XV Etichette Ricambi Cliente"
         // Copio la temporanea dentro il dataset del report
         LabelBuffer.Copy(TempBuffer, true);
     end;
-procedure SetParameters(ItemNoP: Code[20]; CustomerNoP: Code[20])
-begin
-    ItemNo := ItemNoP;
-    CustomerNo := CustomerNoP;
-end;
+
+    procedure SetParameters(ItemNoP: Code[20]; CustomerNoP: Code[20])
+    begin
+        ItemNo := ItemNoP;
+        CustomerNo := CustomerNoP;
+    end;
 }

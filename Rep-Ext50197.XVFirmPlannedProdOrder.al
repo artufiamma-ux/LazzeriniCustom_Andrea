@@ -1,5 +1,5 @@
 
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 using Microsoft.Manufacturing.Document;
 
 reportextension 50197 XVProdOrderJobCardExt extends "Prod. Order - Job Card"

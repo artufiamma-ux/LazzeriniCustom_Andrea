@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 query 50201 "XV HUAssignmDistinct"
 {

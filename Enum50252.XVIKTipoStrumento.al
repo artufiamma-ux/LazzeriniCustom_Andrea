@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 enum 50252 "XV IK Tipo Strumento"
 {
     Extensible = true;

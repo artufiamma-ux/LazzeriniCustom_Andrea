@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 using Microsoft.Sales.History;
 
 tableextension 50226 "XV Sales Shipment Line" extends "Sales Shipment Line"

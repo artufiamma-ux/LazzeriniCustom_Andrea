@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 using Microsoft.Inventory.Requisition;
 using Microsoft.Sales.Document;
 using Microsoft.Inventory.Item;

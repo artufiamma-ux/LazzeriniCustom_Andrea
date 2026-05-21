@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 using Microsoft.Sales.History;
 
 pageextension 50229 "XV Sales Posted Ship Summary" extends "EOS Sales Posted Ship Summary"
@@ -7,7 +7,7 @@ pageextension 50229 "XV Sales Posted Ship Summary" extends "EOS Sales Posted Shi
     {
         addafter("Posting Date")
         {
-            field("Nr Fattura Proforma"; GetNrFatturaProforma(Rec."Document No.") )
+            field("Nr Fattura Proforma"; GetNrFatturaProforma(Rec."Document No."))
             {
                 ApplicationArea = All;
                 Caption = 'Nr Fattura Proforma';
@@ -19,7 +19,7 @@ pageextension 50229 "XV Sales Posted Ship Summary" extends "EOS Sales Posted Shi
             }
         }
     }
-    local procedure GetNrFatturaProforma(ShipmentNo: Code[20]) : Code[20]
+    local procedure GetNrFatturaProforma(ShipmentNo: Code[20]): Code[20]
     var
         Shipment: Record "Sales Shipment Header";
     begin
@@ -29,7 +29,7 @@ pageextension 50229 "XV Sales Posted Ship Summary" extends "EOS Sales Posted Shi
             exit('');
     end;
 
-    local procedure GetNrFattura(ShipmentNo: Code[20]) : Code[20]
+    local procedure GetNrFattura(ShipmentNo: Code[20]): Code[20]
     var
         Shipment: Record "Sales Shipment Header";
     begin

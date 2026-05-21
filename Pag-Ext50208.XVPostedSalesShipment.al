@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 using Microsoft.Sales.History;
 
 pageextension 50208 "XV Posted Sales Shipment Ext" extends "Posted Sales Shipment"

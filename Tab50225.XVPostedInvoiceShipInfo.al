@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 table 50225 "XV Posted Invoice Ship Info"
 {
     Caption = 'XV Posted Invoice Ship Info';

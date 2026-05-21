@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 using Microsoft.Warehouse.Document;
 using Microsoft.Inventory.Item.Catalog;
@@ -11,7 +11,7 @@ page 50228 "XV Etichette Ricambi Cliente"
     PageType = List;
     SourceTable = "Warehouse Shipment Line";
     UsageCategory = Lists;
-    
+
     layout
     {
         area(Content)
@@ -38,32 +38,33 @@ page 50228 "XV Etichette Ricambi Cliente"
     {
         area(Processing)
         {
-action(Print)
-{
-    ApplicationArea = All;
-    Caption = 'Stampa Etichette';
-    Image = Print;
+            action(Print)
+            {
+                ApplicationArea = All;
+                Caption = 'Stampa Etichette';
+                Image = Print;
 
-    trigger OnAction()
-    var
-        CustomerNo: Code[20];
-        ReportObj: Report "XV Etichette Ricambi Cliente";
-    begin
-        // 1️⃣ Ricavo il cliente dalla spedizione
-        CustomerNo := GetCustomerFromShipment();
+                trigger OnAction()
+                var
+                    CustomerNo: Code[20];
+                    ReportObj: Report "XV Etichette Ricambi Cliente";
+                begin
+                    // 1️⃣ Ricavo il cliente dalla spedizione
+                    CustomerNo := GetCustomerFromShipment();
 
-        // 2️⃣ Passo i parametri al report
-        ReportObj.SetParameters(Rec."Item No.", CustomerNo);
+                    // 2️⃣ Passo i parametri al report
+                    ReportObj.SetParameters(Rec."Item No.", CustomerNo);
 
-        // 3️⃣ Avvio la stampa
-        ReportObj.RunModal();
-    end;
-}        }
+                    // 3️⃣ Avvio la stampa
+                    ReportObj.RunModal();
+                end;
+            }
+        }
     }
 
 
     var
-    WhseShptHeader: Record "Warehouse Shipment Header";
+        WhseShptHeader: Record "Warehouse Shipment Header";
 
     procedure SetShipmentHeader(var Header: Record "Warehouse Shipment Header")
     begin
@@ -75,7 +76,7 @@ action(Print)
 
         CurrPage.Update(false);
     end;
- 
+
     procedure GetCustomerFromShipment(): Code[20]
     var
         SalesHeader: Record "Sales Header";

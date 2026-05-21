@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 enum 50060 "XV Tipo Prelievo Item"
 {
     Extensible = false;

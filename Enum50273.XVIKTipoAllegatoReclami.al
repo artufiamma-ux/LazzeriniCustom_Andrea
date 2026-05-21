@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 enum 50273 "XV IK Tipo Allegato Reclami"
 {

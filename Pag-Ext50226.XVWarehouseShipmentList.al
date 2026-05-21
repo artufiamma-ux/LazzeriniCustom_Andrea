@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 using Microsoft.Warehouse.Document;
 
 pageextension 50226 "XV Warehouse Shipment List" extends "Warehouse Shipment List"

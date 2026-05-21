@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 table 50224 "Kit Bus Aggregate"
 {
     DataClassification = ToBeClassified;

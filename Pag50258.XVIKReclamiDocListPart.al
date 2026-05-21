@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 page 50258 "XV IK Reclami Doc ListPart"
 {

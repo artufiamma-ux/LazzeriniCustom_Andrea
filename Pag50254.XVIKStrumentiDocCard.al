@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 page 50254 "XV IK Strumenti Doc Card"
 {

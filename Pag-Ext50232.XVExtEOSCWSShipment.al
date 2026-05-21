@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 pageextension 50232 "XVExt EOS CWS Shipment" extends "EOS CWS Shipment"
 {

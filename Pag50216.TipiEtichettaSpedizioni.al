@@ -1,6 +1,5 @@
-namespace Custom.Custom;
+namespace Xview.Custom.Lazzerini;
 
-using Lazzerini;
 
 page 50216 TipiEtichettaSpedizioni
 {

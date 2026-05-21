@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 enum 50063 "XV Status Materiali"
 {
     Extensible = false;

@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 enum 50251 "XV IK Ubicazione Strumento"
 {
     Extensible = true;

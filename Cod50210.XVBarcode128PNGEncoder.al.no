@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 codeunit 50210 "XV Barcode128 PNG Encoder"
 {

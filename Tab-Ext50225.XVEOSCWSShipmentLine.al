@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 
 tableextension 50225 "XV EOS CWS Shipment Line" extends "EOS CWS Shipment Line"
 {

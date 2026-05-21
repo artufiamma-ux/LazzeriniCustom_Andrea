@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 using Microsoft.Sales.Posting;
 using Microsoft.Sales.History;
 using Microsoft.Sales.Document;

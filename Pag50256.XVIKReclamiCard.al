@@ -1,4 +1,4 @@
-namespace Lazzerini;
+namespace Xview.Custom.Lazzerini;
 using System.Security.User;
 using Microsoft.Sales.Customer;
 using Microsoft.Purchases.Vendor;

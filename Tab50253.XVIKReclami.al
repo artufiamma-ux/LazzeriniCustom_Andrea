@@ -76,6 +76,7 @@ table 50253 "XV IK Reclami"
         {
             Caption = 'Deadline';
             NotBlank = true;
+
         }
 
         field(10; "Problem solving tool"; Enum "XV IK Problem solving tool")
@@ -203,6 +204,7 @@ table 50253 "XV IK Reclami"
         {
             Caption = 'Debit note and/or Returned goods';
         }
+
     }
 
     keys
@@ -247,4 +249,5 @@ table 50253 "XV IK Reclami"
             ID := TodayTxt + SeqTxt;
         end;
     end;
+
 }

@@ -246,6 +246,16 @@ page 50256 "XV IK Reclami Card"
 
                 trigger OnAction()
                 begin
+                    //Rec.TestField("Plant");
+                    Rec.TestField("Date of the document");
+                    //Rec.TestField("Type");
+                    Rec.TestField("Problem Description");
+                    //Rec.TestField("IP assigned to.");
+                    // Rec.TestField("IP opened by");
+                    // Rec.TestField("Source/reason of the IP");
+                    //Rec.TestField("Problem solving tool");
+                    //Rec.TestField("PDCA");
+                    Rec.TestField("Deadline");
                     CurrPage.SaveRecord();
                     Message('Reclamo/IP salvato correttamente.');
                 end;
@@ -341,48 +351,6 @@ page 50256 "XV IK Reclami Card"
                         Message('Nessun ordine cliente trovato per il cliente %1.', Rec."Customer No.");
                 end;
             }
-            /*
-                        action(OpenReportedByUser)
-                        {
-                            Caption = 'Apri Utente (Segnalato da)';
-                            ApplicationArea = All;
-                            Image = User;
-                            Enabled = Rec."IP opened by" <> '';
-                            trigger OnAction()
-                            var
-                                US: Record "User Setup";
-                            begin
-                                if US.Get(Rec."IP opened by") then
-                                    Page.Run(Page::"User Setup", US);
-                            end;
-                        }
-
-                        action(OpenAssignedToUser)
-                        {
-                            Caption = 'Apri Utente (Assegnato a)';
-                            ApplicationArea = All;
-                            Image = User;
-                            Enabled = Rec."IP assigned to." <> '';
-                            trigger OnAction()
-                            var
-                                US: Record "User Setup";
-                            begin
-                                if US.Get(Rec."IP assigned to.") then
-                                    Page.Run(Page::"User Setup", US);
-                            end;
-                        }
-
-                                    action(NewIP)
-                                    {
-                                        Caption = 'Nuovo Reclamo/IP';
-                                        ApplicationArea = All;
-                                        Image = NewDocument;
-                                        trigger OnAction()
-                                        begin
-                                            Page.RunModal(Page::"XV IK Reclami Card");
-                                        end;
-                                    }
-                        */
         }
     }
     var
@@ -401,6 +369,8 @@ page 50256 "XV IK Reclami Card"
 
         if Rec."IP opened by" = '' then
             Rec.Validate("IP opened by", UserId());
+        if Rec."IP assigned to." = '' then
+            Rec.Validate("IP assigned to.", UserId());
     end;
 
     trigger OnOpenPage()
@@ -408,6 +378,8 @@ page 50256 "XV IK Reclami Card"
         //DeleteOrphanDocs();
         if Rec."IP opened by" = '' then
             Rec."IP opened by" := UserId();
+        if Rec."IP assigned to." = '' then
+            Rec."IP assigned to." := UserId();
         if Rec."Date of the document" = 0D then begin
             Rec."Date of the document" := WorkDate();
         end;

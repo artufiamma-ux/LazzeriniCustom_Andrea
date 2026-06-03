@@ -4,7 +4,8 @@ page 50280 "XVWarehouseShipmentMob"
     SourceTable = "Warehouse Shipment Header";
     ApplicationArea = All;
     UsageCategory = Lists;
-    Caption = 'Spedizioni Magazzino';
+    Caption = 'Spedizioni Magazzino Mobile';
+    AdditionalSearchTerms = 'XV Stampa Colli Spedizione';
 
     layout
     {

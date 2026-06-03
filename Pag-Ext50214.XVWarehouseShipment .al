@@ -35,7 +35,7 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
 
                 trigger OnValidate()
                 begin
-                    Message('Ricalcolo Scatole necessario');
+                    Message('Chiudi Scatole necessario');
                 end;
             }
             field(DescrPalletAccessori; Rec."Descrizione Colli Accessori")

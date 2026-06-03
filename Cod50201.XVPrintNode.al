@@ -50,7 +50,7 @@ codeunit 50201 "XV PrintNode"
         Message('Base64 length: %1', StrLen(PdfBase64));
         // ✅ 3. Costruisci JSON
 
-        JsonObj.Add('printerId', 75481733);
+        JsonObj.Add('printerId', 75518159);
         JsonObj.Add('title', StrSubstNo('Colli Spedizione %1', WarehouseShipmentNo));
         JsonObj.Add('contentType', 'pdf_base64');
         JsonObj.Add('content', PdfBase64);

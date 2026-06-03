@@ -81,15 +81,13 @@ codeunit 50203 XVEosUtil
 
     procedure SetNrScatoleOrder(WarehouseShipmentNo: Code[20])
     var
-        WhseShpt: Record "Warehouse Shipment Header";
         WarehouseShipmentLine: Record "Warehouse Shipment Line";
         HUAssignm: Record "EOS055 Handling Unit Assignm.";
         Scatole: Text[100];
         NScatola: Integer;
-        NScatoleAccessorie: Integer;
+
     begin
-        WhseShpt.Get(WarehouseShipmentNo);
-        //HUAssignm.
+        WarehouseShipmentLine.Reset();
         WarehouseShipmentLine.SetRange("No.", WarehouseShipmentNo);
         // Ordinamento per Progressivo Kit Bus
         WarehouseShipmentLine.SetCurrentKey("Progressivo Kit Bus");
@@ -97,6 +95,7 @@ codeunit 50203 XVEosUtil
 
         if WarehouseShipmentLine.FindSet() then
             repeat
+                HUAssignm.Reset();
                 HUAssignm.SetRange("Source No.", WarehouseShipmentLine."Source No.");
                 HUAssignm.SetRange("Source Line No.", WarehouseShipmentLine."Source Line No.");
                 if HUAssignm.FindSet() then
@@ -112,13 +111,15 @@ codeunit 50203 XVEosUtil
                             HUAssignm.Modify(true);
                         end;
                     until HUAssignm.Next() = 0;
+
+                WarehouseShipmentLine.Modify(true);
+                NScatoleAccessorie := NScatola + 1;
             until WarehouseShipmentLine.Next() = 0;
 
     end;
 
     procedure SetNrScatoleSpedizione(WarehouseShipmentNo: Code[20])
     var
-        WhseShpt: Record "Warehouse Shipment Header";
         WarehouseShipmentLine: Record "Warehouse Shipment Line";
         HUAssignm: Record "EOS055 Handling Unit Assignm.";
         HUAssignmSpedizione: Record "EOS055 Handling Unit Assignm.";
@@ -126,8 +127,8 @@ codeunit 50203 XVEosUtil
         NScatola: Integer;
         NScatoleAccessorie: Integer;
     begin
-        WhseShpt.Get(WarehouseShipmentNo);
-        //HUAssignm.
+        WarehouseShipmentLine.Reset();
+
         WarehouseShipmentLine.SetRange("No.", WarehouseShipmentNo);
         // Ordinamento per Progressivo Kit Bus
         WarehouseShipmentLine.SetCurrentKey("Progressivo Kit Bus");
@@ -136,6 +137,7 @@ codeunit 50203 XVEosUtil
         if WarehouseShipmentLine.FindSet() then
             repeat
                 //Recupero la scatola dall'ordine
+                HUAssignm.Reset();
                 HUAssignm.SetRange("Source No.", WarehouseShipmentLine."Source No.");
                 HUAssignm.SetRange("Source Line No.", WarehouseShipmentLine."Source Line No.");
                 if HUAssignm.FindSet() then
@@ -187,7 +189,9 @@ codeunit 50203 XVEosUtil
             YN := Confirm('Le scatole sono già state chiuse. Vuoi rieseguire la procedura di chiusura?')
         end;
         if YN then begin
-            ResetDatiChiusura(WarehouseShipmentNo);
+            ResetDatiChiusura(WhseShpt);
+            WhseShpt.Reset();
+            WhseShpt.Get(WarehouseShipmentNo);
             DeleteScatoleAccessorie(WarehouseShipmentNo);
             NScatoleAccessorie := WhseShpt."Nr Colli Accessori";
             WarehouseShipmentLine.SetRange("No.", WarehouseShipmentNo);
@@ -209,6 +213,7 @@ codeunit 50203 XVEosUtil
                     end;
                     WarehouseShipmentLine."Progressivo Serie Spedizione" := NSerie;
                     WarehouseShipmentLine.Modify(true);
+                    SetNrSerieOrder(WarehouseShipmentLine."Source No.", WarehouseShipmentLine."Source Line No.", NSerie);
                 until WarehouseShipmentLine.Next() = 0;
                 // Creazione scatole accessorie per l'ultima serie
                 if CurrentSerie <> 0 then begin
@@ -221,10 +226,12 @@ codeunit 50203 XVEosUtil
                 WhseShpt."Numero Totale Serie" := NSerie;
                 WhseShpt."Scatole Chiuse" := true;
                 WhseShpt.Modify(true);
-                WarehouseShipmentLine.Reset();
-                WarehouseShipmentLine.SetRange("No.", WarehouseShipmentNo);
-                WarehouseShipmentLine.SetCurrentKey("Progressivo Serie Spedizione");
-                WarehouseShipmentLine.Ascending(true);
+                /*
+                                WarehouseShipmentLine.Reset();
+                                WarehouseShipmentLine.SetRange("No.", WarehouseShipmentNo);
+                                WarehouseShipmentLine.SetCurrentKey("Progressivo Serie Spedizione");
+                                WarehouseShipmentLine.Ascending(true);
+                */
             end;
             SetNrScatoleOrder(WarehouseShipmentNo);
             SetNrScatoleSpedizione(WarehouseShipmentNo);
@@ -250,21 +257,18 @@ codeunit 50203 XVEosUtil
         exit(false);
     end;
 
-    local procedure ResetDatiChiusura(WarehouseShipmentNo: Code[20])
+    local procedure ResetDatiChiusura(WhseShpt: Record "Warehouse Shipment Header")
     var
-        WhseShpt: Record "Warehouse Shipment Header";
         WarehouseShipmentLine: Record "Warehouse Shipment Line";
         HUAssignm: Record "EOS055 Handling Unit Assignm.";
     begin
         // Reset header
-        if WhseShpt.Get(WarehouseShipmentNo) then begin
-            WhseShpt."Numero Totale Serie" := 0;
-            WhseShpt."Scatole Chiuse" := false;
-            WhseShpt.Modify(true);
-        end;
+        WhseShpt."Numero Totale Serie" := 0;
+        WhseShpt."Scatole Chiuse" := false;
+        WhseShpt.Modify(true);
 
         // Reset righe spedizione
-        WarehouseShipmentLine.SetRange("No.", WarehouseShipmentNo);
+        WarehouseShipmentLine.SetRange("No.", WhseShpt."No.");
         if WarehouseShipmentLine.FindSet() then
             repeat
                 WarehouseShipmentLine."Progressivo Serie Spedizione" := 0;
@@ -272,7 +276,7 @@ codeunit 50203 XVEosUtil
             until WarehouseShipmentLine.Next() = 0;
 
         // Reset assignment spedizione
-        HUAssignm.SetRange("Source No.", WarehouseShipmentNo);
+        HUAssignm.SetRange("Source No.", WhseShpt."No.");
         if HUAssignm.FindSet() then
             repeat
                 HUAssignm."Nr Scatola" := 0;
@@ -300,6 +304,22 @@ codeunit 50203 XVEosUtil
             until HUAssignm.Next() = 0;
     end;
 
+    local procedure SetNrSerieOrder(SourceNo: Code[20]; SourceLineNo: Integer; NSerie: Integer)
+    var
+        HUAssignm: Record "EOS055 Handling Unit Assignm.";
+    begin
+        HUAssignm.Reset();
+        HUAssignm.SetRange("Source No.", SourceNo);
+        HUAssignm.SetRange("Source Line No.", SourceLineNo);
+        if HUAssignm.FindSet() then
+            repeat begin
+                HUAssignm."Progressivo Serie Spedizione" := NSerie;
+                HUAssignm.Modify(true);
+            end;
+            until HUAssignm.Next() = 0;
+    end;
+
     var
         HUMSequence: Label 'BOXN';
+        NScatoleAccessorie: Integer;
 }

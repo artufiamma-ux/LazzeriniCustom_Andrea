@@ -34,7 +34,7 @@ report 50235 "XV Colli Di Spedizione"
 
                 column(SourceNo; "Source No.") { }
                 column(SourceLineNo; "Source Line No.") { }
-                column(ProgressivoKitBus; ZeroValeUno("Progressivo Kit Bus")) { }
+                column(ProgressivoKitBus; ZeroValeUno("Progressivo Serie Spedizione")) { }
 
                 // DATAITEM FIGLIO
                 dataitem(HUAssignm; "EOS055 Handling Unit Assignm.")
@@ -132,7 +132,7 @@ report 50235 "XV Colli Di Spedizione"
             trigger OnPreDataItem()
             begin
                 SetRange("No.", WarehouseShipmentNo);
-                XVUtil.SetNrScatola(WarehouseShipmentNo);
+                //XVUtil.SetNrScatola(WarehouseShipmentNo);
             end;
 
             trigger OnAfterGetRecord()

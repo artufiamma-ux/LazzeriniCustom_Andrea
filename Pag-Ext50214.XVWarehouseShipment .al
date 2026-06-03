@@ -159,6 +159,23 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                     Rep.Run();
                 end;
             }
+
+            action(ChiudiScatole)
+            {
+                Caption = 'Chiudi scatole';
+                ApplicationArea = All;
+                Image = Closed;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    XvEosUtil: Codeunit "XVEosUtil";
+                begin
+                    XvEosUtil.ChiudiScatole(Rec."No.");
+                end;
+            }
+
         }
 
     }

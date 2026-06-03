@@ -9,5 +9,11 @@ tableextension 50227 "XV Ext EOS055 Handling Unit As" extends "EOS055 Handling U
             Caption = 'Nr Scatola';
             DataClassification = ToBeClassified;
         }
+        field(50051; "Progressivo Serie Spedizione"; Integer)
+        {
+            Caption = 'Progressivo Serie Spedizione';
+            DataClassification = ToBeClassified;
+        }
+
     }
 }

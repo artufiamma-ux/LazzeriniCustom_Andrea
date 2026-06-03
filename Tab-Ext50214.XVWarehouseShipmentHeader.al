@@ -70,6 +70,10 @@ tableextension 50214 XVWarehouseShipmentHeader extends "Warehouse Shipment Heade
             Caption = 'Descrizione Colli Accessori';
             DataClassification = ToBeClassified;
         }
-
+        field(50113; "Scatole Chiuse"; Boolean)
+        {
+            Caption = 'Scatole Chiuse';
+            DataClassification = ToBeClassified;
+        }
     }
 }

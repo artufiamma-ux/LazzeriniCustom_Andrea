@@ -31,5 +31,18 @@ tableextension 50217 "XV Whse Shipment Line" extends "Warehouse Shipment Line"
         {
             Caption = 'Kit Bus';
         }
+        field(50205; "Progressivo Serie Spedizione"; Integer)
+        {
+            Caption = 'Progressivo Serie Spedizione';
+        }
+    }
+    keys
+    {
+        key(ProgressivoKitBusKey; "Progressivo Kit Bus")
+        {
+        }
+        key(ProgSerieSpedizioneKey; "Progressivo Serie Spedizione")
+        {
+        }
     }
 }

@@ -10,7 +10,7 @@ codeunit 50201 "XV PrintNode"
 
     procedure SetApiKeyBarcode()
     begin
-        ApiKeyBarcode := 'YLYYFR_jFppWy-PUJdYpWD0UWK5mas2pynourI3ZAnU';
+        ApiKeyBarcode := 'OAHXvwqb3IFZ3vCx9rjDYl6T9pH8l40ssDa99qWpqf4';
         UrlPrintNode := 'https://api.printnode.com/printjobs';
     end;
 
@@ -50,7 +50,7 @@ codeunit 50201 "XV PrintNode"
         Message('Base64 length: %1', StrLen(PdfBase64));
         // ✅ 3. Costruisci JSON
 
-        JsonObj.Add('printerId', 75518159);
+        JsonObj.Add('printerId', 75518667);
         JsonObj.Add('title', StrSubstNo('Colli Spedizione %1', WarehouseShipmentNo));
         JsonObj.Add('contentType', 'pdf_base64');
         JsonObj.Add('content', PdfBase64);

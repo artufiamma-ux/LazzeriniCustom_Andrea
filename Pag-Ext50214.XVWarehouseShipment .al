@@ -26,7 +26,7 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
             {
                 ApplicationArea = All;
                 Editable = false;
-                Caption = 'Box per serie';
+                Caption = 'Box totali';
             }
             field(NrPalletAccessori; Rec."Nr Colli Accessori")
             {

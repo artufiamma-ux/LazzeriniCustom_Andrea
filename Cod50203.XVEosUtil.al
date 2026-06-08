@@ -42,6 +42,7 @@ codeunit 50203 XVEosUtil
         HandlingUnit."Created by" := UserId;
         HandlingUnit."Has Content" := false;
 
+
         HandlingUnit.Insert(true);
 
 
@@ -113,12 +114,12 @@ codeunit 50203 XVEosUtil
                     until HUAssignm.Next() = 0;
 
                 WarehouseShipmentLine.Modify(true);
-                NScatoleAccessorie := NScatola + 1;
+                NScatoleTotali := NScatola;
             until WarehouseShipmentLine.Next() = 0;
 
     end;
 
-    procedure SetNrScatoleSpedizione(WarehouseShipmentNo: Code[20])
+    procedure SetNrScatoleSpedizioneByOrder(WarehouseShipmentNo: Code[20])
     var
         WarehouseShipmentLine: Record "Warehouse Shipment Line";
         HUAssignm: Record "EOS055 Handling Unit Assignm.";
@@ -155,6 +156,30 @@ codeunit 50203 XVEosUtil
             until WarehouseShipmentLine.Next() = 0;
 
     end;
+
+    procedure SetNrScatoleSpedizioneByShipment(WarehouseShipmentNo: Code[20])
+    var
+        HUAssignmSpedizione: Record "EOS055 Handling Unit Assignm.";
+        Scatole: Text[100];
+        NScatola: Integer;
+        NScatoleAccessorie: Integer;
+    begin
+        HUAssignmSpedizione.SetRange("Source No.", WarehouseShipmentNo);
+        if HUAssignmSpedizione.FindSet() then
+            repeat begin
+
+                if NOT Scatole.Contains(HUAssignmSpedizione."Handling Unit No.") then begin
+                    NScatola := NScatola + 1;
+                    Scatole := Scatole + ';' + HUAssignmSpedizione."Handling Unit No.";
+                end;
+                HUAssignmSpedizione."Nr Scatola" := NScatola;
+                HUAssignmSpedizione."Progressivo Serie Spedizione" := 0;
+                HUAssignmSpedizione.Modify(true);
+            end;
+            until HUAssignmSpedizione.Next() = 0;
+
+    end;
+
 
     /* ToDo procedura da rivedere 
     vanno prese le scatole warehouse e aggiunte quelle accessorie per i basamenti
@@ -201,13 +226,6 @@ codeunit 50203 XVEosUtil
             if WarehouseShipmentLine.FindSet() then begin
                 repeat
                     if CurrentSerie <> WarehouseShipmentLine."Progressivo Kit Bus" then begin
-                        if CurrentSerie <> 0 then begin
-                            // Creazione scatole accessorie
-                            for i := 1 to NScatoleAccessorie do begin
-                                CreateEmptyBox(WarehouseShipmentNo, WhseShpt."Location Code", NSerie);
-                            end;
-                        end;
-
                         CurrentSerie := WarehouseShipmentLine."Progressivo Kit Bus";
                         NSerie := NSerie + 1;
                     end;
@@ -216,16 +234,7 @@ codeunit 50203 XVEosUtil
                     SetNrSerieOrder(WarehouseShipmentLine."Source No.", WarehouseShipmentLine."Source Line No.", NSerie);
                 until WarehouseShipmentLine.Next() = 0;
                 // Creazione scatole accessorie per l'ultima serie
-                if CurrentSerie <> 0 then begin
-                    // Creazione scatole accessorie
-                    for i := 1 to NScatoleAccessorie do begin
-                        CreateEmptyBox(WarehouseShipmentNo, WhseShpt."Location Code", NSerie);
-                    end;
-                end;
 
-                WhseShpt."Numero Totale Serie" := NSerie;
-                WhseShpt."Scatole Chiuse" := true;
-                WhseShpt.Modify(true);
                 /*
                                 WarehouseShipmentLine.Reset();
                                 WarehouseShipmentLine.SetRange("No.", WarehouseShipmentNo);
@@ -234,7 +243,13 @@ codeunit 50203 XVEosUtil
                 */
             end;
             SetNrScatoleOrder(WarehouseShipmentNo);
-            SetNrScatoleSpedizione(WarehouseShipmentNo);
+            SetNrScatoleSpedizioneByOrder(WarehouseShipmentNo);
+            CreateAllEmptyBox(WarehouseShipmentNo, WhseShpt."Location Code", NSerie);
+            WhseShpt."Numero Totale Serie" := NSerie;
+            WhseShpt."Numero Totale Pallet" := NScatoleTotali;
+            WhseShpt."Scatole Chiuse" := true;
+            WhseShpt.Modify(true);
+
             /*
                        QueryHUAssignm.SetFilter(HandlingUnitFilter, WarehouseShipmentNo);
                        while QueryHUAssignm.Read() do
@@ -319,7 +334,17 @@ codeunit 50203 XVEosUtil
             until HUAssignm.Next() = 0;
     end;
 
+    local procedure CreateAllEmptyBox(WarehouseShipmentNo: Code[20]; LocationCode: Code[10]; NSerie: Integer)
+    var
+        i: Integer;
+    begin
+        for i := 1 to NSerie do begin
+            NScatoleTotali := NScatoleTotali + 1;
+            CreateEmptyBox(WarehouseShipmentNo, LocationCode, NSerie);
+        end;
+    end;
+
     var
         HUMSequence: Label 'BOXN';
-        NScatoleAccessorie: Integer;
+        NScatoleTotali: Integer;
 }

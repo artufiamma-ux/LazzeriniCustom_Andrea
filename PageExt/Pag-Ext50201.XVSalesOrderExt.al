@@ -82,14 +82,35 @@ pageextension 50201 "XV Sales Order Ext" extends "Sales Order"
     }
 
     trigger OnQueryClosePage(CloseAction: Action): Boolean
+    var
+        RecSalesLine: Record "Sales Line";
     begin
         if (CloseAction in [Action::OK, Action::LookupOK]) then begin
-            if Rec."Reason Code" = '' then
-                Message('Il campo Causale è obbligatorio per salvare l’ordine.');//Error
-            if Rec."Activity Code" = '' then
-                Message('Il campo Codice Attività è obbligatorio per salvare l’ordine.');//Error
+            // Controlla se l'ordine contiene righe con prezzo unitario o quantità a zero o peso netto a zero
+            RecSalesLine.SetRange("Document No.", Rec."No.");
+            if RecSalesLine.FindFirst() then begin
+                repeat
+                    if RecSalesLine."Unit Price" = 0 then begin
+                        Error(RecSalesLine."No." + ' - ' + MsgPrezzo);
+                        exit(false);
+                    end;
+                    if RecSalesLine.Quantity = 0 then begin
+                        Error(RecSalesLine."No." + ' - ' + MsgQta);
+                        exit(false);
+                    end;
+                    if RecSalesLine."Net Weight" = 0 then begin
+                        Error(RecSalesLine."No." + ' - ' + MsgPeso);
+                        exit(false);
+                    end;
+                until RecSalesLine.Next() = 0;
+            end;
         end;
     end;
+
+    var
+        MsgPrezzo: Label 'Il campo Prezzo Unitario è obbligatorio per salvare l’ordine.';
+        MsgPeso: Label 'Il campo Peso Netto è obbligatorio per salvare l’ordine.';
+        MsgQta: Label 'Il campo Quantità è obbligatorio per salvare l’ordine.';
 
 
 

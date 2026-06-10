@@ -29,4 +29,33 @@ tableextension 50202 "XV Sales Line" extends "Sales Line"
             DataClassification = ToBeClassified;
         }
     }
+    /*
+        trigger OnBeforeInsert()
+        begin
+            CheckMandatoryFields();
+        end;
+
+        trigger OnBeforeModify()
+        begin
+            CheckMandatoryFields();
+        end;
+    */
+    local procedure CheckMandatoryFields()
+    begin
+        if (Rec.Type <> Rec.Type::" ") and (Rec."No." <> '') then begin
+            if Rec."Net Weight" = 0 then
+                Error(MsgPeso);
+
+            if Rec."Unit Price" = 0 then
+                Error(MsgPrezzo);
+            if Rec."Quantity" = 0 then
+                Error(MsgQta);
+        end;
+    end;
+
+    var
+        MsgPrezzo: Label 'Il campo Prezzo Unitario è obbligatorio per salvare l’ordine.';
+        MsgPeso: Label 'Il campo Peso Netto è obbligatorio per salvare l’ordine.';
+        MsgQta: Label 'Il campo Quantità è obbligatorio per salvare l’ordine.';
+
 }

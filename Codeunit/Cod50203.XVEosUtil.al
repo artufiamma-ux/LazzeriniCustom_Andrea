@@ -33,7 +33,7 @@ codeunit 50203 XVEosUtil
 
         HandlingUnit."HU Type Code" := 'SCATOLA';
         HandlingUnit.Type := HandlingUnit.Type::Package;
-        HandlingUnit.Status := HandlingUnit.Status::Draft;
+        HandlingUnit.Status := HandlingUnit.Status::Loaded;
 
         HandlingUnit."Packaging Material No." := 'PADESTAL';
         HandlingUnit."Location Code" := LocationCode;
@@ -66,10 +66,12 @@ codeunit 50203 XVEosUtil
         Assignment."Source No." := WhseShipmentNo;
         Assignment."Source Line No." := 0;
         Assignment."Source Subline No." := 0;
+        Assignment."Warehouse Shipment No." := WhseShipmentNo;
 
         Assignment."Handling Unit No." := HandlingUnit."No.";
 
         Assignment."Quantity (Base)" := 0;
+        Assignment."Nr Scatola" := NScatola;
         Assignment."Progressivo Serie Spedizione" := NumSerie;
 
         Assignment.Insert();
@@ -83,19 +85,32 @@ codeunit 50203 XVEosUtil
     procedure SetNrScatoleOrder(WarehouseShipmentNo: Code[20])
     var
         WarehouseShipmentLine: Record "Warehouse Shipment Line";
+        //        TWarehouseShipmentLine: Record "Warehouse Shipment Line";
         HUAssignm: Record "EOS055 Handling Unit Assignm.";
         Scatole: Text[100];
-        NScatola: Integer;
+
+        CurrentNSerie: Integer;
+        i: Integer;
 
     begin
+        CurrentNSerie := 1;
         WarehouseShipmentLine.Reset();
         WarehouseShipmentLine.SetRange("No.", WarehouseShipmentNo);
         // Ordinamento per Progressivo Kit Bus
-        WarehouseShipmentLine.SetCurrentKey("Progressivo Kit Bus");
+        WarehouseShipmentLine.SetCurrentKey("Progressivo Serie Spedizione");
         WarehouseShipmentLine.Ascending(true);
+        WarehouseShipmentLine.SetFilter("Qty. to Ship (Base)", '>0');
 
         if WarehouseShipmentLine.FindSet() then
-            repeat
+            repeat begin
+                //        TWarehouseShipmentLine := WarehouseShipmentLine;
+                if CurrentNSerie <> WarehouseShipmentLine."Progressivo Serie Spedizione" then begin
+                    for i := 1 to NScatoleAccessorie do begin
+                        NScatola := NScatola + 1;
+                        CreateEmptyBox(WarehouseShipmentNo, TmpLocationCode, CurrentNSerie);
+                    end;
+                    CurrentNSerie := WarehouseShipmentLine."Progressivo Serie Spedizione";
+                end;
                 HUAssignm.Reset();
                 HUAssignm.SetRange("Source No.", WarehouseShipmentLine."Source No.");
                 HUAssignm.SetRange("Source Line No.", WarehouseShipmentLine."Source Line No.");
@@ -114,74 +129,17 @@ codeunit 50203 XVEosUtil
                     until HUAssignm.Next() = 0;
 
                 WarehouseShipmentLine.Modify(true);
-                NScatoleTotali := NScatola;
-            until WarehouseShipmentLine.Next() = 0;
-
-    end;
-
-    procedure SetNrScatoleSpedizioneByOrder(WarehouseShipmentNo: Code[20])
-    var
-        WarehouseShipmentLine: Record "Warehouse Shipment Line";
-        HUAssignm: Record "EOS055 Handling Unit Assignm.";
-        HUAssignmSpedizione: Record "EOS055 Handling Unit Assignm.";
-        Scatole: Text[100];
-        NScatola: Integer;
-        NScatoleAccessorie: Integer;
-    begin
-        WarehouseShipmentLine.Reset();
-
-        WarehouseShipmentLine.SetRange("No.", WarehouseShipmentNo);
-        // Ordinamento per Progressivo Kit Bus
-        WarehouseShipmentLine.SetCurrentKey("Progressivo Kit Bus");
-        WarehouseShipmentLine.Ascending(true);
-
-        if WarehouseShipmentLine.FindSet() then
-            repeat
-                //Recupero la scatola dall'ordine
-                HUAssignm.Reset();
-                HUAssignm.SetRange("Source No.", WarehouseShipmentLine."Source No.");
-                HUAssignm.SetRange("Source Line No.", WarehouseShipmentLine."Source Line No.");
-                if HUAssignm.FindSet() then
-                    repeat
-                        if HUAssignm."Nr Scatola" <> 0 then begin
-                            HUAssignmSpedizione.SetRange("Source No.", WarehouseShipmentLine."No.");
-                            HUAssignmSpedizione.SetRange("Handling Unit No.", HUAssignm."Handling Unit No.");
-                            if HUAssignmSpedizione.FindSet() then begin
-                                HUAssignmSpedizione."Nr Scatola" := HUAssignm."Nr Scatola";
-                                HUAssignmSpedizione."Progressivo Serie Spedizione" := HUAssignm."Progressivo Serie Spedizione";
-                                HUAssignmSpedizione.Modify(true);
-                            end;
-                        end;
-                    until HUAssignm.Next() = 0;
-            until WarehouseShipmentLine.Next() = 0;
-
-    end;
-
-    procedure SetNrScatoleSpedizioneByShipment(WarehouseShipmentNo: Code[20])
-    var
-        HUAssignmSpedizione: Record "EOS055 Handling Unit Assignm.";
-        Scatole: Text[100];
-        NScatola: Integer;
-        NScatoleAccessorie: Integer;
-    begin
-        HUAssignmSpedizione.SetRange("Source No.", WarehouseShipmentNo);
-        if HUAssignmSpedizione.FindSet() then
-            repeat begin
-
-                if NOT Scatole.Contains(HUAssignmSpedizione."Handling Unit No.") then begin
-                    NScatola := NScatola + 1;
-                    Scatole := Scatole + ';' + HUAssignmSpedizione."Handling Unit No.";
-                end;
-                HUAssignmSpedizione."Nr Scatola" := NScatola;
-                HUAssignmSpedizione."Progressivo Serie Spedizione" := 0;
-                HUAssignmSpedizione.Modify(true);
             end;
-            until HUAssignmSpedizione.Next() = 0;
+            until WarehouseShipmentLine.Next() = 0;
+        for i := 1 to NScatoleAccessorie do begin
+            NScatola := NScatola + 1;
+            CreateEmptyBox(WarehouseShipmentNo, TmpLocationCode, CurrentNSerie);
+        end;
 
     end;
 
 
-    /* ToDo procedura da rivedere 
+    /*  
     vanno prese le scatole warehouse e aggiunte quelle accessorie per i basamenti
      Per evitare di contare più volte le scatole accessorie o di sfalzare i numeri di serie
      il numero di serie è il count di progressivo kit bus
@@ -199,8 +157,8 @@ codeunit 50203 XVEosUtil
         HUAssignm: Record "EOS055 Handling Unit Assignm.";
         QueryHUAssignm: Query "XV HUAssignmDistinct";
         Scatole: Text[100];
-        NScatola: Integer;
-        NScatoleAccessorie: Integer;
+
+
         NSerie: Integer;
         CurrentSerie: Integer;
         i: Integer;
@@ -219,9 +177,11 @@ codeunit 50203 XVEosUtil
             WhseShpt.Get(WarehouseShipmentNo);
             DeleteScatoleAccessorie(WarehouseShipmentNo);
             NScatoleAccessorie := WhseShpt."Nr Colli Accessori";
+            TmpLocationCode := WhseShpt."Location Code";
             WarehouseShipmentLine.SetRange("No.", WarehouseShipmentNo);
             WarehouseShipmentLine.SetCurrentKey("Progressivo Kit Bus");
             WarehouseShipmentLine.Ascending(true);
+            WarehouseShipmentLine.SetFilter("Qty. to Ship (Base)", '>0');
             // Calcolo numero serie della spedizione basato sul progressivo kit bus, in modo da rinumerare le serie in base alla spedizione e non all'ordine
             if WarehouseShipmentLine.FindSet() then begin
                 repeat
@@ -231,7 +191,7 @@ codeunit 50203 XVEosUtil
                     end;
                     WarehouseShipmentLine."Progressivo Serie Spedizione" := NSerie;
                     WarehouseShipmentLine.Modify(true);
-                    SetNrSerieOrder(WarehouseShipmentLine."Source No.", WarehouseShipmentLine."Source Line No.", NSerie);
+                    SetNrSerieOrder(WarehouseShipmentLine, NSerie);
                 until WarehouseShipmentLine.Next() = 0;
                 // Creazione scatole accessorie per l'ultima serie
 
@@ -243,10 +203,9 @@ codeunit 50203 XVEosUtil
                 */
             end;
             SetNrScatoleOrder(WarehouseShipmentNo);
-            SetNrScatoleSpedizioneByOrder(WarehouseShipmentNo);
-            CreateAllEmptyBox(WarehouseShipmentNo, WhseShpt."Location Code", NSerie);
+            //            SetNrScatoleSpedizioneByOrder(WarehouseShipmentNo);
             WhseShpt."Numero Totale Serie" := NSerie;
-            WhseShpt."Numero Totale Pallet" := NScatoleTotali;
+            WhseShpt."Numero Totale Pallet" := NScatola;
             WhseShpt."Scatole Chiuse" := true;
             WhseShpt.Modify(true);
 
@@ -291,16 +250,18 @@ codeunit 50203 XVEosUtil
             until WarehouseShipmentLine.Next() = 0;
 
         // Reset assignment spedizione
-        HUAssignm.SetRange("Source No.", WhseShpt."No.");
+
+        HUAssignm.SetRange("Warehouse Shipment No.", WhseShpt."No.");
         if HUAssignm.FindSet() then
             repeat
                 HUAssignm."Nr Scatola" := 0;
                 HUAssignm."Progressivo Serie Spedizione" := 0;
                 HUAssignm.Modify(true);
             until HUAssignm.Next() = 0;
+
     end;
 
-    local procedure DeleteScatoleAccessorie(WarehouseShipmentNo: Code[20])
+    procedure DeleteScatoleAccessorie(WarehouseShipmentNo: Code[20])
     var
         HUAssignm: Record "EOS055 Handling Unit Assignm.";
         HandlingUnit: Record "EOS055 Handling Unit";
@@ -319,32 +280,40 @@ codeunit 50203 XVEosUtil
             until HUAssignm.Next() = 0;
     end;
 
-    local procedure SetNrSerieOrder(SourceNo: Code[20]; SourceLineNo: Integer; NSerie: Integer)
+    local procedure SetNrSerieOrder(WarehouseShipmentLine: Record "Warehouse Shipment Line"; NSerie: Integer)
     var
         HUAssignm: Record "EOS055 Handling Unit Assignm.";
     begin
         HUAssignm.Reset();
-        HUAssignm.SetRange("Source No.", SourceNo);
-        HUAssignm.SetRange("Source Line No.", SourceLineNo);
+        HUAssignm.SetRange("Source No.", WarehouseShipmentLine."Source No.");
+        HUAssignm.SetRange("Source Line No.", WarehouseShipmentLine."Source Line No.");
         if HUAssignm.FindSet() then
             repeat begin
                 HUAssignm."Progressivo Serie Spedizione" := NSerie;
+                HUAssignm."Warehouse Shipment No." := WarehouseShipmentLine."No.";
                 HUAssignm.Modify(true);
             end;
             until HUAssignm.Next() = 0;
     end;
 
-    local procedure CreateAllEmptyBox(WarehouseShipmentNo: Code[20]; LocationCode: Code[10]; NSerie: Integer)
-    var
-        i: Integer;
-    begin
-        for i := 1 to NSerie do begin
-            NScatoleTotali := NScatoleTotali + 1;
-            CreateEmptyBox(WarehouseShipmentNo, LocationCode, NSerie);
-        end;
-    end;
 
     var
         HUMSequence: Label 'BOXN';
-        NScatoleTotali: Integer;
+        NScatola: Integer;
+        NScatoleAccessorie: Integer;
+        Log: Codeunit "XV App Logger";
+        TmpLocationCode: Code[10];
+
+    [EventSubscriber(ObjectType::Table, Database::"EOS055 Handling Unit Assignm.", 'OnBeforeInsertEvent', '', false, false)]
+    procedure BeforeInsertHUAssignm(var Rec: Record "EOS055 Handling Unit Assignm.")
+    var
+        msg: Text;
+    begin
+        msg := 'DEBUG Source Type: ' + Format(Rec."Source Type") +
+               ' - Source No.: ' + Format(Rec."Source No.") +
+               ' - Source Line No.: ' + Format(Rec."Source Line No.") +
+               ' - Handling Unit: ' + Format(Rec."Handling Unit No.");
+        Log.LogDebug(msg, 'XVEosUtil', 'BeforeInsertHUAssignm');
+    end;
+
 }

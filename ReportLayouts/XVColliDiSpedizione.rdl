@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.14.36915.13</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-05-20T13:44:35.8367894Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-06-09T08:02:54.3623710Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -32,18 +32,18 @@
                 <TablixBody>
                   <TablixColumns>
                     <TablixColumn>
-                      <Width>5.8cm</Width>
+                      <Width>5.48838cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>5.8cm</Width>
+                      <Width>5.48838cm</Width>
                     </TablixColumn>
                     <TablixColumn>
-                      <Width>8.15cm</Width>
+                      <Width>7.83838cm</Width>
                     </TablixColumn>
                   </TablixColumns>
                   <TablixRows>
                     <TablixRow>
-                      <Height>2.0129cm</Height>
+                      <Height>1.89447cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -86,7 +86,7 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>1cm</Height>
+                      <Height>0.88157cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -97,7 +97,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=First(Fields!ShipmentNo.Value, "DataSet_Result")</Value>
+                                      <Value>=Fields!ShipmentNo.Value</Value>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
                                         <FontWeight>Bold</FontWeight>
@@ -122,14 +122,14 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox87">
+                            <Textbox Name="FormattedSerie">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>="Serie " &amp; First(Fields!ProgressivoKitBus.Value, "DataSet_Result") &amp; "/" &amp; First(Fields!Numero_Totale_Serie.Value, "DataSet_Result")</Value>
+                                      <Value>=Fields!FormattedSerie.Value</Value>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
                                         <FontSize>12pt</FontSize>
@@ -140,7 +140,7 @@
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox87</rd:DefaultName>
+                              <rd:DefaultName>FormattedSerie</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -155,14 +155,14 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox79">
+                            <Textbox Name="FormattedBox">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>="Box " &amp; Max(fields!NScatola.Value, "DataSet_Result") &amp; "/" &amp; First(Fields!Numero_Totale_Pallet.Value, "DataSet_Result")</Value>
+                                      <Value>=Fields!FormattedBox.Value</Value>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
                                         <FontSize>12pt</FontSize>
@@ -173,7 +173,7 @@
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox79</rd:DefaultName>
+                              <rd:DefaultName>FormattedBox</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -189,7 +189,7 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>1cm</Height>
+                      <Height>0.88157cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -293,18 +293,18 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>2.55971cm</Height>
+                      <Height>2.44128cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox53">
+                            <Textbox Name="Cliente">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=First(Fields!Cliente.Value, "DataSet_Result")</Value>
+                                      <Value>=Fields!Cliente.Value</Value>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
                                         <FontWeight>Bold</FontWeight>
@@ -316,7 +316,7 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox53</rd:DefaultName>
+                              <rd:DefaultName>Cliente</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -331,14 +331,14 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox54">
+                            <Textbox Name="Vettore">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=First(Fields!Vettore.Value, "DataSet_Result")</Value>
+                                      <Value>=Fields!Vettore.Value</Value>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
                                         <FontWeight>Bold</FontWeight>
@@ -350,7 +350,7 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox54</rd:DefaultName>
+                              <rd:DefaultName>Vettore</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -365,18 +365,14 @@
                         </TablixCell>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox55">
+                            <Textbox Name="Formatted_Indirizzo_Spedizione">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>
-																				=Fields!Indirizzo_Spedizione1.Value &amp; vbCrLf &amp;
-																				Fields!Indirizzo_Spedizione2.Value &amp; vbCrLf &amp;
-																				Fields!Indirizzo_Spedizione3.Value
-																			</Value>
+                                      <Value>=Fields!Formatted_Indirizzo_Spedizione.Value</Value>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
                                         <FontWeight>Bold</FontWeight>
@@ -388,7 +384,7 @@
                                   </Style>
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox55</rd:DefaultName>
+                              <rd:DefaultName>Formatted_Indirizzo_Spedizione</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -404,18 +400,18 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>1cm</Height>
+                      <Height>0.88157cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox94">
+                            <Textbox Name="HUSourceNo">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=fields!SourceNo.Value</Value>
+                                      <Value>=Fields!HUSourceNo.Value</Value>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
                                         <FontSize>12pt</FontSize>
@@ -426,7 +422,7 @@
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox94</rd:DefaultName>
+                              <rd:DefaultName>HUSourceNo</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -504,21 +500,18 @@
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>1cm</Height>
+                      <Height>0.88157cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
-                            <Textbox Name="Textbox102">
+                            <Textbox Name="Formatted_Padestal">
                               <CanGrow>true</CanGrow>
                               <KeepTogether>true</KeepTogether>
                               <Paragraphs>
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>="Vs Ordine / Your Purchase Order     " &amp;
-"Nr Pallett Accessori: " &amp;
-CStr(First(Fields!NrPalletAccessori.Value, "DataSet_Result")) &amp; " " &amp;
-CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
+                                      <Value>=Fields!Formatted_Padestal.Value</Value>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
                                         <FontWeight>Bold</FontWeight>
@@ -528,7 +521,7 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
                                   <Style />
                                 </Paragraph>
                               </Paragraphs>
-                              <rd:DefaultName>Textbox102</rd:DefaultName>
+                              <rd:DefaultName>Formatted_Padestal</rd:DefaultName>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
@@ -547,7 +540,7 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
                       </TablixCells>
                     </TablixRow>
                     <TablixRow>
-                      <Height>1cm</Height>
+                      <Height>0.88157cm</Height>
                       <TablixCells>
                         <TablixCell>
                           <CellContents>
@@ -623,10 +616,11 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
                     </TablixMember>
                   </TablixMembers>
                 </TablixRowHierarchy>
+                <DataSetName>DataSet_Result</DataSetName>
                 <Top>0.05cm</Top>
                 <Left>0.13882cm</Left>
-                <Height>9.57261cm</Height>
-                <Width>19.75cm</Width>
+                <Height>8.7436cm</Height>
+                <Width>18.81514cm</Width>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -635,8 +629,10 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
               </Tablix>
             </ReportItems>
             <KeepTogether>true</KeepTogether>
-            <Height>9.9cm</Height>
-            <Width>19.93882cm</Width>
+            <Top>0.07696cm</Top>
+            <Left>0.07792cm</Left>
+            <Height>8.86414cm</Height>
+            <Width>19.02451cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -644,12 +640,12 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
             </Style>
           </Rectangle>
         </ReportItems>
-        <Height>9.9cm</Height>
+        <Height>9.01806cm</Height>
         <Style />
       </Body>
-      <Width>19.93882cm</Width>
+      <Width>19.18035cm</Width>
       <Page>
-        <PageHeight>10cm</PageHeight>
+        <PageHeight>20cm</PageHeight>
         <PageWidth>20cm</PageWidth>
         <LeftMargin>0cm</LeftMargin>
         <RightMargin>0cm</RightMargin>
@@ -718,18 +714,6 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
         <Field Name="Vettore">
           <DataField>Vettore</DataField>
         </Field>
-        <Field Name="YourReference">
-          <DataField>YourReference</DataField>
-        </Field>
-        <Field Name="SourceNo">
-          <DataField>SourceNo</DataField>
-        </Field>
-        <Field Name="SourceLineNo">
-          <DataField>SourceLineNo</DataField>
-        </Field>
-        <Field Name="ProgressivoKitBus">
-          <DataField>ProgressivoKitBus</DataField>
-        </Field>
         <Field Name="HandlingUnitNo">
           <DataField>HandlingUnitNo</DataField>
         </Field>
@@ -753,6 +737,21 @@ CStr(First(Fields!DescrPalletAccessori.Value, "DataSet_Result"))</Value>
         </Field>
         <Field Name="Indirizzo_Spedizione3">
           <DataField>Indirizzo_Spedizione3</DataField>
+        </Field>
+        <Field Name="YourReference">
+          <DataField>YourReference</DataField>
+        </Field>
+        <Field Name="FormattedSerie">
+          <DataField>FormattedSerie</DataField>
+        </Field>
+        <Field Name="FormattedBox">
+          <DataField>FormattedBox</DataField>
+        </Field>
+        <Field Name="Formatted_Indirizzo_Spedizione">
+          <DataField>Formatted_Indirizzo_Spedizione</DataField>
+        </Field>
+        <Field Name="Formatted_Padestal">
+          <DataField>Formatted_Padestal</DataField>
         </Field>
         <Field Name="NrPalletAccessori">
           <DataField>NrPalletAccessori</DataField>

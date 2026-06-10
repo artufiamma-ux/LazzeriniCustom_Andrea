@@ -5,6 +5,8 @@ using Microsoft.Sales.Document;
 using Microsoft.Foundation.Address;
 using Microsoft.Foundation.PaymentTerms;
 using Microsoft.Bank.BankAccount;
+using Microsoft.Sales.Customer;
+
 
 codeunit 50200 XVUtil
 {
@@ -493,5 +495,24 @@ codeunit 50200 XVUtil
         exit(PaymentDesc);
     end;
 
+    procedure GetInfoCustomerByShipment(WarehouseShipmentNo: Code[20]; var info: array[4] of Text[100])
+    var
+        RecShipmentLine: Record "Sales Shipment Line";
+        RecSalesHeader: Record "Sales Header";
+        RecAddress: Record "Ship-to Address";
+    begin
+        RecShipmentLine.Reset();
+        RecShipmentLine.SetRange("No.", WarehouseShipmentNo);
+        if RecShipmentLine.FindSet() then
+            repeat
+                if RecSalesHeader.Get(RecSalesHeader."Document Type"::Order, RecShipmentLine."Order No.") then begin
+                    info[1] := RecSalesHeader."Your Reference";
+                    if RecAddress.Get(RecSalesHeader."Ship-to Code") then
+                        info[2] := RecAddress.Name + ' ' + RecAddress."Name 2";
+                    info[3] := RecAddress.Address + ' ' + RecAddress."Address 2";
+                    info[4] := RecAddress.City + '(' + RecAddress."Location Code" + ') ';
+                end;
+            until RecShipmentLine.Next() = 0;
+    end;
 }
 

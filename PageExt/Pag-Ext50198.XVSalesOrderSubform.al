@@ -47,11 +47,36 @@ pageextension 50198 "XV Sales Order Subform" extends "Sales Order Subform" // Pa
         modify("Net Weight")
         {
             ShowMandatory = (Rec.Type <> Rec.Type::" ") and (Rec."No." <> '');
+            trigger OnBeforeValidate()
+            begin
+                if Rec."Net Weight" = 0 then
+                    Error(MsgPeso);
+            end;
+
         }
-        modify("Service Tariff No.")
+        modify("Unit Price")
         {
             ShowMandatory = (Rec.Type <> Rec.Type::" ") and (Rec."No." <> '');
+
+
+            trigger OnBeforeValidate()
+            begin
+                if Rec."Unit Price" = 0 then
+                    Error(MsgPrezzo);
+            end;
         }
+        modify("Quantity")
+        {
+            ShowMandatory = (Rec.Type <> Rec.Type::" ") and (Rec."No." <> '');
+
+
+            trigger OnBeforeValidate()
+            begin
+                if Rec."Quantity" = 0 then
+                    Error(MsgQta);
+            end;
+        }
+
 
     }
 
@@ -68,14 +93,18 @@ pageextension 50198 "XV Sales Order Subform" extends "Sales Order Subform" // Pa
     trigger OnQueryClosePage(CloseAction: Action): Boolean
     begin
         if (CloseAction in [Action::OK, Action::LookupOK]) then begin
-            if Rec."Service Tariff No." = '' then
-                Error('Il campo Causale è obbligatorio per salvare l’ordine.');
+            if Rec."Unit Price" = 0 then
+                Error(MsgPrezzo);
             // if Rec."Unit Price" = 0 then
             //   Error('Il campo Prezzo Unitario è obbligatorio per salvare l’ordine.');
             if Rec."Net Weight" = 0 then
-                Error('Il campo Peso Netto è obbligatorio per salvare l’ordine.');
+                Error(MsgPeso);
         end;
     end;
 
+    var
+        MsgPrezzo: Label 'Il campo Prezzo Unitario è obbligatorio per salvare l’ordine.';
+        MsgPeso: Label 'Il campo Peso Netto è obbligatorio per salvare l’ordine.';
+        MsgQta: Label 'Il campo Quantità è obbligatorio per salvare l’ordine.';
 }
 

@@ -316,4 +316,33 @@ codeunit 50203 XVEosUtil
         Log.LogDebug(msg, 'XVEosUtil', 'BeforeInsertHUAssignm');
     end;
 
+
+    procedure GetHUClusterFromWhseShipment(var WhseShptHeader: Record "Warehouse Shipment Header"): Code[20]
+    var
+        PackingMgt: Codeunit "EOS055 Packing List Management";
+        TempSourceBuffer: Record "EOS055 Handling Unit Buffer" temporary;
+        ClusterNo: Code[20];
+    begin
+        // Costruisce il contesto vero del packing
+        PackingMgt.GetDocAssignment(
+            DATABASE::"Warehouse Shipment Header", // SourceType
+            0,                                       // Subtype
+            WhseShptHeader."No.",                    // Shipment No
+            '',                                      // HU vuota → prende tutto
+            TempSourceBuffer
+        );
+
+        // Cerca il cluster (tipo 7321)
+        if TempSourceBuffer.FindSet() then begin
+            repeat
+                if TempSourceBuffer."Source Type" = 7321 then begin
+                    ClusterNo := TempSourceBuffer."Source No.";
+                    exit(ClusterNo);
+                end;
+            until TempSourceBuffer.Next() = 0;
+        end;
+
+        exit('');
+    end;
+
 }

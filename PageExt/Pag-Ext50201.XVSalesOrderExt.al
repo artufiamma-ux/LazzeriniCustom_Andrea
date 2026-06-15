@@ -88,6 +88,7 @@ pageextension 50201 "XV Sales Order Ext" extends "Sales Order"
         if (CloseAction in [Action::OK, Action::LookupOK]) then begin
             // Controlla se l'ordine contiene righe con prezzo unitario o quantità a zero o peso netto a zero
             RecSalesLine.SetRange("Document No.", Rec."No.");
+            RecSalesLine.SetRange(Type, RecSalesLine.Type::Item);
             if RecSalesLine.FindFirst() then begin
                 repeat
                     if RecSalesLine."Unit Price" = 0 then begin

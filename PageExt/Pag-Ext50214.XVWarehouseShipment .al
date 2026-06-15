@@ -80,8 +80,6 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                 Caption = 'Controlla integrità serie';
                 ApplicationArea = All;
                 Image = Check;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 var
@@ -148,8 +146,6 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                 Caption = 'Genera dettaglio colli spedizioni';
                 ApplicationArea = All;
                 Image = BarCode;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 var
@@ -165,8 +161,6 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                 Caption = 'Chiudi scatole';
                 ApplicationArea = All;
                 Image = Closed;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 var
@@ -175,22 +169,37 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                     XvEosUtil.ChiudiScatole(Rec."No.");
                 end;
             }
-            action(EliminaScatoleAccessorie)
+            action(CreateEmptyHUFromWhseShipment)
             {
-                Caption = 'Elimina scatole accessorie';
+                Caption = 'Create Empty HU from Warehouse Shipment';
                 ApplicationArea = All;
                 Image = BinContent;
-                Promoted = true;
-                PromotedCategory = Process;
 
                 trigger OnAction()
                 var
-                    XvEosUtil: Codeunit "XVEosUtil";
+                    XvEos: Codeunit "XV EOS HU Auto Create";
+                    TempCode: Code[20];
                 begin
-                    XvEosUtil.DeleteScatoleAccessorie(Rec."No.");
+                    XvEos.CreateEmptyHUFromWhseShipment(Rec, 1); // 1 is the quantity, you can modify it as needed
+                    Message('OK');
                 end;
             }
 
+        }
+        addlast(Category_Process)
+        {
+            actionref(ControllaIntegritaSerie_Promoted; ControllaIntegritaSerie)
+            {
+            }
+            actionref(StampaEtichetteUdc_Promoted; StampaEtichetteUdc)
+            {
+            }
+            actionref(ChiudiScatole_Promoted; ChiudiScatole)
+            {
+            }
+            actionref(CreateEmptyHUFromWhseShipment_Promoted; CreateEmptyHUFromWhseShipment)
+            {
+            }
         }
 
     }

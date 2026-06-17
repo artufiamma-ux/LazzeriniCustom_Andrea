@@ -78,7 +78,7 @@ pageextension 50208 "XV Posted Sales Shipment Ext" extends "Posted Sales Shipmen
     trigger OnAfterGetRecord()
     begin
         IsProformaEnabled :=
-            (Rec."Nr fattura proforma" = '') and Rec."Reason Code" in ['15', '18', '23', '27']
+            (Rec."Nr fattura proforma" = '') and Rec."Reason Code" in ['15', '18', '23', '27', '01']
             ;
     end;
 }

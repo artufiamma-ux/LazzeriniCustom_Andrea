@@ -85,6 +85,8 @@ pageextension 50201 "XV Sales Order Ext" extends "Sales Order"
     var
         RecSalesLine: Record "Sales Line";
     begin
+        if (Rec.Status = Rec.Status::Released) then
+            exit(true); // Permette di chiudere la pagina senza controlli se l'ordine è già rilasciato
         if (CloseAction in [Action::OK, Action::LookupOK]) then begin
             // Controlla se l'ordine contiene righe con prezzo unitario o quantità a zero o peso netto a zero
             RecSalesLine.SetRange("Document No.", Rec."No.");

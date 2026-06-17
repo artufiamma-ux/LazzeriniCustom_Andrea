@@ -42,10 +42,7 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
             {
                 ApplicationArea = All;
             }
-            field("Fattura Richiesta"; Rec."Fattura Richiesta")
-            {
-                ApplicationArea = All;
-            }
+
         }
         addafter(General)
         {
@@ -65,6 +62,14 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                 }
 
                 field("Quotazione Trasporto Acc."; Rec."Quotazione Trasporto Acc.")
+                {
+                    ApplicationArea = All;
+                }
+                field("Fattura Richiesta"; Rec."Fattura Richiesta")
+                {
+                    ApplicationArea = All;
+                }
+                field("Verifica Pagamenti"; Rec."Verifica Pagamenti")
                 {
                     ApplicationArea = All;
                 }

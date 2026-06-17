@@ -1,4 +1,4 @@
-namespace Custom.Custom;
+namespace Xview.Custom.Lazzerini;
 
 pageextension 50237 "XVExt Handling Units Assigned " extends "EOS055 Handling Units Assigned"
 {

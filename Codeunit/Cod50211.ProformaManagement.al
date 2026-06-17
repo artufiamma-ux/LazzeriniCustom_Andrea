@@ -131,40 +131,62 @@ codeunit 50211 "Proforma Management"
         LineNo += 10000;
 
         //----------------------------------------------------
-        // 6. Copia righe ordine con conversione valuta
+        // 6. Copia righe spedizione con conversione valuta
         //----------------------------------------------------
         SalesLine.Reset();
-        //  SalesLine.SetRange("Document Type", SalesLine."Document Type"::Order);
         SalesLine.SetRange("Document No.", PostedShipment."No.");
 
         if SalesLine.FindSet() then
             repeat
+                // Salta righe non significative
+                if (SalesLine.Type = SalesLine.Type::" ") or (SalesLine.Quantity = 0) then
+                    continue;
+
                 NewSalesLine.Init();
                 NewSalesLine.Validate("Document Type", NewSalesHeader."Document Type");
                 NewSalesLine.Validate("Document No.", NewSalesHeader."No.");
                 NewSalesLine.Validate("Line No.", LineNo);
-                NewSalesLine.TransferFields(SalesLine, false);
-                // Conversione valuta
-                if IsValuta then
+
+                //-----------------------------------------
+                // CAMPI CHIAVE (fondamentali)
+                //-----------------------------------------
+                NewSalesLine.Validate(Type, SalesLine.Type);
+
+                if SalesLine.Type = SalesLine.Type::Item then
+                    NewSalesLine.Validate("No.", SalesLine."No.")
+                else
+                    NewSalesLine.Validate(Description, SalesLine.Description);
+
+                //-----------------------------------------
+                // QUANTITA'
+                //-----------------------------------------
+                NewSalesLine.Validate(Quantity, SalesLine.Quantity);
+
+                //-----------------------------------------
+                // PREZZO (con conversione valuta)
+                //-----------------------------------------
+                if IsValuta then begin
                     if SalesLine."Unit Price" <> 0 then
                         NewSalesLine.Validate("Unit Price",
-                                            Round(SalesLine."Unit Price" * FattoreValuta, 0.01, '>')
-                                            )
+                            Round(SalesLine."Unit Price" * FattoreValuta, 0.01, '>'))
                     else
-                        NewSalesLine.Validate("Unit Price", Round(SalesLine."Unit Price"));
-                NewSalesLine.Validate(Quantity, SalesLine.Quantity);
-                NewSalesLine.Validate("Quantity Invoiced", SalesLine.Quantity);
-                NewSalesLine.Validate("Qty. Invoiced (Base)", SalesLine.Quantity);
+                        NewSalesLine.Validate("Unit Price", 0);
+                end else
+                    NewSalesLine.Validate("Unit Price", SalesLine."Unit Price");
+
+                //-----------------------------------------
+                // EVENTUALI DATI CUSTOM
+                //-----------------------------------------
                 NewSalesLine."xv Progressivo Kit Bus" := SalesLine."xv Progressivo Kit Bus";
                 NewSalesLine."xv Kit Bus" := SalesLine."xv Kit Bus";
                 NewSalesLine."xv Posizione Layout" := SalesLine."Posizione Layout";
                 NewSalesLine."xv Nr Layout" := SalesLine."Nr. Layout";
                 NewSalesLine."Qta. Origine layout" := SalesLine."Qta. Origine layout";
 
-                NewSalesLine.Amount := NewSalesLine."Unit Price" * NewSalesLine.Quantity;
-                //NewSalesLine."Service Tariff No." := SalesLine.;
+                //-----------------------------------------
+                // INSERT
+                //-----------------------------------------
                 NewSalesLine.Insert(true);
-
 
                 LineNo += 10000;
 

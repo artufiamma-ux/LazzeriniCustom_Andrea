@@ -1,4 +1,4 @@
-namespace Custom.Custom;
+namespace Xview.Custom.Lazzerini;
 
 using Microsoft.Sales.History;
 

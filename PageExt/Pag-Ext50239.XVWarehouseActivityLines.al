@@ -3,9 +3,8 @@ namespace Xview.Custom.Lazzerini;
 using Microsoft.Inventory.Item;
 using Microsoft.Warehouse.Activity;
 
-pageextension 50238 "XV Whse. Pick Subform" extends "Whse. Pick Subform"
+pageextension 50239 "XV Warehouse Activity Lines" extends "Warehouse Activity Lines"
 {
-
     layout
     {
         addafter("Item No.")

@@ -20,20 +20,62 @@ page 50234 "XV Drawings Management"
         {
             repeater(Group)
             {
-                field("Disegno"; Rec."Drawing No.") { }
-                field("ID Revisione"; Rec."Revision ID") { }
-                field("Revisione"; Rec."Revision") { }
-                field("Descrizione"; Rec."Description") { }
-                field("Descrizione Componente"; Rec."Component Description") { }
-                field("Modello"; Rec."Model") { }
-                field("Data Creazione"; Rec."Creation Date") { }
-                field("Annullato"; Rec."Cancelled") { }
-                field("Creato Da"; Rec."Created By") { }
-                field("Data Ultima Modifica"; Rec."Last Modified DateTime") { }
-                field("Modificato Da"; Rec."Modified By") { }
-                field("Designer"; Rec."Designer") { }
-                field("Attivo"; Rec."Active") { }
-                field("Visibile al Portale Fornitori"; Rec."Visible Supplier Portal") { }
+                field("Disegno"; Rec."Drawing No.")
+                {
+                    CaptionML = ITA = 'Disegno';
+                }
+                field("ID Revisione"; Rec."Revision ID")
+                {
+                    CaptionML = ITA = 'ID Revisione';
+                }
+                field("Revisione"; Rec."Revision")
+                {
+                    CaptionML = ITA = 'Revisione';
+                }
+                field("Descrizione"; Rec."Description")
+                {
+                    CaptionML = ITA = 'Descrizione';
+                }
+                field("Descrizione Componente"; Rec."Component Description")
+                {
+                    CaptionML = ITA = 'Descrizione Componente';
+                }
+                field("Modello"; Rec."Model")
+                {
+                    CaptionML = ITA = 'Modello';
+                }
+                field("Data Creazione"; Rec."Creation Date")
+                {
+                    CaptionML = ITA = 'Data Creazione';
+                }
+                field("Annullato"; Rec."Cancelled")
+                {
+                    CaptionML = ITA = 'Annullato';
+                }
+                field("Creato Da"; Rec."Created By")
+                {
+                    CaptionML = ITA = 'Creato Da';
+                }
+                field("Data Ultima Modifica"; Rec."Last Modified DateTime")
+                {
+                    CaptionML = ITA = 'Data Ultima Modifica';
+                }
+                field("Modificato Da"; Rec."Modified By")
+                {
+                    CaptionML = ITA = 'Modificato Da';
+                }
+                field("Designer"; Rec."Designer")
+                {
+                    CaptionML = ITA = 'Designer';
+                }
+                field("Attivo"; Rec."Active")
+                {
+                    CaptionML = ITA = 'Attivo';
+                }
+                field("Visibile al Portale Fornitori"; Rec."Visible Supplier Portal")
+                {
+                    CaptionML = ITA = 'Visibile al Portale Fornitori';
+                }
             }
         }
     }

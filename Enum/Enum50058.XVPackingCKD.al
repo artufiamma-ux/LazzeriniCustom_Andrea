@@ -5,7 +5,7 @@ enum 50058 "XV Packing CKD"
 
     value(0; none)
     {
-        Caption = '';
+        Caption = ' ';
     }
 
     value(1; Telaio)

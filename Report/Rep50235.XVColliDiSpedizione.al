@@ -26,7 +26,7 @@ report 50235 "XV Colli Di Spedizione"
 
             // DATAITEM Line
             // DATAITEM FIGLIO
-            dataitem(HUAssignm; "EOS055 Handling Unit Assignm.")
+            dataitem(HU; "EOS055 Handling Unit")
             {
                 DataItemLink =
                     "Warehouse Shipment No." = field("No.");
@@ -38,11 +38,11 @@ report 50235 "XV Colli Di Spedizione"
                             WHERE("Nr Scatola" = FILTER(> 0));
 
 
-                column(HandlingUnitNo; "Handling Unit No.") { }
-                column(HUSourceNo; "Source No.") { }
-                column(HUSourceLineNo; "Source Line No.") { }
-                column(HUItemNo; "Item No.") { }
-                column(HULotNo; "Lot No.") { }
+                column(HandlingUnitNo; "No.") { }
+                column(HUSourceNo; SourceNo) { }
+                column(HUSourceLineNo; SourceLineNo) { }
+                column(HUItemNo; ItemNo) { }
+                column(HULotNo; LotNo) { }
                 column(Indirizzo_Spedizione1; Indirizzo_Spedizione1) { }
                 column(Indirizzo_Spedizione2; Indirizzo_Spedizione2) { }
                 column(Indirizzo_Spedizione3; Indirizzo_Spedizione3) { }
@@ -70,6 +70,8 @@ report 50235 "XV Colli Di Spedizione"
                 begin
                     if NrScatolaFilter <> '' then
                         SetFilter("Nr Scatola", NrScatolaFilter);
+                    if NrSerieFilter <> '' then
+                        SetFilter("Progressivo Serie Spedizione", NrSerieFilter);
                 end;
 
                 trigger OnAfterGetRecord()
@@ -78,6 +80,7 @@ report 50235 "XV Colli Di Spedizione"
                     BarcodeSymbology: Enum "Barcode Symbology";
                     BarcodeFontProvider: Interface "Barcode Font Provider";
                     CustomerInfo: array[4] of Text[100];
+                    HUA: Record "EOS055 Handling Unit Assignm.";
 
                 begin
                     // Declare the barcode provider using the barcode provider interface and enum
@@ -87,7 +90,7 @@ report 50235 "XV Colli Di Spedizione"
                     BarcodeSymbology := Enum::"Barcode Symbology"::"Code39";
 
                     // Set data string source
-                    BarcodeString := "Handling Unit No.";
+                    BarcodeString := "No.";
 
                     // Validate the input. This method is not available for 2D provider
                     BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
@@ -117,6 +120,13 @@ report 50235 "XV Colli Di Spedizione"
                         'Vs Ordine / Your Purchase Order     ' +
                         'Nr Pallett Accessori: ' + Format(whseShpt."Nr Colli Accessori") +
                         ' ' + Format(whseShpt."Descrizione Colli Accessori");
+                    HUA.SetRange("Handling Unit No.", HU."No.");
+                    if HUA.FindFirst() then begin
+                        SourceNo := HUA."Source No.";
+                        LotNo := HUA."Lot No.";
+                        ItemNo := HUA."Item No.";
+                        SourceLineNo := HUA."Source Line No.";
+                    end;
 
                 end;
 
@@ -156,6 +166,12 @@ report 50235 "XV Colli Di Spedizione"
                 {
                     Caption = 'Opzioni';
 
+                    field(NrSerieFilter; NrSerieFilter)
+                    {
+                        Caption = 'Nr Serie';
+                        ApplicationArea = All;
+                        ToolTip = 'Inserire uno o più numeri (es: 1 | 1|3 | 1..5). Lasciare vuoto per tutti.';
+                    }
                     field(NrScatolaFilter; NrScatolaFilter)
                     {
                         Caption = 'Nr Scatola';
@@ -167,9 +183,15 @@ report 50235 "XV Colli Di Spedizione"
         }
     }
     var
+        LotNo: Text;
+        ItemNo: Code[20];
+        SourceLineNo: Integer;
+        SourceNo: Code[20];
+
         Scatole: Text[250];
         NScatola: Integer;
-        NrScatolaFilter: Text[100];
+        NrScatolaFilter: Text;
+        NrSerieFilter: Text;
         EncodedText: Text;
         NrPalletAccessori: Integer;
         DescrPalletAccessori: Text[100];

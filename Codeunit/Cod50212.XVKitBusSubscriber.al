@@ -18,14 +18,19 @@ codeunit 50212 "XV Kit Bus Subscriber"
         Progressivo: Integer;
         IsNewKit: Boolean;
     begin
+        if Not SH.Get(Rec."Document Type", Rec."Document No.") then
+            exit;
         // ► Consideriamo solo righe figlio (ITEM);
         if Rec.Type <> Rec.Type::Item then
             exit;
 
         // ► Solo righe generate da esplosione hanno "BOM Item No."
         ParentItemNo := Rec."BOM Item No.";
-        if ParentItemNo = '' then
+        if ParentItemNo = '' then begin
+            Rec."xv Nr Layout" := SH."Nr Layout";
             exit;
+        end;
+
 
         // ► Evita esecuzioni multiple
         if Rec."xv Kit Bus" <> '' then
@@ -70,14 +75,14 @@ codeunit 50212 "XV Kit Bus Subscriber"
         Rec.Modify(true);
 
         // ► Imposta flag su intestazione ordine
-        if SH.Get(Rec."Document Type", Rec."Document No.") then begin
-            if not SH."Ordine con kit" then begin
-                SH."Ordine con kit" := true;
-                SH.Modify();
-            end;
-            Rec."xv Nr Layout" := SH."Nr Layout";
-            Rec.Modify(true);
+
+        if not SH."Ordine con kit" then begin
+            SH."Ordine con kit" := true;
+            SH.Modify();
         end;
+        Rec."xv Nr Layout" := SH."Nr Layout";
+        Rec.Modify(true);
+
 
     end;
 

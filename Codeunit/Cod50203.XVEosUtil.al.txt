@@ -169,7 +169,7 @@ codeunit 50203 XVEosUtil
         WhseShpt.Get(WarehouseShipmentNo);
         YN := true;
         if (WhseShpt."Scatole Chiuse") then begin
-            YN := Confirm('Le scatole sono già state chiuse. Vuoi rieseguire la procedura di chiusura?')
+            YN := Confirm('Sei sicuro di volere procedere nuovamente alla replica.'+ Format(13) + Format(10) +'I colli generati dalla precedente replica verranno eliminati.'+ Format(13) + Format(10) +'Intendi procedere?');
         end;
         if YN then begin
             ResetDatiChiusura(WhseShpt);

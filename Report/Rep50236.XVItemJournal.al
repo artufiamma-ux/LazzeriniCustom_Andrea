@@ -87,6 +87,8 @@ report 50236 "XV Item Journal"
                     if RecSalesHeader.FindFirst() then begin
                         OrdNo := RecSalesHeader."No.";
                         NomeCliente := RecSalesHeader."Bill-to Name";
+                        RifOrdineCliente := RecSalesHeader."Your Reference";
+
                         IdentificativoGaraProgetto :=
                                                 'CIG: ' + Format(RecSalesHeader."Fattura Tender Code") +
                                                 ' - CUP: ' + Format(RecSalesHeader."Fattura Project Code");
@@ -101,7 +103,6 @@ report 50236 "XV Item Journal"
                         RecSalesLine.SetRange("Line No.", OrdLineNo);
 
                         if RecSalesLine.FindFirst() then begin
-                            RifOrdineCliente := RecSalesLine."Item Reference No.";
                             CodArticoloCliente := RecSalesLine."Item Reference No.";
                             DescrizioneArticoloCliente := RecSalesLine."Description";
                             CodArticolo := RecSalesLine."No.";
@@ -136,7 +137,7 @@ report 50236 "XV Item Journal"
         CodArticolo: Code[20];
         EOSHandlingUnitNo: Code[20];
         KitBus: Text;
-        LblCliente: Label 'Customer / Cliente: ';
+        LblCliente: Label 'Customer Ref./Rif. Cliente: ';
         LblContratto: Label 'Contract / Contratto: ';
         LblCup: Label 'CUP: ';
         LblOrdine: Label 'Purchase Order / Ordine Acquisto: ';

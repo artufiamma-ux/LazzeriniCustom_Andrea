@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.14.36915.13</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-06-17T07:47:45.5568641Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-06-19T09:45:52.5658145Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -203,7 +203,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>=Fields!LblCliente.Value</Value>
+                        <Value>=Fields!LblOrdine.Value</Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
                         </Style>
@@ -235,7 +235,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>=Fields!RifOrdineCliente.Value</Value>
+                        <Value>=Fields!CodArticoloCliente.Value</Value>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
                         </Style>

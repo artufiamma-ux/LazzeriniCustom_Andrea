@@ -20,14 +20,15 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
             field("Numero Totale Serie"; Rec."Numero Totale Serie")
             {
                 ApplicationArea = All;
-                Editable = false;
+                Editable = IsAperto;
             }
             field("Numero Totale Pallet"; Rec."Numero Totale Pallet")
             {
                 ApplicationArea = All;
                 Editable = false;
-                Caption = 'Box totali';
+                Caption = 'Box totali per serie';
             }
+            /*
             field(NrPalletAccessori; Rec."Nr Colli Accessori")
             {
                 ApplicationArea = All;
@@ -38,6 +39,7 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                     Message('Chiudi Scatole necessario');
                 end;
             }
+            */
             field(DescrPalletAccessori; Rec."Descrizione Colli Accessori")
             {
                 ApplicationArea = All;
@@ -160,33 +162,43 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                     Rep.Run();
                 end;
             }
+            /*
+                        action(ChiudiScatole)
+                        {
+                            Caption = 'Chiudi scatole';
+                            ApplicationArea = All;
+                            Image = Closed;
 
-            action(ChiudiScatole)
-            {
-                Caption = 'Chiudi scatole';
-                ApplicationArea = All;
-                Image = Closed;
-
-                trigger OnAction()
-                var
-                    XvEosUtil: Codeunit "XVEosUtil";
-                begin
-                    XvEosUtil.ChiudiScatole(Rec."No.");
-                end;
-            }
+                            trigger OnAction()
+                            var
+                                XvEosUtil: Codeunit "XVEosUtil";
+                            begin
+                                XvEosUtil.ChiudiScatole(Rec."No.");
+                            end;
+                        }
+            */
             action(CreateEmptyHUFromWhseShipment)
             {
-                Caption = 'Create Empty HU from Warehouse Shipment';
+                Caption = 'Replica Packing List';
                 ApplicationArea = All;
                 Image = BinContent;
+                //Enabled = IsAperto;
+
 
                 trigger OnAction()
                 var
-                    XvEos: Codeunit "XV EOS HU Auto Create";
-                    TempCode: Code[20];
+                    XvEos: Codeunit "XV Packing List";
+                    YN: Boolean;
+                    Msg: Text;
                 begin
-                    XvEos.CreateEmptyHUFromWhseShipment(Rec, 1); // 1 is the quantity, you can modify it as needed
-                    Message('OK');
+                    YN := true;
+                    if Rec."Scatole Chiuse" then
+                        YN := Confirm('Sei sicuro di volere procedere nuovamente alla replica.\I colli generati dalla precedente replica verranno eliminati.\Intendi procedere?');
+                    if YN then begin
+                        Msg := XvEos.MakePackingList(Rec);
+                        Message(Msg);
+                        IsAperto := (NOT Rec."Scatole Chiuse");
+                    end;
                 end;
             }
 
@@ -199,14 +211,20 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
             actionref(StampaEtichetteUdc_Promoted; StampaEtichetteUdc)
             {
             }
-            actionref(ChiudiScatole_Promoted; ChiudiScatole)
-            {
-            }
+            //            actionref(ChiudiScatole_Promoted; ChiudiScatole) { }
             actionref(CreateEmptyHUFromWhseShipment_Promoted; CreateEmptyHUFromWhseShipment)
             {
             }
         }
 
     }
+
+    trigger OnAfterGetRecord()
+    begin
+        IsAperto := (NOT Rec."Scatole Chiuse");
+    end;
+
+    var
+        IsAperto: Boolean;
 
 }

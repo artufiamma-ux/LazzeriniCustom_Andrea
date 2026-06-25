@@ -30,6 +30,14 @@ pageextension 50205 XVItemCad extends "Item Card"
             {
                 ApplicationArea = All;
             }
+
+
+            field("Drawing No."; Rec."Drawing No.")
+            {
+                ApplicationArea = All;
+                CaptionML = ITA = 'Disegno';
+            }
+
         }
     }
 }

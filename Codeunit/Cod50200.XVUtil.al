@@ -6,6 +6,7 @@ using Microsoft.Foundation.Address;
 using Microsoft.Foundation.PaymentTerms;
 using Microsoft.Bank.BankAccount;
 using Microsoft.Sales.Customer;
+using Microsoft.Warehouse.Document;
 
 
 codeunit 50200 XVUtil
@@ -310,10 +311,10 @@ codeunit 50200 XVUtil
         NrColli: Integer;
         PesoNetto: Decimal;
         PesoLordo: Decimal;
-        AspettoDeiBeni: Text[100];
-        AspettoDeiBeniFK: Text[100];
+        AspettoDeiBeni: Text;
+        AspettoDeiBeniFK: Text;
         FK: Code[20];
-        TmpBox: Text[100];
+        TmpBox: Text;
     begin
         NrColli := 0;
         PesoNetto := 0;
@@ -495,9 +496,9 @@ codeunit 50200 XVUtil
         exit(PaymentDesc);
     end;
 
-    procedure GetInfoCustomerByShipment(WarehouseShipmentNo: Code[20]; var info: array[4] of Text[100])
+    procedure GetInfoCustomerByShipment(WarehouseShipmentNo: Code[20]; var info: array[5] of Text[100])
     var
-        RecShipmentLine: Record "Sales Shipment Line";
+        RecShipmentLine: Record "Warehouse Shipment Line";// "Sales Shipment Line";
         RecSalesHeader: Record "Sales Header";
         RecAddress: Record "Ship-to Address";
     begin
@@ -505,12 +506,12 @@ codeunit 50200 XVUtil
         RecShipmentLine.SetRange("No.", WarehouseShipmentNo);
         if RecShipmentLine.FindSet() then
             repeat
-                if RecSalesHeader.Get(RecSalesHeader."Document Type"::Order, RecShipmentLine."Order No.") then begin
+                if RecSalesHeader.Get(RecSalesHeader."Document Type"::Order, RecShipmentLine."Source No.") then begin
                     info[1] := RecSalesHeader."Your Reference";
-                    if RecAddress.Get(RecSalesHeader."Ship-to Code") then
-                        info[2] := RecAddress.Name + ' ' + RecAddress."Name 2";
-                    info[3] := RecAddress.Address + ' ' + RecAddress."Address 2";
-                    info[4] := RecAddress.City + '(' + RecAddress."Location Code" + ') ';
+                    info[2] := RecSalesHeader."Ship-to Name" + ' ' + RecSalesHeader."Ship-to Name 2";
+                    info[3] := RecSalesHeader."Ship-to Address" + ' ' + RecSalesHeader."Ship-to Address 2";
+                    info[4] := RecSalesHeader."Ship-to City" + '(' + RecSalesHeader."Ship-to Country/Region Code" + ') ';
+                    info[5] := RecSalesHeader."No.";
                 end;
             until RecShipmentLine.Next() = 0;
     end;

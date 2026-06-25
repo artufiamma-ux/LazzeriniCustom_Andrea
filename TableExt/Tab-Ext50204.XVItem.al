@@ -40,5 +40,19 @@ tableextension 50204 XVItem extends Item
             BlankZero = true;
         }
         field(50065; "Posizione Layout"; code[20]) { Caption = 'Posizione Layout'; DataClassification = ToBeClassified; }
+
+        field(50105; "Drawing No."; Code[20])
+        {
+            Caption = 'Drawing No.';
+            DataClassification = CustomerContent;
+
+            TableRelation = "XV Drawings Management"."Drawing No."
+             WHERE(
+                Active = CONST(true),
+                Cancelled = CONST(false)
+            )
+            ;
+
+        }
     }
 }

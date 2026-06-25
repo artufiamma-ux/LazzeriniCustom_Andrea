@@ -71,7 +71,7 @@ pageextension 50207 "XV Released Prod Orders Ext" extends "Released Production O
         {
             action(EtichetteBasamenti)
             {
-                Caption = 'Genera etichette basamenti';
+                Caption = 'Etichette Basamenti - Telai';
                 ApplicationArea = All;
                 Image = DebugNext;
                 Promoted = true;

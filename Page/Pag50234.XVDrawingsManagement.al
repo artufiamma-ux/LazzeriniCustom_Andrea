@@ -97,7 +97,7 @@ page 50234 "XV Drawings Management"
                 begin
                     if not Rec.IsEmpty() then begin
                         NewDrawing := Rec; // Copia i dati del disegno esistente
-                        NewDrawing."Revision ID" := NewDrawing."Revision ID" + 1; // Incrementa l'ID revisione
+                        NewDrawing.SetNewRevision(); // Incrementa l'ID revisione
                         NewDrawing."Revision" := ''; // Resetta il campo revisione, l'utente lo compilerà nella scheda
                         NewDrawing.Insert(); // Inserisce il nuovo record, attivando la logica di creazione della revisione
                         PAGE.Run(PAGE::"XV Drawings Management Card", NewDrawing); // Apre la scheda del nuovo disegno per ulteriori modifiche

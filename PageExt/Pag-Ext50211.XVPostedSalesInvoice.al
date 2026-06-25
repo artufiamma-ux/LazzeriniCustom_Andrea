@@ -4,6 +4,7 @@ using Microsoft.Sales.Document;
 using Microsoft.Sales.History;
 pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
 {
+
     layout
     {
         addafter("Posting Date")
@@ -13,6 +14,22 @@ pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
                 ApplicationArea = All;
                 Caption = 'Accompagnatoria';
                 ToolTip = 'Indica se la fattura è accompagnatoria.';
+                /*
+                Editable = false; // resta non editabile
+                DrillDown = true;
+                trigger OnDrillDown()
+                var
+                    Header: Record "Sales Invoice Header";
+                begin
+                    Header.Get(Rec."No.");
+                    // toggle
+                    Header."ACCOMPAGNATORIA" := not Header."ACCOMPAGNATORIA";
+                    Header.Modify(true);
+                    // sync UI
+                    Rec."ACCOMPAGNATORIA" := Header."ACCOMPAGNATORIA";
+                    CurrPage.Update(false);
+                end;
+                */
             }
         }
         addlast("Bill-to")

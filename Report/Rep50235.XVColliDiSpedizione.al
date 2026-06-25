@@ -79,7 +79,6 @@ report 50235 "XV Colli Di Spedizione"
                     BarcodeString: Text;
                     BarcodeSymbology: Enum "Barcode Symbology";
                     BarcodeFontProvider: Interface "Barcode Font Provider";
-                    CustomerInfo: array[4] of Text[100];
                     HUA: Record "EOS055 Handling Unit Assignm.";
 
                 begin
@@ -97,11 +96,6 @@ report 50235 "XV Colli Di Spedizione"
 
                     // Encode the data string to the barcode font
                     EncodedText := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
-                    XVUtil.GetInfoCustomerByShipment(WarehouseShipmentNo, CustomerInfo);
-                    YourReference := CustomerInfo[1];
-                    Indirizzo_Spedizione1 := CustomerInfo[2];
-                    Indirizzo_Spedizione2 := CustomerInfo[3];
-                    Indirizzo_Spedizione3 := CustomerInfo[4];
                     FormattedSerie :=
                         'Serie  ' +
                         Format("Progressivo Serie Spedizione") + '/' +
@@ -112,17 +106,12 @@ report 50235 "XV Colli Di Spedizione"
                         Format("Nr Scatola") + '/' +
                         Format(whseShpt."Numero Totale Pallet");
 
-                    Formatted_Indirizzo_Spedizione :=
-                        Format(Indirizzo_Spedizione1) + Format(13) + Format(10) +
-                        Format(Indirizzo_Spedizione2) + Format(13) + Format(10) +
-                        Format(Indirizzo_Spedizione3);
                     Formatted_Padestal :=
                         'Vs Ordine / Your Purchase Order     ' +
                         'Nr Pallett Accessori: ' + Format(whseShpt."Nr Colli Accessori") +
                         ' ' + Format(whseShpt."Descrizione Colli Accessori");
                     HUA.SetRange("Handling Unit No.", HU."No.");
                     if HUA.FindFirst() then begin
-                        SourceNo := HUA."Source No.";
                         LotNo := HUA."Lot No.";
                         ItemNo := HUA."Item No.";
                         SourceLineNo := HUA."Source Line No.";
@@ -142,6 +131,7 @@ report 50235 "XV Colli Di Spedizione"
             var
                 Customer: Record Customer;
                 Carrier: Record "Shipping Agent";
+                CustomerInfo: array[5] of Text[100];
             begin
 
                 // Recupero dati per cliente
@@ -152,6 +142,17 @@ report 50235 "XV Colli Di Spedizione"
 
                 if Carrier.Get(WhseShpt."Shipping Agent Code") then
                     Vettore := Carrier.Name;
+                XVUtil.GetInfoCustomerByShipment(WarehouseShipmentNo, CustomerInfo);
+                YourReference := CustomerInfo[1];
+                Indirizzo_Spedizione1 := CustomerInfo[2];
+                Indirizzo_Spedizione2 := CustomerInfo[3];
+                Indirizzo_Spedizione3 := CustomerInfo[4];
+                SourceNo := CustomerInfo[5];
+                Formatted_Indirizzo_Spedizione :=
+                    Format(Indirizzo_Spedizione1) + Format(13) + Format(10) +
+                    Format(Indirizzo_Spedizione2) + Format(13) + Format(10) +
+                    Format(Indirizzo_Spedizione3);
+
             end;
         }
 

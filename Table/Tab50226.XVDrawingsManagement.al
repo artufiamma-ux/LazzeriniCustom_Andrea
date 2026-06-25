@@ -23,6 +23,15 @@ table 50226 "XV Drawings Management"
         field(10; "Cancelled"; Boolean)
         {
             DataClassification = CustomerContent;
+            trigger OnValidate()
+            begin
+                if Cancelled then begin
+                    if Active then begin
+                        Active := false;
+                    end;
+                end;
+
+            end;
         }
 
         field(16; "Active"; Boolean)
@@ -112,5 +121,45 @@ table 50226 "XV Drawings Management"
     begin
         "Last Modified DateTime" := CurrentDateTime();
         "Modified By" := UserId();
+        if "Active" then DeactivateOtherRevision();
     end;
+
+    procedure SetNewRevision()
+    var
+        RecDrawings: Record "XV Drawings Management";
+    begin
+        RecDrawings.Reset();
+        RecDrawings.SetRange("Drawing No.", Rec."Drawing No.");
+
+        // Imposto la chiave (assicurati che includa Revision ID)
+        RecDrawings.SetCurrentKey("Drawing No.", "Revision ID");
+
+        // Ordinamento decrescente sulla Revision ID
+        RecDrawings.SetAscending("Revision ID", false);
+
+        // Prendo il record con la revisione più alta
+        if RecDrawings.FindFirst() then
+            Rec."Revision ID" := RecDrawings."Revision ID" + 1
+        else
+            Rec."Revision ID" := 1; // primo inserimento
+    end;
+
+    procedure DeactivateOtherRevision()
+    var
+        RecDrawings: Record "XV Drawings Management";
+        CurrentRevision: Integer;
+    begin
+        CurrentRevision := Rec."Revision ID";
+        RecDrawings.Reset();
+        RecDrawings.SetRange("Drawing No.", Rec."Drawing No.");
+        RecDrawings.SetFilter("Revision ID", '<>%1', Rec."Revision ID");
+        if RecDrawings.FindSet() then
+            repeat begin
+                RecDrawings.Active := false;
+                RecDrawings.Modify();
+            end;
+            until RecDrawings.Next() = 0;
+        Rec.Cancelled := false;
+    end;
+
 }

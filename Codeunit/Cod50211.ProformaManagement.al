@@ -51,6 +51,7 @@ codeunit 50211 "Proforma Management"
         if IsValuta then begin
             // 2. Recupero valuta proforma appena inserito in pagina
             PostedShipment."Cod valuta proforma" := CodValuta;
+            PostedShipment.Modify(false);
             if PostedShipment."Cod valuta proforma" = '' then
                 Error('Il campo "Cod valuta proforma" non è valorizzato.');
 
@@ -71,14 +72,7 @@ codeunit 50211 "Proforma Management"
         NewSalesHeader.Validate("No. Series", 'PROFORMA');
         NewSalesHeader."EOS Document Class Code" := 'PROFORMA';
         NewSalesHeader."XV Proforma Source" := PK;
-        if IsValuta then begin
-            NewSalesHeader.Validate("Currency Code", PostedShipment."Cod valuta proforma");
-            if NewSalesHeader."Currency Code" = '' then
-                NewSalesHeader."Currency Code" := PostedShipment."Cod valuta proforma";
-            NewSalesHeader."Currency Factor" := FattoreValuta;
-        end
-        else
-            NewSalesHeader.Validate("Currency Code", PostedShipment."Currency Code");
+
         NewSalesHeader.Validate("Sell-to Customer No.", SalesHeader."Sell-to Customer No.");
         NewSalesHeader.Validate("Bill-to Customer No.", SalesHeader."Bill-to Customer No.");
         NewSalesHeader.Validate("Ship-to Code", SalesHeader."Ship-to Code");
@@ -87,8 +81,15 @@ codeunit 50211 "Proforma Management"
         NewSalesHeader.Validate("Your Reference", SalesHeader."Your Reference");
         if Cust.Get(PostedShipment."Bill-to Customer No.") then
             IsForeign := Cust."Country/Region Code" <> 'IT';
+        if IsValuta then begin
+            NewSalesHeader."Currency Code" := PostedShipment."Cod valuta proforma";
+            if NewSalesHeader."Currency Code" = '' then NewSalesHeader."Currency Code" := PostedShipment."Currency Code";
+            NewSalesHeader."Currency Factor" := FattoreValuta;
+        end
+        else
+            NewSalesHeader.Validate("Currency Code", PostedShipment."Currency Code");
 
-        NewSalesHeader.Insert(true);
+        NewSalesHeader.Insert(false);
 
         //----------------------------------------------------
         // 5. Riga COMMENTO iniziale

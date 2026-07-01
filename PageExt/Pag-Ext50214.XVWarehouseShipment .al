@@ -28,18 +28,14 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                 Editable = false;
                 Caption = 'Box totali per serie';
             }
-            /*
+
             field(NrPalletAccessori; Rec."Nr Colli Accessori")
             {
                 ApplicationArea = All;
+                Editable = false;
                 Caption = 'Box Accessori per serie';
-
-                trigger OnValidate()
-                begin
-                    Message('Chiudi Scatole necessario');
-                end;
             }
-            */
+
             field(DescrPalletAccessori; Rec."Descrizione Colli Accessori")
             {
                 ApplicationArea = All;

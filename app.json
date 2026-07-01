@@ -58,6 +58,13 @@
       "name": "MES Manufacturing execution system",
       "publisher": "EOS Solutions",
       "version": "27.0.16.0"
+    },
+    {
+      "id": "4322e2ed-02d4-490b-b644-02235c517973",
+      "name": "Packing List",
+      "publisher": "EOS Solutions",
+      "version": "28.0.1.0"
+
     }
 
   ],

@@ -128,6 +128,7 @@ codeunit 50205 "XV Packing List"
         PkgItemU: List of [Code[20]];
         UPallet: Text[1];
         i: Integer;
+        TPadestal: Text[20];
 
     begin
         DeleteOldPackaging(WhseShipmentHeader);
@@ -157,6 +158,10 @@ codeunit 50205 "XV Packing List"
                             PkgItemC.Add(HU."No.");
                             NScatola := NScatola + 1;
                             HU."Nr Scatola" := NScatola;
+                            TPadestal := HU."Packaging Material No.";
+                            if TPadestal.ToUpper().Contains('PADESTAL') then
+                                NumPadestal := NumPadestal + 1;
+
                         end;
                         if UPallet = 'U' then
                             PkgItemU.Add(HU."No.");
@@ -178,6 +183,7 @@ codeunit 50205 "XV Packing List"
                 end;
             end;
             if ErrMsg = '' then begin
+                WhseShipmentHeader."Nr Colli Accessori" := NumPadestal;
                 WhseShipmentHeader."Numero Totale Pallet" := NScatola;
                 WhseShipmentHeader."Scatole Chiuse" := true;
                 WhseShipmentHeader.Modify();
@@ -241,4 +247,6 @@ codeunit 50205 "XV Packing List"
         ErrMsg: Text;
         LocationCode: Code[10];
         NumScatolePerSerie: Integer;
+        NumPadestal: Integer;
+
 }

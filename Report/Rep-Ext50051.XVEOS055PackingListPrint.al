@@ -36,7 +36,7 @@ reportextension 50051 "XV EOS055 Packing List - Print" extends "EOS055 Packing L
                 if RecShipHeader.FindFirst() then begin
                     Header_No_CWS := 'Packing List ' + RecShipHeader."EOS Shipment No.";
                 end else
-                    Header_No_CWS := "Packing List No.";
+                    Header_No_CWS := 'Packing List ' + "Packing List No.";
             end;
         }
         modify(TmpPackingListLine)

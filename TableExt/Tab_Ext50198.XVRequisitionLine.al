@@ -7,7 +7,7 @@ tableextension 50198 "XV Requisition Line" extends "Requisition Line"
 {
     fields
     {
-        field(50065; "Posizione Layout"; code[20]) { Caption = 'Posizione Layout'; DataClassification = ToBeClassified; }
+        //        field(50065; "Posizione Layout"; code[20]) { Caption = 'Posizione Layout'; DataClassification = ToBeClassified; }
 
         field(50100; "XV Sales"; Code[20])
         {

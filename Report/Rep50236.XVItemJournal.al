@@ -100,8 +100,10 @@ report 50236 "XV Item Journal"
                             EOSHandlingUnitNo := RecProOrdLine."EOS055 Handling Unit No.";
                         end;
                         RecSalesLine.SetRange("Document No.", "CodOrdVen");
-                        RecSalesLine.SetRange("Line No.", OrdLineNo);
-
+                        if OrdLineNo <> 0 then
+                            RecSalesLine.SetRange("Line No.", OrdLineNo)
+                        else
+                            RecSalesLine.SetRange("No.", "Item No.");
                         if RecSalesLine.FindFirst() then begin
                             CodArticoloCliente := RecSalesLine."Item Reference No.";
                             DescrizioneArticoloCliente := RecSalesLine."Description";

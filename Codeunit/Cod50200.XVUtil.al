@@ -32,7 +32,7 @@ codeunit 50200 XVUtil
                 'Type Payment Caption':
                     exit('Type Payment Caption');
                 'Amount':
-                    exit('Amount');
+                    exit('Value');//exit('Amount');
                 'VAT Base':
                     exit('VAT Base');
                 else

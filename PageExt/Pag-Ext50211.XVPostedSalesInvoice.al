@@ -36,12 +36,13 @@ pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
         {
             group(ShipDetailsXV)
             {
-                Caption = 'Colli e Pesi';
+                Caption = 'Informazioni di spedizione';
 
                 field("Nr. Colli"; NrColli) { ApplicationArea = All; Editable = false; }
                 field("Peso Netto"; PesoNetto) { ApplicationArea = All; Editable = false; }
                 field("Peso Lordo"; PesoLordo) { ApplicationArea = All; Editable = false; }
                 field("Aspetto dei beni"; AspettoDeiBeni) { ApplicationArea = All; Editable = false; }
+                field("Ora di partenza"; OraPartenza) { ApplicationArea = All; Editable = false; }
             }
         }
     }
@@ -52,8 +53,8 @@ pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
             action(UpdShipInfo)
             {
                 ApplicationArea = All;
-                Caption = 'Colli e Pesi';
-                ToolTip = 'Aggiorna Pesi e Nr Colli.';
+                Caption = 'Informazioni di Spedizione';
+                ToolTip = 'Aggiorna Informazioni di Spedizione Ora di partenza, Pesi e Nr Colli.';
                 Image = Print;
                 Promoted = true;
                 PromotedCategory = Process;
@@ -92,6 +93,7 @@ pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
         PesoLordo: Decimal;
         AspettoDeiBeni: Text[100];
         ShipInfo: Record "XV Posted Invoice Ship Info";
+        OraPartenza: Time;
 
     trigger OnAfterGetCurrRecord()
     var
@@ -107,6 +109,7 @@ pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
             NrColli := ShipInfo."Nr. Colli";
             PesoNetto := ShipInfo."Peso Netto";
             PesoLordo := ShipInfo."Peso Lordo";
+            OraPartenza := ShipInfo."Ora di partenza";
         end
         else begin
             XVUtil.SetShipInfo(Rec."No.");
@@ -115,6 +118,7 @@ pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
                 NrColli := ShipInfo."Nr. Colli";
                 PesoNetto := ShipInfo."Peso Netto";
                 PesoLordo := ShipInfo."Peso Lordo";
+                OraPartenza := ShipInfo."Ora di partenza";
             end;
         end;
 

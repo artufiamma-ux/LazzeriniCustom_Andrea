@@ -15,6 +15,9 @@ reportextension 50051 "XV EOS055 Packing List - Print" extends "EOS055 Packing L
             column(LblYourReference; LblYourReference) { }
             column(LblCrossReference; LblCrossReference) { }
             column(Header_No_CWS; Header_No_CWS) { Caption = 'Packing List No.'; }
+            column("TotalNetWeight"; "Total Net Weight") { Caption = 'Total Net Weight'; }
+            column(NumScatole; NumScatole) { Caption = 'Num. Scatole'; }
+            column(LblNumScatole; LblNumScatole) { }
         }
 
         add(TmpPackingListLine)
@@ -48,6 +51,7 @@ reportextension 50051 "XV EOS055 Packing List - Print" extends "EOS055 Packing L
                 RecSalesHeader: Record "Sales Header";
                 NrOrigine: Code[20];
                 NrRigaOrigine: Integer;
+                CodScatola: Code[20];
             begin
                 // valorizzazione variabili
                 OrdineVendita := ' ';
@@ -55,6 +59,11 @@ reportextension 50051 "XV EOS055 Packing List - Print" extends "EOS055 Packing L
                 CrossReference := ' ';
                 RecAssignment.SetRange("Handling Unit No.", "Handling Unit No.");
                 RecAssignment.SetRange("Item No.", "No.");
+                CodScatola := "Handling Unit No.";
+                if (CodScatola <> '') AND (CopyStr(CodScatola, 1, 1) = 'C') AND (StrPos(AppoScatole, CodScatola) = 0) then begin
+                    NumScatole := NumScatole + 1;
+                    AppoScatole := AppoScatole + ';' + CodScatola;
+                end;
                 if RecAssignment.FindFirst() then begin
                     NrOrigine := RecAssignment."Source No.";
                     NrRigaOrigine := RecAssignment."Source Line No.";
@@ -84,4 +93,7 @@ reportextension 50051 "XV EOS055 Packing List - Print" extends "EOS055 Packing L
         LblOrdineVendita: Label 'Order';
         LblYourReference: Label 'Your Reference';
         LblCrossReference: Label 'Cross Reference';
+        LblNumScatole: Label 'Number of Boxes (Total)';
+        AppoScatole: Text;
+        NumScatole: Integer;
 }

@@ -72,6 +72,10 @@ page 50235 "XV Drawings Management Card"
                     CaptionML = ITA = 'Annullato';
                     ToolTip = 'Specifica se il disegno è annullato.';
                 }
+                field("Visibile al Portale Fornitori"; Rec."Visible Supplier Portal")
+                {
+                    CaptionML = ITA = 'Visibile al Portale Fornitori';
+                }
             }
 
             group(Audit)

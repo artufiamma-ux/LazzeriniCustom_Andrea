@@ -213,9 +213,10 @@ report 50231 "Custom Sales - Invoice"
             column(ShipmentMethodDescription_Lbl; ShptMethodDescLbl)
             {
             }
-            column(ShipmentDate; Format("Shipment Date", 0, '<Day,2>/<Month,2>/<Year4>'))
+            column(ShipmentDate; Format("Shipment Date", 0, '<Day,2>/<Month,2>/<Year4>') + ' ' + Format(OraDiPartenza, 0, '<Hours24,2>:<Minutes,2>'))
             {
             }
+
             column(ShipmentDate_Lbl; FieldCaption("Shipment Date"))
             {
             }
@@ -521,7 +522,7 @@ report 50231 "Custom Sales - Invoice"
             column(ShiptoName2; "Ship-to Name 2")
             {
             }
-            column(EORICode; Cust."EORI Number") { } //GetEORICode("Sell-to Customer No.")) { }
+            column(EORICode; Cust."Codice EORI") { } //GetEORICode("Sell-to Customer No.")) { }
             column(ACCOMPAGNATORIA; ACCOMPAGNATORIA) { }
             column(TipoDocumento; GetTipoDocumento(ACCOMPAGNATORIA, "Sell-to Country/Region Code")) { }
             column(TariffNo_lbl; GetCustomLabel('Tariff No.')) { }
@@ -563,7 +564,7 @@ report 50231 "Custom Sales - Invoice"
             column(DESC; GetCustomValue('the exported of the products covered by this doc declares, except where otherwise clearly indicate, these products are of italian origin.')) { }
             column(Firma; GetCustomValue('Lazzareni S.r.l Ufficio AMM.VO')) { }
             column(NrColli; GetNrColli("No.")) { Caption = 'Numero colli'; }
-            column(Freight; GetFreight("No.")) { Caption = 'Freight'; }
+            column(Freight; GetFreight("Reason Code")) { Caption = 'Freight'; }
             column(Forwarder; GetForwarder("Shipping Agent Code")) { Caption = 'Spedizioniere'; }
             column(XVPaymentTerms; XVUtil.GetPaymentTerms("Payment Terms Code", IsForeign)) { }
             column(XVPaymentMethod; XVUtil.GetPaymentMethod("Payment Method Code", IsForeign)) { }
@@ -575,7 +576,7 @@ report 50231 "Custom Sales - Invoice"
             column(XVQtyLbl; GetCustomLabel('Q.ty')) { }
             column(XVUnitPriceLbl; GetCustomLabel('Unit Price')) { }
             column(XVAmountItemLbl; GetCustomLabel('Amount')) { }
-            column(XVVatIdItemLbl; GetCustomLabel('VATId.')) { }
+            column(XVVatIdItemLbl; GetCustomLabel('VAT Id.')) { }
             column(XVGrossWeightLbl; GetCustomLabel('Gross Weight')) { }
             column(XVNetWeightLbl; GetCustomLabel('Net Weight')) { }
             column(XVCurrencyLbl; GetCustomLabel('Currency')) { }
@@ -611,6 +612,8 @@ report 50231 "Custom Sales - Invoice"
             column(GrossWeight; PesoLordo) { }
             column(NetWeight; PesoNetto) { }
             column(Packaging; AspettoDeiBeni) { }
+            column(TotaVatBase; VAT_BaseTotal) { }
+            column(TotalVatAmount; VAT_AmountTotal) { }
 
             dataitem(Line; "Sales Invoice Line")
             {
@@ -1172,6 +1175,7 @@ report 50231 "Custom Sales - Invoice"
                     NrColli := ShipInfo."Nr. Colli";
                     PesoNetto := ShipInfo."Peso Netto";
                     PesoLordo := ShipInfo."Peso Lordo";
+                    OraDiPartenza := ShipInfo."Ora di Partenza";
                 end
                 else begin
                     XVUtil.SetShipInfo(Header."No.");
@@ -1180,6 +1184,7 @@ report 50231 "Custom Sales - Invoice"
                         NrColli := ShipInfo."Nr. Colli";
                         PesoNetto := ShipInfo."Peso Netto";
                         PesoLordo := ShipInfo."Peso Lordo";
+                        OraDiPartenza := ShipInfo."Ora di Partenza";
                     end;
                 end;
                 IsForeign := Cust."Country/Region Code" <> 'IT';
@@ -1199,7 +1204,11 @@ report 50231 "Custom Sales - Invoice"
                         CurrSymbol := GeneralLedgerSetup.GetCurrencySymbol();
                     end;
                 CalculateVATTotals("No.");
+                VAT_AmountTotal := VAT_Amount1 + VAT_Amount2 + VAT_Amount3;
+                VAT_BaseTotal := VAT_Base1 + VAT_Base2 + VAT_Base3;
                 XVUtil.GetPostedPayments("No.", Header."Payment Method Code", PostedPayment, IsForeign);
+
+                if ShipmentMethod.Get(Header."Shipment Method Code") then;
             end;
 
             trigger OnPreDataItem()
@@ -1278,6 +1287,9 @@ report 50231 "Custom Sales - Invoice"
         VAT_Amount1: Decimal;
         VAT_Amount2: Decimal;
         VAT_Amount3: Decimal;
+
+        VAT_BaseTotal: Decimal;
+        VAT_AmountTotal: Decimal;
 
 
         DatScadenze1: Date;
@@ -1386,6 +1398,7 @@ report 50231 "Custom Sales - Invoice"
         PesoNetto: Decimal;
         PesoLordo: Decimal;
         AspettoDeiBeni: Text[100];
+        OraDiPartenza: Time;
 
     protected var
         XVUtil: Codeunit "XVUtil";
@@ -1624,13 +1637,15 @@ report 50231 "Custom Sales - Invoice"
         exit('');
     end;
 
-    local procedure GetFreight(DocumentNo: Code[20]): Text[100]
-    var
-        ReasonCode: Record "Reason Code";
+    local procedure GetFreight(ReasonCode: Code[10]): Text[100]
+    //    var        RecReasonCode: Record "Reason Code";
     begin
-        if ReasonCode.Get('231') then
-            exit(ReasonCode.Description);
+        exit('Vendita');
+        /*
+        if RecReasonCode.Get(ReasonCode) then
+            exit(RecReasonCode.Description);
         exit('');
+        */
     end;
 
     local procedure GetForwarder(ShippingAgentCode: Code[10]): Text[100]

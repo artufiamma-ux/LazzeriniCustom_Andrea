@@ -1,0 +1,41 @@
+{
+  "@odata.context": "https://api.businesscentral.dynamics.com/v2.0/46eaa442-6c85-4b20-aa51-d16e69a4c167/Lazzerini_coll/api/v2.0/$metadata#companies",
+  "value": [
+    {
+      "id": "e4cdf3f7-fcb9-f011-af5f-6045bdfdb768",
+      "systemVersion": "28.2.50931.52066",
+      "timestamp": 4383,
+      "name": "CRONUS IT",
+      "displayName": "",
+      "businessProfileId": "",
+      "systemCreatedAt": "2025-11-05T04:07:40.157Z",
+      "systemCreatedBy": "00000000-0000-0000-0000-000000000001",
+      "systemModifiedAt": "2025-11-05T04:07:40.157Z",
+      "systemModifiedBy": "00000000-0000-0000-0000-000000000001"
+    },
+    {
+      "id": "6da98184-a6c3-f011-bbd1-7c1e523692f4",
+      "systemVersion": "28.2.50931.52066",
+      "timestamp": 105478,
+      "name": "Lazzerini S.r.l.",
+      "displayName": "Lazzerini S.r.l.",
+      "businessProfileId": "",
+      "systemCreatedAt": "2025-11-17T11:14:01.37Z",
+      "systemCreatedBy": "0b305422-fa1e-4a49-912e-c4746541af3a",
+      "systemModifiedAt": "2025-11-17T11:14:01.37Z",
+      "systemModifiedBy": "0b305422-fa1e-4a49-912e-c4746541af3a"
+    },
+    {
+      "id": "278e2803-fdb9-f011-af5f-6045bdfdb768",
+      "systemVersion": "28.2.50931.52066",
+      "timestamp": 4384,
+      "name": "My Company",
+      "displayName": "",
+      "businessProfileId": "",
+      "systemCreatedAt": "2025-11-05T04:07:59.833Z",
+      "systemCreatedBy": "00000000-0000-0000-0000-000000000001",
+      "systemModifiedAt": "2025-11-05T04:07:59.833Z",
+      "systemModifiedBy": "00000000-0000-0000-0000-000000000001"
+    }
+  ]
+}

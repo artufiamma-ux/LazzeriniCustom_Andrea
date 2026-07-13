@@ -369,7 +369,7 @@ report 50234 "Custom Proforma - Invoice"
             column(VATRegistrationNo_Lbl; GetCustomerVATRegistrationNumberLbl())
             {
             }
-            column(SellToFaxNo; '') //GetSellToCustomerFaxNo()
+            column(SellToFaxNo; CompanyInfo."Fax No.") //GetSellToCustomerFaxNo()
             {
             }
             column(SellToPhoneNo; "Sell-to Phone No.")
@@ -541,8 +541,8 @@ report 50234 "Custom Proforma - Invoice"
             column(TotalAmountVAT; GetCustomValue('Total Amount VAT/Importo Totale Iva')) { }
             column(TotalAmountInclVAT; "TotalAmountInclVAT") { }
             column(SalesInvoiceHeader_CurrencyCode; GetCustomValue('SalesInvoiceHeader_CurrencyCode')) { }
-            column(CONAI; GetCustomValue('contributo CONAI assolto ove dovuto')) { }
-            column(DESC; GetCustomValue('the exported of the products covered by this doc declares, except where otherwise clearly indicate, these products are of italian origin.')) { }
+            column(CONAI; GetCustomValue('Contributo CONAI assolto ove dovuto')) { }
+            column(DESC; GetCustomValue('The exported of the products covered by this doc declares, except where otherwise clearly indicate, these products are of italian origin.')) { }
             column(Firma; GetCustomValue('Lazzareni S.r.l Ufficio AMM.VO')) { }
             column(Forwarder; GetForwarder("Shipping Agent Code")) { Caption = 'Spedizioniere'; }
             column(XVPaymentTerms; XVUtil.GetPaymentTerms("Payment Terms Code", IsForeign)) { }
@@ -591,7 +591,7 @@ report 50234 "Custom Proforma - Invoice"
             column(GrossWeight; PesoLordo) { }
             column(NetWeight; PesoNetto) { }
             column(Packaging; AspettoDeiBeni) { }
-            column(Freight; GetFreight("No.")) { Caption = 'Freight'; }
+            column(Freight; GetFreight("Reason Code")) { Caption = 'Freight'; }
 
             dataitem(Line; "Sales Line")
             {
@@ -1577,12 +1577,12 @@ report 50234 "Custom Proforma - Invoice"
         exit('');
     end;
 
-    local procedure GetFreight(DocumentNo: Code[20]): Text[100]
+    local procedure GetFreight(ReasonCode: Code[10]): Text[100]
     var
-        ReasonCode: Record "Reason Code";
+        RecReasonCode: Record "Reason Code";
     begin
-        if ReasonCode.Get('231') then
-            exit(ReasonCode.Description);
+        if RecReasonCode.Get(ReasonCode) then
+            exit(RecReasonCode.Description);
         exit('');
     end;
 

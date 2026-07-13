@@ -200,7 +200,11 @@ codeunit 50211 "Proforma Management"
         if IsValuta then PostedShipment."Cod valuta proforma" := NewSalesHeader."Currency Code";
         PostedShipment."Nr fattura proforma" := NewSalesHeader."No.";
         PostedShipment.Modify(true);
-        SetShipLinesInvoiced(PostedShipment."No.");
+        /* 
+        *  Le quantità vengono aggiornate nella spedizione e nell'ordine, 
+        *  in caso di Proforma per conto consociata non verranno più aggiornate
+        */
+        if NOT IsValuta then SetShipLinesInvoiced(PostedShipment."No.");
         Commit();
 
         //----------------------------------------------------

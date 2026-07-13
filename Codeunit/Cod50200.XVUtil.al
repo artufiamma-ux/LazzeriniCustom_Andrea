@@ -1,5 +1,6 @@
 namespace Xview.Custom.Lazzerini;
 using Microsoft.Inventory.Item;
+using Microsoft.Inventory.Tracking;
 using Microsoft.Sales.History;
 using Microsoft.Sales.Document;
 using Microsoft.Foundation.Address;
@@ -104,7 +105,7 @@ codeunit 50200 XVUtil
                     exit('Q.tà');
                 'Unit Price':
                     exit('Prezzo Unitario');
-                'VATId.':
+                'VAT Id.':
                     exit('Id IVA');
                 'Currency':
                     exit('Valuta');
@@ -245,7 +246,7 @@ codeunit 50200 XVUtil
         AspettoDeiBeni: Text[100];
         AspettoDeiBeniFK: Text[100];
         FK: Code[20];
-        TmpBox: Text[100];
+        TmpBox: Text;
     begin
         NrColli := 0;
         PesoNetto := 0;
@@ -343,11 +344,11 @@ codeunit 50200 XVUtil
                         end;
                         if NOT TmpBox.Contains(RecInfo."No.") then begin // solo le scatole fanno collo, non conto le scatole già contate
                             NrColli := NrColli + 1;
+                            if RecInfo."Parent Handling Unit No." = '' then begin // non ha padre, scatola singola
+                                PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
+                                PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
+                            end;
                             TmpBox += ' ; ' + RecInfo."No.";
-                        end;
-                        if RecAssignm."Handling Unit No." = '' then begin // non ha padre, scatola singola
-                            PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
-                            PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
                         end;
                     until RecAssignm.Next() = 0;
 
@@ -515,5 +516,20 @@ codeunit 50200 XVUtil
                 end;
             until RecShipmentLine.Next() = 0;
     end;
+
+    procedure GetPosizioneLayout(ItemNo: Code[20]; OrderNo: Code[20]): Code[20]
+    var
+        SalesLine: Record "Sales Line";
+    begin
+        if (OrderNo = '') OR (ItemNo = '') then
+            exit('');
+        SalesLine.SetRange("Document Type", SalesLine."Document Type"::Order);
+        SalesLine.SetRange("Document No.", OrderNo);
+        SalesLine.SetRange("No.", ItemNo);
+        if SalesLine.FindFirst() then
+            exit(SalesLine."xv Posizione Layout");
+        exit('');
+    end;
+
 }
 

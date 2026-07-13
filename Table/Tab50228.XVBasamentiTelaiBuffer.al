@@ -1,8 +1,9 @@
-table 50228 "XV Labels Basamenti Telai"
+namespace Xview.Custom.Lazzerini;
+table 50228 "XV Basamenti Telai Buffer"
 {
-    Caption = 'XV Labels Basamenti Telai';
+    Caption = 'XV Basamenti Telai Buffer';
     DataClassification = CustomerContent;
-    
+
     fields
     {
         field(1; "Progressivo Kit Bus"; Integer)
@@ -32,7 +33,7 @@ table 50228 "XV Labels Basamenti Telai"
     }
     keys
     {
-        key(PK; "Progressivo Kit Bus","Posizione Layout")
+        key(PK; "Progressivo Kit Bus", "Posizione Layout")
         {
             Clustered = true;
         }

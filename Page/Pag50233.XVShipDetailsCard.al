@@ -1,7 +1,7 @@
 page 50233 "XV Ship Details Card"
 {
     ApplicationArea = All;
-    Caption = 'XV Ship Details Card';
+    Caption = 'Modifica Dettagli - Colli e Pesi';
     PageType = StandardDialog;
     SourceTable = "XV Posted Invoice Ship Info";
 
@@ -21,6 +21,7 @@ page 50233 "XV Ship Details Card"
                 field("Peso Netto"; Rec."Peso Netto") { }
                 field("Peso Lordo"; Rec."Peso Lordo") { }
                 field("Aspetto Beni"; Rec."Aspetto Beni") { }
+                field("Ora di partenza"; Rec."Ora di partenza") { }
             }
         }
     }

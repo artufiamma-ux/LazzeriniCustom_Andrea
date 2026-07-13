@@ -49,12 +49,12 @@ table 50226 "XV Drawings Management"
             DataClassification = CustomerContent;
         }
 
-        field(6; "Description"; Text[100])
+        field(6; "Description"; Text[500])
         {
             DataClassification = CustomerContent;
         }
 
-        field(7; "Component Description"; Text[100])
+        field(7; "Component Description"; Text[500])
         {
             DataClassification = CustomerContent;
         }

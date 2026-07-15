@@ -20,7 +20,7 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
             field("Numero Totale Serie"; Rec."Numero Totale Serie")
             {
                 ApplicationArea = All;
-                Editable = IsAperto;
+                //Editable = IsAperto;
             }
             field("Numero Totale Pallet"; Rec."Numero Totale Pallet")
             {

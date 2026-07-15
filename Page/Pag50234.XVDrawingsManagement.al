@@ -36,9 +36,9 @@ page 50234 "XV Drawings Management"
                 {
                     CaptionML = ITA = 'Descrizione';
                 }
-                field("Descrizione Componente"; Rec."Component Description")
+                field("Descrizione Esponente"; Rec."Component Description")
                 {
-                    CaptionML = ITA = 'Descrizione Componente';
+                    CaptionML = ITA = 'Descrizione Esponente';
                 }
                 field("Modello"; Rec."Model")
                 {

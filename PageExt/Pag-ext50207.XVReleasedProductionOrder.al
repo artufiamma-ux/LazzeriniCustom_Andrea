@@ -69,20 +69,24 @@ pageextension 50207 "XV Released Prod Orders Ext" extends "Released Production O
     {
         addlast(Warehouse)
         {
-            action(EtichetteBasamenti)
+            action(StampaBasamentiTelai)
             {
-                Caption = 'Etichette Basamenti - Telai';
                 ApplicationArea = All;
-                Image = DebugNext;
+                Caption = 'Etichette Basamenti e Telai';
+                ToolTip = 'STAMPA ETICHETTE BASAMENTI E TELAI';
+                Image = Print;
                 Promoted = true;
                 PromotedCategory = Process;
 
+
                 trigger OnAction()
                 var
-                    Report50202: Report "XV Etichette UDC";
+                    BasamentiTelaiReport: Report "XV Etichette Basamenti Telai";
+
                 begin
-                    // Esegue il report
-                    Report50202.Run();
+                    BasamentiTelaiReport.SetParameters(Rec);
+                    //                    BasamentiTelaiReport.SetTableView(Rec);
+                    BasamentiTelaiReport.Run();
                 end;
             }
         }

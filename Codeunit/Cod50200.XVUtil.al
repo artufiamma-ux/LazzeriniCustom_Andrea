@@ -531,5 +531,19 @@ codeunit 50200 XVUtil
         exit('');
     end;
 
+    procedure GetItemReference(ItemNo: Code[20]; OrderNo: Code[20]): Code[20]
+    var
+        SalesLine: Record "Sales Line";
+    begin
+        if (OrderNo = '') OR (ItemNo = '') then
+            exit('');
+        SalesLine.SetRange("Document Type", SalesLine."Document Type"::Order);
+        SalesLine.SetRange("Document No.", OrderNo);
+        SalesLine.SetRange("No.", ItemNo);
+        if SalesLine.FindFirst() then
+            exit(SalesLine."Item Reference No.");
+        exit('');
+    end;
+
 }
 

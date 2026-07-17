@@ -72,8 +72,8 @@ report 50236 "XV Item Journal"
                 RecProOrdLine: Record "Prod. Order Line";
                 RecSalesHeader: Record "Sales Header";
                 BarcodeString: Text;
-                BarcodeSymbology: Enum "Barcode Symbology";
-                BarcodeFontProvider: Interface "Barcode Font Provider";
+                BarcodeSymbology: Enum System.Text."Barcode Symbology";
+                BarcodeFontProvider: Interface System.Text."Barcode Font Provider";
                 CodOrdVen: Code[20];
 
             begin
@@ -113,7 +113,7 @@ report 50236 "XV Item Journal"
                     // Declare the barcode provider using the barcode provider interface and enum
                     BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
                     // Declare the font using the barcode symbology enum
-                    BarcodeSymbology := Enum::"Barcode Symbology"::"Code39";
+                    BarcodeSymbology := Enum::System.Text."Barcode Symbology"::Code39;
                     // Set data string source
                     BarcodeString := CodArticolo;
                     // Validate the input. This method is not available for 2D provider

@@ -77,7 +77,7 @@ report 50235 "XV Colli Di Spedizione"
                 trigger OnAfterGetRecord()
                 var
                     BarcodeString: Text;
-                    BarcodeSymbology: Enum "Barcode Symbology";
+                    BarcodeSymbology: Enum System.Text."Barcode Symbology";
                     BarcodeFontProvider: Interface "Barcode Font Provider";
                     HUA: Record "EOS055 Handling Unit Assignm.";
 
@@ -86,7 +86,7 @@ report 50235 "XV Colli Di Spedizione"
                     BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
 
                     // Declare the font using the barcode symbology enum
-                    BarcodeSymbology := Enum::"Barcode Symbology"::"Code39";
+                    BarcodeSymbology := Enum::System.Text."Barcode Symbology"::"Code39";
 
                     // Set data string source
                     BarcodeString := "No.";

@@ -86,16 +86,4 @@ report 50202 "XV Etichette UDC"
         NrCopieUDC: Integer;
         NrPallettAccessori: Integer;
         DescrPallettAccessori: Text[100];
-
-    local procedure GenerateBarcode(BarcodeString: Text): Text
-    var
-        BarcodeSymbology: Enum "Barcode Symbology";
-        BarcodeFontProvider: Interface "Barcode Font Provider";
-    begin
-        BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
-        BarcodeSymbology := Enum::"Barcode Symbology"::Code39;
-
-        BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
-        exit(BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology));
-    end;
 }

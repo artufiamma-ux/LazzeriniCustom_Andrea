@@ -214,6 +214,11 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
         }
 
     }
+    trigger OnNewRecord(BelowxRec: Boolean)
+    begin
+        if Rec."Location Code" = '' then
+            Rec.Validate("Location Code", 'M01');
+    end;
 
     trigger OnAfterGetRecord()
     begin

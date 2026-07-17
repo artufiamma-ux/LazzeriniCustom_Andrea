@@ -31,15 +31,15 @@ reportextension 50237 "XV ProdOrderJobCard" extends "EOS 07000 MES ProdOrderJobC
             trigger OnAfterAfterGetRecord()
             var
                 BarcodeString: Text;
-                BarcodeSymbology: Enum "Barcode Symbology";
-                BarcodeFontProvider: Interface "Barcode Font Provider";
+                BarcodeSymbology: Enum System.Text."Barcode Symbology";
+                BarcodeFontProvider: Interface System.Text."Barcode Font Provider";
 
             begin
                 // Declare the barcode provider using the barcode provider interface and enum
                 BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
 
                 // Declare the font using the barcode symbology enum
-                BarcodeSymbology := Enum::"Barcode Symbology"::"Code39";
+                BarcodeSymbology := Enum::System.Text."Barcode Symbology"::"Code39";
 
                 // Set data string source
                 BarcodeString := "Item No.";

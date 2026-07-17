@@ -8,6 +8,26 @@ pageextension 50241 "XV Warehouse Receipt" extends "Warehouse Receipt"
     {
         addlast(Processing)
         {
+            action(StampaEtichettaColli)
+            {
+                ApplicationArea = All;
+                Caption = 'Etichetta Colli Carico';
+                ToolTip = 'STAMPA ETICHETTA OLLI CARICO';
+                Image = BinContent;
+                Promoted = true;
+                PromotedCategory = Process;
+
+
+                trigger OnAction()
+                var
+                    WCPLabelReport: Report "XV Colli Carico";
+                    Rep: Integer;
+                begin
+                    WCPLabelReport.SetParameters(Rec."No.");
+                    //                    WCPLabelReport.SetTableView(Rec);
+                    WCPLabelReport.Run();
+                end;
+            }
             action(StampaEtichettaWCP)
             {
                 ApplicationArea = All;

@@ -1,3 +1,4 @@
+namespace Xview.Custom.Lazzerini;
 page 50233 "XV Ship Details Card"
 {
     ApplicationArea = All;
@@ -29,5 +30,14 @@ page 50233 "XV Ship Details Card"
     trigger OnModifyRecord(): Boolean
     begin
         Rec."Modificato manualmente" := true;
+    end;
+
+    trigger OnOpenPage()
+    var
+        Prefisso: Text;
+    begin
+        Prefisso := Rec."Invoice No.";
+        if Evaluate(Prefisso, 'FVPF', 4) then;
+        //Message('PROFORMA');
     end;
 }

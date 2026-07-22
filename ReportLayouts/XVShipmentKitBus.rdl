@@ -9,7 +9,7 @@
       <am:Name>SSDTRS</am:Name>
       <am:Version>17.14.36915.13</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-07-17T08:04:29.3287621Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-07-21T11:48:14.8455731Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -22,454 +22,27 @@
       <rd:DataSourceID>ab7d6634-f1d9-4da7-8d3c-8dd2db855786</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="EOSDocNo">
-          <DataField>EOSDocNo</DataField>
-        </Field>
-        <Field Name="TipoDocumento">
-          <DataField>TipoDocumento</DataField>
-        </Field>
-        <Field Name="CompanyAddress1">
-          <DataField>CompanyAddress1</DataField>
-        </Field>
-        <Field Name="CompanyAddress2">
-          <DataField>CompanyAddress2</DataField>
-        </Field>
-        <Field Name="CompanyAddress3">
-          <DataField>CompanyAddress3</DataField>
-        </Field>
-        <Field Name="CompanyAddress4">
-          <DataField>CompanyAddress4</DataField>
-        </Field>
-        <Field Name="CompanyAddress5">
-          <DataField>CompanyAddress5</DataField>
-        </Field>
-        <Field Name="CompanyAddress6">
-          <DataField>CompanyAddress6</DataField>
-        </Field>
-        <Field Name="CompanyAddress7">
-          <DataField>CompanyAddress7</DataField>
-        </Field>
-        <Field Name="CompanyAddress8">
-          <DataField>CompanyAddress8</DataField>
-        </Field>
-        <Field Name="CompanyHomePage">
-          <DataField>CompanyHomePage</DataField>
-        </Field>
-        <Field Name="CompanyEMail">
-          <DataField>CompanyEMail</DataField>
-        </Field>
-        <Field Name="CompanyPicture">
-          <DataField>CompanyPicture</DataField>
-        </Field>
-        <Field Name="CompanyPhoneNo">
-          <DataField>CompanyPhoneNo</DataField>
-        </Field>
-        <Field Name="CompanyPhoneNo_Lbl">
-          <DataField>CompanyPhoneNo_Lbl</DataField>
-        </Field>
-        <Field Name="CompanyCountry">
-          <DataField>CompanyCountry</DataField>
-        </Field>
-        <Field Name="InvoiceTo1">
-          <DataField>InvoiceTo1</DataField>
-        </Field>
-        <Field Name="InvoiceTo2">
-          <DataField>InvoiceTo2</DataField>
-        </Field>
-        <Field Name="InvoiceTo3">
-          <DataField>InvoiceTo3</DataField>
-        </Field>
-        <Field Name="InvoiceTo4">
-          <DataField>InvoiceTo4</DataField>
-        </Field>
-        <Field Name="InvoiceTo5">
-          <DataField>InvoiceTo5</DataField>
-        </Field>
-        <Field Name="CustomerAddress1">
-          <DataField>CustomerAddress1</DataField>
-        </Field>
-        <Field Name="CustomerAddress2">
-          <DataField>CustomerAddress2</DataField>
-        </Field>
-        <Field Name="CustomerAddress3">
-          <DataField>CustomerAddress3</DataField>
-        </Field>
-        <Field Name="CustomerAddress4">
-          <DataField>CustomerAddress4</DataField>
-        </Field>
-        <Field Name="CustomerAddress5">
-          <DataField>CustomerAddress5</DataField>
-        </Field>
-        <Field Name="CustomerAddress6">
-          <DataField>CustomerAddress6</DataField>
-        </Field>
-        <Field Name="CustomerAddress7">
-          <DataField>CustomerAddress7</DataField>
-        </Field>
-        <Field Name="CustomerAddress8">
-          <DataField>CustomerAddress8</DataField>
-        </Field>
-        <Field Name="CustomerPostalBarCode">
-          <DataField>CustomerPostalBarCode</DataField>
-        </Field>
-        <Field Name="DocumentNo">
-          <DataField>DocumentNo</DataField>
-        </Field>
-        <Field Name="BillPaytoAddress">
-          <DataField>BillPaytoAddress</DataField>
-        </Field>
-        <Field Name="BillPaytoAddress2">
-          <DataField>BillPaytoAddress2</DataField>
-        </Field>
-        <Field Name="BillPaytoCity">
-          <DataField>BillPaytoCity</DataField>
-        </Field>
-        <Field Name="BillPaytoContact">
-          <DataField>BillPaytoContact</DataField>
-        </Field>
-        <Field Name="BillPaytoContactNo">
-          <DataField>BillPaytoContactNo</DataField>
-        </Field>
-        <Field Name="BillPaytoCounty">
-          <DataField>BillPaytoCounty</DataField>
-        </Field>
-        <Field Name="BillPaytoName">
-          <DataField>BillPaytoName</DataField>
-        </Field>
-        <Field Name="BillPaytoName2">
-          <DataField>BillPaytoName2</DataField>
-        </Field>
-        <Field Name="BillPaytoPostCode">
-          <DataField>BillPaytoPostCode</DataField>
-        </Field>
-        <Field Name="Customer_Id">
-          <DataField>Customer_Id</DataField>
-        </Field>
-        <Field Name="CustomerVatNo">
-          <DataField>CustomerVatNo</DataField>
-        </Field>
-        <Field Name="CustomerPhoneNo">
-          <DataField>CustomerPhoneNo</DataField>
-        </Field>
-        <Field Name="Comment">
-          <DataField>Comment</DataField>
-        </Field>
-        <Field Name="DocumentDate">
-          <DataField>DocumentDate</DataField>
-        </Field>
-        <Field Name="ExternalDocumentNo">
-          <DataField>ExternalDocumentNo</DataField>
-        </Field>
-        <Field Name="LanguageCode">
-          <DataField>LanguageCode</DataField>
-        </Field>
-        <Field Name="LocationCode">
-          <DataField>LocationCode</DataField>
-        </Field>
-        <Field Name="No">
-          <DataField>No</DataField>
-        </Field>
-        <Field Name="NoPrinted">
-          <DataField>NoPrinted</DataField>
-        </Field>
-        <Field Name="NoSeries">
-          <DataField>NoSeries</DataField>
-        </Field>
-        <Field Name="Packaging">
-          <DataField>Packaging</DataField>
-        </Field>
-        <Field Name="FreightType">
-          <DataField>FreightType</DataField>
-        </Field>
-        <Field Name="PostingDate">
-          <DataField>PostingDate</DataField>
-        </Field>
-        <Field Name="PostingDescription">
-          <DataField>PostingDescription</DataField>
-        </Field>
-        <Field Name="ReasonCode">
-          <DataField>ReasonCode</DataField>
-        </Field>
-        <Field Name="ReasonDescription">
-          <DataField>ReasonDescription</DataField>
-        </Field>
-        <Field Name="ResponsibilityCenter">
-          <DataField>ResponsibilityCenter</DataField>
-        </Field>
-        <Field Name="SalespersonCode">
-          <DataField>SalespersonCode</DataField>
-        </Field>
-        <Field Name="ShiptoAddress">
-          <DataField>ShiptoAddress</DataField>
-        </Field>
-        <Field Name="ShiptoAddress2">
-          <DataField>ShiptoAddress2</DataField>
-        </Field>
-        <Field Name="ShiptoCity">
-          <DataField>ShiptoCity</DataField>
-        </Field>
-        <Field Name="ShiptoCode">
-          <DataField>ShiptoCode</DataField>
-        </Field>
-        <Field Name="ShiptoContact">
-          <DataField>ShiptoContact</DataField>
-        </Field>
-        <Field Name="ShiptoCountryRegionCode">
-          <DataField>ShiptoCountryRegionCode</DataField>
-        </Field>
-        <Field Name="ShiptoCountry">
-          <DataField>ShiptoCountry</DataField>
-        </Field>
-        <Field Name="ShiptoName">
-          <DataField>ShiptoName</DataField>
-        </Field>
-        <Field Name="ShiptoName2">
-          <DataField>ShiptoName2</DataField>
-        </Field>
-        <Field Name="ShiptoPostCode">
-          <DataField>ShiptoPostCode</DataField>
-        </Field>
-        <Field Name="ShipmentDate">
-          <DataField>ShipmentDate</DataField>
-        </Field>
-        <Field Name="ShipmentMethodCode">
-          <DataField>ShipmentMethodCode</DataField>
-        </Field>
-        <Field Name="ShipmentMethodDescription">
-          <DataField>ShipmentMethodDescription</DataField>
-        </Field>
-        <Field Name="ShippingAgentCode">
-          <DataField>ShippingAgentCode</DataField>
-        </Field>
-        <Field Name="ShippingAgentServiceCode">
-          <DataField>ShippingAgentServiceCode</DataField>
-        </Field>
-        <Field Name="AdditionalNotes">
-          <DataField>AdditionalNotes</DataField>
-        </Field>
-        <Field Name="Forwarder">
-          <DataField>Forwarder</DataField>
-        </Field>
-        <Field Name="NrPackages">
-          <DataField>NrPackages</DataField>
-        </Field>
-        <Field Name="GrossWeight">
-          <DataField>GrossWeight</DataField>
-        </Field>
-        <Field Name="NetWeight">
-          <DataField>NetWeight</DataField>
-        </Field>
-        <Field Name="EOSShippingStartingDateTime">
-          <DataField>EOSShippingStartingDateTime</DataField>
-        </Field>
-        <Field Name="EOSNrShip">
-          <DataField>EOSNrShip</DataField>
-        </Field>
-        <Field Name="PiePag1_Lbl">
-          <DataField>PiePag1_Lbl</DataField>
-        </Field>
-        <Field Name="PiePag2_Lbl">
-          <DataField>PiePag2_Lbl</DataField>
-        </Field>
-        <Field Name="EORICode">
-          <DataField>EORICode</DataField>
-        </Field>
-        <Field Name="XVOrderNoLbl">
-          <DataField>XVOrderNoLbl</DataField>
-        </Field>
-        <Field Name="XVOurCodeLbl">
-          <DataField>XVOurCodeLbl</DataField>
-        </Field>
-        <Field Name="XVCustomCodeLbl">
-          <DataField>XVCustomCodeLbl</DataField>
-        </Field>
-        <Field Name="XVDescItemLbl">
-          <DataField>XVDescItemLbl</DataField>
-        </Field>
-        <Field Name="XVUomLbl">
-          <DataField>XVUomLbl</DataField>
-        </Field>
-        <Field Name="XVQtyLbl">
-          <DataField>XVQtyLbl</DataField>
-        </Field>
-        <Field Name="XVUnitPriceLbl">
-          <DataField>XVUnitPriceLbl</DataField>
-        </Field>
-        <Field Name="XVAmountItemLbl">
-          <DataField>XVAmountItemLbl</DataField>
-        </Field>
-        <Field Name="XVVatIdItemLbl">
-          <DataField>XVVatIdItemLbl</DataField>
-        </Field>
-        <Field Name="XVGrossWeightLbl">
-          <DataField>XVGrossWeightLbl</DataField>
-        </Field>
-        <Field Name="XVNetWeightLbl">
-          <DataField>XVNetWeightLbl</DataField>
-        </Field>
-        <Field Name="XVCurrencyLbl">
-          <DataField>XVCurrencyLbl</DataField>
-        </Field>
-        <Field Name="XVDeliveryTermsLbl">
-          <DataField>XVDeliveryTermsLbl</DataField>
-        </Field>
-        <Field Name="XVFreightLbl">
-          <DataField>XVFreightLbl</DataField>
-        </Field>
-        <Field Name="XVShipTimeLbl">
-          <DataField>XVShipTimeLbl</DataField>
-        </Field>
-        <Field Name="XVForwarderLbl">
-          <DataField>XVForwarderLbl</DataField>
-        </Field>
-        <Field Name="XVTotVatBaseLbl">
-          <DataField>XVTotVatBaseLbl</DataField>
-        </Field>
-        <Field Name="XVVatTotalLbl">
-          <DataField>XVVatTotalLbl</DataField>
-        </Field>
-        <Field Name="XVSignForwarderLbl">
-          <DataField>XVSignForwarderLbl</DataField>
-        </Field>
-        <Field Name="XVSignDriverLbl">
-          <DataField>XVSignDriverLbl</DataField>
-        </Field>
-        <Field Name="XVSignConsigneeLbl">
-          <DataField>XVSignConsigneeLbl</DataField>
-        </Field>
-        <Field Name="XVParcNoLbl">
-          <DataField>XVParcNoLbl</DataField>
-        </Field>
-        <Field Name="XVCustomerIdLbl">
-          <DataField>XVCustomerIdLbl</DataField>
-        </Field>
-        <Field Name="XVPaymentTermsLbl">
-          <DataField>XVPaymentTermsLbl</DataField>
-        </Field>
-        <Field Name="XVBankAccountLbl">
-          <DataField>XVBankAccountLbl</DataField>
-        </Field>
-        <Field Name="XVPackagingLbl">
-          <DataField>XVPackagingLbl</DataField>
-        </Field>
-        <Field Name="XVEORILbl">
-          <DataField>XVEORILbl</DataField>
-        </Field>
-        <Field Name="XVTotalAmountLbl">
-          <DataField>XVTotalAmountLbl</DataField>
-        </Field>
-        <Field Name="XVNotesLbl">
-          <DataField>XVNotesLbl</DataField>
-        </Field>
-        <Field Name="XVDeliveryLbl">
-          <DataField>XVDeliveryLbl</DataField>
-        </Field>
-        <Field Name="XVInvoiceToLbl">
-          <DataField>XVInvoiceToLbl</DataField>
-        </Field>
-        <Field Name="XVVatPercItemLbl">
-          <DataField>XVVatPercItemLbl</DataField>
-        </Field>
-        <Field Name="XVDeliveryDateLbl">
-          <DataField>XVDeliveryDateLbl</DataField>
-        </Field>
-        <Field Name="XVVatNoLbl">
-          <DataField>XVVatNoLbl</DataField>
-        </Field>
-        <Field Name="XVTelephoneNoLbl">
-          <DataField>XVTelephoneNoLbl</DataField>
-        </Field>
-        <Field Name="XVDeliveryNoteNoLbl">
-          <DataField>XVDeliveryNoteNoLbl</DataField>
-        </Field>
-        <Field Name="XVDNDateLbl">
-          <DataField>XVDNDateLbl</DataField>
-        </Field>
-        <Field Name="XVDeliveryReasonLbl">
-          <DataField>XVDeliveryReasonLbl</DataField>
-        </Field>
-        <Field Name="XVShipmentProvidedBy">
-          <DataField>XVShipmentProvidedBy</DataField>
-        </Field>
-        <Field Name="XVDateAndTimeLbl">
-          <DataField>XVDateAndTimeLbl</DataField>
-        </Field>
-        <Field Name="XVDriverSSignatureLbl">
-          <DataField>XVDriverSSignatureLbl</DataField>
-        </Field>
-        <Field Name="XVAddresseeSSignatureLbl">
-          <DataField>XVAddresseeSSignatureLbl</DataField>
-        </Field>
-        <Field Name="XVPaymentTerms">
-          <DataField>XVPaymentTerms</DataField>
-        </Field>
-        <Field Name="IsKitBus">
-          <DataField>IsKitBus</DataField>
-        </Field>
-        <Field Name="LineNo">
-          <DataField>LineNo</DataField>
-        </Field>
-        <Field Name="Item_No">
-          <DataField>Item_No</DataField>
-        </Field>
-        <Field Name="Item_Reference_No">
-          <DataField>Item_Reference_No</DataField>
-        </Field>
-        <Field Name="Description">
-          <DataField>Description</DataField>
-        </Field>
-        <Field Name="Description_Line_Lbl">
-          <DataField>Description_Line_Lbl</DataField>
-        </Field>
-        <Field Name="Quantity">
-          <DataField>Quantity</DataField>
-        </Field>
-        <Field Name="UnitOfMeasure">
-          <DataField>UnitOfMeasure</DataField>
-        </Field>
-        <Field Name="Kit_Bus_Desc">
-          <DataField>Kit_Bus_Desc</DataField>
-        </Field>
-        <Field Name="xv_Kit_Bus">
-          <DataField>xv_Kit_Bus</DataField>
-        </Field>
-        <Field Name="xv_Progressivo_Kit_Bus">
-          <DataField>xv_Progressivo_Kit_Bus</DataField>
-        </Field>
-        <Field Name="Shipment_Date">
-          <DataField>Shipment_Date</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
         <ReportItems>
-          <Tablix Name="TabDettaglio">
+          <Tablix Name="Tablix1">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.99844in</Width>
+                  <Width>1.03148in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.85419in</Width>
+                  <Width>0.88744in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.37893in</Width>
+                  <Width>4.3625in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.75506in</Width>
+                  <Width>0.75in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.69543in</Width>
+                  <Width>0.65169in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -478,14 +51,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox15">
+                        <Textbox Name="Kit_Bus2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Max(Fields!xv_Kit_Bus.Value, "DataSet_Result")</Value>
+                                  <Value>=Fields!ItemNo_Line.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -495,176 +68,10 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <rd:DefaultName>Kit_Bus1</rd:DefaultName>
                           <Style>
                             <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BackgroundColor>Yellow</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox111">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox111</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox20">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Max(Fields!Kit_Bus_Desc.Value)</Value>
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox19</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BackgroundColor>Yellow</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox113">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox113</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox114">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox114</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.25in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="ItemNo_Line">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Fields!Item_No.Value</Value>
-                                  <Style>
-                                    <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>ItemNo_Line</rd:DefaultName>
-                          <Style>
-                            <Border>
+                              <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -684,7 +91,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Item_Reference_No.Value</Value>
+                                  <Value>=Fields!ItemReferenceNo_Line.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -697,6 +104,7 @@
                           <rd:DefaultName>ItemReferenceNo_Line</rd:DefaultName>
                           <Style>
                             <Border>
+                              <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -716,11 +124,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Description.Value</Value>
+                                  <Value>=Fields!Description_Line.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>8pt</FontSize>
-                                    <FontWeight>=IIF((Fields!xv_Progressivo_Kit_Bus.Value = 0 And Fields!IsKitBus.Value = True),"Bold","Normal")</FontWeight>
+                                    <FontWeight>=IIF(((Fields!Progressivo_Kit_Bus.Value = 0 And Fields!IsKitBus.Value = True) Or (IsNothing(Fields!ItemReferenceNo_Line.Value) Or Fields!ItemReferenceNo_Line.Value = "")),"Bold","Normal")</FontWeight>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -730,6 +138,7 @@
                           <rd:DefaultName>Description_Line</rd:DefaultName>
                           <Style>
                             <Border>
+                              <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -781,7 +190,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIf(Fields!Quantity.Value &gt; 0, Fields!Quantity.Value, " ")</Value>
+                                  <Value>=IIf(Fields!Quantity_Line.Value &gt; 0, Fields!Quantity_Line.Value, " ")</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -810,168 +219,14 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox107">
+                        <Textbox Name="Kit_Bus1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox107</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox108">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox108</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox109">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox109</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="FraseTariff">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox71">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox71</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                            <BackgroundColor>Aqua</BackgroundColor>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.25in</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox13">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>=Max(Fields!xv_Kit_Bus.Value, "DataSet_Result")</Value>
+                                  <Value>=Fields!Kit_Bus.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -981,9 +236,10 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox13</rd:DefaultName>
+                          <rd:DefaultName>Kit_Bus1</rd:DefaultName>
                           <Style>
                             <Border>
+                              <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -996,7 +252,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox23">
+                        <Textbox Name="Textbox47">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1013,9 +269,10 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox23</rd:DefaultName>
+                          <rd:DefaultName>Textbox47</rd:DefaultName>
                           <Style>
                             <Border>
+                              <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -1028,14 +285,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox19">
+                        <Textbox Name="Kit_Bus_Desc">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Max(Fields!Kit_Bus_Desc.Value)</Value>
+                                  <Value>=Fields!Kit_Bus_Desc.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -1045,9 +302,10 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox19</rd:DefaultName>
+                          <rd:DefaultName>Kit_Bus_Desc</rd:DefaultName>
                           <Style>
                             <Border>
+                              <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -1060,7 +318,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox25">
+                        <Textbox Name="Textbox51">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -1077,9 +335,10 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox25</rd:DefaultName>
+                          <rd:DefaultName>Textbox51</rd:DefaultName>
                           <Style>
                             <Border>
+                              <Color>LightGrey</Color>
                               <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
@@ -1099,7 +358,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIF(CountDistinct(Fields!xv_Progressivo_Kit_Bus.Value) = 0, "", CountDistinct(Fields!xv_Progressivo_Kit_Bus.Value))</Value>
+                                  <Value>=IIF(CountDistinct(Fields!Progressivo_Kit_Bus.Value) = 0, "", CountDistinct(Fields!Progressivo_Kit_Bus.Value))</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -1138,62 +397,37 @@
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="DocumentNo">
+                  <Group Name="Kit_Bus">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!DocumentNo.Value</GroupExpression>
+                      <GroupExpression>=Fields!Kit_Bus.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!DocumentNo.Value</Value>
+                      <Value>=Fields!Kit_Bus.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <TablixMembers>
                     <TablixMember>
-                      <KeepWithGroup>After</KeepWithGroup>
-                    </TablixMember>
-                    <TablixMember>
-                      <Group Name="xv_Kit_Bus">
-                        <GroupExpressions>
-                          <GroupExpression>=Fields!xv_Kit_Bus.Value</GroupExpression>
-                        </GroupExpressions>
-                      </Group>
-                      <SortExpressions>
-                        <SortExpression>
-                          <Value>=Fields!xv_Kit_Bus.Value</Value>
-                        </SortExpression>
-                      </SortExpressions>
-                      <TablixMembers>
-                        <TablixMember>
-                          <Group Name="Dettagli" />
-                        </TablixMember>
-                      </TablixMembers>
+                      <Group Name="Dettagli" />
                       <Visibility>
-                        <Hidden>=(Fields!xv_Progressivo_Kit_Bus.Value &gt; 0 And Fields!IsKitBus.Value) Or (Not Fields!LineNo.Value &gt; 0) OR (1=2)</Hidden>
+                        <Hidden>=(Fields!Progressivo_Kit_Bus.Value &gt; 0 And Fields!IsKitBus.Value) Or (Not Fields!LineNo_Line.Value &gt; 0)</Hidden>
                       </Visibility>
                     </TablixMember>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>true</Hidden>
+                        <Hidden>=Not Fields!IsKitBus.Value</Hidden>
                       </Visibility>
                       <KeepWithGroup>Before</KeepWithGroup>
                     </TablixMember>
                   </TablixMembers>
                 </TablixMember>
-                <TablixMember>
-                  <Visibility>
-                    <Hidden>=Not Fields!IsKitBus.Value</Hidden>
-                  </Visibility>
-                </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <RepeatColumnHeaders>true</RepeatColumnHeaders>
-            <RepeatRowHeaders>true</RepeatRowHeaders>
             <DataSetName>DataSet_Result</DataSetName>
-            <Top>0.23731cm</Top>
-            <Left>0.23279in</Left>
-            <Height>1in</Height>
-            <Width>7.68205in</Width>
+            <Left>0.15933in</Left>
+            <Height>0.5in</Height>
+            <Width>7.6831in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1841,7 +1075,7 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox1</rd:DefaultName>
-                      <Top>0.03207cm</Top>
+                      <Top>0.01069cm</Top>
                       <Height>0.635cm</Height>
                       <Width>2.54cm</Width>
                       <ZIndex>6</ZIndex>
@@ -3210,8 +2444,8 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <Top>2.46041cm</Top>
-                      <Left>14.12052cm</Left>
+                      <Top>2.45003cm</Top>
+                      <Left>14.10356cm</Left>
                       <Height>0.99496cm</Height>
                       <Width>5.1947cm</Width>
                       <ZIndex>8</ZIndex>
@@ -3726,6 +2960,7 @@
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Segoe UI</FontFamily>
                                 <FontSize>7pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -3734,8 +2969,8 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <Top>3.48027cm</Top>
-                      <Left>14.23685cm</Left>
+                      <Top>3.46954cm</Top>
+                      <Left>14.22247cm</Left>
                       <Height>0.31976cm</Height>
                       <Width>5.1428cm</Width>
                       <ZIndex>23</ZIndex>
@@ -3926,12 +3161,6 @@
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>
 		Public Function BlankZero(ByVal Value As Decimal)
 		if Value = 0 then
@@ -3972,4 +3201,431 @@
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>0eeb6585-38ae-40f1-885b-8d50088d51b4</rd:ReportID>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="EOSDocNo">
+          <DataField>EOSDocNo</DataField>
+        </Field>
+        <Field Name="TipoDocumento">
+          <DataField>TipoDocumento</DataField>
+        </Field>
+        <Field Name="CompanyAddress1">
+          <DataField>CompanyAddress1</DataField>
+        </Field>
+        <Field Name="CompanyAddress2">
+          <DataField>CompanyAddress2</DataField>
+        </Field>
+        <Field Name="CompanyAddress3">
+          <DataField>CompanyAddress3</DataField>
+        </Field>
+        <Field Name="CompanyAddress4">
+          <DataField>CompanyAddress4</DataField>
+        </Field>
+        <Field Name="CompanyAddress5">
+          <DataField>CompanyAddress5</DataField>
+        </Field>
+        <Field Name="CompanyAddress6">
+          <DataField>CompanyAddress6</DataField>
+        </Field>
+        <Field Name="CompanyAddress7">
+          <DataField>CompanyAddress7</DataField>
+        </Field>
+        <Field Name="CompanyAddress8">
+          <DataField>CompanyAddress8</DataField>
+        </Field>
+        <Field Name="CompanyHomePage">
+          <DataField>CompanyHomePage</DataField>
+        </Field>
+        <Field Name="CompanyEMail">
+          <DataField>CompanyEMail</DataField>
+        </Field>
+        <Field Name="CompanyPicture">
+          <DataField>CompanyPicture</DataField>
+        </Field>
+        <Field Name="CompanyPhoneNo">
+          <DataField>CompanyPhoneNo</DataField>
+        </Field>
+        <Field Name="CompanyPhoneNo_Lbl">
+          <DataField>CompanyPhoneNo_Lbl</DataField>
+        </Field>
+        <Field Name="CompanyCountry">
+          <DataField>CompanyCountry</DataField>
+        </Field>
+        <Field Name="InvoiceTo1">
+          <DataField>InvoiceTo1</DataField>
+        </Field>
+        <Field Name="InvoiceTo2">
+          <DataField>InvoiceTo2</DataField>
+        </Field>
+        <Field Name="InvoiceTo3">
+          <DataField>InvoiceTo3</DataField>
+        </Field>
+        <Field Name="InvoiceTo4">
+          <DataField>InvoiceTo4</DataField>
+        </Field>
+        <Field Name="InvoiceTo5">
+          <DataField>InvoiceTo5</DataField>
+        </Field>
+        <Field Name="CustomerAddress1">
+          <DataField>CustomerAddress1</DataField>
+        </Field>
+        <Field Name="CustomerAddress2">
+          <DataField>CustomerAddress2</DataField>
+        </Field>
+        <Field Name="CustomerAddress3">
+          <DataField>CustomerAddress3</DataField>
+        </Field>
+        <Field Name="CustomerAddress4">
+          <DataField>CustomerAddress4</DataField>
+        </Field>
+        <Field Name="CustomerAddress5">
+          <DataField>CustomerAddress5</DataField>
+        </Field>
+        <Field Name="CustomerAddress6">
+          <DataField>CustomerAddress6</DataField>
+        </Field>
+        <Field Name="CustomerAddress7">
+          <DataField>CustomerAddress7</DataField>
+        </Field>
+        <Field Name="CustomerAddress8">
+          <DataField>CustomerAddress8</DataField>
+        </Field>
+        <Field Name="CustomerPostalBarCode">
+          <DataField>CustomerPostalBarCode</DataField>
+        </Field>
+        <Field Name="DocumentNo">
+          <DataField>DocumentNo</DataField>
+        </Field>
+        <Field Name="BillPaytoAddress">
+          <DataField>BillPaytoAddress</DataField>
+        </Field>
+        <Field Name="BillPaytoAddress2">
+          <DataField>BillPaytoAddress2</DataField>
+        </Field>
+        <Field Name="BillPaytoCity">
+          <DataField>BillPaytoCity</DataField>
+        </Field>
+        <Field Name="BillPaytoContact">
+          <DataField>BillPaytoContact</DataField>
+        </Field>
+        <Field Name="BillPaytoContactNo">
+          <DataField>BillPaytoContactNo</DataField>
+        </Field>
+        <Field Name="BillPaytoCounty">
+          <DataField>BillPaytoCounty</DataField>
+        </Field>
+        <Field Name="BillPaytoName">
+          <DataField>BillPaytoName</DataField>
+        </Field>
+        <Field Name="BillPaytoName2">
+          <DataField>BillPaytoName2</DataField>
+        </Field>
+        <Field Name="BillPaytoPostCode">
+          <DataField>BillPaytoPostCode</DataField>
+        </Field>
+        <Field Name="Customer_Id">
+          <DataField>Customer_Id</DataField>
+        </Field>
+        <Field Name="CustomerVatNo">
+          <DataField>CustomerVatNo</DataField>
+        </Field>
+        <Field Name="CustomerPhoneNo">
+          <DataField>CustomerPhoneNo</DataField>
+        </Field>
+        <Field Name="Comment">
+          <DataField>Comment</DataField>
+        </Field>
+        <Field Name="DocumentDate">
+          <DataField>DocumentDate</DataField>
+        </Field>
+        <Field Name="ExternalDocumentNo">
+          <DataField>ExternalDocumentNo</DataField>
+        </Field>
+        <Field Name="LanguageCode">
+          <DataField>LanguageCode</DataField>
+        </Field>
+        <Field Name="LocationCode">
+          <DataField>LocationCode</DataField>
+        </Field>
+        <Field Name="No">
+          <DataField>No</DataField>
+        </Field>
+        <Field Name="NoPrinted">
+          <DataField>NoPrinted</DataField>
+        </Field>
+        <Field Name="NoSeries">
+          <DataField>NoSeries</DataField>
+        </Field>
+        <Field Name="Packaging">
+          <DataField>Packaging</DataField>
+        </Field>
+        <Field Name="FreightType">
+          <DataField>FreightType</DataField>
+        </Field>
+        <Field Name="PostingDate">
+          <DataField>PostingDate</DataField>
+        </Field>
+        <Field Name="PostingDescription">
+          <DataField>PostingDescription</DataField>
+        </Field>
+        <Field Name="ReasonCode">
+          <DataField>ReasonCode</DataField>
+        </Field>
+        <Field Name="ReasonDescription">
+          <DataField>ReasonDescription</DataField>
+        </Field>
+        <Field Name="ResponsibilityCenter">
+          <DataField>ResponsibilityCenter</DataField>
+        </Field>
+        <Field Name="SalespersonCode">
+          <DataField>SalespersonCode</DataField>
+        </Field>
+        <Field Name="ShiptoAddress">
+          <DataField>ShiptoAddress</DataField>
+        </Field>
+        <Field Name="ShiptoAddress2">
+          <DataField>ShiptoAddress2</DataField>
+        </Field>
+        <Field Name="ShiptoCity">
+          <DataField>ShiptoCity</DataField>
+        </Field>
+        <Field Name="ShiptoCode">
+          <DataField>ShiptoCode</DataField>
+        </Field>
+        <Field Name="ShiptoContact">
+          <DataField>ShiptoContact</DataField>
+        </Field>
+        <Field Name="ShiptoCountryRegionCode">
+          <DataField>ShiptoCountryRegionCode</DataField>
+        </Field>
+        <Field Name="ShiptoCountry">
+          <DataField>ShiptoCountry</DataField>
+        </Field>
+        <Field Name="ShiptoName">
+          <DataField>ShiptoName</DataField>
+        </Field>
+        <Field Name="ShiptoName2">
+          <DataField>ShiptoName2</DataField>
+        </Field>
+        <Field Name="ShiptoPostCode">
+          <DataField>ShiptoPostCode</DataField>
+        </Field>
+        <Field Name="ShipmentDate">
+          <DataField>ShipmentDate</DataField>
+        </Field>
+        <Field Name="ShipmentMethodCode">
+          <DataField>ShipmentMethodCode</DataField>
+        </Field>
+        <Field Name="ShipmentMethodDescription">
+          <DataField>ShipmentMethodDescription</DataField>
+        </Field>
+        <Field Name="ShippingAgentCode">
+          <DataField>ShippingAgentCode</DataField>
+        </Field>
+        <Field Name="ShippingAgentServiceCode">
+          <DataField>ShippingAgentServiceCode</DataField>
+        </Field>
+        <Field Name="AdditionalNotes">
+          <DataField>AdditionalNotes</DataField>
+        </Field>
+        <Field Name="Forwarder">
+          <DataField>Forwarder</DataField>
+        </Field>
+        <Field Name="NrPackages">
+          <DataField>NrPackages</DataField>
+        </Field>
+        <Field Name="GrossWeight">
+          <DataField>GrossWeight</DataField>
+        </Field>
+        <Field Name="NetWeight">
+          <DataField>NetWeight</DataField>
+        </Field>
+        <Field Name="EOSShippingStartingDateTime">
+          <DataField>EOSShippingStartingDateTime</DataField>
+        </Field>
+        <Field Name="EOSNrShip">
+          <DataField>EOSNrShip</DataField>
+        </Field>
+        <Field Name="PiePag1_Lbl">
+          <DataField>PiePag1_Lbl</DataField>
+        </Field>
+        <Field Name="PiePag2_Lbl">
+          <DataField>PiePag2_Lbl</DataField>
+        </Field>
+        <Field Name="EORICode">
+          <DataField>EORICode</DataField>
+        </Field>
+        <Field Name="XVOrderNoLbl">
+          <DataField>XVOrderNoLbl</DataField>
+        </Field>
+        <Field Name="XVOurCodeLbl">
+          <DataField>XVOurCodeLbl</DataField>
+        </Field>
+        <Field Name="XVCustomCodeLbl">
+          <DataField>XVCustomCodeLbl</DataField>
+        </Field>
+        <Field Name="XVDescItemLbl">
+          <DataField>XVDescItemLbl</DataField>
+        </Field>
+        <Field Name="XVUomLbl">
+          <DataField>XVUomLbl</DataField>
+        </Field>
+        <Field Name="XVQtyLbl">
+          <DataField>XVQtyLbl</DataField>
+        </Field>
+        <Field Name="XVUnitPriceLbl">
+          <DataField>XVUnitPriceLbl</DataField>
+        </Field>
+        <Field Name="XVAmountItemLbl">
+          <DataField>XVAmountItemLbl</DataField>
+        </Field>
+        <Field Name="XVVatIdItemLbl">
+          <DataField>XVVatIdItemLbl</DataField>
+        </Field>
+        <Field Name="XVGrossWeightLbl">
+          <DataField>XVGrossWeightLbl</DataField>
+        </Field>
+        <Field Name="XVNetWeightLbl">
+          <DataField>XVNetWeightLbl</DataField>
+        </Field>
+        <Field Name="XVCurrencyLbl">
+          <DataField>XVCurrencyLbl</DataField>
+        </Field>
+        <Field Name="XVDeliveryTermsLbl">
+          <DataField>XVDeliveryTermsLbl</DataField>
+        </Field>
+        <Field Name="XVFreightLbl">
+          <DataField>XVFreightLbl</DataField>
+        </Field>
+        <Field Name="XVShipTimeLbl">
+          <DataField>XVShipTimeLbl</DataField>
+        </Field>
+        <Field Name="XVForwarderLbl">
+          <DataField>XVForwarderLbl</DataField>
+        </Field>
+        <Field Name="XVTotVatBaseLbl">
+          <DataField>XVTotVatBaseLbl</DataField>
+        </Field>
+        <Field Name="XVVatTotalLbl">
+          <DataField>XVVatTotalLbl</DataField>
+        </Field>
+        <Field Name="XVSignForwarderLbl">
+          <DataField>XVSignForwarderLbl</DataField>
+        </Field>
+        <Field Name="XVSignDriverLbl">
+          <DataField>XVSignDriverLbl</DataField>
+        </Field>
+        <Field Name="XVSignConsigneeLbl">
+          <DataField>XVSignConsigneeLbl</DataField>
+        </Field>
+        <Field Name="XVParcNoLbl">
+          <DataField>XVParcNoLbl</DataField>
+        </Field>
+        <Field Name="XVCustomerIdLbl">
+          <DataField>XVCustomerIdLbl</DataField>
+        </Field>
+        <Field Name="XVPaymentTermsLbl">
+          <DataField>XVPaymentTermsLbl</DataField>
+        </Field>
+        <Field Name="XVBankAccountLbl">
+          <DataField>XVBankAccountLbl</DataField>
+        </Field>
+        <Field Name="XVPackagingLbl">
+          <DataField>XVPackagingLbl</DataField>
+        </Field>
+        <Field Name="XVEORILbl">
+          <DataField>XVEORILbl</DataField>
+        </Field>
+        <Field Name="XVTotalAmountLbl">
+          <DataField>XVTotalAmountLbl</DataField>
+        </Field>
+        <Field Name="XVNotesLbl">
+          <DataField>XVNotesLbl</DataField>
+        </Field>
+        <Field Name="XVDeliveryLbl">
+          <DataField>XVDeliveryLbl</DataField>
+        </Field>
+        <Field Name="XVInvoiceToLbl">
+          <DataField>XVInvoiceToLbl</DataField>
+        </Field>
+        <Field Name="XVVatPercItemLbl">
+          <DataField>XVVatPercItemLbl</DataField>
+        </Field>
+        <Field Name="XVDeliveryDateLbl">
+          <DataField>XVDeliveryDateLbl</DataField>
+        </Field>
+        <Field Name="XVVatNoLbl">
+          <DataField>XVVatNoLbl</DataField>
+        </Field>
+        <Field Name="XVTelephoneNoLbl">
+          <DataField>XVTelephoneNoLbl</DataField>
+        </Field>
+        <Field Name="XVDeliveryNoteNoLbl">
+          <DataField>XVDeliveryNoteNoLbl</DataField>
+        </Field>
+        <Field Name="XVDNDateLbl">
+          <DataField>XVDNDateLbl</DataField>
+        </Field>
+        <Field Name="XVDeliveryReasonLbl">
+          <DataField>XVDeliveryReasonLbl</DataField>
+        </Field>
+        <Field Name="XVShipmentProvidedBy">
+          <DataField>XVShipmentProvidedBy</DataField>
+        </Field>
+        <Field Name="XVDateAndTimeLbl">
+          <DataField>XVDateAndTimeLbl</DataField>
+        </Field>
+        <Field Name="XVDriverSSignatureLbl">
+          <DataField>XVDriverSSignatureLbl</DataField>
+        </Field>
+        <Field Name="XVAddresseeSSignatureLbl">
+          <DataField>XVAddresseeSSignatureLbl</DataField>
+        </Field>
+        <Field Name="XVPaymentTerms">
+          <DataField>XVPaymentTerms</DataField>
+        </Field>
+        <Field Name="IsKitBus">
+          <DataField>IsKitBus</DataField>
+        </Field>
+        <Field Name="LineNo_Line">
+          <DataField>LineNo_Line</DataField>
+        </Field>
+        <Field Name="ItemNo_Line">
+          <DataField>ItemNo_Line</DataField>
+        </Field>
+        <Field Name="ItemReferenceNo_Line">
+          <DataField>ItemReferenceNo_Line</DataField>
+        </Field>
+        <Field Name="Description_Line">
+          <DataField>Description_Line</DataField>
+        </Field>
+        <Field Name="Description_Line_Lbl">
+          <DataField>Description_Line_Lbl</DataField>
+        </Field>
+        <Field Name="Quantity_Line">
+          <DataField>Quantity_Line</DataField>
+        </Field>
+        <Field Name="UnitOfMeasure">
+          <DataField>UnitOfMeasure</DataField>
+        </Field>
+        <Field Name="Kit_Bus_Desc">
+          <DataField>Kit_Bus_Desc</DataField>
+        </Field>
+        <Field Name="Kit_Bus">
+          <DataField>Kit_Bus</DataField>
+        </Field>
+        <Field Name="Progressivo_Kit_Bus">
+          <DataField>Progressivo_Kit_Bus</DataField>
+        </Field>
+        <Field Name="Shipment_Date">
+          <DataField>Shipment_Date</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

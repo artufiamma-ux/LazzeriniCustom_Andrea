@@ -26,6 +26,19 @@ pageextension 50208 "XV Posted Sales Shipment Ext" extends "Posted Sales Shipmen
                 ApplicationArea = All;
             }
         }
+        addlast("Shipping")
+        {
+            group(ShipDetailsXV)
+            {
+                Caption = 'Informazioni di spedizione';
+
+                field("Nr. Colli"; NrColli) { ApplicationArea = All; Editable = false; }
+                field("Peso Netto"; PesoNetto) { ApplicationArea = All; Editable = false; }
+                field("Peso Lordo"; PesoLordo) { ApplicationArea = All; Editable = false; }
+                field("Aspetto dei beni"; AspettoDeiBeni) { ApplicationArea = All; Editable = false; }
+                field("Ora di partenza"; OraPartenza) { ApplicationArea = All; Editable = false; }
+            }
+        }
     }
     actions
     {
@@ -51,6 +64,21 @@ pageextension 50208 "XV Posted Sales Shipment Ext" extends "Posted Sales Shipmen
                     SalesInvoiceReport.Run();
                 end;
             }
+            action(UpdShipInfo)
+            {
+                ApplicationArea = All;
+                Caption = 'Informazioni di Spedizione';
+                ToolTip = 'Aggiorna Informazioni di Spedizione Ora di partenza, Pesi e Nr Colli.';
+                Image = Print;
+                Promoted = true;
+                PromotedCategory = Process;
+
+
+                trigger OnAction()
+                begin
+                    Page.RunModal(Page::"XV Ship Details Card", ShipInfo);
+                end;
+            }
 
             action(CreaProforma)
             {
@@ -74,6 +102,41 @@ pageextension 50208 "XV Posted Sales Shipment Ext" extends "Posted Sales Shipmen
 
     var
         IsProformaEnabled: Boolean;
+        NrColli: Integer;
+        PesoNetto: Decimal;
+        PesoLordo: Decimal;
+        AspettoDeiBeni: Text[100];
+        ShipInfo: Record "XV Posted Invoice Ship Info";
+        OraPartenza: Time;
+
+    trigger OnAfterGetCurrRecord()
+    var
+        XVUtil: Codeunit "XVUtil";
+    begin
+        if ShipInfo.Get(Rec."No.") then begin
+            if ShipInfo."Nr. Colli" = 0 then begin
+                ShipInfo.Delete();
+                XVUtil.SetShipInfo(Rec."No.");
+                if ShipInfo.Get(Rec."No.") then;
+            end;
+            AspettoDeiBeni := ShipInfo."Aspetto Beni";
+            NrColli := ShipInfo."Nr. Colli";
+            PesoNetto := ShipInfo."Peso Netto";
+            PesoLordo := ShipInfo."Peso Lordo";
+            OraPartenza := ShipInfo."Ora di partenza";
+        end
+        else begin
+            XVUtil.SetShipInfo(Rec."No.");
+            if ShipInfo.Get(Rec."No.") then begin
+                AspettoDeiBeni := ShipInfo."Aspetto Beni";
+                NrColli := ShipInfo."Nr. Colli";
+                PesoNetto := ShipInfo."Peso Netto";
+                PesoLordo := ShipInfo."Peso Lordo";
+                OraPartenza := ShipInfo."Ora di partenza";
+            end;
+        end;
+
+    end;
 
     trigger OnAfterGetRecord()
     begin

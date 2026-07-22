@@ -296,23 +296,26 @@ report 50233 "XV Custom Sales - Shipment"
             {
                 DataItemLink = "Document No." = field("No.");
                 DataItemLinkReference = Header;
-                DataItemTableView = sorting("Document No.", "Line No.");
-                column(LineNo; "Line No.")
+                DataItemTableView = sorting("Document No.", "Line No.");// WHERE(Quantity = FILTER(> 0));
+
+
+                column(LineNo_Line;
+                "Line No.")
                 {
                 }
-                column(Item_No; "No.")
+                column(ItemNo_Line; "No.")
                 {
                 }
-                column(Item_Reference_No; "Item Reference No.")
+                column(ItemReferenceNo_Line; "Item Reference No.")
                 {
                 }
-                column(Description; Description)
+                column(Description_Line; Description)
                 {
                 }
                 column(Description_Line_Lbl; FieldCaption(Description))
                 {
                 }
-                column(Quantity; Format(Quantity, 0, 4))
+                column(Quantity_Line; Format(Quantity, 0, 4))
                 {
                 }
                 column(UnitOfMeasure; GetUOMText("Unit of Measure Code"))
@@ -321,8 +324,8 @@ report 50233 "XV Custom Sales - Shipment"
                 column(Kit_Bus_Desc; XVUtil.GetKitBusDescription("xv Kit Bus", "Description"))
                 {
                 }
-                column(xv_Kit_Bus; "xv Kit Bus") { }
-                column(xv_Progressivo_Kit_Bus; "xv Progressivo Kit Bus") { }
+                column(Kit_Bus; "xv Kit Bus") { }
+                column(Progressivo_Kit_Bus; "xv Progressivo Kit Bus") { }
                 column(Shipment_Date; "Shipment Date") { }
 
             }

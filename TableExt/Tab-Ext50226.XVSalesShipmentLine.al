@@ -44,4 +44,12 @@ tableextension 50226 "XV Sales Shipment Line" extends "Sales Shipment Line"
 
     }
 
+    keys
+    {
+        key("xv Kit Bus"; "xv Kit Bus")
+        {
+        }
+        key("xv Progressivo Kit Bus"; "xv Progressivo Kit Bus") { }
+    }
+
 }

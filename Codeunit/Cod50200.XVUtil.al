@@ -247,7 +247,10 @@ codeunit 50200 XVUtil
         AspettoDeiBeniFK: Text[100];
         FK: Code[20];
         TmpBox: Text;
+        Pallets: List of [Code[20]];
+        WarehouseShipmentNo: Code[20];
     begin
+        WarehouseShipmentNo := '';
         NrColli := 0;
         PesoNetto := 0;
         PesoLordo := 0;
@@ -255,11 +258,19 @@ codeunit 50200 XVUtil
         AspettoDeiBeni := '';
         RecAssignm.Reset();
         RecAssignm.SetRange("Source No.", DocNo);
+
         if RecAssignm.FindSet() then
             repeat
-                repeat
-                    if RecInfo.Get(RecAssignm."Handling Unit No.") then begin // prendo il padre
-                        FK := RecInfo."Parent Handling Unit No.";
+                if RecInfo.Get(RecAssignm."Handling Unit No.") then begin // prendo il padre
+                    FK := RecInfo."Parent Handling Unit No.";
+                    if FK = '' then begin // Scatola senza pallet
+                        FK := RecInfo."No."; // Metto la scatola
+                        if NOT TmpBox.Contains(FK) then begin
+                            TmpBox += ' ; ' + FK;
+                            PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
+                            PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
+                        end;
+                    end else begin
                         if NOT TmpBox.Contains(FK) then begin
                             TmpBox += ' ; ' + FK;
                             if RecInfoFK.Get(FK) then begin
@@ -268,16 +279,36 @@ codeunit 50200 XVUtil
                             end;
                         end;
                     end;
-                    if NOT TmpBox.Contains(RecInfo."No.") then begin // solo le scatole fanno collo, non conto le scatole già contate
-                        NrColli := NrColli + 1;
-                        TmpBox += ' ; ' + RecInfo."No.";
-                    end;
-                    if RecAssignm."Handling Unit No." = '' then begin // non ha padre, scatola singola
-                        PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
-                        PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
-                    end;
-                until RecAssignm.Next() = 0;
+                end;
+                if NOT TmpBox.Contains(RecInfo."No.") then begin // solo le scatole fanno collo, non conto le scatole già contate
+                    NrColli := NrColli + 1;
+                    TmpBox += ' ; ' + RecInfo."No.";
+                    if (RecInfo."Warehouse Shipment No." <> '') AND (WarehouseShipmentNo = '') then
+                        WarehouseShipmentNo := RecInfo."Warehouse Shipment No.";
+                end;
+                if RecAssignm."Handling Unit No." = '' then begin // non ha padre, scatola singola
+                    PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
+                    PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
+                end;
             until RecAssignm.Next() = 0;
+        // Aggiungo i padestal non conteggiati
+        if WarehouseShipmentNo <> '' then begin
+            RecInfo.Reset();
+            RecInfo.SetRange("Warehouse Shipment No.", WarehouseShipmentNo);
+            Recinfo.SetFilter("Packaging Material No.", '=%1', 'PADESTAL');
+            if RecInfo.FindSet() then
+                repeat
+                    FK := RecInfo."No.";
+                    if NOT TmpBox.Contains(FK) then begin // solo le scatole fanno collo, non conto le scatole già contate
+                        NrColli := NrColli + 1;
+                        TmpBox += ' ; ' + FK;
+                        if (RecInfo."Parent Handling Unit No." = '') then begin // se il padestal è sfuso aggiungo il peso, quello netto dovrebbe essere zero
+                            PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
+                            PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
+                        end;
+                    end;
+                until RecInfo.Next() = 0;
+        end;
         info[1] := Format(NrColli);
         info[2] := Format(PesoNetto);
         info[3] := Format(PesoLordo);
@@ -303,8 +334,7 @@ codeunit 50200 XVUtil
         RecAssignm: Record "EOS055 Handling Unit Assignm.";//70491906
         RecInfo: Record "EOS055 Handling Unit"; // scatola
         RecInfoFK: Record "EOS055 Handling Unit"; //pallet
-        RecSalesInvoiceHeader: Record "Sales Invoice Header";
-        RecSalesInvoiceLine: Record "Sales Invoice Line";
+        RecLine: Record "Sales Invoice Line";
         //       RecSalesShipmentLine : Record "Sales Shipment Line";
         ShipNo: Code[20];
         ShipLine: Integer;
@@ -322,23 +352,32 @@ codeunit 50200 XVUtil
         PesoLordo := 0;
         AspettoDeiBeniFK := '';
         AspettoDeiBeni := '';
-        RecSalesInvoiceLine.Reset();
-        RecSalesInvoiceLine.SetRange("Document No.", DocNo);
-        RecSalesInvoiceLine.SetFilter("Shipment Line No.", '>0');
-        if RecSalesInvoiceLine.FindSet() then
+        RecLine.Reset();
+        RecLine.SetRange("Document No.", DocNo);
+        RecLine.SetFilter("Shipment Line No.", '>0');
+        if RecLine.FindSet() then
             repeat
                 RecAssignm.Reset();
-                RecAssignm.SetRange("Source No.", RecSalesInvoiceLine."Shipment No.");
-                RecAssignm.SetRange("Source Line No.", RecSalesInvoiceLine."Shipment Line No.");
+                RecAssignm.SetRange("Source No.", RecLine."Shipment No.");
+                RecAssignm.SetRange("Source Line No.", RecLine."Shipment Line No.");
                 if RecAssignm.FindSet() then
                     repeat
                         if RecInfo.Get(RecAssignm."Handling Unit No.") then begin // prendo il padre
                             FK := RecInfo."Parent Handling Unit No.";
-                            if NOT TmpBox.Contains(FK) then begin
-                                TmpBox += ' ; ' + FK;
-                                if RecInfoFK.Get(FK) then begin
-                                    PesoNetto := PesoNetto + RecInfoFK."Calc. Net Weight";
-                                    PesoLordo := PesoLordo + RecInfoFK."Calc. Gross Weight";
+                            if FK = '' then begin // Scatola senza pallet
+                                FK := RecInfo."No."; // Metto la scatola
+                                if NOT TmpBox.Contains(FK) then begin
+                                    TmpBox += ' ; ' + FK;
+                                    PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
+                                    PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
+                                end;
+                            end else begin
+                                if NOT TmpBox.Contains(FK) then begin
+                                    TmpBox += ' ; ' + FK;
+                                    if RecInfoFK.Get(FK) then begin
+                                        PesoNetto := PesoNetto + RecInfoFK."Calc. Net Weight";
+                                        PesoLordo := PesoLordo + RecInfoFK."Calc. Gross Weight";
+                                    end;
                                 end;
                             end;
                         end;
@@ -352,7 +391,163 @@ codeunit 50200 XVUtil
                         end;
                     until RecAssignm.Next() = 0;
 
-            until RecSalesInvoiceLine.Next() = 0;
+            until RecLine.Next() = 0;
+        info[1] := Format(NrColli);
+        info[2] := Format(PesoNetto);
+        info[3] := Format(PesoLordo);
+        info[4] := 'BOX';
+        /* DA ATTIVARE QUANDO VORRANNO UNA DESCRIZIONE PUNTUALE
+        if AspettoDeiBeniFK = '' then
+            info[4] := AspettoDeiBeni
+        else if IsForeign then
+            info[4] := AspettoDeiBeniFK + ' AND ' + AspettoDeiBeni
+        else
+            info[4] := AspettoDeiBeniFK + ' E ' + AspettoDeiBeni
+        */
+
+    end;
+
+    procedure GetInfoPackagingProforma(DocNo: Code[20]; var info: array[4] of Text[100]; IsForeign: Boolean)
+    var
+        RecAssignm: Record "EOS055 Handling Unit Assignm.";//70491906
+        RecInfo: Record "EOS055 Handling Unit"; // scatola
+        RecInfoFK: Record "EOS055 Handling Unit"; //pallet
+        RecProformaHeader: Record "Sales Header";
+
+        //       RecSalesShipmentLine : Record "Sales Shipment Line";
+        ShipNo: Code[20];
+        ShipLine: Integer;
+
+        NrColli: Integer;
+        PesoNetto: Decimal;
+        PesoLordo: Decimal;
+        AspettoDeiBeni: Text;
+        AspettoDeiBeniFK: Text;
+        FK: Code[20];
+        TmpBox: Text;
+    begin
+        NrColli := 0;
+        PesoNetto := 0;
+        PesoLordo := 0;
+        AspettoDeiBeniFK := '';
+        AspettoDeiBeni := '';
+        RecProformaHeader.SetRange("No.", DocNo);
+        if RecProformaHeader.FindFirst() then begin
+            RecAssignm.Reset();
+            RecAssignm.SetRange("Source No.", RecProformaHeader."XV Proforma Source");
+
+            if RecAssignm.FindSet() then
+                repeat
+                    if RecInfo.Get(RecAssignm."Handling Unit No.") then begin // prendo il padre
+                        FK := RecInfo."Parent Handling Unit No.";
+                        if FK = '' then begin // Scatola senza pallet
+                            FK := RecInfo."No."; // Metto la scatola
+                            if NOT TmpBox.Contains(FK) then begin
+                                NrColli := NrColli + 1;
+                                TmpBox += ' ; ' + FK;
+                                PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
+                                PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
+                            end;
+                        end else begin
+                            if NOT TmpBox.Contains(FK) then begin
+                                TmpBox += ' ; ' + FK;
+                                if RecInfoFK.Get(FK) then begin
+                                    PesoNetto := PesoNetto + RecInfoFK."Calc. Net Weight";
+                                    PesoLordo := PesoLordo + RecInfoFK."Calc. Gross Weight";
+                                end;
+                            end;
+                        end;
+                    end;
+                    if NOT TmpBox.Contains(RecInfo."No.") then begin //scatole nel pallett solo le scatole fanno collo, non conto le scatole già contate
+                        NrColli := NrColli + 1;
+                        if RecInfo."Parent Handling Unit No." = '' then begin // non ha padre, scatola singola
+                            PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
+                            PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
+                        end;
+                        TmpBox += ' ; ' + RecInfo."No.";
+                    end;
+                until RecAssignm.Next() = 0;
+
+
+        end;
+
+        info[1] := Format(NrColli);
+        info[2] := Format(PesoNetto);
+        info[3] := Format(PesoLordo);
+        info[4] := 'BOX';
+        /* DA ATTIVARE QUANDO VORRANNO UNA DESCRIZIONE PUNTUALE
+        if AspettoDeiBeniFK = '' then
+            info[4] := AspettoDeiBeni
+        else if IsForeign then
+            info[4] := AspettoDeiBeniFK + ' AND ' + AspettoDeiBeni
+        else
+            info[4] := AspettoDeiBeniFK + ' E ' + AspettoDeiBeni
+        */
+
+    end;
+
+    procedure GetInfoPackagingSpedizione(DocNo: Code[20]; var info: array[4] of Text[100]; IsForeign: Boolean)
+    var
+        RecAssignm: Record "EOS055 Handling Unit Assignm.";//70491906
+        RecInfo: Record "EOS055 Handling Unit"; // scatola
+        RecInfoFK: Record "EOS055 Handling Unit"; //pallet
+        RecProformaHeader: Record "Sales Header";
+
+        //       RecSalesShipmentLine : Record "Sales Shipment Line";
+        ShipNo: Code[20];
+        ShipLine: Integer;
+
+        NrColli: Integer;
+        PesoNetto: Decimal;
+        PesoLordo: Decimal;
+        AspettoDeiBeni: Text;
+        AspettoDeiBeniFK: Text;
+        FK: Code[20];
+        TmpBox: Text;
+    begin
+        NrColli := 0;
+        PesoNetto := 0;
+        PesoLordo := 0;
+        AspettoDeiBeniFK := '';
+        AspettoDeiBeni := '';
+        RecAssignm.Reset();
+        RecAssignm.SetRange("Source No.", DocNo);
+
+        if RecAssignm.FindSet() then
+            repeat
+                if RecInfo.Get(RecAssignm."Handling Unit No.") then begin // prendo il padre
+                    FK := RecInfo."Parent Handling Unit No.";
+                    if FK = '' then begin // Scatola senza pallet
+                        FK := RecInfo."No."; // Metto la scatola
+                        if NOT TmpBox.Contains(FK) then begin
+                            NrColli := NrColli + 1;
+                            TmpBox += ' ; ' + FK;
+                            PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
+                            PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
+                        end;
+                    end else begin
+                        if NOT TmpBox.Contains(FK) then begin
+                            TmpBox += ' ; ' + FK;
+                            if RecInfoFK.Get(FK) then begin
+                                PesoNetto := PesoNetto + RecInfoFK."Calc. Net Weight";
+                                PesoLordo := PesoLordo + RecInfoFK."Calc. Gross Weight";
+                            end;
+                        end;
+                    end;
+                end;
+                if NOT TmpBox.Contains(RecInfo."No.") then begin //scatole nel pallett solo le scatole fanno collo, non conto le scatole già contate
+                    NrColli := NrColli + 1;
+                    if RecInfo."Parent Handling Unit No." = '' then begin // non ha padre, scatola singola
+                        PesoNetto := PesoNetto + RecInfo."Calc. Net Weight";
+                        PesoLordo := PesoLordo + RecInfo."Calc. Gross Weight";
+                    end;
+                    TmpBox += ' ; ' + RecInfo."No.";
+                end;
+            until RecAssignm.Next() = 0;
+
+
+
+
         info[1] := Format(NrColli);
         info[2] := Format(PesoNetto);
         info[3] := Format(PesoLordo);
@@ -375,8 +570,14 @@ codeunit 50200 XVUtil
         TInt: Integer;
         TDec: Decimal;
         ShipInfo: Record "XV Posted Invoice Ship Info";
+        CheckNo: Text;
     begin
-        XUtil.GetInfoPackagingInvoice(SalesInvoiceHeaderNo, info, false);
+        if CopyStr(SalesInvoiceHeaderNo, 1, 4) = 'FVPF' then
+            XUtil.GetInfoPackagingProforma(SalesInvoiceHeaderNo, info, false)
+        else if CopyStr(SalesInvoiceHeaderNo, 1, 3) = 'FV2' then
+            XUtil.GetInfoPackagingInvoice(SalesInvoiceHeaderNo, info, false)
+        else if CopyStr(SalesInvoiceHeaderNo, 1, 4) = 'DDTP' then
+            XUtil.GetInfoPackagingSpedizione(SalesInvoiceHeaderNo, info, false);
 
 
         if not ShipInfo.Get(SalesInvoiceHeaderNo) then begin

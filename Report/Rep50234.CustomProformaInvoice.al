@@ -542,8 +542,8 @@ report 50234 "Custom Proforma - Invoice"
             column(TotalAmountInclVAT; "TotalAmountInclVAT") { }
             column(SalesInvoiceHeader_CurrencyCode; GetCustomValue('SalesInvoiceHeader_CurrencyCode')) { }
             column(CONAI; GetCustomValue('Contributo CONAI assolto ove dovuto')) { }
-            column(DESC; GetCustomValue('The exported of the products covered by this doc declares, except where otherwise clearly indicate, these products are of italian origin.')) { }
-            column(Firma; GetCustomValue('Lazzareni S.r.l Ufficio AMM.VO')) { }
+            column(DESC; GetCustomValue('The exporter of the products covered by this doc (Custon authorisation nr) declares that, except where otherwise clearly indicated, these product are of E.C.C. origin.')) { }
+            column(Firma; GetCustomValue('Lazzareni S.r.l Ufficio AMM.VO          ')) { }
             column(Forwarder; GetForwarder("Shipping Agent Code")) { Caption = 'Spedizioniere'; }
             column(XVPaymentTerms; XVUtil.GetPaymentTerms("Payment Terms Code", IsForeign)) { }
             column(XVPaymentMethod; XVUtil.GetPaymentMethod("Payment Method Code", IsForeign)) { }
@@ -1120,12 +1120,13 @@ report 50234 "Custom Proforma - Invoice"
 
                 if not Cust.Get("Bill-to Customer No.") then
                     Clear(Cust);
-                if ShipInfo.Get(Header."XV Proforma Source") then begin
+
+                if ShipInfo.Get(Header."No.") then begin
                     // se esite ma i colli sono a zero ricalcola
                     if ShipInfo."Nr. Colli" = 0 then begin
                         ShipInfo.Delete();
-                        XVUtil.SetShipInfoProforma(Header."XV Proforma Source");
-                        if ShipInfo.Get(Header."XV Proforma Source") then;
+                        XVUtil.SetShipInfoProforma(Header."No."); //XV Proforma Source
+                        if ShipInfo.Get(Header."No.") then;
                     end;
                     AspettoDeiBeni := ShipInfo."Aspetto Beni";
                     NrColli := ShipInfo."Nr. Colli";
@@ -1133,8 +1134,8 @@ report 50234 "Custom Proforma - Invoice"
                     PesoLordo := ShipInfo."Peso Lordo";
                 end
                 else begin
-                    XVUtil.SetShipInfoProforma(Header."XV Proforma Source");
-                    if ShipInfo.Get(Header."XV Proforma Source") then begin
+                    XVUtil.SetShipInfoProforma(Header."No.");
+                    if ShipInfo.Get(Header."No.") then begin
                         AspettoDeiBeni := ShipInfo."Aspetto Beni";
                         NrColli := ShipInfo."Nr. Colli";
                         PesoNetto := ShipInfo."Peso Netto";

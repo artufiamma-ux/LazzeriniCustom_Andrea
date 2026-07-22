@@ -31,5 +31,6 @@ tableextension 50228 "XV EOS055 Handling Unit" extends "EOS055 Handling Unit"
         key(ReportColliKey; "Progressivo Serie Spedizione", "Nr Scatola")
         {
         }
+        key("Warehouse Shipment No."; "Warehouse Shipment No.") { }
     }
 }

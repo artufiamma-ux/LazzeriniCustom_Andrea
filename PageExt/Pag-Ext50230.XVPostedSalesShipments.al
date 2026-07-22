@@ -41,7 +41,7 @@ pageextension 50230 "XV Posted Sales Shipments " extends "Posted Sales Shipments
                     info: array[4] of Text[100];
 
                 begin
-                    XUtil.GetInfoPackaging(Rec."No.", info);
+                    //XUtil.GetInfoPackaging(Rec."No.", info);
                     Message('Ciao %1, %2, %3, %4', info[1], info[2], info[3], info[4]);
 
                 end;

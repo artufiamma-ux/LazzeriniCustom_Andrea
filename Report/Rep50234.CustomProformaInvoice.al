@@ -606,7 +606,7 @@ report 50234 "Custom Proforma - Invoice"
                 column(Description_Line; Description)
                 {
                 }
-                column(Description_Line_Lbl; FieldCaption(Description))
+                column(Description_Line_Lbl; Upper(FieldCaption(Description)))
                 {
                 }
                 column(LineDiscountPercent_Line; "Line Discount %")
@@ -1125,7 +1125,7 @@ report 50234 "Custom Proforma - Invoice"
                     // se esite ma i colli sono a zero ricalcola
                     if ShipInfo."Nr. Colli" = 0 then begin
                         ShipInfo.Delete();
-                        XVUtil.SetShipInfoProforma(Header."No."); //XV Proforma Source
+                        XVUtil.SetShipInfo(Header."No."); //XV Proforma Source
                         if ShipInfo.Get(Header."No.") then;
                     end;
                     AspettoDeiBeni := ShipInfo."Aspetto Beni";
@@ -1134,7 +1134,7 @@ report 50234 "Custom Proforma - Invoice"
                     PesoLordo := ShipInfo."Peso Lordo";
                 end
                 else begin
-                    XVUtil.SetShipInfoProforma(Header."No.");
+                    XVUtil.SetShipInfo(Header."No.");
                     if ShipInfo.Get(Header."No.") then begin
                         AspettoDeiBeni := ShipInfo."Aspetto Beni";
                         NrColli := ShipInfo."Nr. Colli";
@@ -1463,7 +1463,7 @@ report 50234 "Custom Proforma - Invoice"
 
     local procedure GetCustomLabel(LabelName: Text): Text
     begin
-        exit(XVUtil.GetCustomLabel(LabelName, IsForeign));
+        exit(Upper(XVUtil.GetCustomLabel(LabelName, IsForeign)));
     end;
 
     local procedure GetCustomValue(LabelName: Text): Text
@@ -1707,5 +1707,9 @@ report 50234 "Custom Proforma - Invoice"
         DocNo := DocumentNo;
     end;
 
+    local procedure Upper(String: Text): Text
+    begin
+        exit(UpperCase(String));
+    end;
 }
 

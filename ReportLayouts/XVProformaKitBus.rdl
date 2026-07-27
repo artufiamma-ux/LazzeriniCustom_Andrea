@@ -7,9 +7,9 @@
     </am:CreatedBy>
     <am:UpdatedBy>
       <am:Name>SSDTRS</am:Name>
-      <am:Version>17.14.36915.13</am:Version>
+      <am:Version>17.14.37516.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-07-22T07:07:47.7482047Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-07-24T13:15:52.4260736Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -4960,7 +4960,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Note</Value>
+                              <Value EvaluationMode="Constant">NOTE</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Segoe UI</FontFamily>

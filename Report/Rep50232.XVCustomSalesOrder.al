@@ -528,7 +528,7 @@ report 50232 "XV Custom Sales Order"
                 column(Description; Description)
                 {
                 }
-                column(Description_Line_Lbl; FieldCaption(Description))
+                column(Description_Line_Lbl; Upper(FieldCaption(Description)))
                 {
                 }
                 column(Quantity; Format(Quantity, 0, 4))
@@ -930,7 +930,7 @@ report 50232 "XV Custom Sales Order"
 
     local procedure GetCustomLabel(LabelName: Text): Text
     begin
-        exit(XVUtil.GetCustomLabel(LabelName, IsForeign));
+        exit(Upper(XVUtil.GetCustomLabel(LabelName, IsForeign)));
     end;
 
     local procedure GetNote(): Text[1000]
@@ -946,6 +946,11 @@ report 50232 "XV Custom Sales Order"
             if ShipmentHeader."Additional Notes" <> '' then
                 XVNote := XVNote + ' ' + ShipmentHeader."Additional Notes";
         exit(XVNote);
+    end;
+
+    local procedure Upper(String: Text): Text
+    begin
+        exit(UpperCase(String));
     end;
 
 

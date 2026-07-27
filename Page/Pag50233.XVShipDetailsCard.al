@@ -10,6 +10,21 @@ page 50233 "XV Ship Details Card"
     {
         area(Content)
         {
+
+
+            group(Info)
+            {
+                ShowCaption = false;
+
+                field(InfoText; 'Assegnando 0 (ZERO) al campo ''Nr. Colli'' i valori verranno ripresi dalla paccking list.')
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    Style = StandardAccent;
+                    ShowCaption = false;
+                }
+            }
+
             group(General)
             {
                 Caption = 'General';

@@ -646,7 +646,7 @@ report 50231 "Custom Sales - Invoice"
                 column(Description_Line; Description)
                 {
                 }
-                column(Description_Line_Lbl; FieldCaption(Description))
+                column(Description_Line_Lbl; Upper(FieldCaption(Description)))
                 {
                 }
                 column(LineDiscountPercent_Line; "Line Discount %")
@@ -1522,12 +1522,17 @@ report 50231 "Custom Sales - Invoice"
 
     local procedure GetCustomLabel(LabelName: Text): Text
     begin
-        exit(XVUtil.GetCustomLabel(LabelName, IsForeign));
+        exit(Upper(XVUtil.GetCustomLabel(LabelName, IsForeign)));
     end;
 
     local procedure GetCustomValue(LabelName: Text): Text
     begin
         exit(LabelName);
+    end;
+
+    local procedure Upper(String: Text): Text
+    begin
+        exit(UpperCase(String));
     end;
 
     local procedure GetDueDateFromPaymentTerms(PaymentTermsCode: Code[10]; Position: Integer): Date

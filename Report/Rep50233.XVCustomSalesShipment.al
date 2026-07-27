@@ -429,7 +429,7 @@ report 50233 "XV Custom Sales - Shipment"
 
     local procedure GetCustomLabel(LabelName: Text): Text
     begin
-        exit(XVUtil.GetCustomLabel(LabelName, IsForeign));
+        exit(Upper(XVUtil.GetCustomLabel(LabelName, IsForeign)));
     end;
 
     local procedure GetShipmentMethodDescription(ShipmentMethodCode: Code[10]): Text
@@ -484,5 +484,10 @@ report 50233 "XV Custom Sales - Shipment"
     procedure SetParameters(DocumentNo: Code[20])
     begin
         DocNo := DocumentNo;
+    end;
+
+    local procedure Upper(String: Text): Text
+    begin
+        exit(UpperCase(String));
     end;
 }

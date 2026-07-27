@@ -7,9 +7,9 @@
     </am:CreatedBy>
     <am:UpdatedBy>
       <am:Name>SSDTRS</am:Name>
-      <am:Version>17.14.36915.13</am:Version>
+      <am:Version>17.14.37516.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-07-13T09:16:02.0546917Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-07-24T10:22:32.4019392Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -134,6 +134,14 @@
                                   <TextRuns>
                                     <TextRun>
                                       <Value>=Fields!Description_Line.Value</Value>
+                                      <Style>
+                                        <FontFamily>Segoe UI</FontFamily>
+                                        <FontSize>8pt</FontSize>
+                                        <FontWeight>=IIF(((Fields!Progressivo_Kit_Bus.Value = 0 And Fields!IsKitBus.Value = True) Or (IsNothing(Fields!ItemReferenceNo_Line.Value) Or Fields!ItemReferenceNo_Line.Value = "")),"Bold","Normal")</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                    <TextRun>
+                                      <Value>to</Value>
                                       <Style>
                                         <FontFamily>Segoe UI</FontFamily>
                                         <FontSize>8pt</FontSize>
@@ -1493,8 +1501,8 @@ OR NOT fields!LineNo_Line.Value&gt;0</Hidden>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox1</rd:DefaultName>
-                      <Top>0.02123cm</Top>
-                      <Left>0.08039cm</Left>
+                      <Top>0.00001cm</Top>
+                      <Left>0.07019cm</Left>
                       <Height>0.635cm</Height>
                       <Width>2.44475cm</Width>
                       <ZIndex>9</ZIndex>
@@ -2783,7 +2791,7 @@ OR NOT fields!LineNo_Line.Value&gt;0</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!ShiptoName.Value</Value>
+                          <Value>=Fields!ShipToAddress1.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
@@ -2813,7 +2821,7 @@ OR NOT fields!LineNo_Line.Value&gt;0</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!ShiptoName2.Value</Value>
+                          <Value>=Fields!ShipToAddress2.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
@@ -2843,7 +2851,7 @@ OR NOT fields!LineNo_Line.Value&gt;0</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!ShiptoAddress.Value</Value>
+                          <Value>=Fields!ShipToAddress3.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
@@ -2873,7 +2881,7 @@ OR NOT fields!LineNo_Line.Value&gt;0</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!ShiptoPostCode.Value &amp; " " &amp; Fields!ShiptoCity.Value</Value>
+                          <Value>=Fields!ShipToAddress5.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
@@ -2896,36 +2904,6 @@ OR NOT fields!LineNo_Line.Value&gt;0</Hidden>
                     <PaddingRight>5pt</PaddingRight>
                   </Style>
                 </Textbox>
-                <Textbox Name="HShip6">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=Fields!ShiptoCountry.Value</Value>
-                          <Style>
-                            <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>9pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>2.43035cm</Top>
-                  <Left>0.22138cm</Left>
-                  <Height>0.4cm</Height>
-                  <Width>9.54cm</Width>
-                  <ZIndex>5</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>5pt</PaddingLeft>
-                    <PaddingRight>5pt</PaddingRight>
-                  </Style>
-                </Textbox>
                 <Textbox Name="HShip7">
                   <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
@@ -2933,7 +2911,7 @@ OR NOT fields!LineNo_Line.Value&gt;0</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!ShipToAddress2.Value</Value>
+                          <Value>=Fields!ShipToAddress4.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>9pt</FontSize>
@@ -2947,7 +2925,7 @@ OR NOT fields!LineNo_Line.Value&gt;0</Hidden>
                   <Left>0.22138cm</Left>
                   <Height>0.4cm</Height>
                   <Width>9.54cm</Width>
-                  <ZIndex>6</ZIndex>
+                  <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -4998,7 +4976,7 @@ OR NOT fields!LineNo_Line.Value&gt;0</Hidden>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Note</Value>
+                              <Value EvaluationMode="Constant">NOTE</Value>
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Segoe UI</FontFamily>
@@ -5805,8 +5783,8 @@ OR NOT fields!LineNo_Line.Value&gt;0</Hidden>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <Top>2.42164cm</Top>
-                      <Left>15.09957cm</Left>
+                      <Top>2.41144cm</Top>
+                      <Left>15.08937cm</Left>
                       <Height>0.35cm</Height>
                       <Width>4.24783cm</Width>
                       <ZIndex>28</ZIndex>
@@ -5945,26 +5923,6 @@ OR NOT fields!LineNo_Line.Value&gt;0</Hidden>
                         <Border>
                           <Style>None</Style>
                         </Border>
-                        <TopBorder>
-                          <Color>Black</Color>
-                          <Style>None</Style>
-                          <Width>1pt</Width>
-                        </TopBorder>
-                        <BottomBorder>
-                          <Color>Black</Color>
-                          <Style>None</Style>
-                          <Width>1pt</Width>
-                        </BottomBorder>
-                        <LeftBorder>
-                          <Color>Black</Color>
-                          <Style>None</Style>
-                          <Width>1pt</Width>
-                        </LeftBorder>
-                        <RightBorder>
-                          <Color>Black</Color>
-                          <Style>None</Style>
-                          <Width>1pt</Width>
-                        </RightBorder>
                         <VerticalAlign>Middle</VerticalAlign>
                         <PaddingLeft>5pt</PaddingLeft>
                         <PaddingRight>5pt</PaddingRight>

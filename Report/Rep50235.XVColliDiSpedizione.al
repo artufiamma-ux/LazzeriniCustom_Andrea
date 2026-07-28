@@ -209,6 +209,12 @@ report 50235 "XV Colli Di Spedizione"
         Formatted_Indirizzo_Spedizione: Text[900];
         Formatted_Padestal: Text[900];
 
+    procedure SetInitParameter(No: Code[20])
+    begin
+        SetWarehouseShipmentNo(No);
+        // TODO DA provare
+    end;
+
     procedure SetWarehouseShipmentNo(No: Code[20])
     begin
         WarehouseShipmentNo := No;

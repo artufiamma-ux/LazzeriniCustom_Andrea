@@ -41,7 +41,7 @@ codeunit 50201 "XV PrintNode"
         // ✅ 1. Genera PDF in memoria
         TempBlob.CreateOutStream(OutStr);
 
-        ReportObj.SetWarehouseShipmentNo(WarehouseShipmentNo);
+        ReportObj.SetInitParameter(WarehouseShipmentNo);
         ReportObj.SaveAs('', ReportFormat::Pdf, OutStr);
 
         // ✅ 2. Converti in Base64

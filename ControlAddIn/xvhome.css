@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    font-family: Segoe UI, Arial, sans-serif;
+}
+
+#xv-home {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px;
+}
+
+#xv-home button {
+
+    min-height: 90px;
+    width: 100%;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    color: white;
+
+    text-align: left;
+    padding-left: 20px;
+
+    box-shadow: 0 4px 8px rgba(0,0,0,.2);
+
+    cursor: pointer;
+}
+
+#xv-home button:active {
+    transform: scale(0.98);
+}
+.pick-sped {
+    background: #0078d4;
+}
+
+.pick-prod {
+    background: #107c10;
+}
+
+.stampa-etichetta {
+    background: #ff8c00;
+}
+
+.dividi-scatole {
+    background: #8764b8;
+}
+
+.magazzino {
+    background: #505050;
+}
+
+.sposta-articolo {
+    background: #00b7c3;
+}
+
+.compatta-scatole {
+    background: #d13438;
+}

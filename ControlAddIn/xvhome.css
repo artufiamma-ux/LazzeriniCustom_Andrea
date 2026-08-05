@@ -12,13 +12,13 @@ body {
 
 #xv-home button {
 
-    min-height: 90px;
+    min-height: 150px;
     width: 100%;
 
     border: none;
     border-radius: 14px;
 
-    font-size: 24px;
+    font-size: 48px;
     font-weight: bold;
 
     color: white;
@@ -50,7 +50,7 @@ body {
     background: #8764b8;
 }
 
-.magazzino {
+.articolo {
     background: #505050;
 }
 

@@ -57,6 +57,15 @@ report 50205 "XV WCP Label"
         WCPNo := DocumentNo;
     end;
 
+    procedure SetInitParameter(ParamInit: Text)
+    var
+        CodeValue: Code[20];
+    begin
+        CodeValue := CopyStr(ParamInit, 1, MaxStrLen(CodeValue));
+        SetParameters(CodeValue);
+    end;
+
+
     var
         EncodedText: Text;
         WCPNo: Code[20];

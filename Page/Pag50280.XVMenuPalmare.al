@@ -4,7 +4,7 @@ using Microsoft.Foundation.Company;
 using Microsoft.Inventory.Item;
 using Microsoft.Warehouse.Document;
 using Microsoft.Warehouse.Structure;
-page 50101 "XV Menu Palmare"
+page 50280 "XV Menu Palmare Mob"
 {
     PageType = CardPart;
 
@@ -20,21 +20,17 @@ page 50101 "XV Menu Palmare"
                 begin
                     case ActionName of
                         'PRELIEVI_SPED':
-                            Page.Run(Page::"XVWarehouseShipmentMob");
+                            Message('Prelievi Spedizione');
                         'PRELIEVI_PROD':
-                            Page.Run(Page::"Warehouse Shipment List");
-
-                        'MAGAZZINO':
-                            Page.Run(Page::"Bin List");
-
-                        'STAMPA_ETICHETTA':
-                            Page.Run(Page::"Item List");
+                            Message('Prelievi Produzione');
+                        'CONTENUTO_COLLOCAZION':
+                            Message('Contenuto Collocazione');
                         'DIVIDI_SCATOLE':
-                            Page.Run(Page::"Item List");
+                            Message('Dividi Scatole');
                         'COMPATTA_SCATOLE':
-                            Page.Run(Page::"Item List");
-                        'SPOSTA_ARTICOLO':
-                            Page.Run(Page::"Item List");
+                            Message('Compatta Scatole');
+                        'ARTICOLO':
+                            Page.Run(Page::"XV Articolo Palmare Mob"); // Stampa,Cerca,Sposta
                     end;
                 end;
             }

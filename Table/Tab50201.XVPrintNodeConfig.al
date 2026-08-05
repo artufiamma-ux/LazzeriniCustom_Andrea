@@ -6,9 +6,9 @@ table 50201 "XV PrintNode Config"
 
     fields
     {
-        field(1; "Report ID"; Integer)
+        field(1; "Report Type"; Enum "XV PrintNode Report")
         {
-            Caption = 'Report ID';
+            Caption = 'Report';
         }
 
         field(2; "Code"; Code[20])
@@ -55,7 +55,7 @@ table 50201 "XV PrintNode Config"
 
     keys
     {
-        key(PK; "Report ID")
+        key(PK; "Report Type")
         {
             Clustered = true;
         }

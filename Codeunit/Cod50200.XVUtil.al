@@ -8,6 +8,7 @@ using Microsoft.Foundation.PaymentTerms;
 using Microsoft.Bank.BankAccount;
 using Microsoft.Sales.Customer;
 using Microsoft.Warehouse.Document;
+using Microsoft.Warehouse.Structure;
 
 
 codeunit 50200 XVUtil
@@ -548,6 +549,25 @@ codeunit 50200 XVUtil
         SalesLine.SetRange("No.", ItemNo);
         if SalesLine.FindFirst() then
             exit(SalesLine."Item Reference No.");
+        exit('');
+    end;
+
+    procedure GetItemDescription(ItemNo: Code[20]): Text
+    var
+        Item: Record Item;
+    begin
+        if Item.get(ItemNo) then
+            exit(Item.Description);
+        exit('');
+    end;
+
+    procedure GetBinDescription(BinCode: Code[20]): Text
+    var
+        Bin: Record Bin;
+    begin
+        Bin.SetRange(Code, BinCode);
+        if Bin.FindFirst() then
+            exit(Bin.Description);
         exit('');
     end;
 

@@ -1,4 +1,8 @@
-page 50280 "XVWarehouseShipmentMob"
+namespace Xview.Custom.Lazzerini;
+
+using Microsoft.Warehouse.Document;
+
+page 50283 "XVWarehouseShipmentMob"
 {
     PageType = List;
     SourceTable = "Warehouse Shipment Header";
@@ -39,13 +43,34 @@ page 50280 "XVWarehouseShipmentMob"
 
                 trigger OnAction()
                 var
-                    PrintNode: Codeunit "XV PrintNode";
+                    //PrintNode: Codeunit "XV PrintNode";
+                    Rep: Report "XV Colli Di Spedizione";
                 begin
                     if Rec."No." = '' then
                         Error('Seleziona una spedizione');
 
-                    PrintNode.PrintColliSpedizione(Rec."No.");
+                    //PrintNode.PrintColliSpedizione(Rec."No.");
+                    Rep.SetWarehouseShipmentNo(Rec."No.");
+                    Rep.RunModal();
+                    //Message('Inviata');
+                end;
+            }
+            action(ZPrintColli)
+            {
+                Caption = 'Stampa';
+                Image = PrintForm;
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
 
+                trigger OnAction()
+                var
+                    PrintNode: Codeunit "XV PrintNode Mgt";
+                begin
+                    if Rec."No." = '' then
+                        Error('Seleziona una spedizione');
+
+                    PrintNode.PrintReport(Enum::"XV PrintNode Report"::"XV Colli Di Spedizione", Rec."No.");
                     Message('Inviata');
                 end;
             }

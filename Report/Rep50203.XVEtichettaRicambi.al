@@ -1,3 +1,4 @@
+
 report 50230 "XV Etichetta Ricambi"
 {
     Caption = 'Etichette Ricambi';
@@ -119,5 +120,10 @@ report 50230 "XV Etichetta Ricambi"
         // Imposta ItemNo per il ciclo OnPreReport se vuoi generare più etichette
         if TempItemReference.FindFirst() then
             ItemNo := TempItemReference."Reference No.";
+    end;
+
+    procedure SetInitParameter(ParamInit: Text)
+    begin
+        Error('Procedure SetInitParameter not implemented.');
     end;
 }

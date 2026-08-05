@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 10px;
+
+    background-color: #f5f5f5;
+
+    font-family: "Segoe UI", sans-serif;
+}
+
+.mob-card {
+
+    border-radius: 12px;
+
+    padding: 16px;
+
+    margin-bottom: 12px;
+
+    box-shadow:
+        0 2px 6px rgba(0,0,0,0.15);
+}
+
+.mob-card.even {
+    background-color: #d5d5d5;
+}
+
+.mob-card.odd {
+    background-color: #9a9a9a;
+}
+
+.mob-no {
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #212529;
+}
+
+.mob-desc {
+
+    margin-top: 6px;
+
+    font-size: 22px;
+
+    color: #212529;
+}
+
+.mob-qty {
+
+    margin-top: 12px;
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    color: #0d6efd;
+}
+
+.mob-btn {
+
+    width: 100%;
+
+    margin-top: 16px;
+
+    height: 70px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    background-color: #0d6efd;
+
+    color: white;
+
+    font-size: 24px;
+
+    font-weight: 700;
+}
+
+.mob-btn:active {
+
+    transform: scale(0.98);
+}

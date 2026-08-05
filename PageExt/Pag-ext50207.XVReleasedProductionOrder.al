@@ -51,6 +51,7 @@ pageextension 50207 "XV Released Prod Orders Ext" extends "Released Production O
             field("Nome area di produzione (Ciclo)"; Rec."Nome area produzione (Ciclo)")
             {
                 ApplicationArea = All;
+                Editable = false;
             }
 
             field("Tipo Ciclo"; Rec."Tipo Ciclo")

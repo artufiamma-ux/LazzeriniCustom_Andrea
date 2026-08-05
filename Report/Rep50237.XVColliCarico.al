@@ -128,6 +128,14 @@ report 50237 "XV Colli Carico"
         WCPNo := DocumentNo;
     end;
 
+    procedure SetInitParameter(ParamInit: Text)
+    var
+        CodeValue: Code[20];
+    begin
+        CodeValue := CopyStr(ParamInit, 1, MaxStrLen(CodeValue));
+        SetParameters(CodeValue);
+    end;
+
     local procedure ParameterList(): List of [Code[20]]
     var
         // TempBuffer: Record "XV Colli Carico Buffer" temporary;

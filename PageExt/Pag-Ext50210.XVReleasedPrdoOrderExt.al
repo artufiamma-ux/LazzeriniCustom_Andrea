@@ -44,6 +44,7 @@ pageextension 50210 "XV Released Prod. Order Ext" extends "Firm Planned Prod. Or
             field("Nome area produzione (Ciclo)"; Rec."Nome area produzione (Ciclo)")
             {
                 ApplicationArea = All;
+                Editable = false;
             }
 
             field("Tipo Ciclo"; Rec."Tipo Ciclo")

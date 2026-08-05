@@ -46,14 +46,14 @@ tableextension 50199 "XV Production Order" extends "Production Order"
         {
             Caption = 'Nr. Area produzione (Ciclo)';
             DataClassification = CustomerContent;
-            TableRelation = "Work Center"."No.";
+            TableRelation = "Work Center";
         }
-
-        field(50106; "Nome area produzione (Ciclo)"; code[20])
+        field(50106; "Nome area produzione (Ciclo)"; Text[100])
         {
-            Caption = 'Nome area produzione (Ciclo)';
-            DataClassification = CustomerContent;
-            TableRelation = "Work Center".Name;
+            FieldClass = FlowField;
+            CalcFormula = lookup("Work Center".Name
+                         where("No." = field("Nr. Area produzione (Ciclo)")));
+            Editable = false;
         }
 
         field(50107; "Tipo Ciclo"; enum "OPTipoCiclo")

@@ -4,7 +4,7 @@ using Microsoft.Inventory.Item;
 using Microsoft.Warehouse.Document;
 using Microsoft.Warehouse.Structure;
 
-page 50100 "XV Home Magazzino"
+page 50281 "XV Home Magazzino Mob"
 {
     PageType = RoleCenter;
 
@@ -12,7 +12,7 @@ page 50100 "XV Home Magazzino"
     {
         area(RoleCenter)
         {
-            part(Menu; "XV Menu Palmare")
+            part(Menu; "XV Menu Palmare Mob")
             {
                 ApplicationArea = All;
             }

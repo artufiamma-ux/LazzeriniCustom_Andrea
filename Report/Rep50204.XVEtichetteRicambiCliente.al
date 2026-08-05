@@ -94,4 +94,17 @@ report 50204 "XV Etichette Ricambi Cliente"
         ItemNo := ItemNoP;
         CustomerNo := CustomerNoP;
     end;
+
+    procedure SetInitParameter(ParamInit: Text)
+    var
+        CodeValue: Code[20];
+        CustomerValue: Code[20];
+        Parts: List of [Text];
+    begin
+        Parts := ParamInit.Split('|');
+        CodeValue := CopyStr(Parts.Get(1), 1, MaxStrLen(CodeValue));
+        CustomerValue := CopyStr(Parts.Get(2), 1, MaxStrLen(CodeValue));
+        SetParameters(CodeValue, CustomerValue);
+    end;
+
 }

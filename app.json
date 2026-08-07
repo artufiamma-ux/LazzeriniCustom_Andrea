@@ -26,11 +26,19 @@
     },
 
     {
+      "id": "4e2a89a2-9049-496c-8b3a-f4eee6399b0e",
+      "name": "Common Data Layer",
+      "publisher": "EOS Solutions",
+      "version": "28.0.10.0"
+    },
+ 
+    {
       "id": "8d707d0a-0145-4387-a46c-b1a5304029fc",
       "name": "DocSolutions for Sharepoint",
       "publisher": "EOS Solutions",
       "version": "28.0.10.0"
     },
+
     {
       "id": "de912bec-70b4-427d-a57c-c68e3907a6f4",
       "name": "DocSolutions Common Library",
@@ -38,10 +46,10 @@
       "version": "28.0.1.0"
     },
     {
-      "id": "4e2a89a2-9049-496c-8b3a-f4eee6399b0e",
-      "name": "Common Data Layer",
+      "id": "5becf0fc-053d-4fca-90f9-8c0d7e6ba394",
+      "name": "MES Manufacturing execution system",
       "publisher": "EOS Solutions",
-      "version": "28.0.10.0"
+      "version": "28.0.16.0"
     },
     {
       "id": "be167a22-6665-408f-baa6-3df197d0de7c",
@@ -54,12 +62,6 @@
       "name": "Combine Warehouse Shipment",
       "publisher": "EOS Solutions",
       "version": "28.0.12.0"
-    },
-    {
-      "id": "5becf0fc-053d-4fca-90f9-8c0d7e6ba394",
-      "name": "MES Manufacturing execution system",
-      "publisher": "EOS Solutions",
-      "version": "28.0.16.0"
     },
     {
       "id": "4322e2ed-02d4-490b-b644-02235c517973",

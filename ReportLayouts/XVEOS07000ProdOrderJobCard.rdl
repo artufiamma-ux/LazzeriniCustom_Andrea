@@ -7,9 +7,9 @@
     </am:CreatedBy>
     <am:UpdatedBy>
       <am:Name>SSDTRS</am:Name>
-      <am:Version>17.14.36915.13</am:Version>
+      <am:Version>17.14.37516.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-07-16T14:48:42.4167352Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-09-02T15:05:06.9386734Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -1761,7 +1761,6 @@
                             <PaddingRight>5pt</PaddingRight>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -2855,7 +2854,7 @@
                                       <Value>=IIF(Fields!IsFunctionAPI.Value, "",Fields!Barcode_ProdOrderRtngLine.Value)</Value>
                                       <Style>
                                         <FontFamily>=Fields!Barcode_Font.Value</FontFamily>
-                                        <FontSize>8pt</FontSize>
+                                        <FontSize>6pt</FontSize>
                                       </Style>
                                     </TextRun>
                                   </TextRuns>
@@ -2880,9 +2879,8 @@
                               <Value>=Fields!Barcode_Image_ProdOrderRtngLine.Value</Value>
                               <MIMEType>image/jpeg</MIMEType>
                               <Sizing>FitProportional</Sizing>
-                              <Left>0.00001cm</Left>
                               <Height>1.12942cm</Height>
-                              <Width>5.39999cm</Width>
+                              <Width>4.85318cm</Width>
                               <ZIndex>1</ZIndex>
                               <Visibility>
                                 <Hidden>=(Fields!IsFunctionAPI.Value = False)Or(Fields!ISQRCode.Value=True)</Hidden>

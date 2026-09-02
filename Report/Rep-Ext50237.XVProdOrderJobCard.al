@@ -1,7 +1,7 @@
 namespace Xview.Custom.Lazzerini;
 
 using System.Text;
-/*
+
 
 reportextension 50237 "XV ProdOrderJobCard" extends "EOS 07000 MES ProdOrderJobCard"
 {
@@ -56,4 +56,4 @@ reportextension 50237 "XV ProdOrderJobCard" extends "EOS 07000 MES ProdOrderJobC
     var
         EncodedText: Text;
 }
-*/
+

@@ -79,6 +79,8 @@ report 50236 "XV Item Journal"
             begin
 
                 InformazioniSocieta := 'Lazzerini S.r.l. S.B.';
+                // Il nr. unit\u00e0 di carico va letto dalla riga di Output Journal compilata dall'operatore, non dalla Prod. Order Line
+                EOSHandlingUnitNo := "EOS055 Handling Unit No.";
                 RecProductionOrder.SetRange("No.", "Order No.");
                 if RecProductionOrder.FindFirst() then begin
                     CodOrdVen := RecProductionOrder."Nr. Ordine di vendita";
@@ -97,7 +99,6 @@ report 50236 "XV Item Journal"
                         if RecProOrdLine.FindFirst() then begin
                             OrdLineNo := RecProOrdLine."XV Line No.";
                             KitBus := RecProOrdLine."XV Kit Bus";
-                            EOSHandlingUnitNo := RecProOrdLine."EOS055 Handling Unit No.";
                         end;
                         RecSalesLine.SetRange("Document No.", "CodOrdVen");
                         if OrdLineNo <> 0 then
@@ -114,12 +115,14 @@ report 50236 "XV Item Journal"
                     BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
                     // Declare the font using the barcode symbology enum
                     BarcodeSymbology := Enum::System.Text."Barcode Symbology"::Code39;
-                    // Set data string source
-                    BarcodeString := CodArticolo;
-                    // Validate the input. This method is not available for 2D provider
-                    BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
-                    // Encode the data string to the barcode font
-                    EncodedText := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
+                    // Il codice a barre deve essere riferito alla scatola (nr. unit\u00e0 di carico), non all'articolo
+                    BarcodeString := EOSHandlingUnitNo;
+                    if BarcodeString <> '' then begin
+                        // Validate the input. This method is not available for 2D provider
+                        BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
+                        // Encode the data string to the barcode font
+                        EncodedText := BarcodeFontProvider.EncodeFont(BarcodeString, BarcodeSymbology);
+                    end;
                 end;
             end;
         }

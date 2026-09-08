@@ -31,6 +31,9 @@ report 50233 "XV Custom Sales - Shipment"
             column(CompanyAddress1; CompanyAddr[1])
             {
             }
+            column(OrderDate; "Order Date")
+            {
+            }
             column(CompanyAddress2; CompanyAddr[2])
             {
             }
@@ -292,9 +295,9 @@ report 50233 "XV Custom Sales - Shipment"
 
             column(IsKitBus; XVUtil.GetIsKitBus('DDT', DocNo)) { }
 
-            dataitem(Line; "Sales Shipment Line")
+            dataitem(Line; "EOS CWS Shipment Line")//"Sales Shipment Line")
             {
-                DataItemLink = "Document No." = field("No.");
+                DataItemLink = "Document No." = field("EOS Shipment No.");
                 DataItemLinkReference = Header;
                 DataItemTableView = sorting("Document No.", "Line No.");// WHERE(Quantity = FILTER(> 0));
 

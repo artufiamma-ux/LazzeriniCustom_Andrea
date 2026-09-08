@@ -7,9 +7,9 @@
     </am:CreatedBy>
     <am:UpdatedBy>
       <am:Name>SSDTRS</am:Name>
-      <am:Version>17.14.36915.13</am:Version>
+      <am:Version>17.14.37516.0</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-07-21T11:48:14.8455731Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-09-08T09:14:33.2742526Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -416,7 +416,7 @@
                     </TablixMember>
                     <TablixMember>
                       <Visibility>
-                        <Hidden>=Not Fields!IsKitBus.Value</Hidden>
+                        <Hidden>=Not Fields!IsKitBus.Value OR Sum(Fields!Progressivo_Kit_Bus.Value, "DataSet_Result") = 0</Hidden>
                       </Visibility>
                       <KeepWithGroup>Before</KeepWithGroup>
                     </TablixMember>
@@ -427,7 +427,7 @@
             <DataSetName>DataSet_Result</DataSetName>
             <Left>0.15933in</Left>
             <Height>0.5in</Height>
-            <Width>7.6831in</Width>
+            <Width>7.68311in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3212,6 +3212,9 @@
         </Field>
         <Field Name="CompanyAddress1">
           <DataField>CompanyAddress1</DataField>
+        </Field>
+        <Field Name="OrderDate">
+          <DataField>OrderDate</DataField>
         </Field>
         <Field Name="CompanyAddress2">
           <DataField>CompanyAddress2</DataField>

@@ -20,12 +20,9 @@ pageextension 50246 "XV Subcontracting Order List" extends "Subcontracting Order
 
                 trigger OnAction()
                 var
-                    Report: Report "XV Ordine Conto Lavoro";
-                //                    Rep: Integer;
+                //                  Report: Report "XV Ordine Conto Lavoro";
                 begin
-                    //                    Report.SetParameters(Rec."No.");
-                    //                    Report.SetTableView(Rec);
-                    Report.Run();
+                    //                    Report.Run();
                 end;
             }
 

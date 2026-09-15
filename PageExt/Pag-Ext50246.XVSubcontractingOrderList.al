@@ -2,7 +2,9 @@ namespace Xview.Custom.Lazzerini;
 
 using Microsoft.Manufacturing.Document;
 
+#pragma warning disable AL0432
 pageextension 50246 "XV Subcontracting Order List" extends "Subcontracting Order List"
+#pragma warning restore AL0432
 {
     actions
     {

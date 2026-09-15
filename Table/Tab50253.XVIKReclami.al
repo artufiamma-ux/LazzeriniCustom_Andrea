@@ -144,7 +144,7 @@ table 50253 "XV IK Reclami"
             Caption = 'Detection';
         }
 
-        field(22; "Quantities of the NC parts"; Text[100])
+        field(22; "Quantities of the NC parts"; Decimal)
         {
             Caption = 'Quantities of the NC parts';
         }
@@ -204,6 +204,14 @@ table 50253 "XV IK Reclami"
         {
             Caption = 'Debit note and/or Returned goods';
         }
+        field(34; "Cost of the component (euro)"; Decimal)
+        {
+            Caption = 'Cost of the component (euro)';
+        }
+        field(35; "Total costs of the IP"; Decimal)
+        {
+            Caption = 'Total costs of the IP';
+        }
 
     }
 
@@ -222,6 +230,8 @@ table 50253 "XV IK Reclami"
         SeqTxt: Text[10];
         NextSeq: Integer;
     begin
+        TestMandatoryFields();
+
         // Default data (se vuota)
         if "Date of the document" = 0D then
             "Date of the document" := WorkDate(); // o Today()
@@ -248,6 +258,25 @@ table 50253 "XV IK Reclami"
                 SeqTxt := PadStr('', 4 - StrLen(SeqTxt), '0') + SeqTxt;
             ID := TodayTxt + SeqTxt;
         end;
+    end;
+
+    trigger OnModify()
+    begin
+        TestMandatoryFields();
+    end;
+
+    local procedure TestMandatoryFields()
+    begin
+        //  TestField("Plant");
+        TestField("Date of the document");
+        //TestField("Type");
+        TestField("Problem Description");
+        TestField("IP opened by");
+        TestField("IP assigned to.");
+        // TestField("Source/reason of the IP");
+        //TestField("Problem solving tool");
+        //TestField("PDCA");
+        TestField("Deadline");
     end;
 
 }

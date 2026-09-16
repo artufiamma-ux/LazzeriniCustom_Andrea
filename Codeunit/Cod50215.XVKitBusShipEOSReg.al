@@ -40,10 +40,10 @@ codeunit 50215 "XV KitBus ShipEOSReg"
     begin
         //        if Rec."Order No." = '' then
         //            exit;
-        Message('Line Ref added to EOS CWS Shipment Line for Order No: %1, %2, %3', CWSLine.Description, Rec."Document No.", Rec."Order No.");
+        //Message('Line Ref added to EOS CWS Shipment Line for Order No: %1, %2, %3', CWSLine.Description, Rec."Document No.", Rec."Order No.");
         if Rec."Line No." = 5000 then begin
             SalesLine.SetRange("Document No.", Rec."Document No.");
-            SalesLine.SetFilter("Line No.", '>%1', Rec."Order Line No.");
+            SalesLine.SetFilter("Line No.", '>%1', Rec."Line No.");
             if SalesLine.FindFirst() then begin
                 OrderNo := SalesLine."Order No.";
                 SalesHeader.SetRange("No.", OrderNo);

@@ -158,6 +158,34 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
                     Rep.Run();
                 end;
             }
+            action(StampaEtichettaRicambiPackingList)
+            {
+                Caption = 'Stampa Etichetta Ricambi Packing List';
+                ApplicationArea = All;
+                Image = BarCode;
+
+                trigger OnAction()
+                var
+                    HU: Record "EOS055 Handling Unit";
+                    XvPackingList: Codeunit "XV Packing List";
+                    Msg: Text;
+                    Rep: Report "XV Etich. Ricambi Packing List";
+                begin
+                    HU.SetRange("Warehouse Shipment No.", Rec."No.");
+                    HU.SetFilter("Nr Scatola", '>0');
+                    if not HU.FindFirst() then begin
+                        Msg := XvPackingList.MakePackingList(Rec);
+                        if (Msg <> '') and (Msg <> 'Processo concluso correttamente.') then begin
+                            Message(Msg);
+                            exit;
+                        end;
+                        Commit();
+                    end;
+
+                    Rep.SetInitParameter(Rec."No.");
+                    Rep.Run();
+                end;
+            }
             /*
                         action(ChiudiScatole)
                         {
@@ -205,6 +233,9 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
             {
             }
             actionref(StampaEtichetteUdc_Promoted; StampaEtichetteUdc)
+            {
+            }
+            actionref(StampaEtichettaRicambiPackingList_Promoted; StampaEtichettaRicambiPackingList)
             {
             }
             //            actionref(ChiudiScatole_Promoted; ChiudiScatole) { }

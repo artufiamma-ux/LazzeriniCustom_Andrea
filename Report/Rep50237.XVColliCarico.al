@@ -59,12 +59,12 @@ report 50237 "XV Colli Carico"
             var
                 ItemBarcodeString: Text;
                 BoxBarcodeString: Text;
-                BarcodeSymbology: Enum System.Text."Barcode Symbology";
-                BarcodeFontProvider: Interface "Barcode Font Provider";
+                BarcodeSymbology: Enum "Barcode Symbology";
+                BarcodeFontProvider: Interface System.Text."Barcode Font Provider";
 
             begin
                 BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
-                BarcodeSymbology := Enum::System.Text."Barcode Symbology"::"Code39";
+                BarcodeSymbology := Enum::"Barcode Symbology"::"Code39";
                 ItemBarcodeString := "Item No.";
                 BoxBarcodeString := "Handling Unit No.";
 

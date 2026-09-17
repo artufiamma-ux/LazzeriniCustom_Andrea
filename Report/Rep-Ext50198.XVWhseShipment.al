@@ -31,8 +31,8 @@ reportextension 50198 WhseShipmentExt extends "Whse. - Shipment"
             trigger OnAfterAfterGetRecord()
             var
                 BarcodeString: Text;
-                BarcodeSymbology: Enum System.Text."Barcode Symbology";
-                BarcodeFontProvider: Interface System.Text."Barcode Font Provider";
+                    BarcodeSymbology: Enum "Barcode Symbology";
+                    BarcodeFontProvider: Interface System.Text."Barcode Font Provider";
 
             begin
                 // calcola giacenza
@@ -44,7 +44,7 @@ reportextension 50198 WhseShipmentExt extends "Whse. - Shipment"
                 BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
 
                 // Declare the font using the barcode symbology enum
-                BarcodeSymbology := Enum::System.Text."Barcode Symbology"::"Code39";
+                BarcodeSymbology := Enum::"Barcode Symbology"::"Code39";
 
                 // Set data string source
                 BarcodeString := "Item No.";

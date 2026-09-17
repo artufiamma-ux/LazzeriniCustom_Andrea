@@ -30,7 +30,7 @@ report 50205 "XV WCP Label"
             trigger OnAfterGetRecord()
             var
                 BarcodeString: Text;
-                BarcodeSymbology: Enum System.Text."Barcode Symbology";
+                BarcodeSymbology: Enum "Barcode Symbology";
                 BarcodeFontProvider: Interface System.Text."Barcode Font Provider";
 
             begin
@@ -38,7 +38,7 @@ report 50205 "XV WCP Label"
                 BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
 
                 // Declare the font using the barcode symbology enum
-                BarcodeSymbology := Enum::System.Text."Barcode Symbology"::Code39;
+                BarcodeSymbology := Enum::"Barcode Symbology"::Code39;
 
                 // Set data string source
                 BarcodeString := "No.";

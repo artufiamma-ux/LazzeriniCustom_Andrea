@@ -72,7 +72,7 @@ report 50236 "XV Item Journal"
                 RecProOrdLine: Record "Prod. Order Line";
                 RecSalesHeader: Record "Sales Header";
                 BarcodeString: Text;
-                BarcodeSymbology: Enum System.Text."Barcode Symbology";
+                BarcodeSymbology: Enum "Barcode Symbology";
                 BarcodeFontProvider: Interface System.Text."Barcode Font Provider";
                 CodOrdVen: Code[20];
 
@@ -114,7 +114,7 @@ report 50236 "XV Item Journal"
                     // Declare the barcode provider using the barcode provider interface and enum
                     BarcodeFontProvider := Enum::"Barcode Font Provider"::IDAutomation1D;
                     // Declare the font using the barcode symbology enum
-                    BarcodeSymbology := Enum::System.Text."Barcode Symbology"::Code39;
+                    BarcodeSymbology := Enum::"Barcode Symbology"::Code39;
                     // Il codice a barre deve essere riferito alla scatola (nr. unit\u00e0 di carico), non all'articolo
                     BarcodeString := EOSHandlingUnitNo;
                     if BarcodeString <> '' then begin

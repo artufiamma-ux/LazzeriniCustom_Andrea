@@ -32,17 +32,18 @@ page 50256 "XV IK Reclami Card"
         {
             group(General)
             {
-                field("ID"; Rec."ID")
-                {
-                    ApplicationArea = All;
-                    Editable = false;
-                    ToolTip = '-> Identificativo univoco generato automaticamente (YYYYMMDD + sequenza).';
-                }
                 field("Plant"; Rec."Plant")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
                     ToolTip = 'Stabilimento in cui è stato aperto il reclamo.';
+                }
+                field("ID"; Rec."ID")
+                {
+                    ApplicationArea = All;
+                    Editable = false;
+                    Caption = 'Id';
+                    ToolTip = '-> Identificativo univoco generato automaticamente (YYYYMMDD + sequenza).';
                 }
                 field("Date of the document"; Rec."Date of the document")
                 {
@@ -56,42 +57,23 @@ page 50256 "XV IK Reclami Card"
                     ShowMandatory = true;
                     ToolTip = 'Tipologia del reclamo/IP.';
                 }
-                field("Customer No."; Rec."Customer No.")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Cliente coinvolto.';
-                }
-                field("Supplier No."; Rec."Supplier No.")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Fornitore coinvolto.';
-                }
-                field("Item No."; Rec."Item No.")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Articolo correlato.';
-                }
-                field("Product family"; Rec."Product family")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Famiglia di prodotto.';
-                }
                 field("Problem Description"; Rec."Problem Description")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
                     ToolTip = 'Descrizione dettagliata del problema.';
                 }
-
-            }
-
-            group(Assignment)
-            {
                 field("Reported by (User)"; Rec."IP opened by")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
                     ToolTip = 'Utente che ha aperto il reclamo.';
+                }
+                field("Source/reason of the IP"; Rec."Source/reason of the IP")
+                {
+                    ApplicationArea = All;
+                    ShowMandatory = true;
+                    ToolTip = 'Origine/motivo del reclamo.';
                 }
                 field("Assigned to (User)"; Rec."IP assigned to.")
                 {
@@ -99,11 +81,11 @@ page 50256 "XV IK Reclami Card"
                     ShowMandatory = true;
                     ToolTip = 'Utente incaricato della risoluzione del reclamo.';
                 }
-                field("Source/reason of the IP"; Rec."Source/reason of the IP")
+                field("Deadline"; Rec."Deadline")
                 {
                     ApplicationArea = All;
                     ShowMandatory = true;
-                    ToolTip = 'Origine/motivo del reclamo.';
+                    ToolTip = 'Scadenza prevista per chiudere il reclamo.';
                 }
                 field("Problem solving tool"; Rec."Problem solving tool")
                 {
@@ -117,6 +99,127 @@ page 50256 "XV IK Reclami Card"
                     ShowMandatory = true;
                     ToolTip = 'Stadio PDCA del reclamo.';
                 }
+                field("Warranty and/or Reworking"; Rec."Warranty and/or Reworking")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Garanzia e/o rilavorazione.';
+                }
+                field("Customer No."; Rec."Customer No.")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Cliente coinvolto.';
+                    trigger OnValidate()
+                    var
+                        CustomerRec: Record Customer;
+                    begin
+                        Clear(DescCustomerName);
+                        if (Rec."Customer No." <> '') and CustomerRec.Get(Rec."Customer No.") then
+                            DescCustomerName := CustomerRec.Name;
+                    end;
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    var
+                        CustomerRec: Record Customer;
+                    begin
+                        if PAGE.RunModal(PAGE::"Customer List", CustomerRec) = ACTION::LookupOK then begin
+                            Text := CustomerRec."No.";
+                            Rec.Validate("Customer No.", CustomerRec."No.");
+                            exit(true);
+                        end;
+                        exit(false);
+                    end;
+                }
+                field("Customer Name"; DescCustomerName)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Nome del cliente coinvolto.';
+                    Editable = false;
+                }
+                field("Supplier No."; Rec."Supplier No.")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Fornitore coinvolto.';
+                    trigger OnValidate()
+                    var
+                        SupplierRec: Record Vendor;
+                    begin
+                        Clear(DescSupplierName);
+                        if (Rec."Supplier No." <> '') and SupplierRec.Get(Rec."Supplier No.") then
+                            DescSupplierName := SupplierRec.Name;
+                    end;
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    var
+                        VendorRec: Record Vendor;
+                    begin
+                        if PAGE.RunModal(PAGE::"Vendor List", VendorRec) = ACTION::LookupOK then begin
+                            Text := VendorRec."No.";
+                            Rec.Validate("Supplier No.", VendorRec."No.");
+                            exit(true);
+                        end;
+                        exit(false);
+                    end;
+                }
+                field("Supplier Name"; DescSupplierName)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Nome del fornitore coinvolto.';
+                    Editable = false;
+                }
+                field("Item No."; Rec."Item No.")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Articolo correlato.';
+                    trigger OnValidate()
+                    var
+                        ItemRec: Record Item;
+                    begin
+                        Clear(DescItemDescription);
+                        if (Rec."Item No." <> '') and ItemRec.Get(Rec."Item No.") then begin
+                            DescItemDescription := ItemRec.Description;
+                            if (Rec."Quantities of the NC parts" <> 0) then
+                                TotalCostsOfTheComponents := Rec."Quantities of the NC parts" * ItemRec."Last Direct Cost";
+                        end;
+                    end;
+
+                    trigger OnLookup(var Text: Text): Boolean
+                    var
+                        ItemRec: Record Item;
+                    begin
+                        if PAGE.RunModal(PAGE::"Item List", ItemRec) = ACTION::LookupOK then begin
+                            Text := ItemRec."No.";
+                            Rec.Validate("Item No.", ItemRec."No.");
+                            exit(true);
+                        end;
+                        exit(false);
+                    end;
+                }
+                field("Item Description"; DescItemDescription)
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Descrizione dell''articolo correlato.';
+                    Editable = false;
+                }
+                field("Product family"; Rec."Product family")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Famiglia di prodotto.';
+                }
+                field("List of the defects"; Rec."List of the defects")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Difetto rilevato.';
+                }
+                field("4M+D Analysis"; Rec."4M+D Analysis")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Analisi 4M+D del problema.';
+                }
+                field("Notes"; Rec."Notes")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Note aggiuntive.';
+                }
                 field("Severity"; Rec."Severity")
                 {
                     ApplicationArea = All;
@@ -127,30 +230,18 @@ page 50256 "XV IK Reclami Card"
                     ApplicationArea = All;
                     ToolTip = 'Fase di rilevamento della non conformità.';
                 }
-                field("Deadline"; Rec."Deadline")
-                {
-                    ApplicationArea = All;
-                    ShowMandatory = true;
-                    ToolTip = 'Scadenza prevista per chiudere il reclamo.';
-                }
-                field("Closing date of the IP"; Rec."Closing date of the IP")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Data di chiusura del reclamo/IP.';
-                }
-            }
-
-            group(Details)
-            {
-                field("List of the defects"; Rec."List of the defects")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Difetto rilevato.';
-                }
                 field("Quantities of the NC parts"; Rec."Quantities of the NC parts")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Quantità non conformi rilevate.';
+                    trigger OnValidate()
+                    var
+                        ItemRec: Record Item;
+                    begin
+                        Clear(TotalCostsOfTheComponents);
+                        if (Rec."Item No." <> '') and ItemRec.Get(Rec."Item No.") then
+                            TotalCostsOfTheComponents := Rec."Quantities of the NC parts" * ItemRec."Last Direct Cost";
+                    end;
                 }
                 field("Rif. Customer NC"; Rec."Rif. Customer NC")
                 {
@@ -177,25 +268,22 @@ page 50256 "XV IK Reclami Card"
                     ApplicationArea = All;
                     ToolTip = 'Collegamento ad altri reclami.';
                 }
-                field("Notes"; Rec."Notes")
+                field("Closing date of the IP"; Rec."Closing date of the IP")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Note aggiuntive.';
+                    ToolTip = 'Data di chiusura del reclamo/IP.';
                 }
-                field("Warranty and/or Reworking"; Rec."Warranty and/or Reworking")
+                field("Total costs of the components"; TotalCostsOfTheComponents)
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Garanzia e/o rilavorazione.';
+                    ToolTip = 'Costo totale dei componenti.';
+                    Editable = false;
                 }
-                field("Debit note and/or Ret goods"; Rec."Debit note and/or Ret goods")
+                field("Cost of the component (euro)"; Rec."Cost of the component (euro)")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Nota di debito e/o reso.';
+                    ToolTip = 'Costo del singolo componente.';
                 }
-            }
-
-            group(Costs)
-            {
                 field("Extra trans costs for warranty"; Rec."Extra trans costs for warranty")
                 {
                     ApplicationArea = All;
@@ -206,15 +294,25 @@ page 50256 "XV IK Reclami Card"
                     ApplicationArea = All;
                     ToolTip = 'Costi vari.';
                 }
+                field("Total costs of the IP"; Rec."Total costs of the IP")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Costo totale del reclamo/IP.';
+                }
                 field("B - Benefit/Cost (B/C)"; Rec."B - Benefit/Cost (B/C)")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Analisi benefici/costi – Sezione B.';
+                    ToolTip = 'Analisi benefici/costi - Sezione B.';
                 }
                 field("C - Benefit/Cost (B/C)"; Rec."C - Benefit/Cost (B/C)")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Analisi benefici/costi – Sezione C.';
+                    ToolTip = 'Analisi benefici/costi - Sezione C.';
+                }
+                field("Debit note and/or Ret goods"; Rec."Debit note and/or Ret goods")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Nota di debito e/o reso.';
                 }
             }
             group("Allegati Reclamo")
@@ -222,7 +320,7 @@ page 50256 "XV IK Reclami Card"
                 part(Allegati; "XV IK Reclami Doc ListPart")
                 {
                     ApplicationArea = All;
-                    SubPageView = where("Reclamo ID" = filter(<> ''));
+                    Visible = Rec.ID <> '';
                     SubPageLink = "Reclamo ID" = field(ID);
                 }
             }
@@ -246,12 +344,12 @@ page 50256 "XV IK Reclami Card"
 
                 trigger OnAction()
                 begin
-                    //Rec.TestField("Plant");
+                    //                    Rec.TestField("Plant");
                     Rec.TestField("Date of the document");
-                    //Rec.TestField("Type");
+                    //                   Rec.TestField("Type");
                     Rec.TestField("Problem Description");
-                    //Rec.TestField("IP assigned to.");
-                    // Rec.TestField("IP opened by");
+                    Rec.TestField("IP assigned to.");
+                    Rec.TestField("IP opened by");
                     // Rec.TestField("Source/reason of the IP");
                     //Rec.TestField("Problem solving tool");
                     //Rec.TestField("PDCA");
@@ -355,6 +453,10 @@ page 50256 "XV IK Reclami Card"
     }
     var
         ParentReclamoID: Code[100];
+        DescCustomerName: Text[100];
+        DescItemDescription: Text[100];
+        DescSupplierName: Text[100];
+        TotalCostsOfTheComponents: Decimal;
 
     procedure SetReclamoID(NewID: Code[100])
     begin
@@ -398,4 +500,26 @@ page 50256 "XV IK Reclami Card"
 
         Message('Record orfani eliminati.');
     end;
+
+    trigger OnAfterGetCurrRecord()
+    var
+        CustomerRec: Record Customer;
+        ItemRec: Record Item;
+        SupplierRec: Record Vendor;
+
+    begin
+        if Rec."Customer No." <> '' then
+            if (CustomerRec.Get(Rec."Customer No.")) then
+                DescCustomerName := CustomerRec."Name";
+        if Rec."Item No." <> '' then
+            if (ItemRec.Get(Rec."Item No.")) then begin
+                DescItemDescription := ItemRec.Description;
+                if (Rec."Quantities of the NC parts" <> 0) then
+                    TotalCostsOfTheComponents := Rec."Quantities of the NC parts" * ItemRec."Last Direct Cost";
+            end;
+        if Rec."Supplier No." <> '' then
+            if (SupplierRec.Get(Rec."Supplier No.")) then
+                DescSupplierName := SupplierRec."Name";
+    end;
+
 }

@@ -3768,6 +3768,15 @@ Elenco Materiali</Value>
         <Field Name="BuyFromVendorName">
           <DataField>BuyFromVendorName</DataField>
         </Field>
+        <Field Name="EOSShippingAgentCode">
+          <DataField>EOSShippingAgentCode</DataField>
+        </Field>
+        <Field Name="AdditionalNotes">
+          <DataField>AdditionalNotes</DataField>
+        </Field>
+        <Field Name="BuyFromContact">
+          <DataField>BuyFromContact</DataField>
+        </Field>
         <Field Name="BuyFromAddress1">
           <DataField>BuyFromAddress1</DataField>
         </Field>

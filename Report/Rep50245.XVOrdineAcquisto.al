@@ -1,11 +1,14 @@
 namespace Xview.Custom.Lazzerini;
+
+using Microsoft.Foundation.Company;
 using Microsoft.Inventory.Item;
+using Microsoft.Inventory.Location;
 using Microsoft.Purchases.Document;
 using Microsoft.Purchases.Vendor;
 using Microsoft.Foundation.PaymentTerms;
 using Microsoft.Foundation.Shipping;
 using Microsoft.Bank.BankAccount;
-using Microsoft.Foundation.Company;
+using Microsoft.Sales.Customer;
 
 report 50245 "XV Ordine Acquisto"
 {
@@ -38,18 +41,21 @@ report 50245 "XV Ordine Acquisto"
             column(CompanyVATRegNo; CompanyInfo.GetVATRegistrationNumber()) { }
             column(CompanyRegistrationNo; CompanyInfo.GetRegistrationNumber()) { }
 
-            column(ShipToName; "Ship-to Name") { }
-            column(ShipToName2; "Ship-to Name 2") { }
-            column(ShipToAddress; "Ship-to Address") { }
-            column(ShipToAddress2; "Ship-to Address 2") { }
-            column(ShipToPostCode; "Ship-to Post Code") { }
-            column(ShipToCity; "Ship-to City") { }
-            column(ShipToCountryRegionCode; "Ship-to Country/Region Code") { }
+            column(ShipToName; ShipToNameDisplay) { }
+            column(ShipToName2; ShipToName2Display) { }
+            column(ShipToAddress; ShipToAddressDisplay) { }
+            column(ShipToAddress2; ShipToAddress2Display) { }
+            column(ShipToPostCode; ShipToPostCodeDisplay) { }
+            column(ShipToCity; ShipToCityDisplay) { }
+            column(ShipToCountryRegionCode; ShipToCountryRegionCodeDisplay) { }
             column(ShipToCountry; ShipToCountry) { }
 
             column(DocumentType; "Document Type") { }
             column(BuyFromVendorNo; "Buy-from Vendor No.") { }
             column(BuyFromVendorName; BuyFromVendorName) { }
+            column(EOSShippingAgentCode; "Shipping Agent Code") { }
+            column(AdditionalNotes; "Additional Notes") { }
+            column(BuyFromContact; "Buy-from Contact") { }
             column(BuyFromAddress1; BuyFromAddress[1]) { }
             column(BuyFromAddress2; BuyFromAddress[2]) { }
             column(BuyFromAddress3; BuyFromAddress[3]) { }
@@ -114,16 +120,24 @@ report 50245 "XV Ordine Acquisto"
                 Clear(BankAccountDisplay);
                 Clear(ShipmentMethodDescription);
                 Clear(GeomRef);
+                Clear(ShipToNameDisplay);
+                Clear(ShipToName2Display);
+                Clear(ShipToAddressDisplay);
+                Clear(ShipToAddress2Display);
+                Clear(ShipToPostCodeDisplay);
+                Clear(ShipToCityDisplay);
+                Clear(ShipToCountryRegionCodeDisplay);
+                Clear(ShipToCountry);
                 CurrencyCodeDisplay := 'EUR';
             end;
 
             trigger OnAfterGetRecord()
             begin
                 LoadVendorData("Buy-from Vendor No.");
+                LoadDestinationMerceData(Header);
                 LoadPaymentMethodData("Payment Method Code");
                 LoadBankAccountData("Buy-from Vendor No.", "Bank Account");
                 LoadShipmentMethodData("Shipment Method Code");
-                ShipToCountry := Format("Ship-to Country/Region Code");
                 if "Currency Code" <> '' then
                     CurrencyCodeDisplay := "Currency Code"
                 else
@@ -150,6 +164,8 @@ report 50245 "XV Ordine Acquisto"
         CompanyInfo: Record "Company Information";
         DummyCompanyInfo: Record "Company Information";
         VendorRec: Record Vendor;
+        LocationRec: Record Location;
+        CustomerRec: Record Customer;
         PaymentMethodRec: Record "Payment Method";
         BankAccountRec: Record "Vendor Bank Account";
         ShipmentMethodRec: Record "Shipment Method";
@@ -158,6 +174,13 @@ report 50245 "XV Ordine Acquisto"
         CompanyCountry: Text[50];
         CompanyFaxNo: Text[30];
         ShipToCountry: Text[50];
+        ShipToNameDisplay: Text[100];
+        ShipToName2Display: Text[100];
+        ShipToAddressDisplay: Text[100];
+        ShipToAddress2Display: Text[100];
+        ShipToPostCodeDisplay: Text[20];
+        ShipToCityDisplay: Text[50];
+        ShipToCountryRegionCodeDisplay: Text[20];
         BuyFromVendorName: Text[100];
         BuyFromPostCode: Text[20];
         BuyFromCity: Text[50];
@@ -216,6 +239,101 @@ report 50245 "XV Ordine Acquisto"
             BuyFromPhoneNo := VendorRec."Phone No.";
             BuyFromFaxNo := VendorRec."Fax No.";
         end;
+    end;
+
+    local procedure LoadDestinationMerceData(var PurchaseHeader: Record "Purchase Header")
+    var
+        ShipToCode: Code[20];
+    begin
+        Clear(ShipToNameDisplay);
+        Clear(ShipToName2Display);
+        Clear(ShipToAddressDisplay);
+        Clear(ShipToAddress2Display);
+        Clear(ShipToPostCodeDisplay);
+        Clear(ShipToCityDisplay);
+        Clear(ShipToCountryRegionCodeDisplay);
+        Clear(ShipToCountry);
+
+        ShipToCode := PurchaseHeader."Ship-to Code";
+
+        if (ShipToCode <> '') and LocationRec.Get(ShipToCode) then begin
+            LoadDestinationFromLocation(LocationRec);
+            exit;
+        end;
+
+        if (ShipToCode <> '') and CustomerRec.Get(ShipToCode) then begin
+            LoadDestinationFromCustomer(CustomerRec);
+            exit;
+        end;
+
+        if HasManualShipToAddress(PurchaseHeader) then begin
+            LoadDestinationFromHeader(PurchaseHeader);
+            exit;
+        end;
+
+        LoadDestinationFromVendor(PurchaseHeader."Buy-from Vendor No.");
+    end;
+
+    local procedure LoadDestinationFromVendor(VendorNo: Code[20])
+    begin
+        if not VendorRec.Get(VendorNo) then
+            exit;
+
+        ShipToNameDisplay := VendorRec.Name;
+        ShipToName2Display := VendorRec."Name 2";
+        ShipToAddressDisplay := VendorRec.Address;
+        ShipToAddress2Display := VendorRec."Address 2";
+        ShipToPostCodeDisplay := VendorRec."Post Code";
+        ShipToCityDisplay := VendorRec.City;
+        ShipToCountryRegionCodeDisplay := Format(VendorRec."Country/Region Code");
+        ShipToCountry := ShipToCountryRegionCodeDisplay;
+    end;
+
+    local procedure LoadDestinationFromLocation(Location: Record Location)
+    begin
+        ShipToNameDisplay := Location.Name;
+        ShipToName2Display := Location."Name 2";
+        ShipToAddressDisplay := Location.Address;
+        ShipToAddress2Display := Location."Address 2";
+        ShipToPostCodeDisplay := Location."Post Code";
+        ShipToCityDisplay := Location.City;
+        ShipToCountryRegionCodeDisplay := Format(Location."Country/Region Code");
+        ShipToCountry := ShipToCountryRegionCodeDisplay;
+    end;
+
+    local procedure LoadDestinationFromCustomer(Customer: Record Customer)
+    begin
+        ShipToNameDisplay := Customer.Name;
+        ShipToName2Display := Customer."Name 2";
+        ShipToAddressDisplay := Customer.Address;
+        ShipToAddress2Display := Customer."Address 2";
+        ShipToPostCodeDisplay := Customer."Post Code";
+        ShipToCityDisplay := Customer.City;
+        ShipToCountryRegionCodeDisplay := Format(Customer."Country/Region Code");
+        ShipToCountry := ShipToCountryRegionCodeDisplay;
+    end;
+
+    local procedure LoadDestinationFromHeader(PurchaseHeader: Record "Purchase Header")
+    begin
+        ShipToNameDisplay := PurchaseHeader."Ship-to Name";
+        ShipToName2Display := PurchaseHeader."Ship-to Name 2";
+        ShipToAddressDisplay := PurchaseHeader."Ship-to Address";
+        ShipToAddress2Display := PurchaseHeader."Ship-to Address 2";
+        ShipToPostCodeDisplay := PurchaseHeader."Ship-to Post Code";
+        ShipToCityDisplay := PurchaseHeader."Ship-to City";
+        ShipToCountryRegionCodeDisplay := Format(PurchaseHeader."Ship-to Country/Region Code");
+        ShipToCountry := ShipToCountryRegionCodeDisplay;
+    end;
+
+    local procedure HasManualShipToAddress(PurchaseHeader: Record "Purchase Header"): Boolean
+    begin
+        exit((PurchaseHeader."Ship-to Name" <> '') or
+             (PurchaseHeader."Ship-to Name 2" <> '') or
+             (PurchaseHeader."Ship-to Address" <> '') or
+             (PurchaseHeader."Ship-to Address 2" <> '') or
+             (PurchaseHeader."Ship-to Post Code" <> '') or
+             (PurchaseHeader."Ship-to City" <> '') or
+             (PurchaseHeader."Ship-to Country/Region Code" <> ''));
     end;
 
     local procedure LoadPaymentMethodData(PaymentMethodCode: Code[10])

@@ -85,6 +85,23 @@ pageextension 50211 XVPostedSalesInvoice extends "Posted Sales Invoice"
                     SalesInvoiceReport.Run();
                 end;
             }
+            action(StampaAccompagnatoriaCustom)
+            {
+                ApplicationArea = All;
+                Caption = 'Stampa Fattura Accompagnatoria (Custom)';
+                ToolTip = 'Stampa la fattura con il nuovo layout personalizzato per le fatture accompagnatorie.';
+                Image = Print;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    AccompagnatoriaReport: Report "XV Fatt. Accompagnatoria Cust";
+                begin
+                    AccompagnatoriaReport.SetParameters(Rec."No.");
+                    AccompagnatoriaReport.Run();
+                end;
+            }
         }
     }
     var

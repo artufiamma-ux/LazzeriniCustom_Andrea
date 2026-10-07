@@ -5,7 +5,7 @@ using Microsoft.Manufacturing.Routing;
 using Microsoft.Sales.Document;
 using System.Text;
 
-reportextension 50302 "XV MES ProdOrderDetCalc Ext" extends "EOS 07000 MES ProdOrderDetCalc"
+reportextension 50303 "XV MES ProdOrderDetCalc Ext" extends "EOS 07000 MES ProdOrderDetCalc"
 {
     RDLCLayout = './ReportLayouts/XVProdOrderDetailedCalc.rdlc';
 

@@ -121,7 +121,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Barcode_ProdOrder.Value</Value>
+                                  <Value>=First(Fields!Barcode_ProdOrder.Value, "DataSet_Result")</Value>
                                   <Style>
                                     <FontFamily>IDAutomationHC39M</FontFamily>
                                     <FontSize>18pt</FontSize>
@@ -200,7 +200,7 @@
                                   <Value>=Fields!Desc_ProdOrder.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -432,7 +432,7 @@
                                   <Value>Rif. ordine</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -465,7 +465,7 @@
                                   <Value>=CStr(Fields!RifOrdVendita_ProdOrder.Value)</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -580,7 +580,7 @@
                                   <Value>=Fields!PosizioneLayout_ProdOrder.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1503,6 +1503,9 @@
                             <VerticalAlign>Bottom</VerticalAlign>
                             <PaddingLeft>5pt</PaddingLeft>
                           </Style>
+                          <Visibility>
+                            <Hidden>true</Hidden>
+                          </Visibility>
                         </Textbox>
                         <ColSpan>2</ColSpan>
                       </CellContents>
@@ -3048,7 +3051,7 @@
                             <PaddingRight>5pt</PaddingRight>
                           </Style>
                           <Visibility>
-                            <Hidden>True</Hidden>
+                            <Hidden>true</Hidden>
                           </Visibility>
                         </Textbox>
                       </CellContents>
@@ -3081,7 +3084,7 @@
                             <PaddingLeft>5pt</PaddingLeft>
                           </Style>
                           <Visibility>
-                            <Hidden>True</Hidden>
+                            <Hidden>true</Hidden>
                           </Visibility>
                         </Textbox>
                         <ColSpan>2</ColSpan>
@@ -3104,7 +3107,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3138,7 +3141,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3173,7 +3176,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3208,7 +3211,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3243,7 +3246,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3278,7 +3281,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3313,7 +3316,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3348,7 +3351,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3383,7 +3386,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3420,7 +3423,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3457,7 +3460,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -3492,7 +3495,7 @@
                                   <Value />
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>9pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -4053,7 +4056,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Fase_ProdOrderRtngLine.Value</Value>
+                                  <Value>=Fields!Type_ProdOrderRtngLine.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>8pt</FontSize>
@@ -4205,6 +4208,9 @@
                             <VerticalAlign>Top</VerticalAlign>
                             <PaddingLeft>5pt</PaddingLeft>
                           </Style>
+                          <Visibility>
+                            <Hidden>true</Hidden>
+                          </Visibility>
                         </Textbox>
                         <ColSpan>2</ColSpan>
                       </CellContents>
@@ -4427,7 +4433,6 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <ZIndex>5</ZIndex>
                           <Style>
                             <BackgroundColor>=IIF(RowNumber(Nothing) Mod 2,"#efefef","White")</BackgroundColor>
                             <VerticalAlign>Top</VerticalAlign>
@@ -4497,7 +4502,7 @@
                             <PaddingRight>5pt</PaddingRight>
                           </Style>
                           <Visibility>
-                            <Hidden>True</Hidden>
+                            <Hidden>true</Hidden>
                           </Visibility>
                         </Textbox>
                       </CellContents>
@@ -4529,7 +4534,7 @@
                             <PaddingLeft>5pt</PaddingLeft>
                           </Style>
                           <Visibility>
-                            <Hidden>True</Hidden>
+                            <Hidden>true</Hidden>
                           </Visibility>
                         </Textbox>
                         <ColSpan>2</ColSpan>
@@ -8780,6 +8785,11 @@
                                     <Hidden>=IIf(CStr(Fields!ItemNo_ProdOrderComp.Value) = "",True,False)</Hidden>
                                   </Visibility>
                                 </TablixMember>
+                                <TablixMember>
+                                  <Visibility>
+                                    <Hidden>=IIf(CStr(Fields!ItemNo_ProdOrderComp.Value) = "",True,False)</Hidden>
+                                  </Visibility>
+                                </TablixMember>
                               </TablixMembers>
                               <DataElementName>Detail_Collection</DataElementName>
                               <DataElementOutput>Output</DataElementOutput>
@@ -9030,6 +9040,125 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="SourceNo_ProdOrderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>SourceNo_ProdOrderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>SourceNo_ProdOrderCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Qty_ProdOrderCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Qty_ProdOrderCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Qty_ProdOrderCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ItemNoCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ItemNoCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ItemNoCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Type_ProdOrderRtngLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Type_ProdOrderRtngLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Type_ProdOrderRtngLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="No_ProdOrderRtngLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>No_ProdOrderRtngLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>No_ProdOrderRtngLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Desc_ProdOrderRtngLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Desc_ProdOrderRtngLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Desc_ProdOrderRtngLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="InputQty_ProdOrderRtngLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>InputQty_ProdOrderRtngLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>InputQty_ProdOrderRtngLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ExpecOPCostAmt_ProdOrderRtngLineCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ExpecOPCostAmt_ProdOrderRtngLineCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ExpecOPCostAmt_ProdOrderRtngLineCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Desc_ProdOrderCompCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>Desc_ProdOrderCompCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Desc_ProdOrderCompCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="RtngLinkCode_ProdOrderCompCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>RtngLinkCode_ProdOrderCompCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>RtngLinkCode_ProdOrderCompCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ExpectedQty_ProdOrderCompCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>ExpectedQty_ProdOrderCompCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ExpectedQty_ProdOrderCompCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CostAmt_ProdOrderCompCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>CostAmt_ProdOrderCompCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>CostAmt_ProdOrderCompCaption</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="UnitCost_ProdOrderCompCaption">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>UnitCost_ProdOrderCompCaption</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>UnitCost_ProdOrderCompCaption</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -9083,14 +9212,17 @@ End Function</Code>
   <DataSets>
     <DataSet Name="DataSet_Result">
       <Fields>
+        <Field Name="TodayFormatted">
+          <DataField>TodayFormatted</DataField>
+        </Field>
+        <Field Name="CompanyName">
+          <DataField>CompanyName</DataField>
+        </Field>
         <Field Name="ProdOrderTableCaptionFilter">
           <DataField>ProdOrderTableCaptionFilter</DataField>
         </Field>
-        <Field Name="Barcode_ProdOrder">
-          <DataField>Barcode_ProdOrder</DataField>
-        </Field>
-        <Field Name="Barcode_Font">
-          <DataField>Barcode_Font</DataField>
+        <Field Name="ProdOrderFilter">
+          <DataField>ProdOrderFilter</DataField>
         </Field>
         <Field Name="No_ProdOrder">
           <DataField>No_ProdOrder</DataField>
@@ -9113,51 +9245,6 @@ End Function</Code>
         <Field Name="CurrReportPageNoCaption">
           <DataField>CurrReportPageNoCaption</DataField>
         </Field>
-        <Field Name="CompanyName">
-          <DataField>CompanyName</DataField>
-        </Field>
-        <Field Name="TodayFormatted">
-          <DataField>TodayFormatted</DataField>
-        </Field>
-        <Field Name="ProdOrderFilter">
-          <DataField>ProdOrderFilter</DataField>
-        </Field>
-        <Field Name="ShowBarcode">
-          <DataField>ShowBarcode</DataField>
-        </Field>
-        <Field Name="IsFunctionAPI">
-          <DataField>IsFunctionAPI</DataField>
-        </Field>
-        <Field Name="ISQRCode">
-          <DataField>ISQRCode</DataField>
-        </Field>
-        <Field Name="TotalMaterialCostCaption">
-          <DataField>TotalMaterialCostCaption</DataField>
-        </Field>
-        <Field Name="TotalProductionCostCaption">
-          <DataField>TotalProductionCostCaption</DataField>
-        </Field>
-        <Field Name="TotalProdCostCaption">
-          <DataField>TotalProdCostCaption</DataField>
-        </Field>
-        <Field Name="TotalMterlCostCaption">
-          <DataField>TotalMterlCostCaption</DataField>
-        </Field>
-        <Field Name="TotalCostCaption">
-          <DataField>TotalCostCaption</DataField>
-        </Field>
-        <Field Name="RifOrdVendita_ProdOrder">
-          <DataField>RifOrdVendita_ProdOrder</DataField>
-        </Field>
-        <Field Name="NrLayout_ProdOrder">
-          <DataField>NrLayout_ProdOrder</DataField>
-        </Field>
-        <Field Name="PosizioneLayout_ProdOrder">
-          <DataField>PosizioneLayout_ProdOrder</DataField>
-        </Field>
-        <Field Name="ProdOrderCompOPCostAmtFormat">
-          <DataField>ProdOrderCompOPCostAmtFormat</DataField>
-        </Field>
         <Field Name="LineNo_ProdOrderLine">
           <DataField>LineNo_ProdOrderLine</DataField>
         </Field>
@@ -9167,11 +9254,14 @@ End Function</Code>
         <Field Name="Item_Description">
           <DataField>Item_Description</DataField>
         </Field>
+        <Field Name="OPNo_ProdOrderRtngLine">
+          <DataField>OPNo_ProdOrderRtngLine</DataField>
+        </Field>
         <Field Name="OPNo_ProdOrderRtngLineCaption">
           <DataField>OPNo_ProdOrderRtngLineCaption</DataField>
         </Field>
-        <Field Name="OPNo_ProdOrderRtngLine">
-          <DataField>OPNo_ProdOrderRtngLine</DataField>
+        <Field Name="Type_ProdOrderRtngLine">
+          <DataField>Type_ProdOrderRtngLine</DataField>
         </Field>
         <Field Name="No_ProdOrderRtngLine">
           <DataField>No_ProdOrderRtngLine</DataField>
@@ -9191,26 +9281,41 @@ End Function</Code>
         <Field Name="ExpecOPCostAmt_ProdOrderRtngLineFormat">
           <DataField>ExpecOPCostAmt_ProdOrderRtngLineFormat</DataField>
         </Field>
+        <Field Name="TotalProductionCostCaption">
+          <DataField>TotalProductionCostCaption</DataField>
+        </Field>
         <Field Name="Barcode_ProdOrderRtngLine">
           <DataField>Barcode_ProdOrderRtngLine</DataField>
         </Field>
         <Field Name="Barcode_Image_ProdOrderRtngLine">
           <DataField>Barcode_Image_ProdOrderRtngLine</DataField>
         </Field>
-        <Field Name="ItemNo_ProdOrderCompCaption">
-          <DataField>ItemNo_ProdOrderCompCaption</DataField>
+        <Field Name="IsFunctionAPI">
+          <DataField>IsFunctionAPI</DataField>
+        </Field>
+        <Field Name="ISQRCode">
+          <DataField>ISQRCode</DataField>
+        </Field>
+        <Field Name="Barcode_Type">
+          <DataField>Barcode_Type</DataField>
+        </Field>
+        <Field Name="Barcode_Font">
+          <DataField>Barcode_Font</DataField>
+        </Field>
+        <Field Name="ShowBarcode">
+          <DataField>ShowBarcode</DataField>
         </Field>
         <Field Name="ItemNo_ProdOrderComp">
           <DataField>ItemNo_ProdOrderComp</DataField>
         </Field>
-        <Field Name="Desc_ProdOrderCompCaption">
-          <DataField>Desc_ProdOrderCompCaption</DataField>
+        <Field Name="ItemNo_ProdOrderCompCaption">
+          <DataField>ItemNo_ProdOrderCompCaption</DataField>
         </Field>
         <Field Name="Desc_ProdOrderComp">
           <DataField>Desc_ProdOrderComp</DataField>
         </Field>
-        <Field Name="ExpectedQty_ProdOrderCompCaption">
-          <DataField>ExpectedQty_ProdOrderCompCaption</DataField>
+        <Field Name="RtngLinkCode_ProdOrderComp">
+          <DataField>RtngLinkCode_ProdOrderComp</DataField>
         </Field>
         <Field Name="ExpectedQty_ProdOrderComp">
           <DataField>ExpectedQty_ProdOrderComp</DataField>
@@ -9218,8 +9323,11 @@ End Function</Code>
         <Field Name="ExpectedQty_ProdOrderCompFormat">
           <DataField>ExpectedQty_ProdOrderCompFormat</DataField>
         </Field>
-        <Field Name="UnitOfMeasure_ProdOrderComp">
-          <DataField>UnitOfMeasure_ProdOrderComp</DataField>
+        <Field Name="CostAmt_ProdOrderComp">
+          <DataField>CostAmt_ProdOrderComp</DataField>
+        </Field>
+        <Field Name="CostAmt_ProdOrderCompFormat">
+          <DataField>CostAmt_ProdOrderCompFormat</DataField>
         </Field>
         <Field Name="UnitCost_ProdOrderComp">
           <DataField>UnitCost_ProdOrderComp</DataField>
@@ -9227,11 +9335,41 @@ End Function</Code>
         <Field Name="UnitCost_ProdOrderCompFormat">
           <DataField>UnitCost_ProdOrderCompFormat</DataField>
         </Field>
-        <Field Name="CostAmt_ProdOrderComp">
-          <DataField>CostAmt_ProdOrderComp</DataField>
+        <Field Name="TotalMaterialCostCaption">
+          <DataField>TotalMaterialCostCaption</DataField>
         </Field>
-        <Field Name="CostAmt_ProdOrderCompFormat">
-          <DataField>CostAmt_ProdOrderCompFormat</DataField>
+        <Field Name="ProdOrderCompOPCostAmt">
+          <DataField>ProdOrderCompOPCostAmt</DataField>
+        </Field>
+        <Field Name="ProdOrderCompOPCostAmtFormat">
+          <DataField>ProdOrderCompOPCostAmtFormat</DataField>
+        </Field>
+        <Field Name="TotalProdCostCaption">
+          <DataField>TotalProdCostCaption</DataField>
+        </Field>
+        <Field Name="TotalMterlCostCaption">
+          <DataField>TotalMterlCostCaption</DataField>
+        </Field>
+        <Field Name="TotalCostCaption">
+          <DataField>TotalCostCaption</DataField>
+        </Field>
+        <Field Name="Barcode_ProdOrder">
+          <DataField>Barcode_ProdOrder</DataField>
+        </Field>
+        <Field Name="RifOrdVendita_ProdOrder">
+          <DataField>RifOrdVendita_ProdOrder</DataField>
+        </Field>
+        <Field Name="NrLayout_ProdOrder">
+          <DataField>NrLayout_ProdOrder</DataField>
+        </Field>
+        <Field Name="PosizioneLayout_ProdOrder">
+          <DataField>PosizioneLayout_ProdOrder</DataField>
+        </Field>
+        <Field Name="Fase_ProdOrder">
+          <DataField>Fase_ProdOrder</DataField>
+        </Field>
+        <Field Name="UnitOfMeasure_ProdOrderComp">
+          <DataField>UnitOfMeasure_ProdOrderComp</DataField>
         </Field>
       </Fields>
       <Query>

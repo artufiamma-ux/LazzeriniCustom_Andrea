@@ -76,72 +76,20 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
     }
     actions
     {
-        addafter("Action51")
+        addlast(Processing)
         {
-            action(ControllaIntegritaSerie)
+            action("Stampa etichette ricambi")
             {
-                Caption = 'Controlla integrità serie';
+                Caption = 'Stampa etichette ricambi';
+                Image = Print;
                 ApplicationArea = All;
-                Image = Check;
 
                 trigger OnAction()
                 var
-                    WhseShptLine: Record "Warehouse Shipment Line";
-                    SalesOrderLine: Record "Sales Line";
-                    Residuo: Decimal;
-                    AllShipped: Boolean;
-                    ItemToCheck: Text;
-                    ItemOrderMsg: Text;
+                    PreviewPage: Page "XV Etichette Ricambi Cliente";
                 begin
-                    AllShipped := true;
-                    ItemToCheck := '';
-                    ItemOrderMsg := '';
-                    WhseShptLine.Reset();
-                    WhseShptLine.SetRange("No.", Rec."No."); // stesso Warehouse Shipment
-
-                    if WhseShptLine.FindSet() then // per ogni riga del documento
-                        repeat
-                            SalesOrderLine.Reset();
-                            SalesOrderLine.SetRange("Document No.", WhseShptLine."Source No.");
-                            SalesOrderLine.SetRange("Line No.", WhseShptLine."Source Line No.");
-                            SalesOrderLine.SetRange("No.", WhseShptLine."Item No.");
-                            if SalesOrderLine.FindSet() then begin
-                                if WhseShptLine.Quantity <> SalesOrderLine.Quantity then begin
-                                    AllShipped := false;
-                                    ItemOrderMsg := '/' + ItemOrderMsg + 'Articolo ' + WhseShptLine."Item No." + ' con quantità diversa da ordine '
-                                end
-                            end
-                            else begin
-                                AllShipped := false;
-                                ItemOrderMsg := ItemOrderMsg + '\Articolo ' + WhseShptLine."Item No." + ' non presente in ordine ';
-                            end;
-                            Residuo := WhseShptLine.Quantity - WhseShptLine."Qty. to Ship";
-                            //Message('Riga %1: Quantità = %2, Quantità Spedita = %3, Residuo = %4, Ordine = %5', WhseShptLine."Line No.", WhseShptLine.Quantity, WhseShptLine."Qty. Shipped", Residuo, WhseShptLine."Source No.");
-                            if Residuo <> 0 then begin
-                                AllShipped := false;
-                                ItemToCheck := ItemToCheck + '\Quantità non corrispondente all''ordine per l''articolo: ' + WhseShptLine."Item No.";
-                                //break;
-                            end;
-                        until WhseShptLine.Next() = 0;
-                    //verifico se tutte le righe ordinate sono nella spedizione
-                    SalesOrderLine.Reset();
-                    SalesOrderLine.SetRange("Document No.", WhseShptLine."Source No.");
-                    //SalesOrderLine.SetRange("Line No.", WhseShptLine."Source Line No.");
-                    if SalesOrderLine.FindSet() then begin
-                        repeat
-                            WhseShptLine.Reset();
-                            WhseShptLine.SetRange("No.", Rec."No."); // stesso Warehouse Shipment
-                            WhseShptLine.SetRange("Source Line No.", SalesOrderLine."Line No.");
-                            if not WhseShptLine.FindSet() then begin
-                                AllShipped := false;
-                                ItemOrderMsg := ItemOrderMsg + '\Articolo ' + SalesOrderLine."No." + ' presente in ordine ma non presente in spedizione ';
-                            end;
-                        until SalesOrderLine.Next() = 0;
-                    end;
-                    if AllShipped then
-                        Message('Controllo integrità serie completato con successo.')
-                    else
-                        Message('Controllo integrità serie Fallito: ' + ItemOrderMsg + ItemToCheck);
+                    PreviewPage.SetShipmentHeader(Rec);
+                    PreviewPage.RunModal();
                 end;
             }
             action(StampaEtichetteUdc)
@@ -227,11 +175,15 @@ pageextension 50214 XVWarehouseShipment extends "Warehouse Shipment"
             }
 
         }
-        addlast(Category_Process)
+        addlast(Category_Category4)
         {
-            actionref(ControllaIntegritaSerie_Promoted; ControllaIntegritaSerie)
+            actionref(StampaEtichetteRicambi_Promoted; "Stampa etichette ricambi")
             {
             }
+        }
+
+        addlast(Category_Process)
+        {
             actionref(StampaEtichetteUdc_Promoted; StampaEtichetteUdc)
             {
             }

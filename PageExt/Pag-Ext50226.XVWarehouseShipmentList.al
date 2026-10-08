@@ -108,25 +108,6 @@ pageextension 50226 "XV Warehouse Shipment List" extends "Warehouse Shipment Lis
 
     actions
     {
-        addlast(Creation)
-        {
-            action("Stampa etichette ricambi")
-            {
-                Caption = 'Stampa etichette ricambi';
-                Image = Print;
-                ApplicationArea = All;
-
-
-
-                trigger OnAction()
-                var
-                    PreviewPage: Page "XV Etichette Ricambi Cliente";
-                begin
-                    PreviewPage.SetShipmentHeader(Rec);  // passi la riga corrente
-                    PreviewPage.RunModal();
-                end;
-            }
-        }
     }
 
 }

@@ -11,7 +11,7 @@
       <am:Name>PBIRB</am:Name>
       <am:Version>15.7.1819.28</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-09-14T15:13:02.1441933Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-09-23T10:39:09.7685195Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -678,7 +678,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!LineNo.Value</Value>
+                                  <Value>=Fields!ItemNo.Value</Value>
                                   <Style>
                                     <FontSize>6pt</FontSize>
                                   </Style>
@@ -1193,7 +1193,7 @@
                   <Paragraph>
                     <TextRuns>
                       <TextRun>
-                        <Value>=Sum(Fields!Amount.Value, "DataSet_Result")</Value>
+                        <Value>=Sum(Fields!VATBaseAmount.Value, "DataSet_Result")</Value>
                         <Style>
                           <Format>#,##0.00</Format>
                         </Style>
@@ -2714,9 +2714,9 @@
                     </Paragraph>
                   </Paragraphs>
                   <Top>1.0583cm</Top>
-                  <Left>7.65527cm</Left>
+                  <Left>7.49172cm</Left>
                   <Height>0.30645cm</Height>
-                  <Width>5.21829cm</Width>
+                  <Width>5.38184cm</Width>
                   <ZIndex>21</ZIndex>
                   <Style>
                     <Border>
@@ -2824,110 +2824,6 @@
                     </Border>
                   </Style>
                 </Textbox>
-                <Textbox Name="VettoreLbl">
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>VETTORE</Value>
-                          <Style>
-                            <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>6.5pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>0.05cm</Top>
-                  <Left>6.3cm</Left>
-                  <Height>0.3cm</Height>
-                  <Width>6cm</Width>
-                  <ZIndex>1</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </Textbox>
-                <Textbox Name="BuyerLbl">
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>BUYER</Value>
-                          <Style>
-                            <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>6.5pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>0.05cm</Top>
-                  <Left>12.6cm</Left>
-                  <Height>0.3cm</Height>
-                  <Width>6cm</Width>
-                  <ZIndex>2</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </Textbox>
-                <Textbox Name="AnnotazioniLbl">
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>ANNOTAZIONI</Value>
-                          <Style>
-                            <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>6.5pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>1.35cm</Top>
-                  <Left>0.1cm</Left>
-                  <Height>0.3cm</Height>
-                  <Width>12.2cm</Width>
-                  <ZIndex>3</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </Textbox>
-                <Textbox Name="ManagingDirectorLbl">
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>MANAGING DIRECTOR</Value>
-                          <Style>
-                            <FontFamily>Segoe UI</FontFamily>
-                            <FontSize>6.5pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <Top>1.35cm</Top>
-                  <Left>12.6cm</Left>
-                  <Height>0.3cm</Height>
-                  <Width>6cm</Width>
-                  <ZIndex>4</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                  </Style>
-                </Textbox>
                 <Textbox Name="AspettoVal">
                   <CanGrow>true</CanGrow>
                   <Paragraphs>
@@ -2948,6 +2844,33 @@
                   <Left>0.1cm</Left>
                   <Height>0.75cm</Height>
                   <Width>6cm</Width>
+                  <ZIndex>1</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="VettoreLbl">
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>VETTORE</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>6.5pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>0.05cm</Top>
+                  <Left>6.3cm</Left>
+                  <Height>0.3cm</Height>
+                  <Width>6cm</Width>
+                  <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -2974,7 +2897,33 @@
                   <Left>6.3cm</Left>
                   <Height>0.75cm</Height>
                   <Width>6cm</Width>
-                  <ZIndex>1</ZIndex>
+                  <ZIndex>3</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="BuyerLbl">
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>BUYER</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>6.5pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>0.05cm</Top>
+                  <Left>12.6cm</Left>
+                  <Height>0.3cm</Height>
+                  <Width>6cm</Width>
+                  <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3001,7 +2950,33 @@
                   <Left>12.6cm</Left>
                   <Height>0.75cm</Height>
                   <Width>6cm</Width>
-                  <ZIndex>2</ZIndex>
+                  <ZIndex>5</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="AnnotazioniLbl">
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>ANNOTAZIONI</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>6.5pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>1.35cm</Top>
+                  <Left>0.1cm</Left>
+                  <Height>0.3cm</Height>
+                  <Width>12.2cm</Width>
+                  <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3028,7 +3003,33 @@
                   <Left>0.1cm</Left>
                   <Height>0.9cm</Height>
                   <Width>12.2cm</Width>
-                  <ZIndex>3</ZIndex>
+                  <ZIndex>7</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="ManagingDirectorLbl">
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>MANAGING DIRECTOR</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>6.5pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>1.35cm</Top>
+                  <Left>12.6cm</Left>
+                  <Height>0.3cm</Height>
+                  <Width>6cm</Width>
+                  <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3041,7 +3042,7 @@
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!BuyFromContact.Value</Value>
+                          <Value>=Fields!BuyFromContactNo.Value</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>6.5pt</FontSize>
@@ -3055,7 +3056,7 @@
                   <Left>12.6cm</Left>
                   <Height>0.9cm</Height>
                   <Width>6cm</Width>
-                  <ZIndex>4</ZIndex>
+                  <ZIndex>9</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3066,7 +3067,7 @@
                   <Left>6.24509cm</Left>
                   <Height>1.3cm</Height>
                   <Width>0cm</Width>
-                  <ZIndex>5</ZIndex>
+                  <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -3077,7 +3078,7 @@
                   <Left>12.49018cm</Left>
                   <Height>1.3cm</Height>
                   <Width>0cm</Width>
-                  <ZIndex>6</ZIndex>
+                  <ZIndex>11</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -3089,7 +3090,7 @@
                   <Left>12.49018cm</Left>
                   <Height>1.15cm</Height>
                   <Width>0cm</Width>
-                  <ZIndex>7</ZIndex>
+                  <ZIndex>12</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -3100,7 +3101,7 @@
                   <Top>1.3cm</Top>
                   <Height>0cm</Height>
                   <Width>18.73528cm</Width>
-                  <ZIndex>8</ZIndex>
+                  <ZIndex>13</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -3108,9 +3109,8 @@
                   </Style>
                 </Line>
               </ReportItems>
-              <Top>0cm</Top>
               <Left>0.25965cm</Left>
-              <Height>2.45cm</Height>
+              <Height>2.55cm</Height>
               <Width>18.73528cm</Width>
               <Style>
                 <Border>
@@ -3359,6 +3359,9 @@
         <Field Name="EOSShippingAgentCode">
           <DataField>EOSShippingAgentCode</DataField>
         </Field>
+        <Field Name="BuyFromContactNo">
+          <DataField>BuyFromContactNo</DataField>
+        </Field>
         <Field Name="AdditionalNotes">
           <DataField>AdditionalNotes</DataField>
         </Field>
@@ -3442,6 +3445,9 @@
         </Field>
         <Field Name="OrdinePilota">
           <DataField>OrdinePilota</DataField>
+        </Field>
+        <Field Name="ItemNo">
+          <DataField>ItemNo</DataField>
         </Field>
         <Field Name="LineNo">
           <DataField>LineNo</DataField>

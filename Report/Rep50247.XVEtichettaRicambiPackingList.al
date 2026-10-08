@@ -68,8 +68,6 @@ report 50247 "XV Etich. Ricambi Packing List"
 
                 trigger OnPreDataItem()
                 begin
-                    if NrSerieFilter <> '' then
-                        SetFilter("Progressivo Serie Spedizione", NrSerieFilter);
                 end;
 
                 trigger OnAfterGetRecord()
@@ -127,13 +125,6 @@ report 50247 "XV Etich. Ricambi Packing List"
                 group(Opzioni)
                 {
                     Caption = 'Opzioni';
-
-                    field(NrSerieFilter; NrSerieFilter)
-                    {
-                        Caption = 'Nr Serie';
-                        ApplicationArea = All;
-                        ToolTip = 'Inserire uno o più numeri (es: 1 | 1|3 | 1..5). Lasciare vuoto per tutti.';
-                    }
                     field(NrScatolaFilter; NrScatolaFilter)
                     {
                         Caption = 'Nr Scatola';
@@ -148,7 +139,6 @@ report 50247 "XV Etich. Ricambi Packing List"
     var
         WarehouseShipmentNo: Code[20];
         NrScatolaFilter: Text;
-        NrSerieFilter: Text;
         ItemNo: Code[20];
         DescriptionIT: Text[100];
         DescriptionEN: Text[100];

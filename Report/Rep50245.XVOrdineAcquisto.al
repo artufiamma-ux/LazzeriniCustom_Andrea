@@ -54,6 +54,7 @@ report 50245 "XV Ordine Acquisto"
             column(BuyFromVendorNo; "Buy-from Vendor No.") { }
             column(BuyFromVendorName; BuyFromVendorName) { }
             column(EOSShippingAgentCode; "Shipping Agent Code") { }
+            column(BuyFromContactNo; "Buy-from Contact No.") { }
             column(AdditionalNotes; "Additional Notes") { }
             column(BuyFromContact; "Buy-from Contact") { }
             column(BuyFromAddress1; BuyFromAddress[1]) { }
@@ -88,6 +89,7 @@ report 50245 "XV Ordine Acquisto"
                 DataItemLink = "Document Type" = field("Document Type"), "Document No." = field("No.");
                 DataItemTableView = sorting("Document Type", "Document No.", "Line No.");
 
+                column(ItemNo; ItemNoDisplay) { }
                 column(LineNo; "Line No.") { }
                 column(LineDescription; Description) { }
                 column(DrawingNo; "Drawing No.") { }
@@ -103,7 +105,10 @@ report 50245 "XV Ordine Acquisto"
 
                 trigger OnAfterGetRecord()
                 begin
-                    // keep GeomRef as is (populate if present)
+                    if Type = Type::Item then
+                        ItemNoDisplay := "No."
+                    else
+                        Clear(ItemNoDisplay);
                 end;
             }
 
@@ -195,6 +200,7 @@ report 50245 "XV Ordine Acquisto"
         BankAccountDisplay: Text[200];
         ShipmentMethodDescription: Text[100];
         GeomRef: Text[50];
+        ItemNoDisplay: Code[20];
         CurrencyCodeDisplay: Text[10];
 
     local procedure LoadCompanyData()

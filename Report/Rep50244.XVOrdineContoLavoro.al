@@ -60,6 +60,7 @@ report 50244 "XV Ordine Conto Lavoro"
             column(BuyFromVendorNo; "Buy-from Vendor No.") { }
             column(BuyFromVendorName; BuyFromVendorName) { }
             column(EOSShippingAgentCode; "Shipping Agent Code") { }
+            column(BuyFromContactNo; "Buy-from Contact No.") { }
             column(AdditionalNotes; "Additional Notes") { }
             column(BuyFromContact; "Buy-from Contact") { }
             column(BuyFromAddress1; BuyFromAddress[1]) { }
@@ -118,7 +119,7 @@ report 50244 "XV Ordine Conto Lavoro"
                 DataItemTableView = sorting("Document Type", "Document No.", "Line No.");
 
                 // Nr. -> Purchase Line."No." (id 6)
-                column(LineNo; "No.") { }
+                column(LineItemNo; "No.") { }
                 // Descrizione -> Purchase Line.Description (id 11)
                 column(LineDescription; Description) { }
                 // Dis. -> Purchase Line."Drawing No." (custom field id 50201)
@@ -393,15 +394,16 @@ report 50244 "XV Ordine Conto Lavoro"
              (PurchaseHeader."Ship-to Country/Region Code" <> ''));
     end;
 
-        local procedure HasSubcontractingOrder(PurchaseOrderNo: Code[20]): Boolean
-        begin
-            PurchaseLineRec.Reset();
-            PurchaseLineRec.SetRange("Document Type", PurchaseLineRec."Document Type"::Order);
-            PurchaseLineRec.SetRange("Document No.", PurchaseOrderNo);
-            PurchaseLineRec.SetFilter("Prod. Order No.", '<>%1', '');
+    local procedure HasSubcontractingOrder(PurchaseOrderNo: Code[20]): Boolean
+    begin
+        PurchaseLineRec.Reset();
+        PurchaseLineRec.SetRange("Document Type", PurchaseLineRec."Document Type"::Order);
+        PurchaseLineRec.SetRange("Document No.", PurchaseOrderNo);
+        PurchaseLineRec.SetFilter("Prod. Order No.", '<>%1', '');
 
-            exit(not PurchaseLineRec.IsEmpty());
-        end;
+        exit(not PurchaseLineRec.IsEmpty());
+    end;
+
     local procedure LoadPaymentMethodData(PaymentMethodCode: Code[10])
     begin
         Clear(PaymentMethodDescription);

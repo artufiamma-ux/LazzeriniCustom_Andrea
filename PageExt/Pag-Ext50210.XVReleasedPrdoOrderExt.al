@@ -74,7 +74,7 @@ pageextension 50210 "XV Released Prod. Order Ext" extends "Firm Planned Prod. Or
 
                 trigger OnAction()
                 var
-                    ProdOrderDetailedCalc: Report "XV Prod. Order Dtl Calc.";
+                    ProdOrderDetailedCalc: Report "EOS 07000 MES ProdOrderDetCalc";
                 begin
                     ProdOrderDetailedCalc.SetTableView(Rec);
                     ProdOrderDetailedCalc.RunModal();

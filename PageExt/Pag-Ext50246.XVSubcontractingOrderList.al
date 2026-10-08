@@ -6,6 +6,18 @@ using Microsoft.Manufacturing.Document;
 pageextension 50246 "XV Subcontracting Order List" extends "Subcontracting Order List"
 #pragma warning restore AL0432
 {
+    layout
+    {
+        addafter("Currency Code")
+        {
+            field("Shipping Agent Code"; Rec."Shipping Agent Code")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Trasportatore.';
+            }
+        }
+    }
+
     actions
     {
         addlast(Processing)

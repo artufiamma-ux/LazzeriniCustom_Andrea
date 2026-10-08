@@ -13,6 +13,8 @@ report 50301 "XV Prod. Order Dtl Calc."
     {
         dataitem("Production Order"; "Production Order")
         {
+            DataItemTableView = sorting("No.");
+            RequestFilterFields = "No.";
             column(ProdOrderTableCaptionFilter; ProdOrderTableCaptionFilterTxt) { }
             column(Barcode_ProdOrder; BarcodeProdOrderTxt) { }
             column(Barcode_Font; BarcodeFontTxt) { }
@@ -36,7 +38,46 @@ report 50301 "XV Prod. Order Dtl Calc."
             column(RifOrdVendita_ProdOrder; Format(GetRifOrdVendita("No."))) { }
             column(NrLayout_ProdOrder; Format(GetNrLayout("No."))) { }
             column(PosizioneLayout_ProdOrder; Format(GetPosizioneLayout("No."))) { }
+            column(Fase_ProdOrder; GetFaseDescription("No.")) { }
             column(ProdOrderCompOPCostAmtFormat; ProdOrderCompOPCostAmtFormatTxt) { }
+
+            dataitem("Prod. Order Line"; "Prod. Order Line")
+            {
+                DataItemLink = "Prod. Order No." = field("No.");
+                DataItemLinkReference = "Production Order";
+                column(LineNo_ProdOrderLine; "Line No.") { }
+                column(ItemNo; "Item No.") { }
+                column(Item_Description; Description) { }
+            }
+
+            dataitem("Prod. Order Routing Line"; "Prod. Order Routing Line")
+            {
+                DataItemLink = "Prod. Order No." = field("No.");
+                DataItemLinkReference = "Production Order";
+                column(OPNo_ProdOrderRtngLineCaption; OPNo_ProdOrderRtngLineCaptionTxt) { }
+                column(OPNo_ProdOrderRtngLine; "Operation No.") { }
+                column(No_ProdOrderRtngLine; "No.") { }
+                column(Desc_ProdOrderRtngLine; Description) { }
+                column(InputQty_ProdOrderRtngLine; "Input Quantity") { }
+                column(ExpecOPCostAmt_ProdOrderRtngLine; "Expected Operation Cost Amt.") { }
+                column(Barcode_ProdOrderRtngLine; Barcode_ProdOrderRtngLineTxt) { }
+                column(Barcode_Image_ProdOrderRtngLine; Barcode_Image_ProdOrderRtngLineTxt) { }
+            }
+
+            dataitem("Prod. Order Component"; "Prod. Order Component")
+            {
+                DataItemLink = "Prod. Order No." = field("No.");
+                DataItemLinkReference = "Production Order";
+                column(ItemNo_ProdOrderCompCaption; ItemNo_ProdOrderCompCaptionTxt) { }
+                column(ItemNo_ProdOrderComp; "Item No.") { }
+                column(Desc_ProdOrderCompCaption; Desc_ProdOrderCompCaptionTxt) { }
+                column(Desc_ProdOrderComp; Description) { }
+                column(ExpectedQty_ProdOrderCompCaption; ExpectedQty_ProdOrderCompCaptionTxt) { }
+                column(ExpectedQty_ProdOrderComp; Quantity) { }
+                column(UnitOfMeasure_ProdOrderComp; "Unit of Measure Code") { }
+                column(UnitCost_ProdOrderComp; "Unit Cost") { }
+                column(CostAmt_ProdOrderComp; "Cost Amount") { }
+            }
 
             trigger OnAfterGetRecord()
             var
@@ -55,6 +96,7 @@ report 50301 "XV Prod. Order Dtl Calc."
                 TotalProdCostCaptionTxt := TotalProdCostCaptionLbl;
                 TotalMterlCostCaptionTxt := TotalMterlCostCaptionLbl;
                 TotalCostCaptionTxt := TotalCostCaptionLbl;
+                Fase_ProdOrderCaptionTxt := Fase_ProdOrderCaptionLbl;
                 ShowBarcodeBool := true;
                 IsFunctionAPIBool := false;
                 ISQRCodeBool := false;
@@ -71,38 +113,12 @@ report 50301 "XV Prod. Order Dtl Calc."
                 BarcodeFontProvider.ValidateInput(BarcodeString, BarcodeSymbology);
                 BarcodeProdOrderTxt := '*' + BarcodeString + '*';
             end;
-        }
 
-        dataitem("Prod. Order Line"; "Prod. Order Line")
-        {
-            column(LineNo_ProdOrderLine; "Line No.") { }
-            column(ItemNo; "Item No.") { }
-            column(Item_Description; Description) { }
-        }
-
-        dataitem("Prod. Order Routing Line"; "Prod. Order Routing Line")
-        {
-            column(OPNo_ProdOrderRtngLineCaption; OPNo_ProdOrderRtngLineCaptionTxt) { }
-            column(OPNo_ProdOrderRtngLine; "Operation No.") { }
-            column(No_ProdOrderRtngLine; "No.") { }
-            column(Desc_ProdOrderRtngLine; Description) { }
-            column(InputQty_ProdOrderRtngLine; "Input Quantity") { }
-            column(ExpecOPCostAmt_ProdOrderRtngLine; "Expected Operation Cost Amt.") { }
-            column(Barcode_ProdOrderRtngLine; Barcode_ProdOrderRtngLineTxt) { }
-            column(Barcode_Image_ProdOrderRtngLine; Barcode_Image_ProdOrderRtngLineTxt) { }
-        }
-
-        dataitem("Prod. Order Component"; "Prod. Order Component")
-        {
-            column(ItemNo_ProdOrderCompCaption; ItemNo_ProdOrderCompCaptionTxt) { }
-            column(ItemNo_ProdOrderComp; "Item No.") { }
-            column(Desc_ProdOrderCompCaption; Desc_ProdOrderCompCaptionTxt) { }
-            column(Desc_ProdOrderComp; Description) { }
-            column(ExpectedQty_ProdOrderCompCaption; ExpectedQty_ProdOrderCompCaptionTxt) { }
-            column(ExpectedQty_ProdOrderComp; Quantity) { }
-            column(UnitOfMeasure_ProdOrderComp; "Unit of Measure Code") { }
-            column(UnitCost_ProdOrderComp; "Unit Cost") { }
-            column(CostAmt_ProdOrderComp; "Cost Amount") { }
+            trigger OnPreDataItem()
+            begin
+                if SelectedProductionOrderNo <> '' then
+                    SetRange("No.", SelectedProductionOrderNo);
+            end;
         }
     }
 
@@ -110,7 +126,9 @@ report 50301 "XV Prod. Order Dtl Calc."
         ProductionOrder: Record "Production Order";
         SalesHeader: Record "Sales Header";
         SalesLine: Record "Sales Line";
+        ProdOrderRoutingLine: Record "Prod. Order Routing Line";
         StandardTask: Record "Standard Task";
+        SelectedProductionOrderNo: Code[20];
         ProdOrderTableCaptionFilterTxt: Text;
         BarcodeProdOrderTxt: Text;
         BarcodeFontTxt: Text;
@@ -128,6 +146,7 @@ report 50301 "XV Prod. Order Dtl Calc."
         ProdOrderDetailedCalcCaptionTxt: Text;
         CurrReportPageNoCaptionTxt: Text;
         ProdOrderCompOPCostAmtFormatTxt: Text;
+        Fase_ProdOrderCaptionTxt: Text;
         OPNo_ProdOrderRtngLineCaptionTxt: Text;
         ItemNo_ProdOrderCompCaptionTxt: Text;
         Desc_ProdOrderCompCaptionTxt: Text;
@@ -149,9 +168,14 @@ report 50301 "XV Prod. Order Dtl Calc."
         TotalProdCostCaptionLbl: Label 'Total Prod Cost';
         TotalMterlCostCaptionLbl: Label 'Total Material Cost';
         TotalCostCaptionLbl: Label 'Total Cost';
+        Fase_ProdOrderCaptionLbl: Label 'Fase';
         Barcode_ProdOrderRtngLineTxt: Text;
         Barcode_Image_ProdOrderRtngLineTxt: Text;
 
+    procedure SetSelectedProductionOrderNo(OrderNo: Code[20])
+    begin
+        SelectedProductionOrderNo := OrderNo;
+    end;
 
     local procedure GetRifOrdVendita(ItemNo: Code[20]): Code[20]
     begin
@@ -207,6 +231,19 @@ report 50301 "XV Prod. Order Dtl Calc."
             if SalesLine.FindFirst() then
                 exit(SalesLine."xv Posizione Layout");
         end;
+
+        exit('');
+    end;
+
+    local procedure GetFaseDescription(OrderNo: Code[20]): Text[100]
+    begin
+        if OrderNo = '' then
+            exit('');
+
+        ProdOrderRoutingLine.Reset();
+        ProdOrderRoutingLine.SetRange("Prod. Order No.", OrderNo);
+        if ProdOrderRoutingLine.FindFirst() then
+            exit(GetStandardTaskDescription(ProdOrderRoutingLine."Standard Task Code"));
 
         exit('');
     end;

@@ -26,7 +26,7 @@ page 50228 "XV Etichette Ricambi Cliente"
                 {
                     ToolTip = 'Specifies the description of the item in the line.';
                 }
-                field(Quantity; Rec.Quantity)
+                field("Qty. to Ship"; Rec."Qty. to Ship")
                 {
                     ToolTip = 'Specifies the quantity that should be shipped.';
                 }

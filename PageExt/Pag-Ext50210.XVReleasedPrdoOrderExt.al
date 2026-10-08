@@ -58,4 +58,28 @@ pageextension 50210 "XV Released Prod. Order Ext" extends "Firm Planned Prod. Or
             }
         }
     }
+
+    actions
+    {
+        addlast(Processing)
+        {
+            action(StampaProdOrderDetailedCalc)
+            {
+                ApplicationArea = All;
+                Caption = 'Prod. Order - Detailed Calc.';
+                ToolTip = 'Apre il report dettagliato dell''ordine di produzione.';
+                Image = Print;
+                Promoted = true;
+                PromotedCategory = Process;
+
+                trigger OnAction()
+                var
+                    ProdOrderDetailedCalc: Report "EOS 07000 MES ProdOrderDetCalc";
+                begin
+                    ProdOrderDetailedCalc.SetTableView(Rec);
+                    ProdOrderDetailedCalc.RunModal();
+                end;
+            }
+        }
+    }
 }

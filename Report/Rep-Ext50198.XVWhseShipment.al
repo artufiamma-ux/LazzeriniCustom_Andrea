@@ -31,8 +31,8 @@ reportextension 50198 WhseShipmentExt extends "Whse. - Shipment"
             trigger OnAfterAfterGetRecord()
             var
                 BarcodeString: Text;
-                    BarcodeSymbology: Enum "Barcode Symbology";
-                    BarcodeFontProvider: Interface System.Text."Barcode Font Provider";
+                BarcodeSymbology: Enum "Barcode Symbology";
+                BarcodeFontProvider: Interface System.Text."Barcode Font Provider";
 
             begin
                 // calcola giacenza

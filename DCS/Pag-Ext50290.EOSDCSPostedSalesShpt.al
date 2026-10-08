@@ -24,8 +24,8 @@ pageextension 50290 "EOS DCS Posted Sales Shpt" extends "Posted Sales Shipment" 
         {
             part("XV EOS DCS FactBox"; "EOS069 DCS FactBox")
             {
-                Enabled = isVisible;
-                Visible = isVisible;
+                Enabled = true;
+                Visible = true;
                 ApplicationArea = All;
                 UpdatePropagation = SubPart;
             }
@@ -89,7 +89,6 @@ pageextension 50290 "EOS DCS Posted Sales Shpt" extends "Posted Sales Shipment" 
 
     trigger OnAfterGetCurrRecord()
     begin
-        if isVisible then
-            CurrPage."XV EOS DCS FactBox".Page.SetCurrRecord(Database::"Sales Shipment Header", Rec.SystemId);
+        CurrPage."XV EOS DCS FactBox".Page.SetCurrRecord(Database::"Sales Shipment Header", Rec.SystemId);
     end;
 }

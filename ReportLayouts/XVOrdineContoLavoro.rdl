@@ -11,7 +11,7 @@
       <am:Name>PBIRB</am:Name>
       <am:Version>15.7.1819.28</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-09-15T08:14:06.0698188Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-09-23T08:08:18.0059915Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -32,7 +32,7 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.42191cm</Width>
+                  <Width>2.13826cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>3.31413cm</Width>
@@ -59,7 +59,7 @@
                   <Width>1.39931cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.23384cm</Width>
+                  <Width>1.42328cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.85897cm</Width>
@@ -678,7 +678,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!LineNo.Value</Value>
+                                  <Value>=Fields!LineItemNo.Value</Value>
                                   <Style>
                                     <FontSize>6pt</FontSize>
                                   </Style>
@@ -691,8 +691,8 @@
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>White</Color>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -725,8 +725,8 @@
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>White</Color>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -759,8 +759,8 @@
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>White</Color>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -793,8 +793,8 @@
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>White</Color>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -827,8 +827,8 @@
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>White</Color>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -861,8 +861,8 @@
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>White</Color>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -895,8 +895,8 @@
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>White</Color>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -929,8 +929,8 @@
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>White</Color>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -964,8 +964,8 @@
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>White</Color>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -999,8 +999,8 @@
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>White</Color>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1034,8 +1034,8 @@
                           </Paragraphs>
                           <Style>
                             <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
+                              <Color>White</Color>
+                              <Style>None</Style>
                             </Border>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>
@@ -1079,7 +1079,7 @@
             <Top>0.21953cm</Top>
             <Left>1.33479cm</Left>
             <Height>1.66147cm</Height>
-            <Width>17.62712cm</Width>
+            <Width>17.53291cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1244,7 +1244,7 @@
                 </Style>
               </Line>
             </ReportItems>
-            <Top>5.57834cm</Top>
+            <Top>6.34425cm</Top>
             <Left>1.25364cm</Left>
             <Height>1.07639cm</Height>
             <Width>17.74636cm</Width>
@@ -2575,10 +2575,10 @@ Elenco Materiali</Value>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <Top>0.04117cm</Top>
-                      <Left>0.04713cm</Left>
+                      <Top>0.11552cm</Top>
+                      <Left>0.3618cm</Left>
                       <Height>0.25cm</Height>
-                      <Width>2.45084cm</Width>
+                      <Width>2.08904cm</Width>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -2600,10 +2600,10 @@ Elenco Materiali</Value>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <Top>0.28cm</Top>
-                      <Left>0.04713cm</Left>
-                      <Height>0.55167cm</Height>
-                      <Width>2.45084cm</Width>
+                      <Top>0.55308cm</Top>
+                      <Left>0.40922cm</Left>
+                      <Height>0.36411cm</Height>
+                      <Width>2.11217cm</Width>
                       <ZIndex>1</ZIndex>
                       <Style>
                         <Border>
@@ -2611,11 +2611,22 @@ Elenco Materiali</Value>
                         </Border>
                       </Style>
                     </Textbox>
+                    <Line Name="Line7">
+                      <Top>0.04233cm</Top>
+                      <Left>2.5214cm</Left>
+                      <Height>0.84663cm</Height>
+                      <Width>0cm</Width>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Line>
                   </ReportItems>
-                  <Top>0.08552cm</Top>
-                  <Left>7.58817cm</Left>
-                  <Height>0.83167cm</Height>
-                  <Width>2.5451cm</Width>
+                  <Left>7.22608cm</Left>
+                  <Height>0.91719cm</Height>
+                  <Width>2.97621cm</Width>
                   <ZIndex>2</ZIndex>
                   <Style>
                     <Border>
@@ -2642,9 +2653,9 @@ Elenco Materiali</Value>
                         </Paragraph>
                       </Paragraphs>
                       <Top>0.02cm</Top>
-                      <Left>0.04713cm</Left>
+                      <Left>0.10583cm</Left>
                       <Height>0.25cm</Height>
-                      <Width>1.4712cm</Width>
+                      <Width>1.84975cm</Width>
                       <Style>
                         <Border>
                           <Style>None</Style>
@@ -2668,7 +2679,7 @@ Elenco Materiali</Value>
                         </Paragraph>
                       </Paragraphs>
                       <Top>0.02cm</Top>
-                      <Left>1.72108cm</Left>
+                      <Left>2.15833cm</Left>
                       <Height>0.31056cm</Height>
                       <Width>1.29193cm</Width>
                       <ZIndex>1</ZIndex>
@@ -2696,7 +2707,7 @@ Elenco Materiali</Value>
                         </Paragraph>
                       </Paragraphs>
                       <Top>0.43639cm</Top>
-                      <Left>1.72108cm</Left>
+                      <Left>2.15833cm</Left>
                       <Height>0.3cm</Height>
                       <Width>1.17222cm</Width>
                       <ZIndex>2</ZIndex>
@@ -2723,9 +2734,9 @@ Elenco Materiali</Value>
                         </Paragraph>
                       </Paragraphs>
                       <Top>0.39756cm</Top>
-                      <Left>0.08002cm</Left>
+                      <Left>0.10583cm</Left>
                       <Height>0.42056cm</Height>
-                      <Width>1.43831cm</Width>
+                      <Width>1.84975cm</Width>
                       <ZIndex>3</ZIndex>
                       <Style>
                         <Border>
@@ -2735,9 +2746,9 @@ Elenco Materiali</Value>
                     </Textbox>
                   </ReportItems>
                   <Top>0.08552cm</Top>
-                  <Left>10.25528cm</Left>
+                  <Left>9.81803cm</Left>
                   <Height>0.95cm</Height>
-                  <Width>3.48773cm</Width>
+                  <Width>3.92498cm</Width>
                   <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
@@ -3316,24 +3327,12 @@ Elenco Materiali</Value>
                 </Border>
               </Style>
             </Line>
-            <Line Name="Line7">
-              <Top>5.3467cm</Top>
-              <Left>11.53708cm</Left>
-              <Height>0.84663cm</Height>
-              <Width>0cm</Width>
-              <ZIndex>5</ZIndex>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
             <Line Name="Line13">
               <Top>5.3467cm</Top>
               <Left>14.64964cm</Left>
               <Height>0.98774cm</Height>
               <Width>0cm</Width>
-              <ZIndex>6</ZIndex>
+              <ZIndex>5</ZIndex>
               <Style>
                 <Border>
                   <Style>Solid</Style>
@@ -3375,6 +3374,33 @@ Elenco Materiali</Value>
                     </Border>
                   </Style>
                 </Textbox>
+                <Textbox Name="AspettoVal">
+                  <CanGrow>true</CanGrow>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value />
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>6.5pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>0.45cm</Top>
+                  <Left>0.09426cm</Left>
+                  <Height>0.75cm</Height>
+                  <Width>5.65578cm</Width>
+                  <ZIndex>1</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
                 <Textbox Name="VettoreLbl">
                   <Paragraphs>
                     <Paragraph>
@@ -3394,7 +3420,34 @@ Elenco Materiali</Value>
                   <Left>5.93857cm</Left>
                   <Height>0.3cm</Height>
                   <Width>5.65578cm</Width>
-                  <ZIndex>1</ZIndex>
+                  <ZIndex>2</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="VettoreVal">
+                  <CanGrow>true</CanGrow>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Fields!EOSShippingAgentCode.Value</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>6.5pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>0.45cm</Top>
+                  <Left>5.93857cm</Left>
+                  <Height>0.75cm</Height>
+                  <Width>5.65578cm</Width>
+                  <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3420,7 +3473,34 @@ Elenco Materiali</Value>
                   <Left>11.87713cm</Left>
                   <Height>0.3cm</Height>
                   <Width>5.65578cm</Width>
-                  <ZIndex>2</ZIndex>
+                  <ZIndex>4</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="BuyerVal">
+                  <CanGrow>true</CanGrow>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Fields!BuyFromVendorName.Value</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>6.5pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>0.45cm</Top>
+                  <Left>11.87713cm</Left>
+                  <Height>0.75cm</Height>
+                  <Width>5.65578cm</Width>
+                  <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3446,7 +3526,34 @@ Elenco Materiali</Value>
                   <Left>0.09426cm</Left>
                   <Height>0.3cm</Height>
                   <Width>11.50008cm</Width>
-                  <ZIndex>3</ZIndex>
+                  <ZIndex>6</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="AnnotazioniVal">
+                  <CanGrow>true</CanGrow>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Fields!AdditionalNotes.Value</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>6.5pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>1.65cm</Top>
+                  <Left>0.09426cm</Left>
+                  <Height>0.9cm</Height>
+                  <Width>11.50008cm</Width>
+                  <ZIndex>7</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3472,7 +3579,34 @@ Elenco Materiali</Value>
                   <Left>11.87713cm</Left>
                   <Height>0.3cm</Height>
                   <Width>5.65578cm</Width>
-                  <ZIndex>4</ZIndex>
+                  <ZIndex>8</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                  </Style>
+                </Textbox>
+                <Textbox Name="ManagingDirectorVal">
+                  <CanGrow>true</CanGrow>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=Fields!BuyFromContactNo.Value</Value>
+                          <Style>
+                            <FontFamily>Segoe UI</FontFamily>
+                            <FontSize>6.5pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <Top>1.65cm</Top>
+                  <Left>11.87713cm</Left>
+                  <Height>0.9cm</Height>
+                  <Width>5.65578cm</Width>
+                  <ZIndex>9</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -3483,7 +3617,7 @@ Elenco Materiali</Value>
                   <Left>5.88681cm</Left>
                   <Height>1.3cm</Height>
                   <Width>0cm</Width>
-                  <ZIndex>5</ZIndex>
+                  <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -3494,7 +3628,7 @@ Elenco Materiali</Value>
                   <Left>11.77361cm</Left>
                   <Height>1.3cm</Height>
                   <Width>0cm</Width>
-                  <ZIndex>6</ZIndex>
+                  <ZIndex>11</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -3506,7 +3640,7 @@ Elenco Materiali</Value>
                   <Left>11.77361cm</Left>
                   <Height>1.15cm</Height>
                   <Width>0cm</Width>
-                  <ZIndex>7</ZIndex>
+                  <ZIndex>12</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -3517,7 +3651,7 @@ Elenco Materiali</Value>
                   <Top>1.3cm</Top>
                   <Height>0cm</Height>
                   <Width>17.66043cm</Width>
-                  <ZIndex>8</ZIndex>
+                  <ZIndex>13</ZIndex>
                   <Style>
                     <Border>
                       <Style>Solid</Style>
@@ -3526,7 +3660,7 @@ Elenco Materiali</Value>
                 </Line>
               </ReportItems>
               <Left>1.33479cm</Left>
-              <Height>2.45cm</Height>
+              <Height>2.55cm</Height>
               <Width>17.66043cm</Width>
               <Style>
                 <Border>
@@ -3771,6 +3905,9 @@ Elenco Materiali</Value>
         <Field Name="EOSShippingAgentCode">
           <DataField>EOSShippingAgentCode</DataField>
         </Field>
+        <Field Name="BuyFromContactNo">
+          <DataField>BuyFromContactNo</DataField>
+        </Field>
         <Field Name="AdditionalNotes">
           <DataField>AdditionalNotes</DataField>
         </Field>
@@ -3855,8 +3992,8 @@ Elenco Materiali</Value>
         <Field Name="SubcontractingOrder">
           <DataField>SubcontractingOrder</DataField>
         </Field>
-        <Field Name="LineNo">
-          <DataField>LineNo</DataField>
+        <Field Name="LineItemNo">
+          <DataField>LineItemNo</DataField>
         </Field>
         <Field Name="LineDescription">
           <DataField>LineDescription</DataField>

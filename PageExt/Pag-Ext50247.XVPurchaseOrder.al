@@ -13,20 +13,36 @@ pageextension 50247 "XV Purchase Order Ext" extends "Purchase Order"
                 ApplicationArea = All;
                 ToolTip = 'Indica se l''ordine acquisto è un ordine pilota.';
             }
+            field("Additional Notes"; Rec."Additional Notes")
+            {
+                ApplicationArea = All;
+                ToolTip = 'Note aggiuntive.';
+            }
         }
     }
     actions
     {
         addlast(Processing)
         {
+            action(PrintXVOrdineAcquisto)
+            {
+                Caption = 'XV Ordine Acquisto (current)';
+                Image = Print;
+                ApplicationArea = All;
+                trigger OnAction()
+                var
+                    PurchaseHeaderRec: Record "Purchase Header";
+                begin
+                    PurchaseHeaderRec := Rec;
+                    PurchaseHeaderRec.SetRecFilter();
+                    Report.Run(Report::"XV Ordine Acquisto", true, false, PurchaseHeaderRec);
+                end;
+            }
             action(PrintXVAllOrders)
             {
                 Caption = 'XV Print All Orders';
                 Image = Print;
                 ApplicationArea = All;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
                 trigger OnAction()
                 begin
                     // Run report without passing the current Purchase Header record
@@ -38,9 +54,6 @@ pageextension 50247 "XV Purchase Order Ext" extends "Purchase Order"
                 Caption = 'XV Conto Lavoro (current)';
                 Image = Print;
                 ApplicationArea = All;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
                 trigger OnAction()
                 var
                     PurchaseHeaderRec: Record "Purchase Header";
@@ -51,22 +64,15 @@ pageextension 50247 "XV Purchase Order Ext" extends "Purchase Order"
                     Report.Run(Report::"XV Ordine Conto Lavoro", true, false, PurchaseHeaderRec);
                 end;
             }
-            action(PrintXVOrdineAcquisto)
+        }
+
+        addlast(Category_Category10)
+        {
+            actionref(PrintXVOrdineAcquisto_Promoted; PrintXVOrdineAcquisto)
             {
-                Caption = 'XV Ordine Acquisto (current)';
-                Image = Print;
-                ApplicationArea = All;
-                Promoted = true;
-                PromotedCategory = Process;
-                PromotedIsBig = true;
-                trigger OnAction()
-                var
-                    PurchaseHeaderRec: Record "Purchase Header";
-                begin
-                    PurchaseHeaderRec := Rec;
-                    PurchaseHeaderRec.SetRecFilter();
-                    Report.Run(Report::"XV Ordine Acquisto", true, false, PurchaseHeaderRec);
-                end;
+            }
+            actionref(PrintXVContoLavoro_Promoted; PrintXVContoLavoro)
+            {
             }
         }
     }
